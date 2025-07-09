@@ -1,0 +1,15 @@
+writeFile:
+C:\temp\Anyconnect\anyconnect-win-4.8.03036-core-vpn-predeploy-k9.msi
+executeShellCommand:
+msiexec /i "C:\temp\Anyconnect\anyconnect-win-4.8.03036-core-vpn-predeploy-k9.msi" /l*v C:\temp\msilog.txt /qn
+
+Umbrella
+writeFile:
+C:\temp\Anyconnect\anyconnect-win-4.9.00086-core-vpn-predeploy-k9.msi
+C:\temp\Anyconnect\anyconnect-win-4.9.00086-umbrella-predeploy-k9.msi
+C:\temp\Anyconnect\Profiles\umbrella\OrgInfo.json
+executeShellCommand:
+msiexec /i "C:\temp\Anyconnect\anyconnect-win-4.9.00086-core-vpn-predeploy-k9.msi" /l*v C:\temp\msilog.txt /norestart /qn
+msiexec /i "C:\temp\Anyconnect\anyconnect-win-4.9.00086-umbrella-predeploy-k9.msi" /l*v C:\temp\msilog.txt /norestart /qn
+deleteDirectory:
+C:\temp\Anyconnect

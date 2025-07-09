@@ -1,0 +1,13 @@
+https://www.youtube.com/watch?v=I8c3P8PZ7vc
+https://www.youtube.com/watch?v=jR4SQU-Np0s
+
+
+CUCM AXL Users for AXL and CTI for CTI devices
+CUCM SNMPv2 community for phone discovery (cer R/O for CER IPs)
+Enough CTI ports for 911 notification calls (16)
+CTI route points for 911 with failover to route pattern and callback
+Configure CUCM application for off-premise users
+Configure National E911 ERL locations w/ subnets
+Dedicated ELIN DID
+CUCM translation rules per location w/ ELIN
+Setup CR RedSky integration under National E911

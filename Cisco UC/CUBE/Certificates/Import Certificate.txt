@@ -1,0 +1,24 @@
+https://youtu.be/8pUtDOTw-HM?t=1215
+
+Create a new private key
+openssl genrsa -out private_key_example_com.pem 2048
+
+Generate a CSR
+openssl req -new -key private_key_example_com.pem -out example_com.csr
+
+Get the certificate signed by a CA
+
+Bundle all files together
+openssl pkcs12 -export -inkey private_key_example_com.pem -in example_com.pem -certfile root-cert.crt -out bundle_example_com.pfx -macalg sha1 -legacy
+
+The IOS is great, but even the latest available at the time of writing does not support newer ciphers and formats so the “-macalg sha1 -legacy” are needed to create a compatible pfx file.
+
+Create a trust point
+crypto pki trustpoint example_com
+fqdn router.example.com
+subject-name cn=router.example.com
+subject-alt-name router.example.com
+rsakeypair example_com
+
+Import the pfx file
+crypto pki import example_com pkcs12 sftp://admin@10.0.0.1/bundle_example_com.pfx password Password1!

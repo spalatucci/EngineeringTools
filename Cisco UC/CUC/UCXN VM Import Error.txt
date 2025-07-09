@@ -1,0 +1,23 @@
+utils cuc users bulk_clean_orphans subscribers
+
+utils cuc users bulk_clean_orphans mapentries
+
+
+
+
+
+Delete user via Extension:
+
+
+run cuc dbquery unitydirdb delete from tbl_DtmfAccessId WHERE DtmfAccessId ='1648'
+
+
+
+
+DELETE USER WITH PKID>>
+
+run sql select userid, pkid from enduser where userid = '<user_alias>'
+
+run sql SELECT fkenduser, fkappserver  FROM enduserappservermap WHERE fkenduser = '83215248-6288-446d-87e2-db5efcca3e98'
+
+run sql delete FROM enduserappservermap WHERE fkenduser = '83215248-6288-446d-87e2-db5efcca3e98' and fkappserver = '67285943-ff95-4f4f-88c6-e6206cf23551'

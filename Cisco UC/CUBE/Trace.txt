@@ -1,0 +1,2 @@
+alias exec fc show voip trace cover-buffer | section
+alias exec sc show voip trace call-id

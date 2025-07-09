@@ -1,0 +1,10 @@
+no trace all
+clear trace
+trace voicemail msgnotif all
+trace configapi smtp debug
+trace entitymanager NotifDevice all
+trace smtp all
+sho trace buffer tail
+
+hit ctrl c when your done
+then say no trace all

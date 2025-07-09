@@ -1,0 +1,3 @@
+run sql select * from enduser where userid like '%amodi%'
+
+run sql update enduser set xep106userid='AModi' where userid='AModi'

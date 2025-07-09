@@ -1,0 +1,59 @@
+https://www.cisco.com/c/en/us/support/docs/security-vpn/public-key-infrastructure-pki/215849-certificate-installation-and-renewal-on.html#anc14
+
+https://www.digicert.com/easy-csr/openssl.htm
+openssl req -new -newkey rsa:4096 -nodes -out Testing.csr -keyout Testing.key -subj "/C=US/ST=VA/L=Herndon/O=ada/OU=aDASD/CN=Testing"
+
+#first import to windows cert store, then export with private key to get formate openssl understands
+#copy all files to C:\Program Files\OpenSSL-Win64\bin
+
+#export the private key
+openssl pkcs12 -in vpn.pfx -nocerts -out vpn.key
+
+#export the identity cert
+openssl pkcs12 -in vpn.pfx -clcerts -nokeys -out vpn.pem
+
+#combo CA has intermediate then root
+#combine private key, identity cert, and cert chain into pfx
+openssl pkcs12 -export -out anyconnect_asbmb.pfx -inkey vpn.key -in vpn.pem -certfile combo.pem
+
+
+Multi-SAN:
+https://medium.com/@spawnrider/creating-a-multi-domain-san-ssl-certificate-using-openssl-2a3865ccb62a
+
+openssl genrsa -out acme.com.key 4096
+
+#file name
+acme.com.cnf
+
+#file contents
+[ req ]
+default_bits            = 4096
+encrypt_key             = no
+default_md              = sha256
+utf8                    = yes
+string_mask             = utf8only
+prompt                  = no
+distinguished_name = req_distinguished_name
+req_extensions     = req_ext
+
+[ req_distinguished_name ]
+countryName         = US
+stateOrProvinceName = Virginia
+localityName        = Herndon
+organizationName    = ACME GROUP
+organizationalUnitName = Information Technology
+commonName          = acme.com
+
+[ req_ext ]
+subjectAltName = @alt_names
+
+[alt_names]
+DNS.1 = acme.com
+DNS.2 = subdomain.acme.com
+DNS.3 = another.acme.com
+
+#generate csr
+openssl req -new -sha256 -out acme.com.csr -key acme.com.key -config acme.com.cnf
+
+#verify
+openssl req -in acme.com.csr -noout -text

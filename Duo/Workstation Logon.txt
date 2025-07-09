@@ -1,0 +1,3 @@
+https://duo.com/docs/rdp
+
+https://duo.com/docs/winlogon-gpo

@@ -1,0 +1,11 @@
+SELECT so.name as TableName, si.name As IndexName,
+si.type_desc, index_depth, index_level,
+avg_fragmentation_in_percent, fragment_count,
+avg_fragment_size_in_pages, page_count,
+avg_page_space_used_in_percent
+FROM sys.dm_db_index_physical_stats(DB_ID(), NULL, NULL, NULL, 'LIMITED') As phystat
+JOIN sys.objects so ON phystat.object_id = so.object_id
+JOIN sys.indexes si ON so.object_id = si.object_id
+AND phystat.index_id = si.index_id
+WHERE so.type = 'U'
+ORDER BY avg_fragmentation_in_percent desc, TableName, IndexName

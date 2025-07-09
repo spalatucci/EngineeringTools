@@ -1,0 +1,1 @@
+https://documentation.meraki.com/zGeneral_Administration/Non-Meraki_Configuration/Creating_an_offline_certificate_request_in_Windows_Server

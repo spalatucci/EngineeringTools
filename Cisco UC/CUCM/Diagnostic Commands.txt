@@ -1,0 +1,19 @@
+show status
+show network cluster
+utils service list
+utils diagnose test
+utils core active list
+utils ha status
+utils dbreplication runtimestate
+utils imdb_replication status
+run sql select * from processnode
+run sql select * from enterprise node
+show process load using-most memory
+show process load using-most cpu
+
+show status
+utils service list
+utils diagnose test
+utils core active list
+show process load using-most memory
+show process load using-most cpu

@@ -1,0 +1,10 @@
+M = {}
+M.allowHeaders = {"RedSky-CustomerID"}
+local rs_id = scriptParameters.getValue("RedSky-CustomerID")
+function M.outbound_INVITE(msg)
+local hdrexists = msg:getHeader("RedSky-CustomerID")
+if rs_id and not hdrexists then
+msg:addHeader("RedSky-CustomerID", rs_id)
+end
+end
+return M

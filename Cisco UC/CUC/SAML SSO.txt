@@ -1,0 +1,8 @@
+https://www.cisco.com/c/en/us/td/docs/voice_ip_comm/cucm/SAML_SSO_deployment_guide/Azure/cucm_b_saml-sso-microsoft-azure-idp.html
+
+OAuth:
+https://www.cisco.com/c/dam/en/us/td/docs/voice_ip_comm/jabber/11_9/Unified-CM-OAuth-Whitepaper-v17-FINAL.pdf
+https://www.cisco.com/c/en/us/support/docs/unified-communications/jabber/212794-cisco-collaboration-solutions-12-0-oaut.html
+CLI:
+run sql select pkid,refreshtokenindex,userid,clientid,dbinfo('utc_to_datetime',validity) as validity,state from refreshtokendetails
+curl -k -u "admin:password" https://<UCMaddress:8443/ssosp/token/revoke?user_id=<end_user>

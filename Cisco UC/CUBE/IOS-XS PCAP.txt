@@ -1,0 +1,4 @@
+monitor capture TAC interface g0/0/0 both buffer circular size 100 match any limit pps 1000000
+monitor capture TAC start
+monitor capture TAC stop
+monitor capture export

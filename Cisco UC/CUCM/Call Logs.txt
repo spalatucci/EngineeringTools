@@ -1,0 +1,12 @@
+Grab the call logs from CUCM
+file list activelog cm/trace/ccm/calllogs/* date detail
+
+Grab the CUCM logs
+file list activelog cm/trace/ccm/sdi/* date detail
+
+
+
+
+
+Excel Call Time Formula
+("dateTimeOrigination"-18000)/86400 + date(1970,1,1)

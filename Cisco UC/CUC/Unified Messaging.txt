@@ -1,0 +1,2 @@
+Microsoft Permissions Error:
+https://community.cisco.com/t5/collaboration-applications/reminder-cuc-um-w-o365-stops-working-with-legacy-permissions/td-p/5267296

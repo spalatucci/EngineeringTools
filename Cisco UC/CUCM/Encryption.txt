@@ -1,0 +1,9 @@
+Setup OAuth:
+https://www.cisco.com/c/en/us/td/docs/voice_ip_comm/cucm/admin/cucm_b_feature-configuration-guide-for-15/cucm_m_sip-oauth-mode-on-unified.html
+https://www.cisco.com/c/en/us/td/docs/voice_ip_comm/cucm/security/15_0/cucm_b_security-guide-release-15/cucm_m_sip-oauth-mode-on-unified.html
+
+CUCM/CUC:
+https://www.cisco.com/c/en/us/support/docs/unified-communications/unity-connection/211622-Configuration-Example-for-Secure-SIP-Int.html
+
+CUBE:
+https://www.cisco.com/c/en/us/support/docs/security-vpn/public-key-infrastructure-pki/220422-configure-ca-signed-certificates-with-io.html

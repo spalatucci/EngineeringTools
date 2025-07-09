@@ -1,0 +1,1 @@
+run cuc dbquery unitydirdb select * from UnityRptDb:vw_CallHandlerTraffic where CallHandlerName = 'Court-English-NA_0206' AND StartDateTime BETWEEN '2022-01-01 00:00:00.0' AND '2022-02-10 00:00:00.0' ORDER BY CallHandlerName, StartDateTime

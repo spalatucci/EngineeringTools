@@ -1,0 +1,9 @@
+Have CUE 8.6.6 and Office 365 confirmed working.
+
+1. Create a "global admin" service account within Office 365.
+2. Within CUE smtp settings page;
+     a. leave "import smtp settings" blank
+     b. Within "external smtp server" enter outlook.office365.com
+     c. "Security mode" is set to starttls and port 587
+     d. username is the step one email address
+     e. password is the step one password.

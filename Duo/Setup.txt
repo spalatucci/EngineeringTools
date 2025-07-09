@@ -1,0 +1,8 @@
+1. Enrolling Users - https://duo.com/docs/enrolling-users
+2. Administration Overview - https://duo.com/docs/administration
+3. Policies & Control - https://duo.com/docs/policy
+4. Protecting Applications - https://duo.com/docs/protecting-applications#protecting-an-application
+5. All Duo Administration Docs - https://duo.com/docs#intro-to-duo
+6. End-User Guide to Two-Factor Authentication - https://guide.duo.com/
+
+https://guide.duo.com/enrollment

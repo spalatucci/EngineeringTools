@@ -1,0 +1,15 @@
+http://kb.vmware.com/selfservice/microsites/search.do?language=en_US&cmd=displayKC&externalId=2008939
+
+/usr/lib/vmware/secureboot/bin/secureBoot.py -c
+Secure boot can be enabled: All vib signatures verified. All tardisks validated. All acceptance levels validated
+
+Log in to CIMC > Compute > Boot Order > UEFI Secure Boot Enable
+
+cd /vmfs/volumes/datastore1
+ls
+vim-cmd /hostsvc/maintenance_mode_enter
+esxcli software sources profile list -d /vmfs/volumes/datastore1/OVA-ISO/VMware-ESXi-7.0U3o-22348816-depot.zip
+esxcli software profile update -d /vmfs/volumes/datastore1/OVA-ISO/VMware-ESXi-7.0U3o-22348816-depot.zip -p ESXi-7.0U3o-22348816-standard
+esxcli software profile install -p ESXi-7.0U3o-22348816-standard -d /vmfs/volumes/datastore1/OVA-ISO/VMware-ESXi-7.0U3o-22348816-depot.zip --ok-to-remove --no-hardware-warning
+
+esxcli software vib install -d "/vmfs/volumes/datastore1/PatchName.zip"

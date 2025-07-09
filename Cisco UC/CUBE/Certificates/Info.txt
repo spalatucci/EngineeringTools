@@ -1,0 +1,1 @@
+https://community.cisco.com/t5/networking-knowledge-base/creating-a-csr-authenticating-a-ca-and-enrolling-certificates-on/ta-p/4436090

@@ -1,0 +1,706 @@
+
+DC1-1.3-CUBE01#sh run
+Building configuration...
+
+Current configuration : 15168 bytes
+!
+! Last configuration change at 14:47:34 CST Thu Feb 1 2024 by dan.bender
+! NVRAM config last updated at 14:47:35 CST Thu Feb 1 2024 by dan.bender
+!
+version 17.6
+service timestamps debug datetime msec
+service timestamps log datetime msec
+service password-encryption
+service call-home
+platform qfp utilization monitor load 80
+platform punt-keepalive disable-kernel-core
+!
+hostname DC1-1.3-CUBE01
+!
+boot-start-marker
+boot system flash bootflash:isr4400-universalk9.17.06.03a.SPA.bin
+boot-end-marker
+!
+!
+vrf definition Mgmt-intf
+ !
+ address-family ipv4
+ exit-address-family
+ !
+ address-family ipv6
+ exit-address-family
+!
+card type t1 0 1
+enable secret 9 $9$jMPLuZBAbcavpE$smqce9FzEwTbE3oHmwmmAyh3fYkbSbFBru/Q6/tUtDQ
+!
+aaa new-model
+!
+!
+aaa group server tacacs+ ISE_PSNs
+ server-private 10.201.253.21 key 7 00455221160B1E365D711D1E
+ server-private 10.201.253.22 key 7 15534A2B167A3E147A636472
+ server-private 10.201.253.23 key 7 100F483E1747073B5E547B7B
+ ip vrf forwarding Mgmt-intf
+ ip tacacs source-interface GigabitEthernet0
+!
+aaa authentication login default group ISE_PSNs local enable
+aaa authentication enable default group ISE_PSNs enable
+aaa authorization exec default group ISE_PSNs local
+aaa accounting exec default start-stop group ISE_PSNs
+aaa accounting commands 0 default start-stop group ISE_PSNs
+aaa accounting commands 1 default start-stop group ISE_PSNs
+aaa accounting commands 15 default start-stop group ISE_PSNs
+aaa accounting network default start-stop group ISE_PSNs
+aaa accounting connection default start-stop group ISE_PSNs
+aaa accounting system default start-stop group ISE_PSNs
+!
+!
+!
+!
+!
+!
+aaa session-id common
+clock timezone CST -6 0
+clock summer-time CDT recurring
+!
+ip multicast-routing distributed
+!
+!
+!
+!
+!
+!
+ip name-server 10.200.200.131 10.111.9.202
+ip domain name nisdtx.org
+!
+!
+!
+login on-success log
+!
+!
+!
+!
+!
+!
+!
+subscriber templating
+multilink bundle-name authenticated
+!
+!
+!
+!
+!
+isdn switch-type primary-ni
+!
+!
+crypto pki trustpoint TP-self-signed-3559104447
+ enrollment selfsigned
+ subject-name cn=IOS-Self-Signed-Certificate-3559104447
+ revocation-check none
+ rsakeypair TP-self-signed-3559104447
+!
+crypto pki trustpoint SLA-TrustPoint
+ enrollment terminal
+ revocation-check crl
+!
+!
+crypto pki certificate chain TP-self-signed-3559104447
+ certificate self-signed 01
+  30820330 30820218 A0030201 02020101 300D0609 2A864886 F70D0101 05050030
+  31312F30 2D060355 04031326 494F532D 53656C66 2D536967 6E65642D 43657274
+  69666963 6174652D 33353539 31303434 3437301E 170D3233 30323231 31373239
+  32315A17 0D333330 32323031 37323932 315A3031 312F302D 06035504 03132649
+  4F532D53 656C662D 5369676E 65642D43 65727469 66696361 74652D33 35353931
+  30343434 37308201 22300D06 092A8648 86F70D01 01010500 0382010F 00308201
+  0A028201 0100AEF5 52E896A2 2831BA20 E6D4365D FCAC29C8 1097F6CF 14673D43
+  EA20D88F 2E2418C6 3E3CC148 FD37759D 3903A8DA EDB09780 6C2EAE74 E53F93E3
+  74F9E25B 8E2289B8 4E8349AC E0E0CCE5 6D60FCCB D6D4FD5A 29C9394C FA1FB522
+  5B59B367 C75920CF 9C301895 E4894A86 F6827EE5 FF926D94 50D54C78 7A99CB47
+  66C8058D 15E01199 FA90CAAD 0D435842 8F43A405 382AD65D 9C860CD3 E8536EF9
+  F1EFAE90 F33B3D36 1E4CCD1C C116FCB1 9D70A4E0 5A287FC1 7ABAC152 5E99A54A
+  E40B5D62 A53B784F 4ACAD5FE 5B0F3579 15828619 1B732024 0060A711 75972D17
+  DB5AA89F 88E3317E 5A76FABA CA57D6DE 2078DE0D AD32A18C E761CAB2 59C82473
+  03104751 7A230203 010001A3 53305130 0F060355 1D130101 FF040530 030101FF
+  301F0603 551D2304 18301680 140A1194 0988549C 3E3B0EE1 268DCD1C CCEC3CA4
+  9D301D06 03551D0E 04160414 0A119409 88549C3E 3B0EE126 8DCD1CCC EC3CA49D
+  300D0609 2A864886 F70D0101 05050003 82010100 3E3E60CC 1738303F 082E01E0
+  F574EE01 9ACE6248 82C7BF2D AD4A613E E57736BB 5AE6F191 00C30F3B E17FB220
+  3CF9299E 6F341DE8 9C6A013E 82C1D121 74A1831A F6826492 4F25F056 088C1FEE
+  CB083D41 46808735 5189D88D 4C08D2DC 377C9225 A9ED9857 3F6B1224 FC700DFF
+  B2CDAA3E E70DC4BC F7176BBC BE5CDCE7 48A8464D 00390DA6 0172C8B9 F03D5967
+  FDA8519F DB3E7D17 54F4A7E8 76531C79 991FA86D 57E0C34B 3C182F45 49D8F992
+  DE4A8701 6DE66B60 14438698 A684A021 D9300E5C 25D9F364 456A59C5 359C2E4D
+  333F72B3 AC6B255F 7587F783 C4D12F7F F849AC47 C9E2F201 F6CF8D4F 5663A4A0
+  DFFB752A 0FA1880B 403B7EC5 2851CC37 CA2B9FCD
+        quit
+crypto pki certificate chain SLA-TrustPoint
+ certificate ca 01
+  30820321 30820209 A0030201 02020101 300D0609 2A864886 F70D0101 0B050030
+  32310E30 0C060355 040A1305 43697363 6F312030 1E060355 04031317 43697363
+  6F204C69 63656E73 696E6720 526F6F74 20434130 1E170D31 33303533 30313934
+  3834375A 170D3338 30353330 31393438 34375A30 32310E30 0C060355 040A1305
+  43697363 6F312030 1E060355 04031317 43697363 6F204C69 63656E73 696E6720
+  526F6F74 20434130 82012230 0D06092A 864886F7 0D010101 05000382 010F0030
+  82010A02 82010100 A6BCBD96 131E05F7 145EA72C 2CD686E6 17222EA1 F1EFF64D
+  CBB4C798 212AA147 C655D8D7 9471380D 8711441E 1AAF071A 9CAE6388 8A38E520
+  1C394D78 462EF239 C659F715 B98C0A59 5BBB5CBD 0CFEBEA3 700A8BF7 D8F256EE
+  4AA4E80D DB6FD1C9 60B1FD18 FFC69C96 6FA68957 A2617DE7 104FDC5F EA2956AC
+  7390A3EB 2B5436AD C847A2C5 DAB553EB 69A9A535 58E9F3E3 C0BD23CF 58BD7188
+  68E69491 20F320E7 948E71D7 AE3BCC84 F10684C7 4BC8E00F 539BA42B 42C68BB7
+  C7479096 B4CB2D62 EA2F505D C7B062A4 6811D95B E8250FC4 5D5D5FB8 8F27D191
+  C55F0D76 61F9A4CD 3D992327 A8BB03BD 4E6D7069 7CBADF8B DF5F4368 95135E44
+  DFC7C6CF 04DD7FD1 02030100 01A34230 40300E06 03551D0F 0101FF04 04030201
+  06300F06 03551D13 0101FF04 05300301 01FF301D 0603551D 0E041604 1449DC85
+  4B3D31E5 1B3E6A17 606AF333 3D3B4C73 E8300D06 092A8648 86F70D01 010B0500
+  03820101 00507F24 D3932A66 86025D9F E838AE5C 6D4DF6B0 49631C78 240DA905
+  604EDCDE FF4FED2B 77FC460E CD636FDB DD44681E 3A5673AB 9093D3B1 6C9E3D8B
+  D98987BF E40CBD9E 1AECA0C2 2189BB5C 8FA85686 CD98B646 5575B146 8DFC66A8
+  467A3DF4 4D565700 6ADF0F0D CF835015 3C04FF7C 21E878AC 11BA9CD2 55A9232C
+  7CA7B7E6 C1AF74F6 152E99B7 B1FCF9BB E973DE7F 5BDDEB86 C71E3B49 1765308B
+  5FB0DA06 B92AFE7F 494E8A9E 07B85737 F3A58BE1 1A48A229 C37C1E69 39F08678
+  80DDCD16 D6BACECA EEBC7CF9 8428787B 35202CDC 60E4616A B623CDBD 230E3AFB
+  418616A9 4093E049 4D10AB75 27E86F73 932E35B5 8862FDAE 0275156F 719BB2F0
+  D697DF7F 28
+        quit
+!
+!
+!
+!
+voice service voip
+ ip address trusted list
+  ipv4 10.200.100.11
+  ipv4 10.200.100.12
+  ipv4 10.200.100.10
+  ipv4 12.253.106.245
+  ipv4 12.253.103.213
+ address-hiding
+ dtmf-interworking rtp-nte
+ mode border-element
+ allow-connections sip to sip
+ redundancy-group 1
+ redirect ip2ip
+ fax protocol t38 version 0 ls-redundancy 0 hs-redundancy 0 fallback pass-through g711ulaw
+ trace
+ sip
+  min-se 1800 session-expires 7200
+  registrar server
+  asymmetric payload full
+  no update-callerid
+  early-offer forced
+  midcall-signaling passthru
+  sip-profiles 100
+!
+!
+voice class uri UCM sip
+ host ipv4:10.200.100.10
+ host ipv4:10.200.100.11
+ host ipv4:10.200.100.12
+!
+voice class uri ATT sip
+ host ipv4:12.253.106.245
+ host ipv4:12.253.103.213
+voice class codec 1
+ codec preference 1 g711ulaw
+ codec preference 2 g729r8
+!
+!
+voice class sip-profiles 100
+ request INVITE sip-header Diversion remove
+!
+!
+!
+voice class dpg 1
+ dial-peer 100
+!
+voice class dpg 2
+ dial-peer 200
+!
+voice class server-group 1
+ ipv4 10.200.100.10 preference 3
+ ipv4 10.200.100.11 preference 1
+ ipv4 10.200.100.12 preference 2
+!
+voice class server-group 2
+ ipv4 12.253.106.245
+ ipv4 12.253.103.213
+ description AT&T SBCs
+!
+voice class sip-options-keepalive 1
+ retry 3
+!
+!
+!
+!
+voice translation-rule 1
+!
+voice translation-rule 2
+ rule 1 /^\([2-9]..[2-9]......\)/ /+1\1/
+!
+voice translation-rule 3
+!
+voice translation-rule 4
+ rule 1 /\+1\(.*\)/ /\1/
+ rule 2 /\+\([^1].*\)/ /011\1/
+!
+voice translation-rule 5
+!
+voice translation-rule 6
+!
+voice translation-rule 7
+!
+voice translation-rule 8
+ rule 1 /^\([2-9]..[2-9]......\)/ /+1\1/
+!
+!
+voice translation-profile CUCM-IN
+ translate calling 5
+ translate called 6
+!
+voice translation-profile CUCM-OUT
+ translate calling 7
+ translate called 8
+!
+voice translation-profile ITSP-IN
+ translate calling 1
+ translate called 2
+!
+voice translation-profile ITSP-OUT
+ translate calling 3
+ translate called 4
+!
+!
+!
+!
+!
+voice-card 0/1
+ no watchdog
+!
+voice-card 0/4
+ codec complexity medium
+ dsp services dspfarm
+ no watchdog
+!
+license udi pid ISR4431/K9 sn FOC261500K7
+license boot level uck9
+license smart url https://smartreceiver.cisco.com/licservice/license
+license smart url smart https://smartreceiver.cisco.com/licservice/license
+license smart transport smart
+memory free low-watermark processor 69063
+!
+diagnostic bootup level minimal
+!
+spanning-tree extend system-id
+!
+username admin privilege 15 password 7 09621F3A1D574740584D
+username sikrit privilege 15 secret 9 $9$193kONEW.hV4LU$8WornZtpXKxc6OqufLdYUh5GeZdaGm7YGsLKUmYgvEM
+!
+redundancy
+ mode none
+ application redundancy
+  group 1
+   name DC1-CUBE-HA
+   priority 100 failover threshold 75
+   timers delay 30 reload 60
+   control GigabitEthernet0/0/2 protocol 1
+   data GigabitEthernet0/0/2
+   track 1 shutdown
+   track 2 shutdown
+!
+controller T1 0/1/0
+ shutdown
+ framing esf
+ clock source line primary
+ linecode b8zs
+ cablelength long 0db
+!
+controller T1 0/1/1
+ shutdown
+ framing esf
+ clock source line secondary
+ linecode b8zs
+ cablelength long 0db
+!
+controller T1 0/1/2
+ framing esf
+ linecode b8zs
+ cablelength long 0db
+!
+controller T1 0/1/3
+ framing esf
+ linecode b8zs
+ cablelength long 0db
+!
+!
+!
+track 1 interface GigabitEthernet0/0/0 line-protocol
+!
+track 2 interface GigabitEthernet0/0/1 line-protocol
+!
+!
+!
+!
+!
+!
+interface GigabitEthernet0/0/0
+ description AT&T 10Mbit 12.176.61.136/29
+ bandwidth 10000
+ ip address 12.209.5.115 255.255.255.248
+ negotiation auto
+ redundancy rii 2
+ redundancy group 1 ip 12.209.5.114 exclusive
+!
+interface GigabitEthernet0/0/1
+ description Inside Redundancy Interface
+ ip address 10.18.252.131 255.255.255.248
+ ip pim dr-priority 0
+ ip pim sparse-mode
+ ip igmp join-group 239.200.100.1
+ negotiation auto
+ redundancy rii 1
+ redundancy group 1 ip 10.18.252.130 exclusive
+!
+interface GigabitEthernet0/0/2
+ ip address 10.18.255.22 255.255.255.254
+ negotiation auto
+!
+interface GigabitEthernet0/0/3
+ no ip address
+ shutdown
+ negotiation auto
+!
+interface Service-Engine0/1/0
+!
+interface Service-Engine0/4/0
+!
+interface GigabitEthernet0
+ vrf forwarding Mgmt-intf
+ ip address 10.200.2.5 255.255.255.0
+ negotiation auto
+!
+ip default-gateway 10.18.252.1
+no ip http server
+ip http authentication local
+no ip http secure-server
+ip forward-protocol nd
+ip tftp source-interface GigabitEthernet0
+ip rtcp report interval 9000
+ip route 0.0.0.0 0.0.0.0 10.18.252.129
+ip route 12.253.103.208 255.255.255.240 12.209.5.113
+ip route 12.253.106.240 255.255.255.240 12.209.5.113
+ip route vrf Mgmt-intf 0.0.0.0 0.0.0.0 10.200.2.1
+ip tacacs source-interface GigabitEthernet0
+ip ssh version 2
+!
+!
+ip access-list standard ssh
+ 10 remark Rev 31Jan22
+ 10 remark LogicMonitor
+ 10 permit 10.200.207.122
+ 20 permit 10.200.207.123
+ 30 permit 10.200.207.124
+ 40 remark New Prime
+ 40 permit 10.200.202.61
+ 50 remark Prime
+ 50 permit 10.200.200.120
+ 60 remark DNA
+ 60 permit 10.1.220.51
+ 61 permit 10.18.252.144 0.0.0.15
+ 62 permit 10.18.252.176 0.0.0.15
+ 70 remark Engineer Wired
+ 70 permit 10.1.31.0 0.0.0.31
+ 71 permit 10.9.0.0 0.0.255.255
+ 80 permit 10.1.42.0 0.0.0.255
+ 90 permit 10.236.73.0 0.0.0.31
+ 100 remark Engineer Wireless
+ 100 permit 10.170.0.0 0.0.0.31
+ 110 remark DC1_DC2
+ 110 permit 10.18.121.0 0.0.0.255
+ 120 permit 10.18.111.0 0.0.0.255
+ 130 remark Loopback Interfaces
+ 130 permit 10.0.18.0 0.0.0.255
+ 140 remark Engineer VDI
+ 140 permit 10.230.184.0 0.0.0.255
+!
+!
+!
+snmp-server community gasgano RO
+!
+tftp-server bootflash:isr4400-universalk9.17.06.03a.SPA.bin
+!
+!
+!
+control-plane
+!
+!
+mgcp behavior rsip-range tgcp-only
+mgcp behavior comedia-role none
+mgcp behavior comedia-check-media-src disable
+mgcp behavior comedia-sdp-force disable
+!
+mgcp profile default
+!
+sccp local GigabitEthernet0/0/1
+sccp ccm 10.200.100.10 identifier 1 version 7.0
+sccp ccm 10.200.100.11 identifier 2 version 7.0
+sccp ccm 10.200.100.12 identifier 3 version 7.0
+sccp
+!
+sccp ccm group 1
+ associate ccm 2 priority 1
+ associate ccm 3 priority 2
+ associate ccm 1 priority 3
+ associate profile 1 register XCD-DC14431-1
+ associate profile 2 register CFB-DC14431-1
+ associate profile 3 register MTP-DC14431-1
+!
+ccm-manager music-on-hold bind GigabitEthernet0/0/1
+!
+!
+dspfarm profile 1 transcode
+ codec g729abr8
+ codec g729ar8
+ codec g711alaw
+ codec g711ulaw
+ maximum sessions 24
+ associate application SCCP
+!
+dspfarm profile 2 conference
+ codec g729abr8
+ codec g729ar8
+ codec g711alaw
+ codec g711ulaw
+ codec g722-64
+ maximum sessions 4
+ associate application SCCP
+!
+dspfarm profile 3 mtp
+ codec g711ulaw
+ maximum sessions hardware 5
+ associate application SCCP
+!
+dial-peer voice 100 voip
+ description ### ITSP Dial Peer ###
+ translation-profile incoming ITSP-IN
+ translation-profile outgoing ITSP-OUT
+ session protocol sipv2
+ session transport udp
+ session server-group 2
+ destination dpg 2
+ incoming uri via ATT
+ voice-class codec 1
+ voice-class sip options-keepalive profile 1
+ voice-class sip bind control source-interface GigabitEthernet0/0/0
+ voice-class sip bind media source-interface GigabitEthernet0/0/0
+ dtmf-relay rtp-nte
+ dtmf-interworking rtp-nte
+ fax-relay ecm disable
+ fax-relay sg3-to-g3
+ fax rate disable
+ fax nsf 000000
+ fax protocol t38 version 0 ls-redundancy 0 hs-redundancy 0 fallback pass-through g711ulaw
+ no vad
+!
+dial-peer voice 200 voip
+ description ### CUCM Dial Peer ###
+ translation-profile incoming CUCM-IN
+ translation-profile outgoing CUCM-OUT
+ session protocol sipv2
+ session transport tcp
+ session server-group 1
+ destination dpg 1
+ incoming uri via UCM
+ voice-class codec 1
+ voice-class sip options-keepalive profile 1
+ voice-class sip bind control source-interface GigabitEthernet0/0/1
+ voice-class sip bind media source-interface GigabitEthernet0/0/1
+ dtmf-relay rtp-nte sip-notify
+ dtmf-interworking rtp-nte
+ fax-relay ecm disable
+ fax-relay sg3-to-g3
+ fax rate disable
+ fax nsf 000000
+ fax protocol t38 version 0 ls-redundancy 0 hs-redundancy 0 fallback pass-through g711ulaw
+ no vad
+!
+!
+gateway
+ media-inactivity-criteria all
+ timer receive-rtcp 5
+ timer receive-rtp 1200
+!
+sip-ua
+ retry invite 2
+ timers trying 150
+!
+alias exec fc show voip trace cover-buffer | section
+alias exec sc show voip trace call-id
+!
+line con 0
+ session-timeout 900
+ exec-timeout 2880 0
+ stopbits 1
+line aux 0
+line vty 0 4
+ session-timeout 900
+ access-class ssh in vrf-also
+ exec-timeout 2880 0
+ password 7 047C19561A111E1E5849
+ length 0
+ transport input ssh
+line vty 5 15
+ transport input ssh
+!
+network-clock synchronization automatic
+network-clock input-source 1 controller T1 0/1/0
+network-clock input-source 2 controller T1 0/1/1
+call-home
+ ! If contact email address in call-home is configured as sch-smart-licensing@cisco.com
+ ! the email address configured in Cisco Smart License Portal will be used as contact email address to send SCH notifications.
+ contact-email-addr sch-smart-licensing@cisco.com
+ profile "CiscoTAC-1"
+  active
+  destination transport-method http
+ntp server 10.200.202.124
+ntp server 10.200.202.125
+ntp server 10.200.202.126
+!
+!
+!
+!
+!
+!
+end
+
+DC1-1.3-CUBE01#sh ver
+Cisco IOS XE Software, Version 17.06.03a
+Cisco IOS Software [Bengaluru], ISR Software (X86_64_LINUX_IOSD-UNIVERSALK9-M), Version 17.6.3a, RELEASE SOFTWARE (fc1)
+Technical Support: http://www.cisco.com/techsupport
+Copyright (c) 1986-2022 by Cisco Systems, Inc.
+Compiled Fri 08-Apr-22 04:52 by mcpre
+
+
+Cisco IOS-XE software, Copyright (c) 2005-2022 by cisco Systems, Inc.
+All rights reserved.  Certain components of Cisco IOS-XE software are
+licensed under the GNU General Public License ("GPL") Version 2.0.  The
+software code licensed under GPL Version 2.0 is free software that comes
+with ABSOLUTELY NO WARRANTY.  You can redistribute and/or modify such
+GPL code under the terms of GPL Version 2.0.  For more details, see the
+documentation or "License Notice" file accompanying the IOS-XE software,
+or the applicable URL provided on the flyer accompanying the IOS-XE
+software.
+
+
+ROM: (c)
+
+DC1-1.3-CUBE01 uptime is 8 weeks, 4 days, 20 hours, 8 minutes
+Uptime for this control processor is 8 weeks, 4 days, 20 hours, 9 minutes
+System returned to ROM by RG-application reload on voice-b2bha RG at 12:30:24 CST Thu Feb 1 2024
+System restarted at 12:33:08 CST Thu Feb 1 2024
+System image file is "bootflash:isr4400-universalk9.17.06.03a.SPA.bin"
+Last reload reason: RG-application reload on voice-b2bha RG
+
+
+
+This product contains cryptographic features and is subject to United
+States and local country laws governing import, export, transfer and
+use. Delivery of Cisco cryptographic products does not imply
+third-party authority to import, export, distribute or use encryption.
+Importers, exporters, distributors and users are responsible for
+compliance with U.S. and local country laws. By using this product you
+agree to comply with applicable laws and regulations. If you are unable
+to comply with U.S. and local laws, return this product immediately.
+
+A summary of U.S. laws governing Cisco cryptographic products may be found at:
+http://www.cisco.com/wwl/export/crypto/tool/stqrg.html
+
+If you require further assistance please contact us by sending email to
+export@cisco.com.
+
+
+
+Suite License Information for Module:'esg'
+
+--------------------------------------------------------------------------------
+Suite                 Suite Current         Type           Suite Next reboot
+--------------------------------------------------------------------------------
+FoundationSuiteK9     None                  Smart License  None
+securityk9
+appxk9
+
+AdvUCSuiteK9          None                  Smart License  None
+uck9
+cme-srst
+cube
+
+
+Technology Package License Information:
+
+-----------------------------------------------------------------
+Technology    Technology-package           Technology-package
+              Current       Type           Next reboot
+------------------------------------------------------------------
+appxk9           None             Smart License    None
+uck9             uck9             Smart License    uck9
+securityk9       None             Smart License    None
+ipbase           ipbasek9         Smart License    ipbasek9
+
+The current throughput level is 500000 kbps
+
+
+Smart Licensing Status: Registration Not Applicable/Not Applicable
+
+cisco ISR4431/K9 (JUNO-1RU) processor with 1698829K/6147K bytes of memory.
+Processor board ID FJC261724BZ
+Router operating mode: Autonomous
+4 Gigabit Ethernet interfaces
+4 Channelized T1/PRI ports
+32768K bytes of non-volatile configuration memory.
+4194304K bytes of physical memory.
+7081983K bytes of flash memory at bootflash:.
+
+Configuration register is 0x2102
+
+DC1-1.3-CUBE01#sh invent
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+INFO: Please use "show license UDI" to get serial number for licensing.
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+NAME: "Chassis", DESCR: "Cisco ISR4431 Chassis"
+PID: ISR4431/K9        , VID: V07  , SN: FJC261724BZ
+
+NAME: "Power Supply Module 0", DESCR: "500W AC PS w/ POE Module for Cisco ISR 4430"
+PID: PWR-4430-POE-AC   , VID: V01  , SN: DCB2553R0FD
+
+NAME: "Power Supply Module 1", DESCR: "500W AC PS w/ POE Module for Cisco ISR 4430"
+PID: PWR-4430-POE-AC   , VID: V01  , SN: DCB2553R0PL
+
+NAME: "Fan Tray", DESCR: "Cisco ISR4430 Fan Assembly"
+PID: ACS-4430-FANASSY  , VID:      , SN:
+
+NAME: "module 0", DESCR: "Cisco ISR4431 Built-In NIM controller"
+PID: ISR4431/K9        , VID:      , SN:
+
+NAME: "NIM subslot 0/1", DESCR: "NIM-4MFT-T1/E1 - T1/E1 Serial Module"
+PID: NIM-4MFT-T1/E1    , VID: V05  , SN: FOC260931A1
+
+NAME: "subslot 0/1 db module 0", DESCR: "PVDM4-64 Voice DSP Module"
+PID: PVDM4-64          , VID: V02  , SN: FOC25512VQK
+
+NAME: "PVDM subslot 0/4", DESCR: "PVDM4-128 Voice DSP Module"
+PID: PVDM4-128         , VID: V02  , SN: FOC25512WGJ
+
+NAME: "NIM subslot 0/0", DESCR: "Front Panel 4 ports Gigabitethernet Module"
+PID: ISR4431-X-4x1GE   , VID: V01  , SN:
+
+NAME: "subslot 0/0 transceiver 0", DESCR: "GE LX"
+PID: GLC-LH-SMD          , VID: V01  , SN: ZZ220809777
+
+NAME: "module R0", DESCR: "Cisco ISR4431 Route Processor"
+PID: ISR4431/K9        , VID: V07  , SN: FOC261500K7
+
+NAME: "module F0", DESCR: "Cisco ISR4431 Forwarding Processor"
+PID: ISR4431/K9        , VID:      , SN:
+
+
+DC1-1.3-CUBE01#

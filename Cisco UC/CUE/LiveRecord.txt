@@ -1,0 +1,5 @@
+Configuring LiveRecord on CME:
+http://www.cisco.com/en/US/docs/voice_ip_comm/cucme/admin/configuration/guide/cmevmail.html#wp1043267
+
+Configuring LiveRecord on CUE:
+http://www.cisco.com/en/US/docs/voice_ip_comm/unity_exp/administrator/AA_and_VM/guide/advVM.html#wp1025665

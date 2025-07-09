@@ -1,0 +1,5 @@
+Installation and Configuration Best Practices:
+https://help.duo.com/s/article/3618?language=en_US
+
+High Availability and Disaster Recovery:
+https://help.duo.com/s/article/authentication-proxy-availability?language=en_US

@@ -1,0 +1,10 @@
+Certificate and Device CA Upload:
+https://support.microsoft.com/en-us/help/555529
+
+https://<servername>/certsrv
+
+certutil.exe
+
+-From CA CMD: certutil -ca.cert cert.cer and certutil -encode cert.cer certnew.cer
+
+-Create Domain Certificate request from a domain IIS server and export

@@ -1,0 +1,3 @@
+http://<IPPHONE-ADDRESS>/CGI/Screenshot
+
+Credentials are end user creds associated with the phone

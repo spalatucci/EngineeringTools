@@ -1,0 +1,5 @@
+Client:
+iperf3.exe -c X.X.X.X -t 60
+
+Server:
+iperf3.exe -s

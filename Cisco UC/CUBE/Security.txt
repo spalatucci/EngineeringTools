@@ -1,0 +1,4 @@
+https://www.cisco.com/c/en/us/support/docs/unified-communications/unified-border-element/220380-cisco-guide-to-harden-cisco-unified-bord.html
+
+TLS Sockets:
+show sip-ua connections tcp tls brief

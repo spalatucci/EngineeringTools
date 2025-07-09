@@ -1,0 +1,11 @@
+PAC OEM Portal:
+https://www.vmware.com/support/support-resources/licensing/oem-help.html
+
+Downgrade:
+https://kb.vmware.com/s/article/81665#Downgrade
+
+vSphere 7 Foundation:
+J4016-4EL82-58HGD-020RH-3T7KM
+
+vSphere 7 Standard:
+406A2-0M182-Q8NG3-0K2R0-ADH45

@@ -1,0 +1,8 @@
+BYOD Overview:
+http://www.cisco.com/c/en/us/td/docs/solutions/Enterprise/Borderless_Networks/Unified_Access/BYOD_Design_Guide/BYOD_Network_Management.html#10423
+
+Cisco Prime Infrastructure FAQ:
+https://supportforums.cisco.com/document/12172606/cisco-prime-infrastructure-faq
+
+Cisco Prime Infrastructure VoD:
+https://www.youtube.com/playlist?list=PL7406F0EF2BC7DED8

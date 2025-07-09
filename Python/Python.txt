@@ -1,0 +1,28 @@
+https://www.youtube.com/watch?v=-F9sFyXemCQ
+
+Navigate to C:\Users\sam.palatucci\OneDrive - Red River Technology LLC\Code
+
+1. Launch VSC
+2. Create project folder > drag to VSC
+3. Launch Terminal
+	a. pipenv shell
+	b. pipenv install requests
+	c. pipenv install ratelimit
+	d. python script.py
+
+git config --global user.name "Sam Palatucci"
+git config --global user.email "sam.palatucci@outlook.com"
+git remote add origin https://github.com/spalatucci/<repo-name>.git
+
+git config --global http.postBuffer 4404019200
+git config --global --unset http.postBuffer
+
+git commit -m "commit"
+git push origin main
+git pull origin main --allow-unrelated-histories
+
+Exclude large files:
+Get-ChildItem -Recurse -File | Where-Object { $_.Length -gt 100MB } | ForEach-Object {
+    $relativePath = $_.FullName.Replace((Get-Location).Path + "\", "") -replace "\\", "/"
+    Add-Content .gitignore $relativePath
+}

@@ -1,0 +1,24 @@
+router ospf 1
+ router-id 10.1.0.253
+ auto-cost reference-bandwidth 10000
+ redistribute static subnets route-map STATIC-REDISTRIBUTE
+ passive-interface default
+ no passive-interface TenGigabitEthernet1/0/1
+ no passive-interface TenGigabitEthernet1/0/2
+ network 10.1.0.8 0.0.0.3 area 0
+ network 10.1.0.12 0.0.0.3 area 0
+ network 172.16.250.0 0.0.0.255 area 0
+!
+ip prefix-list STATIC-REDISTRIBUTE seq 5 permit 10.0.0.0/8 ge 24
+ip prefix-list STATIC-REDISTRIBUTE seq 10 permit 172.16.0.0/12 ge 24
+ip prefix-list STATIC-REDISTRIBUTE seq 15 permit 192.168.0.0/16 ge 24
+ip prefix-list STATIC-REDISTRIBUTE seq 20 permit 172.32.0.0/19 ge 24
+!
+route-map STATIC-REDISTRIBUTE permit 10
+ match ip address prefix-list STATIC-REDISTRIBUTE
+!
+Te1/0/1                10.1.0.10       YES NVRAM  up                    up
+Te1/0/2                10.1.0.14       YES NVRAM  up                    up
+Te1/0/12               172.16.250.1    YES NVRAM  up                    up
+Loopback0              10.1.0.253      YES NVRAM  up                    up
+!

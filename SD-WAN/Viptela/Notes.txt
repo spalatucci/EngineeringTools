@@ -1,0 +1,11 @@
+Best Practices:
+https://community.cisco.com/t5/networking-documents/cisco-sd-wan-software-upgrade-best-practices/ta-p/4101848
+
+Backup:
+https://www.cisco.com/c/dam/en/us/td/docs/routers/sdwan/knowledge-base/disaster_recovery_technote.pdf
+https://community.cisco.com/t5/networking-documents/cisco-sd-wan-software-upgrade-best-practices/ta-p/4101848
+
+Script:
+https://developer.cisco.com/codeexchange/github/repo/weiborao/vmanage-dailybackup
+
+Check release notes

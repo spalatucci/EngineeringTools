@@ -1,0 +1,2 @@
+Need to enable device administrator privileges
+Need to allow device platform restrictions for Android Device Administrator

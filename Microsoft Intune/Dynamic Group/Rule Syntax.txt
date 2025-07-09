@@ -1,0 +1,5 @@
+SAML MFA:
+user.assignedPlans -any (assignedPlan.servicePlanId -eq "41781fb2-bc02-4b7c-bd55-b576c07bb09d" -and assignedPlan.capabilityStatus -eq "Enabled")
+
+All Licensed:
+(user.userType -eq "member") and (user.accountEnabled -eq true) and (user.assignedPlans -any (assignedPlan.servicePlanId -ne "" -and assignedPlan.capabilityStatus -eq "Enabled"))

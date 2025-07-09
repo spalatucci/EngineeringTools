@@ -1,0 +1,10 @@
+https://www.youtube.com/watch?v=TluMK4gi1o0
+
+MTR
+https://roomos.cisco.com/doc/MTR
+https://roomos.cisco.com/doc/MTR/Requirements
+
+Intune:
+https://techcommunity.microsoft.com/t5/intune-customer-success/intune-ending-support-for-android-device-administrator-on/ba-p/3915443
+https://techcommunity.microsoft.com/t5/microsoft-teams-support/moving-teams-android-devices-to-aosp-device-management/ba-p/4140893
+https://learn.microsoft.com/en-us/MicrosoftTeams/rooms/android-migration-guide

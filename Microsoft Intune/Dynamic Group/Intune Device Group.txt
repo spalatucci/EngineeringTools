@@ -1,0 +1,1 @@
+(device.managementType -eq "MDM") and (device.deviceOSType -startsWith "Windows")

@@ -1,0 +1,5 @@
+https://medium.com/@mozzeph/automatically-render-microsoft-teams-call-flow-diagrams-607b89df4154
+https://github.com/mozziemozz/M365CallFlowVisualizer
+
+
+.\M365CallFlowVisualizerV2.ps1 -VoiceAppName "AA Main" -VoiceAppType "Auto Attendant" -ShowNestedCallFlows $false -ExportPng $true

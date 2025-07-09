@@ -1,0 +1,42 @@
+https://www.cisco.com/c/en/us/support/docs/security/identity-services-engine-24/213616-how-to-configure-cisco-trustsec-sgts-u.html
+
+https://www.cisco.com/c/en/us/td/docs/security/ise/2-4/admin_guide/b_ise_admin_guide_24/b_ise_admin_guide_24_new_chapter_0111.html
+
+TrustSec:
+https://community.cisco.com/t5/security-documents/trustsec-troubleshooting-guide/ta-p/3647576#toc-hId--1301860081
+
+MAB:
+http://www.labminutes.com/sec0272_ise_22_mac_authentication_bypass_mab_1
+
+802.1x:
+https://www.cisco.com/en/US/docs/security/ise/1.0/user_guide/ise10_sw_cnfg.html#wp1059687
+https://www.lookingpoint.com/blog/cisco-ise-wired-802.1x-deployment-monitormode
+http://www.labminutes.com/sec0273_ise_22_wired_dot1x_eap_tls_peap_1
+http://www.labminutes.com/sec0273_ise_22_wired_dot1x_eap_tls_peap_2
+
+Endpoint:
+https://www.lookingpoint.com/blog/cisco-ise-eapsupplicant
+https://www.uio.no/english/services/it/network/student-residential-network/instructions/win7/
+https://documentation.meraki.com/MS/Access_Control/Configuring_802.1X_Wired_Authentication_on_a_Windows_7_Client
+
+Phones:
+https://community.cisco.com/t5/security-documents/ise-secure-wired-access-prescriptive-deployment-guide/ta-p/3641515
+
+Windows:
+https://docs.microsoft.com/en-us/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc731213(v=ws.11)
+
+2960X doesn't do SGT Enforcement
+
+
+Videos:
+https://www.youtube.com/user/kmcnamara013/videos
+http://www.labminutes.com
+
+Create AD join account
+Test machine and phone
+
+
+SPMD\ciscoISEservice
+Cwp$30248698
+
+limit devices over wired/wireless

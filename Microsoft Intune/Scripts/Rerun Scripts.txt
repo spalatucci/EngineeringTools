@@ -1,0 +1,1 @@
+https://docs.microsoft.com/en-us/answers/questions/357387/how-we-can-we-force-the-ps-script-on-intune-to-rer.html

@@ -1,0 +1,6 @@
+https://www.youtube.com/watch?v=6RnlV2U16N0
+
+1. Create emergency policy
+2. Create emergency address and locations
+3. Assign subnets to emergency locations
+4. Create network topology network sites and trusted IPs. Assign subnets, emergency polices

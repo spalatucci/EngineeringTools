@@ -1,0 +1,39 @@
+conf t
+track 1 ip sla 1 reachability
+delay down 60 up 120
+ip sla 1
+http raw http://172.17.43.178
+http-raw-request
+GET http://gateway.zscalerone.net/vpntest HTTP/1.0\r\n
+User-Agent: Cisco IP SLA\r\n
+end\r\n
+\r\n
+exit
+threshold 300
+timeout 5000
+ip sla schedule 1 life forever start-time now
+ip sla reaction-configuration 1 react rtt threshold-value 400 1 threshold-type consecutive 3
+exit
+
+conf t
+track 2 ip sla 2 reachability
+delay down 60 up 120
+ip sla 2
+http raw http://172.17.43.182
+http-raw-request
+GET http://gateway.zscalerone.net/vpntest HTTP/1.0\r\n
+User-Agent: Cisco IP SLA\r\n
+end\r\n
+\r\n
+exit
+threshold 500
+timeout 5000
+ip sla schedule 2 life forever start-time now
+ip sla reaction-configuration 2 react rtt threshold-value 600 1 threshold-type consecutive 3
+exit
+
+conf t
+route-map ZRM permit 20
+set ip next-hop verify-availability 172.17.43.178 1 track 1
+set ip next-hop verify-availability 172.17.43.182 2 track 2
+exit

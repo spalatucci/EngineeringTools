@@ -1,0 +1,8 @@
+http://what-when-how.com/deploying-and-troubleshooting-cisco-wireless-lan-controllers/troubleshooting-792x-voice-quality-issues-cisco-wireless-lan-controllers-part-1/
+
+http://www.cisco.com/c/en/us/td/docs/wireless/technology/vowlan/troubleshooting/VoWLAN_Troubleshooting_Checklist.html
+
+netsh wlan show profiles
+netsh wlan export profile name="AII" key=clear folder="C:\Temp"
+netsh wlan add profile filename=\\ad.AIMCL.cloud\Netlogon\WiFi\Wi-Fi-ADVANTAGE.xml
+netsh wlan connect name=Advantage ssid=Advantage

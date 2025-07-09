@@ -1,0 +1,7 @@
+http://fixingitpro.com/2009/09/08/using-windows-server-2008-as-a-radius-server-for-a-cisco-asa/
+
+https://networklessons.com/wireless/peap-and-eap-tls-on-server-2008-and-cisco-wlc/
+
+
+Enable authentication events:
+auditpol /set /subcategory:"Network Policy Server" /success:enable /failure:enable

@@ -1,0 +1,51 @@
+Background
+Microsoft Network Policy Server (NPS) uses two types of policies to implement 802.1x authentication, Connection Request Policies (CRP) and Network Policies (NP).  An NPS server can have multiple policies of each type but any lower order policies will be ignored once a condition matches on any policy.  Both of these policies are explained in greater detail below.
+A certificate is used to perform device authentication.  For the workstations we are using domain CA issued computer certificates.  For the phones we are using the built-in Cisco Manufacturer Installed Certificates (MICs).  Cisco LCS certs will not work as they do not contain the CDP and AIA extensions, which are required by NPS (see https://www.thomaseadie.com/microsoft-nps-cant-authenticate-cisco-phones-using-802-1x for more information).  The NPS server in the pilot is configured with our internal issuing CA's (which issue the workstation certs) and the Cisco Manufacturing CA's (which issue the phone certs).  Certificates issued by any other CA's (or self-signed certs) will fail authentication.  Unfortunately you can't use the issuing CA to determine if the device is a phone or a workstation, so the tricky part is getting each device type to connect to the proper VLAN after a successful auth.
+
+Connection Request Policy (CRP)
+is used to determine if the device is allowed to make an authentication request.  The CRP can also perform attribute manipulation to allow mapping of device/user names to alternate AD account names if necessary.  This mapping can be 1:1 or 1:many.  We will use this mapping to convert the Cisco phone device name to a single account in AD configured with the Cisco Root CA certificate.  Any device with a certificate issued by that CA (i.e. any Cisco phone) will authenticate successfully using that account in NPS.
+The connection request is proxied to the NPS server via the switch IP.  The conditions for filtering the connection request are minimal as the device has yet to authenticate and does not have an IP address (i.e. media conditions like "NAS Port type = Ethernet" are all you have to work with).  Both the phone and the downstream PC are wired ethernet so a single CRP must apply to both the phone and the workstation.  This CRP must provide a proper account name for authentication regardless of whether a phone or a workstation makes the request.
+
+Network Policy (NP)
+is used to send information back to switch after authentication to allow the switch to determine proper VLAN placement.  A successful authentication should place the device in the voice VLAN if it is a phone, or the data VLAN if it is a workstation.  An unsuccessful authentication should  place the device in the guest VLAN.  The returned settings are different for phones and workstations, so an NP needs to be created for each (one for phones and one for workstations).
+Since a successful match of conditions on the upper NP will ignore the lower NP, the upper NP must be configured with a condition that only one of the 2 device types will match (i.e. a workstation or a phone).  Luckily the device has already authenticated so NP's have a richer set of attributes for conditions than CRP's.  The workstations are domain joined and therefore have computer accounts in Active Directory, so we decided to place the workstation NP higher and add a condition that the device must be in the "Domain Computers" AD group.  Since only workstations (and not phones) meet this condition this NP is configured to place the device in the data VLAN.  A phone will not meet this NP's condition and will therefore use the lower NP which is configured to place the device in the voice VLAN.
+
+NPS Configuration
+Here is the procedure we used to configure our AD/NPS for a successful pilot.
+
+1. Upload the Cisco Manufacturing CA's into the Enterprise NTAuth store (used by NPS to validate CA's)
+https://support.microsoft.com/en-us/help/295663/how-to-import-third-party-certification-authority-ca-certificates-into
+In my case the Cisco Root CA M2 (root), and Cisco Manufacturing CA SHA2 (issuing)
+https://www.cisco.com/security/pki/
+
+2. Create a service account that will be used to authenticate all of the phones.
+Add the Cisco root CA cert to that account as follows…
+Start ADUC, select Advanced Options on the View menu
+Open the Users container or the organizational unit where the user account resides, right-click the user account, and then click Name Mapping. 
+Click Add to link the CA certificate to the Active Directory user account. Browse and select the cert.
+Do not select "Use Subject for alternate security identity" check box unless you want to configure one-to-one mapping for each device (if you want to do that, do not add the root CA cert here, instead export and add each phone certificate from each device)
+Click OK to accept the mapped certificate. 
+Click OK to close the Identity Mapping dialog box.
+
+3. Log in to the NPS server
+If you don't already have a CRP for your workstations 802.1x create one for unspecified network access server with a condition of NAS Port Type = Ethernet, take all the other defaults
+If you have an existing CRP for 802.1x auth for your workstations add the following to it…
+On the settings tab of the CRP, click Attribute
+Pull down the Attribute menu and select User-Name from the list
+Click "Add"
+Enter CP-.* in the Find: box (This will transform the name of any Cisco phone), enter the name of the AD service account you created in the Replace with: box (Just the account name, do not use domain prefix).
+This will change the name for Cisco phones to the service account but pass workstation names unchanged.
+
+4. If you don't already have an NP for your workstations 802.1x create one for unspecified network access server with a condition of NAS Port Type = Ethernet, take all the other defaults except add the EAP type Microsoft:  Smart Card or other certificate.
+If you have an existing NP for 802.1x auth for your workstations make a duplicate by right clicking it and selecting Duplicate Policy from the shortcut menu.
+Rename the policy with the same name but append _Phones to the end of the name
+Position the policy directly below the workstation policy
+
+5. Edit the original workstation policy so that it will only apply to computers in the "Domain Computers" group
+Do this on the Conditions tab by clicking Add…, and then selecting Windows Groups, and then click "Add Groups…", and then select the "Domain Computers" group from your domain.  This NP now only applies to workstations and will not apply to phones.
+
+6. Edit the duplicated _Phones policy so that it sends the Cisco attribute Cisco-AV-Pair "device-traffic-class=voice"
+Do this on the settings tab of the NP, select "Vendor Specific", and then click "Add…", and then select "Cisco" from the Vendor: pull down menu, and then select "Cisco-AV-Pair" from the list, and then click "Add…", and then enter device-traffic-class=voice in the attribute value: box, OK, OK, Close, OK
+Enable the NP
+
+You should now be able to authenticate both Cisco phones and any downstream workstations, while placing unauthenticated devices into the guest VLAN.

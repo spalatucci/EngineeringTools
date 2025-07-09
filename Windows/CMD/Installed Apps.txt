@@ -1,0 +1,5 @@
+wmic product get name,version | sort
+
+wmic product get name,version,identifyingnumber,localpackage
+
+REG QUERY HKCR\Installer\Products /s /f "Cisco Anyconnect Secure Mobility Client"

@@ -1,0 +1,55 @@
+
+conf t
+interface GigabitEthernet 1
+no ip nat inside
+exit
+interface GigabitEthernet 2
+no ip nat outside
+exit
+!
+! Create the Primary Tunnel Interface.
+! MTU and MSS should be set accordingly to prevent fragmentation.
+!
+interface tunnel 30
+ip address 172.17.43.177 255.255.255.252
+ip mtu 1476
+ip tcp adjust-mss 1436
+no shutdown
+tunnel source GigabitEthernet 2 
+tunnel destination 172.17.43.178
+ip virtual-reassembly
+exit
+!
+! Create the Secondary Tunnel Interface.
+! MTU and MSS should be set accordingly to prevent fragmentation.
+!
+interface tunnel 40
+ip address 172.17.43.181 255.255.255.252
+ip mtu 1476
+ip tcp adjust-mss 1436
+no shutdown
+tunnel source GigabitEthernet 2 
+tunnel destination 172.17.43.182
+ip virtual-reassembly
+exit
+!
+! Create an access-list to permit traiffic within the Tunnel
+!
+ip access-list extended ZSCALER
+permit tcp any any
+exit
+!
+! Create a Route-Map to send the traffic from the inside LAN network into the IPsec Tunnel.
+!
+route-map ZRM permit 20
+match ip address ZSCALER
+no set interface tunnel 10 tunnel 20
+set interface tunnel 30 tunnel 40
+exit
+!
+! Tie the Route-Map to GigabitEthernet 1
+!
+interface GigabitEthernet 1
+ip policy route-map ZRM
+exit
+exit

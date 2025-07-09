@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?><md:EntityDescriptor xmlns:md="urn:oasis:names:tc:SAML:2.0:metadata" ID="https___samlsp.private.zscaler.com_auth_metadata_144123237918313405" entityID="https://samlsp.private.zscaler.com/auth/metadata/144123237918313405"><md:SPSSODescriptor AuthnRequestsSigned="false" WantAssertionsSigned="false" protocolSupportEnumeration="urn:oasis:names:tc:SAML:2.0:protocol"><md:KeyDescriptor use="signing"><ds:KeyInfo xmlns:ds="http://www.w3.org/2000/09/xmldsig#"><ds:X509Data><ds:X509Certificate>MIIDsjCCApoCCQCJOS2RMug/KjANBgkqhkiG9w0BAQUFADCBmjELMAkGA1UEBhMCVVMxEzARBgNV
+BAgTCkNhbGlmb3JuaWExETAPBgNVBAcTCFNhbiBKb3NlMRYwFAYDVQQKEw1ac2NhbGVyLCBJbmMu
+MR4wHAYDVQQLExVFbWVyZ2luZyBUZWNobm9sb2dpZXMxKzApBgNVBAMTIlpzY2FsZXIgRVQgUHJv
+ZHVjdGlvbiBTQU1MIFNQIC0gRzIwHhcNMTYwNTEwMDMxNDA3WhcNMzgwMTE4MDMxNDA3WjCBmjEL
+MAkGA1UEBhMCVVMxEzARBgNVBAgTCkNhbGlmb3JuaWExETAPBgNVBAcTCFNhbiBKb3NlMRYwFAYD
+VQQKEw1ac2NhbGVyLCBJbmMuMR4wHAYDVQQLExVFbWVyZ2luZyBUZWNobm9sb2dpZXMxKzApBgNV
+BAMTIlpzY2FsZXIgRVQgUHJvZHVjdGlvbiBTQU1MIFNQIC0gRzIwggEiMA0GCSqGSIb3DQEBAQUA
+A4IBDwAwggEKAoIBAQCpuMiqq37QBuNG/LTR+jBUeC0qh4tbh6PMVdQ9/k+xYrWoQt171To13yJo
+Al4A6ctkDakNlIuplOH7jlYoCOZZXKXDbdEurD8nybANUC6BBjQc9kFLq6HF510M/rY/UIxoUSUO
+CA+sHCIJuo5PfU++tI6xQpXfDefSYnCUaag6vLQ93rczfPcTa8oDc9uvei735pd3/Dj9wdhPLhHp
+ENI56JNJhjHGuZI8k3FWTRuc+mnGt7IMzDk53X6GIV5CR/oDmzcOaeMTg3+f5XATh+AGrKa/u7Ft
+1+PdMwguGakRYWELNOTXriJPcpNWGfl84v1vArrUfAGtMoux1ukoLDpJAgMBAAEwDQYJKoZIhvcN
+AQEFBQADggEBACMEa0ka29WSCBR5wWWOJKz3r8QhC6f6D5Cfe1acAi4XP2uxVH2i8h0ffftdrLo9
+B1h2MbZiwA+gYHdu74273ngucMO7IafkB0NxU4OrWAxwhJ7eedSJxunjRi65eYwXDsp0NUQYrmBy
+w0CrNoHrf19zUjB1bbKRi6jC7yIEZhxpXFHNCbD9cIt+kIRR6RtPo+AKF6DYPtFgoT7hj0OP5sUf
+FQ/MhrMYk40xfGVNfEeq5mCMRT6PFaPKfRVLtJ6iX5fUUnnNr1bqs1dA6HgoY0zUFbHD2H09hK/m
+Z2Ocd1WlfRt4QN74B8wof1RiFV5DqZNz4wIkaTqpIUA8Cw2Xzss=</ds:X509Certificate></ds:X509Data></ds:KeyInfo></md:KeyDescriptor><md:NameIDFormat>urn:oasis:names:tc:SAML:1.1:nameid-format:emailAddress</md:NameIDFormat><md:NameIDFormat>urn:oasis:names:tc:SAML:2.0:nameid-format:transient</md:NameIDFormat><md:NameIDFormat>urn:oasis:names:tc:SAML:2.0:nameid-format:persistent</md:NameIDFormat><md:NameIDFormat>urn:oasis:names:tc:SAML:1.1:nameid-format:unspecified</md:NameIDFormat><md:NameIDFormat>urn:oasis:names:tc:SAML:1.1:nameid-format:X509SubjectName</md:NameIDFormat><md:AssertionConsumerService Binding="urn:oasis:names:tc:SAML:2.0:bindings:HTTP-POST" Location="https://samlsp.private.zscaler.com/auth/144123237918313405/sso" index="0" isDefault="true"/></md:SPSSODescriptor></md:EntityDescriptor>

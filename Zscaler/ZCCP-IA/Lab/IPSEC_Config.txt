@@ -1,0 +1,99 @@
+conf t
+interface GigabitEthernet 1
+no ip nat inside
+exit
+interface GigabitEthernet 2
+no ip nat outside
+exit
+!
+! Define the ISAKMP Policy. Zscaler recommends defining the ISAKMP policy as policy 1 so the router evaluates the
+! policy first and reduces the tunnel negotiation time to Zscaler.
+!
+crypto isakmp policy 1
+encryption aes
+authentication pre-share
+group 2
+exit
+!
+! Define tunnel keep alive settings
+!
+crypto isakmp keepalive 10 periodic
+crypto isakmp nat keepalive 20
+!
+! Configure the IPSec Primary peer for the IKE negotiation.
+!
+crypto isakmp peer hostname lon3-vpn.zscalerone.net
+set aggressive-mode password site1key
+set aggressive-mode client-endpoint user-fqdn site1@training9.safemarch.com
+exit
+!
+! Configure the IPSec Secondary peer for the IKE negotiation.
+!
+crypto isakmp peer hostname jnb2-vpn.zscalerone.net
+set aggressive-mode password site1key
+set aggressive-mode client-endpoint user-fqdn site1@training9.safemarch.com
+exit
+!
+! Define Transform Set. The IPSec transform set defines the encryption, authentication, and IPSec mode parameters.
+!
+crypto ipsec transform-set MYSET esp-null esp-md5-hmac
+mode tunnel
+exit
+!
+! Enable IPSec fragmentation after the encryption.
+!
+crypto ipsec fragmentation after-encryption
+!
+! Define the IPsec Profile. The IPsec profile references the transform set and further defines the other parameters used,
+! such as the security association lifetime.
+!
+crypto ipsec profile VTI
+set security-association lifetime seconds 14400
+set security-association idle-time 14400
+set transform-set MYSET
+exit
+!
+! Create Primary Tunnel Interface. All traffic routed to the tunnel interface is encrypted and transmitted to the ZEN.
+!
+interface tunnel 10
+ip unnumbered GigabitEthernet 2
+ip mtu 1400
+ip tcp adjust-mss 1300
+tunnel source GigabitEthernet 2
+tunnel mode ipsec ipv4
+tunnel destination lon3-vpn.zscalerone.net
+tunnel protection ipsec profile VTI
+exit
+!
+! Create Secondary Tunnel Interface. All traffic routed to the tunnel interface is encrypted and transmitted to the ZEN.
+!
+interface tunnel 20
+ip unnumbered GigabitEthernet 2
+ip mtu 1400
+ip tcp adjust-mss 1300
+tunnel source GigabitEthernet 2
+tunnel mode ipsec ipv4
+tunnel destination jnb2-vpn.zscalerone.net
+tunnel protection ipsec profile VTI
+exit
+!
+! Create an access-list to permit traiffic within the Tunnel
+!
+ip access-list extended ZSCALER
+permit tcp any any
+exit
+!
+! Create a Route-Map to send the traffic from the inside LAN network into the IPsec Tunnel.
+!
+route-map ZRM permit 20
+match ip address ZSCALER
+set interface tunnel 10 tunnel 20
+exit
+!
+! Tie the Route-Map to GigabitEthernet 1
+!
+interface GigabitEthernet 1
+ip policy route-map ZRM
+exit
+exit
+

@@ -1,0 +1,5 @@
+https://dmunified.com/2019/11/28/using-3pip-phones-with-skype-for-business-online-or-microsoft-teams-read-this/
+
+https://login.microsoftonline.com/common/adminconsent?client_id=a850aaae-d5a5-4e82-877c-ce54ff916282&redirect_uri=https://dialin.plcm.vc/teams/postconsent.html
+
+https://www.reddit.com/r/MicrosoftTeams/comments/keu6a1/cannot_sign_in_to_polycom_vvx_teams/

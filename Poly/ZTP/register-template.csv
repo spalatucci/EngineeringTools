@@ -1,0 +1,4 @@
+﻿"Device Serial or MAC","Profile Name (optional)","Provisioning Server Address (optional)","Provisioning Server Username (optional)","Provisioning Server Password (optional)"
+"64167F001FF1","My Profile"
+"64167F10144F","Another Profile","https://example.com/provisioning"
+"0004F20041F1","","https://example.com/provisioning","myusername","mypassword"

@@ -1,0 +1,3 @@
+https://slproweb.com/products/Win32OpenSSL.html
+
+https://github.com/openssl/openssl/blob/master/NOTES-WINDOWS.md

@@ -1,0 +1,6 @@
+Login to the sync server and run from an elevated command prompt
+start-adsyncsynccycle -policytype delta
+
+To find sync server:
+O365 Portal Admin go to Settings > Services & Add-ins > Search for directory sync
+

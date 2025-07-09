@@ -1,0 +1,174 @@
+configure terminal
+crypto pki trustpoint dummyTp
+revocation-check crl
+exit
+sip-ua
+crypto signaling default trustpoint dummyTp cn-san-validate server
+transport tcp tls v1.2
+end
+
+
+configure terminal
+crypto pki trustpool import clean url http://www.cisco.com/security/pki/trs/ios_core.p7b
+end
+show crypto pki trustpool | include DigiCert
+
+
+configure terminal
+voice service voip 
+  ip address trusted list
+    ipv4 85.119.56.128 255.255.255.192    ipv4 85.119.57.128 255.255.255.192    ipv4 185.115.196.0 255.255.255.128    ipv4 185.115.197.0 255.255.255.128    ipv4 128.177.14.0 255.255.255.128    ipv4 128.177.36.0 255.255.255.192    ipv4 135.84.169.0 255.255.255.128    ipv4 135.84.170.0 255.255.255.128    ipv4 135.84.171.0 255.255.255.128    ipv4 135.84.172.0 255.255.255.192    ipv4 199.59.64.0 255.255.255.128    ipv4 199.59.65.0 255.255.255.128    ipv4 199.59.66.0 255.255.255.128    ipv4 199.59.67.0 255.255.255.128    ipv4 199.59.70.0 255.255.255.128    ipv4 199.59.71.0 255.255.255.128    ipv4 135.84.172.0 255.255.255.128    ipv4 135.84.173.0 255.255.255.128    ipv4 135.84.174.0 255.255.255.128    ipv4 199.19.197.0 255.255.255.0    ipv4 199.19.199.0 255.255.255.0    ipv4 139.177.64.0 255.255.255.0    ipv4 139.177.65.0 255.255.255.0    ipv4 139.177.66.0 255.255.255.0    ipv4 139.177.67.0 255.255.255.0    ipv4 139.177.68.0 255.255.255.0    ipv4 139.177.69.0 255.255.255.0    ipv4 139.177.70.0 255.255.255.0    ipv4 139.177.71.0 255.255.255.0    ipv4 139.177.72.0 255.255.255.0    ipv4 139.177.73.0 255.255.255.0    ipv4 23.89.0.0 255.255.0.0
+    exit
+   allow-connections sip to sip
+  media statistics 
+  media bulk-stats
+  no supplementary-service sip refer
+  no supplementary-service sip handle-replaces
+  fax protocol pass-through g711ulaw
+  stun
+    stun flowdata agent-id 1 boot-count 4
+    stun flowdata shared-secret 7 104D000A061811021F0725282D3B303A
+  sip
+    g729 annexb-all
+    early-offer forced
+    end
+
+
+configure terminal
+voice class sip-profiles 200
+  rule 9 request ANY sip-header SIP-Req-URI modify "sips:(.*)" "sip:\1"
+  rule 10 request ANY sip-header To modify "<sips:(.*)" "<sip:\1"
+  rule 11 request ANY sip-header From modify "<sips:" "<sip:\1"
+  rule 12 request ANY sip-header Contact modify "<sips:(.*)>" "<sip:\1;transport=tls>"
+  rule 13 response ANY sip-header To modify "<sips:(.*)" "<sip:\1"
+  rule 14 response ANY sip-header From modify "<sips:(.*)" "<sip:\1"
+  rule 15 response ANY sip-header Contact modify "<sips:(.*)" "<sip:\1"
+  rule 20 request ANY sip-header From modify ">" ";otg=XXXXXX>"
+  rule 30 request ANY sip-header P-Asserted-Identity modify "sips:(.*)" "sip:\1"
+
+
+voice class codec 99
+  codec preference 1 g711ulaw
+  codec preference 2 g711alaw
+  codec preference 3 g729r8
+  exit
+
+voice class srtp-crypto 200
+  crypto 1 AES_CM_128_HMAC_SHA1_80
+  exit
+
+voice class stun-usage 200
+  stun usage firewall-traversal flowdata
+  exit
+
+
+voice class tenant 200
+  registrar dns:XXXXXX scheme sips expires 240 refresh-ratio 50 tcp tls
+  credentials number XXXXXX username XXXXXX password XXXXXX realm BroadWorks
+  authentication username XXXXXX password XXXXXX realm BroadWorks
+  authentication username XXXXXX password XXXXXX realm XXXXXX
+  no remote-party-id
+  sip-server dns:XXXXXX
+  connection-reuse
+  srtp-crypto 200
+  session transport tcp tls
+  url sips
+  error-passthru
+  asserted-id pai
+  bind control source-interface GigabitEthernet1
+  bind media source-interface GigabitEthernet1
+  no pass-thru content custom-sdp
+  sip-profiles 200
+  outbound-proxy dns:XXXXXX
+  privacy-policy passthru
+
+
+voice class tenant 100 
+  session transport udp
+  url sip
+  error-passthru
+  bind control source-interface GigabitEthernet2
+  bind media source-interface GigabitEthernet2
+  no pass-thru content custom-sdp
+
+voice class tenant 300 
+  bind control source-interface GigabitEthernet2
+  bind media source-interface GigabitEthernet2
+  no pass-thru content custom-sdp
+
+
+voice class uri 200 sip
+ pattern :8934
+
+voice class uri 300 sip
+ pattern :5065
+
+
+voice class server-group 301
+ ipv4 198.18.133.3 port 5065
+
+
+dial-peer voice 201 voip
+ description Outgoing dial-peer to Webex
+ destination-pattern .T
+ session protocol sipv2
+ session target sip-server
+ voice-class codec 99
+ dtmf-relay rtp-nte
+ voice-class stun-usage 200
+ no voice-class sip localhost
+ voice-class sip tenant 200
+ srtp
+ no vad
+
+dial-peer voice 301 voip
+ description Outgoing dial-peer to Unified CM Webex Calling Trunk for inbound from Webex
+ destination-pattern .T
+ session protocol sipv2
+ session server-group 301
+ voice-class codec 99
+ dtmf-relay rtp-nte
+ voice-class sip tenant 100
+ no vad
+
+
+
+voice class dpg 200
+ dial-peer 201 preference 1
+
+voice class dpg 300
+ dial-peer 301 preference 1
+
+
+
+dial-peer voice 200 voip
+ description Incoming dial-peer from Webex
+ session protocol sipv2
+ destination dpg 300
+ incoming uri via 200
+ voice-class codec 99
+ dtmf-relay rtp-nte
+ voice-class stun-usage 200
+ voice-class sip tenant 200
+ srtp
+ no vad
+
+dial-peer voice 300 voip
+ description Incoming dial-peer from Unified CM for Webex
+ session protocol sipv2
+ destination dpg 200
+ incoming uri via 300
+ voice-class codec 99
+ dtmf-relay rtp-nte
+ voice-class sip tenant 300
+ no vad
+
+
+end
+
+
+
+copy run start
+
+
+

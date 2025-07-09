@@ -1,0 +1,18 @@
+https://www.cisco.com/c/dam/en/us/products/se/2020/3/Collateral/presentation-c97-743408.pdf
+https://www.cisco.com/c/en/us/products/collateral/collaboration-endpoints/unified-ip-phone-7800-series/guide-c07-742786.html
+https://upgrade.cisco.com/e2m_converter_wxc
+
+Must be supported model
+Must be supported hardware revision
+Must be on 12.5(1)SR2 before MPP load
+
+Migration via CUCM, DHCP or Alt TFTP
+DHCP will automatically upgrade to minimum firmware before MPP
+
+cloudupgrader.webex.com
+
+sip88xx.14-1-1-0001-125
+
+sip88xx.11-3-7MPP0001-272
+
+https://github.com/joemar2/mpp_readiness_check/tree/master

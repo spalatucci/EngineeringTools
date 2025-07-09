@@ -1,0 +1,248 @@
+LGW Trunk OTG: <otg>
+LGW Outbound Proxy: <wxc proxy>
+LGW Registrar Domain: <registrar>
+LGW Line: <line>
+LGW Username: <username>
+LGW Password: <password>
+Encryption/STUN Password: <encrypt>
+CUBE ITSP Interface: GigabitEthernet0/0/0
+CUBE Internal Interface: GigabitEthernet0/0/1
+ISTP IP: <itsp ip1> <itsp ip2>
+UCM IP: <ucm ip1> <ucm ip2> <ucm ip3>
+
+key config-key password-encrypt <encrypt>
+ password encryption aes
+crypto pki trustpoint tp_webex_tls12
+ revocation-check crl
+!
+sip-ua
+ timers trying 150
+ timers buffer-invite 500
+ crypto signaling default trustpoint tp_webex_tls12 cn-san-validate server
+ transport tcp tls v1.2
+ tcp-retry 1000
+!
+show crypto pki trustpool | include DigiCert
+crypto pki trustpool import clean url http://www.cisco.com/security/pki/trs/ios_core.p7b
+!
+voice service voip
+ ip address trusted list
+  ipv4 x.x.x.x y.y.y.y
+ mode border-element
+ allow-connections sip to sip
+ media statistics
+ media bulk-stats
+ no supplementary-service sip moved-temporarily
+ no supplementary-service sip refer
+ no supplementary-service sip handle-replaces
+ fax protocol t38 version 0 ls-redundancy 0 hs-redundancy 0 fallback none
+ stun
+  stun flowdata agent-id 1 boot-count 4
+  stun flowdata shared-secret 0 <encrypt>
+ sip
+  rel1xx disable
+  header-passing
+  error-passthru
+  registrar server expires max 600 min 60
+  asserted-id pai
+  early-offer forced
+  midcall-signaling passthru
+  g729 annexb-all
+  asymmetric payload full
+!
+voice class uri 100 sip
+ host ipv4:<itsp ip1>
+ host ipv4:<itsp ip2>
+!
+voice class uri 200 sip
+ host ipv4:<ucm ip1>
+ host ipv4:<ucm ip2>
+ host ipv4:<ucm ip3>
+!
+voice class uri 300 sip
+ pattern :5065
+!
+voice class uri 400 sip
+ pattern dtg=<otg>
+!
+voice class codec 99
+ codec preference 1 opus
+ codec preference 2 g711ulaw
+ codec preference 3 g711alaw
+!
+voice class stun-usage 400
+ stun usage firewall-traversal flowdata
+ stun usage ice lite
+!
+voice class srtp-crypto 400
+ crypto 1 AES_CM_128_HMAC_SHA1_80
+!
+voice class tls-profile 400
+ trustpoint tp_webex_tls12
+!
+voice class sip-profiles 400
+ rule 9 request ANY sip-header SIP-Req-URI modify "sips:(.*)" "sip:\1"
+ rule 10 request ANY sip-header To modify "<sips:(.*)" "<sip:\1"
+ rule 11 request ANY sip-header From modify "<sips:(.*)" "<sip:\1"
+ rule 12 request ANY sip-header Contact modify "<sips:(.*)>" "<sip:\1;transport=tls>"
+ rule 13 response ANY sip-header To modify "<sips:(.*)" "<sip:\1"
+ rule 14 response ANY sip-header From modify "<sips:(.*)" "<sip:\1"
+ rule 15 response ANY sip-header Contact modify "<sips:(.*)" "<sip:\1"
+ rule 20 request ANY sip-header From modify ">" ";otg=<otg>>"
+ rule 30 request ANY sip-header P-Asserted-Identity modify "sips:(.*)" "sip:\1"
+!
+voice class dpg 100
+ dial-peer 100
+!
+voice class dpg 200
+ dial-peer 200
+!
+voice class dpg 300
+ dial-peer 300
+!
+voice class dpg 400
+ dial-peer 400
+!
+voice class server-group 100
+ ipv4 <itsp ip1>
+ ipv4 <itsp ip2>
+!
+voice class server-group 200
+ ipv4 <ucm ip1> preference 3
+ ipv4 <ucm ip2> preference 1
+ ipv4 <ucm ip3> preference 2
+!
+voice class server-group 300
+ ipv4 <ucm ip1> port 5065 preference 3
+ ipv4 <ucm ip2> port 5065 preference 1
+ ipv4 <ucm ip3> port 5065 preference 2
+!
+voice class tenant 100 
+ session transport udp
+ url sip
+ error-passthru
+ bind control source-interface GigabitEthernet0/0/0
+ bind media source-interface GigabitEthernet0/0/0
+ no pass-thru content custom-sdp
+!
+voice class tenant 200 
+ session transport udp
+ url sip
+ error-passthru
+ bind control source-interface GigabitEthernet0/0/1
+ bind media source-interface GigabitEthernet0/0/1
+ no pass-thru content custom-sdp
+!
+voice class tenant 400
+ registrar dns:<registrar> scheme sips expires 240 refresh-ratio 50 tcp tls
+ credentials number <line> username <username> password 0 <password> realm BroadWorks
+ authentication username <username> password 0 <password> realm BroadWorks
+ authentication username <username> password 0 <password> realm <registrar>
+ no remote-party-id
+ sip-server dns:<registrar>
+ connection-reuse
+ srtp-crypto 400
+ no localhost
+ session transport tcp tls
+ url sips
+ bind control source-interface GigabitEthernet0/0/1
+ bind media source-interface GigabitEthernet0/0/1
+ no pass-thru content custom-sdp
+ sip-profiles 400
+ listen-port secure 5070
+ tls-profile 400
+ outbound-proxy dns:<wxc proxy>
+ privacy-policy passthru
+!
+voice translation-rule 1
+!
+voice translation-rule 2
+ rule 1 /^\([2-9]..[2-9]......\)/ /+1\1/
+!
+voice translation-rule 3
+!
+voice translation-rule 4
+ rule 1 /\+1\(.*\)/ /\1/
+ rule 2 /\+\([^1].*\)/ /011\1/
+!
+voice translation-rule 5
+!
+voice translation-rule 6
+!
+voice translation-rule 7
+!
+voice translation-rule 8
+ rule 1 /^\([2-9]..[2-9]......\)/ /+1\1/
+!
+voice translation-profile CUCM-IN
+ translate calling 5
+ translate called 6
+!
+voice translation-profile CUCM-OUT
+ translate calling 7
+ translate called 8
+!
+voice translation-profile ITSP-IN
+ translate calling 1
+ translate called 2
+!
+voice translation-profile ITSP-OUT
+ translate calling 3
+ translate called 4
+!
+dial-peer voice 100 voip
+ description ### ITSP Dial Peer ###
+ translation-profile incoming ITSP-IN
+ translation-profile outgoing ITSP-OUT
+ session protocol sipv2
+ session server-group 100
+ destination dpg 200
+ incoming uri via 100
+ voice-class codec 99
+ voice-class sip tenant 100
+ voice-class sip options-keepalive
+ dtmf-relay rtp-nte
+ no vad
+!
+dial-peer voice 200 voip
+ description ### CUCM ITSP Dial Peer ###
+ translation-profile incoming CUCM-IN
+ translation-profile outgoing CUCM-OUT
+ session protocol sipv2
+ session server-group 200
+ destination dpg 100
+ incoming uri from 200
+ voice-class codec 99
+ voice-class sip tenant 200
+ voice-class sip options-keepalive
+ dtmf-relay rtp-nte
+ no vad
+!
+dial-peer voice 300 voip
+ description ### CUCM WXC Dial Peer ###
+ session protocol sipv2
+ session server-group 300
+ destination dpg 400
+ incoming uri via 300
+ voice-class codec 99
+ voice-class sip tenant 200
+ voice-class sip options-keepalive
+ dtmf-relay rtp-nte
+ no vad
+!
+dial-peer voice 400 voip
+ description ### WXC Dial Peer ###
+ session protocol sipv2
+ session target sip-server
+ max-conn 250
+ destination dpg 300
+ incoming uri request 400
+ no voice-class sip localhost
+ voice-class codec 99
+ voice-class stun-usage 400
+ voice-class sip tenant 400
+ voice-class sip options-keepalive
+ dtmf-relay rtp-nte
+ srtp
+ no vad
+!

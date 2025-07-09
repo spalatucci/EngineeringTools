@@ -1,0 +1,8 @@
+Primer:
+https://app.vidcast.io/share/7b48c5a2-e06e-4f6f-a343-da72355c64d3
+
+Datasync:
+https://rules.wxcc-us1.cisco.com/datasync/
+
+User Guide:
+https://www.cisco.com/c/en/us/td/docs/voice_ip_comm/cust_contact/contact_center/webexcc/bre_20/wcc_b_cisco-webex-contact-center-business/wcc_bre_implementation.html

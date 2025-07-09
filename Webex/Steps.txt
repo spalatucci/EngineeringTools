@@ -1,0 +1,14 @@
+1. Setup Cisco Smart Account
+2. Provision customer subscription
+3. Have customer change account role to full admin
+4. Verify domain
+5. Add users
+6. Claim users
+7. Setup SSO
+
+Shared lines location restriction
+E911 RedSky
+Monitoring restricted to primary device
+No voicemail migration
+Voicemail PIN complexity requirements
+SSO requires AzureAD licensing

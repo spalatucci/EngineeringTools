@@ -1,0 +1,223 @@
+ip host ucmpub.mydomain.com 192.168.80.60
+ip host ucmsub1.mydomain.com 192.168.80.61
+ip host ucmsub2.mydomain.com 192.168.80.62
+ip host ucmsub3.mydomain.com 192.168.80.63
+ip host ucmsub4.mydomain.com 192.168.80.64
+ip host ucmsub5.mydomain.com 192.168.80.65
+ip host _sip._udp.wxtocucm.io srv 0 1 5065 ucmpub.mydomain.com
+ip host _sip._udp.wxtocucm.io srv 2 1 5065 ucmsub1.mydomain.com
+ip host _sip._udp.wxtocucm.io srv 2 1 5065 ucmsub2.mydomain.com
+ip host _sip._udp.wxtocucm.io srv 2 1 5065 ucmsub3.mydomain.com
+ip host _sip._udp.wxtocucm.io srv 2 1 5065 ucmsub4.mydomain.com
+ip host _sip._udp.wxtocucm.io srv 2 1 5065 ucmsub5.mydomain.com
+ip host _sip._udp.pstntocucm.io srv 0 1 5060 ucmpub.mydomain.com
+ip host _sip._udp.pstntocucm.io srv 2 1 5060 ucmsub1.mydomain.com
+ip host _sip._udp.pstntocucm.io srv 2 1 5060 ucmsub2.mydomain.com
+ip host _sip._udp.pstntocucm.io srv 2 1 5060 ucmsub3.mydomain.com
+ip host _sip._udp.pstntocucm.io srv 2 1 5060 ucmsub4.mydomain.com
+ip host _sip._udp.pstntocucm.io srv 2 1 5060 ucmsub5.mydomain.com
+!
+voice service voip
+ ip address trusted list
+  ipv4 x.x.x.x y.y.y.y
+ mode border-element
+ allow-connections sip to sip
+ no supplementary-service sip refer
+ no supplementary-service sip handle-replaces
+ sip
+  early-offer forced
+  asymmetric payload full
+  sip-profiles inbound
+!
+voice class codec 100
+ codec preference 1 opus
+ codec preference 2 g711ulaw
+ codec preference 3 g729r8
+!
+voice class stun-usage 100
+ stun usage ice lite
+!
+voice class srtp-crypto 100
+ crypto 1 AES_CM_128_HMAC_SHA1_80
+!
+voice class sip-profiles 100
+ rule 10 request ANY sip-header Contact modify "@.*:" "@cube1.lgw.com:"
+ rule 20 response ANY sip-header Contact modify "@.*:" "@cube1.lgw.com:"
+!
+voice class sip-profiles 115
+ rule 10 request OPTIONS sip-header Contact modify "<sip:.*:" "<sip:cube1.lgw.com:"
+!
+
+### SEE BELOW FOR NAT EXAMPLE ###
+
+voice class sip-options-keepalive 100
+ description Keepalive for Webex calling
+ up-interval 5
+ transport tcp tls
+ sip-profiles 115
+!
+voice class uri 110 sip
+ pattern cube1.lgw.com
+!
+voice class uri 210 sip
+  host ipv4:192.168.80.13
+!
+voice class uri 310 sip
+ pattern :5065
+!
+voice class uri 410 sip
+ pattern :5060
+!
+voice class tenant 100
+  no remote-party-id
+  srtp-crypto 100
+  localhost dns:cube1.lgw.com
+  session transport tcp tls
+  no session refresh
+  error-passthru
+  bind control source-interface GigabitEthernet0/0/1
+  bind media source-interface GigabitEthernet0/0/1
+  no pass-thru content custom-sdp
+  privacy-policy passthru
+!
+voice class dpg 100
+ description Incoming Webex Calling to IP PSTN
+ dial-peer 100
+!
+voice class dpg 200
+ description Incoming IP PSTN to Webex Calling
+ dial-peer 200
+!
+voice class dpg 300
+ dial-peer 300
+!
+voice class dpg 400
+ dial-peer 400
+!
+dial-peer voice 100 voip
+ description OutBound Webex Calling
+ destination-pattern bad.bad
+ session protocol sipv2
+ session target dns:<your edge proxy address>
+ session transport tcp tls
+ voice-class codec 100
+ voice-class stun-usage 100
+ voice-class sip rel1xx disable
+ voice-class sip asserted-id pai
+ voice-class sip profiles 100
+ voice-class sip tenant 100
+ voice-class sip options-keepalive profile 100
+ dtmf-relay rtp-nte
+ srtp
+ no vad
+!
+dial-peer voice 110 voip
+ description Inbound dial-peer from Webex Calling
+ session protocol sipv2
+ session transport tcp tls
+ destination dpg 300
+ incoming uri request 110
+ voice-class codec 100
+ voice-class stun-usage 100
+ voice-class sip profiles 110
+ voice-class sip srtp-crypto 100
+ voice-class sip tenant 100
+ srtp
+!
+dial-peer voice 200 voip
+ description Outgoing dial-peer to IP PSTN
+ destination-pattern BAD.BAD
+ session protocol sipv2
+ session target ipv4:192.168.80.13
+ voice-class codec 100
+ dtmf-relay rtp-nte
+ no vad
+!
+dial-peer voice 210 voip
+ description Incoming dial-peer from PSTN
+ session protocol sipv2
+ destination dpg 400
+ incoming uri via 210
+ voice-class codec 100
+ dtmf-relay rtp-nte
+ no vad
+!
+dial-peer voice 300 voip
+ description Outgoing dial-peer to CUCM from Webex Calling
+ destination-pattern BAD.BAD
+ session protocol sipv2
+ session target dns:wxtocucm.io
+ voice-class codec 100
+ voice-class sip bind control source-interface GigabitEthernet 0/0/0
+ voice-class sip bind media source-interface GigabitEthernet 0/0/0
+ dtmf-relay rtp-nte
+ no vad
+!
+dial-peer voice 310 voip
+ description Incoming dial-peer from CUCM for Webex Calling
+ session protocol sipv2
+ destination dpg 100
+ incoming uri via 310
+ voice-class codec 100
+ dtmf-relay rtp-nte
+ no vad
+!
+dial-peer voice 400 voip
+ description Outgoing dial-peer to CUCM from PSTN
+ destination-pattern BAD.BAD
+ session protocol sipv2
+ session target dns:pstntocucm.io
+ voice-class codec 100
+ voice-class sip bind control source-interface GigabitEthernet 0/0/0
+ voice-class sip bind media source-interface GigabitEthernet 0/0/0
+ dtmf-relay rtp-nte
+ no vad
+!
+dial-peer voice 410 voip
+ description Incoming dial-peer from CUCM for PSTN
+ session protocol sipv2
+ destination dpg 200
+ incoming uri via 410
+ voice-class codec 100
+ dtmf-relay rtp-nte
+ no vad
+!
+
+
+
+
+SIP profiles for outbound messages to Webex Calling
+
+voice class sip-profiles 100
+ rule 10 request ANY sip-header Contact modify "@.*:" "@cube1.lgw.com:"
+ rule 11 response ANY sip-header Contact modify "@.*:" "@cube1.lgw.com:"
+ rule 20 response ANY sdp-header Audio-Attribute modify "(a=candidate:1 1.*) 10.80.13.12" "\1 192.65.79.20"
+ rule 30 response ANY sdp-header Audio-Attribute modify "(a=candidate:1 2.*) 10.80.13.12" "\1 192.65.79.20"
+ rule 40 response ANY sdp-header Audio-Connection-Info modify "IN IP4 10.80.13.12" "IN IP4 192.65.79.20"
+ rule 41 request ANY sdp-header Audio-Connection-Info modify "IN IP4 10.80.13.12" "IN IP4 192.65.79.20"
+ rule 50 request ANY sdp-header Connection-Info modify "IN IP4 10.80.13.12" "IN IP4 192.65.79.20"
+ rule 51 response ANY sdp-header Connection-Info modify "IN IP4 10.80.13.12" "IN IP4 192.65.79.20"
+ rule 60 response ANY sdp-header Session-Owner modify "IN IP4 10.80.13.12" "IN IP4 192.65.79.20"
+ rule 61 request ANY sdp-header Session-Owner modify "IN IP4 10.80.13.12" "IN IP4 192.65.79.20"
+ rule 80 request ANY sdp-header Audio-Attribute modify "(a=rtcp:.*) 10.80.13.12" "\1 192.65.79.20"
+ rule 81 response ANY sdp-header Audio-Attribute modify "(a=rtcp:.*) 10.80.13.12" "\1 192.65.79.20
+ rule 91 request ANY sdp-header Audio-Attribute modify "(a=candidate:1 1.*) 10.80.13.12" "\1 192.65.79.20"
+ rule 93 request ANY sdp-header Audio-Attribute modify "(a=candidate:1 2.*) 10.80.13.12" "\1 192.65.79.20"
+
+SIP profiles for inbound messages from Webex Calling
+
+voice class sip-profiles 110
+ rule 10 response ANY sdp-header Video-Connection-Info modify "IN IP4 192.65.79.20" "IN IP4 10.80.13.12"
+ rule 20 response ANY sip-header Contact modify "@.*:" "@cube1.lgw.com:"
+ rule 30 response ANY sdp-header Connection-Info modify "IN IP4 192.65.79.20" "IN IP4 10.80.13.12"
+ rule 40 response ANY sdp-header Audio-Connection-Info modify "IN IP4 192.65.79.20" "IN IP4 10.80.13.12"
+ rule 60 response ANY sdp-header Session-Owner modify "IN IP4 192.65.79.20" "IN IP4 10.80.13.12"
+ rule 70 response ANY sdp-header Audio-Attribute modify "(a=candidate:1 1.*) 192.65.79.20" "\1 10.80.13.12"
+ rule 80 response ANY sdp-header Audio-Attribute modify "(a=candidate:1 2.*) 192.65.79.20" "\1 10.80.13.12"
+ rule 90 response ANY sdp-header Audio-Attribute modify "(a=rtcp:.*) 192.65.79.20" "\1 10.80.13.12"
+
+voice class sip-profiles 115
+ rule 10 request OPTIONS sip-header Contact modify "<sip:.*:" "<sip:cube1.lgw.com:"
+ rule 30 request ANY sip-header Via modify "(SIP.*) 10.80.13.12" "\1 192.65.79.20"
+ rule 40 response ANY sdp-header Connection-Info modify "IN IP4 10.80.13.12" "IN IP4 192.65.79.20" 
+ rule 50 response ANY sdp-header Audio-Connection-Info modify "IN IP4 10.80.13.12" "IN IP4 192.65.79.20"

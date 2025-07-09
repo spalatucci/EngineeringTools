@@ -1,0 +1,174 @@
+configure terminal
+voice service voip 
+  ip address trusted list
+   ipv4 23.89.0.0 255.255.0.0 
+   ipv4 62.109.192.0 255.255.192.0 
+   ipv4 64.68.96.0 255.255.224.0 
+   ipv4 66.114.160.0 255.255.240.0 
+   ipv4 66.163.32.0 255.255.224.0 
+   ipv4 69.26.160.0 255.255.224.0 
+   ipv4 114.29.192.0 255.255.224.0
+   ipv4 150.253.128.0 255.255.128.0
+   ipv4 170.72.0.0 255.255.0.0 
+   ipv4 170.133.128.0 255.255.192.0 
+   ipv4 173.39.224.0 255.255.224.0
+   ipv4 173.243.0.0 255.255.240.0
+   ipv4 207.182.160.0 255.255.224.0
+   ipv4 209.197.192.0 255.255.224.0
+   ipv4 210.4.192.0 255.255.240.0
+   ipv4 216.151.128.0 255.255.224.0
+   ipv4 144.196.0.0 255.255.0.0 
+   ipv4 163.129.0.0 255.255.0.0 
+   ipv4 198.18.133.3
+  exit
+   rtcp all-pass-through
+   address-hiding
+  mode border-element license capacity 100
+  media disable-detailed-stats
+  rtp-port range 36000 48198
+  media-address range <public-ip> <public-ip> port-range 36000 48198  
+  media-address range 198.18.133.3 198.18.133.3 
+allow-connections sip to sip
+ call-quality
+  max-dropout 2
+  max-reorder 2
+
+  
+sip-ua
+ transport tcp tls v1.2
+ crypto signaling default trustpoint CUBE_CA_CERT
+ call threshold global cpu-5sec low 68 high 75
+ call treatment on
+
+ 
+voice class codec 3
+ codec preference 1 g722-64
+ codec preference 2 g711ulaw
+ codec preference 3 g711alaw
+
+ 
+voice class sip-profiles 2340
+rule 1 request INVITE sip-header SIP-Req-URI modify "sips:" "sip:" 
+ rule 2 request INVITE sip-header To modify "sips:" "sip:" 
+ rule 3 request INVITE sip-header From modify "sips:" "sip:" 
+ rule 4 request INVITE sip-header Remote-Party-ID modify "sips:" "sip:" 
+ rule 5 request INVITE sip-header P-Asserted-Identity modify "sips:" "sip:" 
+ rule 6 request ACK sip-header From modify "sips:" "sip:" 
+rule 7 request REINVITE sip-header P-Asserted-Identity modify "sips:" "sip:" 
+rule 8 request REINVITE sip-header From modify "sips:" "sip:" 
+rule 9 request REINVITE sip-header Contact modify "sips:(.*)>" "sip:\1;transport=tls>" 
+rule 10 request INVITE sip-header Contact modify "sips:" "sip:"
+
+
+voice class sip-profiles 2340
+rule 11 request ANY sip-header Via modify "198.18.1.231" "<public-ip>" 
+rule 12 request ANY sip-header Contact modify "198.18.1.231" "<public-ip>" 
+rule 13 response ANY sip-header Contact modify "198.18.1.231" "<public-ip>" 
+rule 14 request ANY sdp-header Audio-Connection-Info modify "198.18.1.231" "<public-ip>" 
+rule 15 response ANY sdp-header Audio-Connection-Info modify "198.18.1.231" "<public-ip>"
+
+
+voice class sip-profiles 2341
+ rule 1 request INVITE sip-header SIP-Req-URI modify "sips:" "sip:"
+ rule 2 request INVITE sip-header To modify "sips:" "sip:"
+ rule 3 request INVITE sip-header From modify "sips:" "sip:"
+ rule 4 request INVITE sip-header Remote-Party-ID modify "sips:" "sip:"
+ rule 5 request INVITE sip-header P-Asserted-Identity modify "sips:" "sip:"
+ rule 6 request ACK sip-header From modify "sips:" "sip:"
+ rule 7 request REINVITE sip-header P-Asserted-Identity modify "sips:" "sip:"
+ rule 8 request REINVITE sip-header From modify "sips:" "sip:"
+ rule 9 request REINVITE sip-header Contact modify "sips:(.*)>" "sip:\1;transport=tls>"
+ rule 10 request INVITE sip-header Contact modify "sips:" "sip:"
+ rule 11 request INVITE sip-header SIP-Req-URI modify "@(.*);x-cisco-webex-service=audio" "@cucm1.dcloud.cisco.com"
+
+
+voice class sip-profiles 2001
+ response 403 method INVITE sip-header SIP-StatusLine modify "Forbidden" "Unknown Webex Site"
+
+
+voice translation-rule 1
+ rule 1 reject /^.*/
+voice translation-profile call_block
+ translate calling 1
+
+ 
+voice class uri INEdgeAudio sip
+ pattern x-cisco-webex-service=audio 
+voice class uri INEdgeAudioWithSiteUUID sip
+ <XXXXXpaste pattern command copied from Control Hub>
+
+
+voice class uri OUTEdgeAudio sip
+ host ecccx.amer.pub.webex.com (<XXXX host address copied from .lua script)
+
+ 
+voice class srtp-crypto 234
+ crypto 1 AEAD_AES_256_GCM
+ crypto 2 AEAD_AES_128_GCM
+ crypto 3 AES_CM_128_HMAC_SHA1_80
+ crypto 4 AES_CM_128_HMAC_SHA1_32
+
+ 
+ip tcp mss 1360
+
+
+voice class tenant 234
+  asymmetric payload full
+  no update-callerid
+  error-passthru
+  call-route url
+
+  
+dial-peer voice 23411 voip
+description External Webex edge audio entry or exit dial-peer
+session protocol sipv2
+session target dns:ecccx.amer.pub.webex.com  (XXXXXrefer to LUA script for correct DNS)
+session transport tcp tls
+destination uri OUTEdgeAudio
+incoming uri request INEdgeAudioWithSiteUUID
+voice-class codec 3 offer-all
+voice-class sip url sips
+voice-class sip profiles 2340
+voice-class sip tenant 234
+voice-class sip srtp-crypto 234
+voice-class sip bind control source-interface GigabitEthernet1
+voice-class sip bind media source-interface GigabitEthernet1
+voice-class sip requri-passing
+voice-class sip audio forced
+dtmf-relay rtp-nte
+srtp
+
+dial-peer voice 23401 voip
+description Internal mix mode Webex edge audio entry or exit dial-peer
+session protocol sipv2
+session target dns:cucm1.dcloud.cisco.com:5070
+session transport tcp
+destination uri INEdgeAudio
+incoming uri request OUTEdgeAudio
+voice-class codec 3 offer-all
+voice-class sip profiles 2341
+voice-class sip tenant 234
+voice-class sip bind control source-interface GigabitEthernet2
+voice-class sip bind media source-interface GigabitEthernet2
+voice-class sip requri-passing
+dtmf-relay rtp-nte
+
+!Next dial peer is used with Secure Edge
+dial-peer voice 2000 voip
+ description External Webex edge audio entry dial-peer to reject no/wrong sit
+ call-block translation-profile incoming call_block
+ call-block disconnect-cause incoming call-reject
+ session protocol sipv2
+ session transport tcp tls
+ incoming uri request INEdgeAudio
+ voice-class codec 3 offer-all
+ voice-class sip url sips
+ voice-class sip profiles 2001
+ voice-class sip bind control source-interface GigabitEthernet1
+ voice-class sip bind media source-interface GigabitEthernet1
+ srtp
+
+do copy run start
+
+
+

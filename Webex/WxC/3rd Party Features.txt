@@ -1,0 +1,8 @@
+Intelepeer SMS:
+https://docs.intelepeer.com/atmosphere/Content/Atmosphere-SMS-Messaging/Atmosphere-SMS-Messaging-Quick-Start-Guide.htm
+https://docs.intelepeer.com/Atmosphere/Content/Atmosphere-SMS-Messaging/How-Tos/Atmosphere-Messaging-for-Webex-Teams.htm
+
+RedSky E911:
+https://help.webex.com/en-us/article/av6oo3/Enhanced-Emergency-Calling-for-Webex-Calling
+https://webexcallingtraining.verizon.com/control-hub-redsky-emergency-911-service/#1
+https://verizon-vce-flex.s3.amazonaws.com/PDF/RedSky+e911/Network+Discovery+Overview.pdf

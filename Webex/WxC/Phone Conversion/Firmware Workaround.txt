@@ -1,0 +1,11 @@
+Download multiple MPP loads to phone to wipe bad firmware
+Voice > Provisioning > Upgrade Rule: tftp://192.168.1.161/sip88xx.11-3-6MPP0001-273.loads
+Downgrade browser: https://ftp.mozilla.org/pub/firefox/releases/15.0b6/win32/en-US/
+Voice > Provisioning > Upgrade Rule: tftp://192.168.1.161/sip88xx.11-3-5MPP0001-276.loads
+
+https://www.youtube.com/watch?v=ANmXjLqykY4&t=630s
+8841-3PCC.xml
+
+Press and hold #, power cycle the phone
+When an LED starts to flash, release #, and enter:
+• Hard Reset (format flash): 3491672850*#

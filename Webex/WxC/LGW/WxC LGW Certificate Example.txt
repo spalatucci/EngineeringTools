@@ -1,0 +1,325 @@
+WXC EDGE: <WxC edge proxy address>
+CUBE FQDN: <fqdn>
+CUBE ITSP Interface: GigabitEthernet0/0/0
+CUBE Internal Interface/IP: GigabitEthernet0/0/1 / <internal ip>
+CUBE External Interface/IP: GigabitEthernet0/0/2 / <external ip>
+
+voice service voip
+ ip address trusted list
+  ipv4 x.x.x.x y.y.y.y
+ address-hiding
+ mode border-element
+ media statistics
+ media bulk-stats
+ allow-connections sip to sip
+ no supplementary-service sip moved-temporarily
+ no supplementary-service sip refer
+ no supplementary-service sip handle-replaces
+ fax protocol t38 version 0 ls-redundancy 0 hs-redundancy 0 fallback pass-through g711ulaw
+ modem passthrough nse codec g711ulaw
+ trace
+ sip
+  rel1xx disable
+  header-passing
+  error-passthru
+  asserted-id pai
+  early-offer forced
+  midcall-signaling passthru
+  g729 annexb-all
+  asymmetric payload full
+!
+voice class uri 100 sip
+ host ipv4:<itsp ip1>
+ host ipv4:<itsp ip2>
+!
+voice class uri 200 sip
+ host ipv4:<ucm ip1>
+ host ipv4:<ucm ip2>
+ host ipv4:<ucm ip3>
+!
+voice class uri 300 sip
+ pattern :5065
+!
+voice class uri 400 sip
+ pattern <fqdn>
+!
+voice class codec 99
+ codec preference 1 opus
+ codec preference 2 g711ulaw
+ codec preference 3 g729r8
+!
+voice class stun-usage 400 
+ stun usage ice lite
+!
+voice class srtp-crypto 400
+ crypto 1 AES_CM_128_HMAC_SHA1_80
+!
+voice class sip-profiles 400
+ rule 10 request ANY sip-header Contact modify "@.*:" "@<fqdn>:"
+ rule 20 response ANY sip-header Contact modify "@.*:" "@<fqdn>:"
+!
+voice class sip-profiles 415
+ rule 10 request OPTIONS sip-header Contact modify "<sip:.*:" "<sip:<fqdn>:"
+!
+voice class sip-options-keepalive 400
+ up-interval 5
+ transport tcp tls
+ sip-profiles 415
+!
+voice class dpg 100
+ dial-peer 100
+!
+voice class dpg 200
+ dial-peer 200
+!
+voice class dpg 300
+ dial-peer 300
+!
+voice class dpg 400
+ dial-peer 400
+!
+voice class server-group 100
+ ipv4 <itsp ip1>
+ ipv4 <itsp ip2>
+!
+voice class server-group 200
+ ipv4 <ucm ip1> preference 3
+ ipv4 <ucm ip2> preference 1
+ ipv4 <ucm ip3> preference 2
+!
+voice class server-group 300
+ ipv4 <ucm ip1> port 5065 preference 3
+ ipv4 <ucm ip2> port 5065 preference 1
+ ipv4 <ucm ip3> port 5065 preference 2
+!
+voice class tenant 400
+  no remote-party-id
+  sip-server dns:<WxC edge proxy address>
+  srtp-crypto 400
+  localhost dns:<fqdn>
+  session transport tcp tls
+  no session refresh
+  bind control source-interface GigabitEthernet0/0/2
+  bind media source-interface GigabitEthernet0/0/2
+  no pass-thru content custom-sdp
+  privacy-policy passthru
+!
+voice translation-rule 1
+!
+voice translation-rule 2
+ rule 1 /^\([2-9]..[2-9]......\)/ /+1\1/
+!
+voice translation-rule 3
+!
+voice translation-rule 4
+ rule 1 /\+1\(.*\)/ /\1/
+ rule 2 /\+\([^1].*\)/ /011\1/
+!
+voice translation-rule 5
+!
+voice translation-rule 6
+!
+voice translation-rule 7
+!
+voice translation-rule 8
+ rule 1 /^\([2-9]..[2-9]......\)/ /+1\1/
+!
+voice translation-profile CUCM-IN
+ translate calling 5
+ translate called 6
+!
+voice translation-profile CUCM-OUT
+ translate calling 7
+ translate called 8
+!
+voice translation-profile ITSP-IN
+ translate calling 1
+ translate called 2
+!
+voice translation-profile ITSP-OUT
+ translate calling 3
+ translate called 4
+!
+dial-peer voice 100 voip
+ description ### ITSP Dial Peer ###
+ translation-profile incoming ITSP-IN
+ translation-profile outgoing ITSP-OUT
+ session protocol sipv2
+ session server-group 100
+ destination dpg 200
+ incoming uri via 100
+ voice-class codec 99
+ voice-class sip bind control source-interface GigabitEthernet0/0/0
+ voice-class sip bind media source-interface GigabitEthernet0/0/0
+ dtmf-relay rtp-nte
+ no vad
+!
+dial-peer voice 200 voip
+ description ### CUCM ITSP Dial Peer ###
+ translation-profile incoming CUCM-IN
+ translation-profile outgoing CUCM-OUT
+ session protocol sipv2
+ session server-group 200
+ destination dpg 100
+ incoming uri from 200
+ voice-class codec 99
+ voice-class sip bind control source-interface GigabitEthernet0/0/1
+ voice-class sip bind media source-interface GigabitEthernet0/0/1
+ dtmf-relay rtp-nte
+ no vad
+!
+dial-peer voice 300 voip
+ description ### CUCM WXC Dial Peer ###
+ session protocol sipv2
+ session server-group 300
+ destination dpg 400
+ incoming uri via 300
+ voice-class codec 99
+ voice-class sip bind control source-interface GigabitEthernet0/0/1
+ voice-class sip bind media source-interface GigabitEthernet0/0/1
+ dtmf-relay rtp-nte
+ no vad
+!
+dial-peer voice 400 voip
+ description ### WXC Dial Peer ###
+ session protocol sipv2
+ session target sip-server
+ destination dpg 300
+ incoming uri request 400
+ voice-class codec 99
+ voice-class stun-usage 400
+ voice-class sip profiles 400
+ voice-class sip tenant 400
+ voice-class sip options-keepalive profile 400
+ dtmf-relay rtp-nte
+ srtp
+ no vad
+!
+
+
+
+### NAT
+SIP profiles for outbound messages to Webex Calling
+
+voice class sip-profiles 400
+ rule 10 request ANY sip-header Contact modify "@.*:" "@<fqdn>:"
+ rule 11 response ANY sip-header Contact modify "@.*:" "@<fqdn>:"
+ rule 20 response ANY sdp-header Audio-Attribute modify "(a=candidate:1 1.*) <internal ip>" "\1 <external ip>"
+ rule 30 response ANY sdp-header Audio-Attribute modify "(a=candidate:1 2.*) <internal ip>" "\1 <external ip>"
+ rule 40 response ANY sdp-header Audio-Connection-Info modify "IN IP4 <internal ip>" "IN IP4 <external ip>"
+ rule 41 request ANY sdp-header Audio-Connection-Info modify "IN IP4 <internal ip>" "IN IP4 <external ip>"
+ rule 50 request ANY sdp-header Connection-Info modify "IN IP4 <internal ip>" "IN IP4 <external ip>"
+ rule 51 response ANY sdp-header Connection-Info modify "IN IP4 <internal ip>" "IN IP4 <external ip>"
+ rule 60 response ANY sdp-header Session-Owner modify "IN IP4 <internal ip>" "IN IP4 <external ip>"
+ rule 61 request ANY sdp-header Session-Owner modify "IN IP4 <internal ip>" "IN IP4 <external ip>"
+ rule 80 request ANY sdp-header Audio-Attribute modify "(a=rtcp:.*) <internal ip>" "\1 <external ip>"
+ rule 81 response ANY sdp-header Audio-Attribute modify "(a=rtcp:.*) <internal ip>" "\1 <external ip>
+ rule 91 request ANY sdp-header Audio-Attribute modify "(a=candidate:1 1.*) <internal ip>" "\1 <external ip>"
+ rule 93 request ANY sdp-header Audio-Attribute modify "(a=candidate:1 2.*) <internal ip>" "\1 <external ip>"
+
+SIP profiles for inbound messages from Webex Calling
+
+voice class sip-profiles 410
+ rule 10 response ANY sdp-header Video-Connection-Info modify "IN IP4 <external ip>" "IN IP4 <internal ip>"
+ rule 20 response ANY sip-header Contact modify "@.*:" "@<fqdn>:"
+ rule 30 response ANY sdp-header Connection-Info modify "IN IP4 <external ip>" "IN IP4 <internal ip>"
+ rule 40 response ANY sdp-header Audio-Connection-Info modify "IN IP4 <external ip>" "IN IP4 <internal ip>"
+ rule 60 response ANY sdp-header Session-Owner modify "IN IP4 <external ip>" "IN IP4 <internal ip>"
+ rule 70 response ANY sdp-header Audio-Attribute modify "(a=candidate:1 1.*) <external ip>" "\1 <internal ip>"
+ rule 80 response ANY sdp-header Audio-Attribute modify "(a=candidate:1 2.*) <external ip>" "\1 <internal ip>"
+ rule 90 response ANY sdp-header Audio-Attribute modify "(a=rtcp:.*) <external ip>" "\1 <internal ip>"
+!
+voice class sip-profiles 415
+ rule 10 request OPTIONS sip-header Contact modify "<sip:.*:" "<sip:<fqdn>:"
+ rule 30 request ANY sip-header Via modify "(SIP.*) <internal ip>" "\1 <external ip>"
+ rule 40 response ANY sdp-header Connection-Info modify "IN IP4 <internal ip>" "IN IP4 <external ip>" 
+ rule 50 response ANY sdp-header Audio-Connection-Info modify "IN IP4 <internal ip>" "IN IP4 <external ip>"
+!
+dial-peer voice 400 voip
+ description ### To WXC Dial Peer ###
+ destination-pattern bad.bad
+ session protocol sipv2
+ session target sip-server
+ voice-class codec 99
+ voice-class stun-usage 400
+ voice-class sip profiles 400
+ voice-class sip tenant 400
+ voice-class sip options-keepalive profile 400
+ dtmf-relay rtp-nte
+ srtp
+ no vad
+!
+dial-peer voice 401 voip
+ description ### From WXC Dial Peer ###
+ session protocol sipv2
+ destination dpg 300
+ incoming uri request 400
+ voice-class codec 99
+ voice-class stun-usage 400
+ voice-class sip profiles 410
+ voice-class sip tenant 400
+ dtmf-relay rtp-nte
+ srtp
+ no vad
+!
+
+
+### CUBE Split Services
+voice class uri 500 sip
+ host ipv4:<fax ip1>
+ host ipv4:<fax ip2>
+ host ipv4:<fax ip3>
+!
+voice class e164-pattern-map 500
+  e164 ^fax_number1$
+!
+voice class codec 500
+ codec preference 1 g711ulaw
+!
+voice class dpg 500
+ dial-peer 500
+!
+voice class server-group 500
+ ipv4 <xmedius ip1>
+!
+dial-peer voice 100 voip
+ description ### ITSP Dial Peer ###
+ translation-profile incoming ITSP-IN
+ translation-profile outgoing ITSP-OUT
+ session protocol sipv2
+ session server-group 100
+ destination dpg 200
+ incoming uri via 100
+ voice-class codec 99
+ voice-class sip bind control source-interface GigabitEthernet0/0/0
+ voice-class sip bind media source-interface GigabitEthernet0/0/0
+ dtmf-relay rtp-nte
+ no vad
+!
+dial-peer voice 101 voip
+ description ### ITSP Dial Peer ###
+ translation-profile incoming ITSP-IN
+ session protocol sipv2
+ destination dpg 500
+ incoming uri via 100
+ incoming called e164-pattern-map 500
+ voice-class codec 99
+ voice-class sip bind control source-interface GigabitEthernet0/0/0
+ voice-class sip bind media source-interface GigabitEthernet0/0/0
+ dtmf-relay rtp-nte
+ no vad
+!
+dial-peer voice 500 voip
+ description ### XMEDIUS Dial Peer ###
+ translation-profile incoming FAX-IN
+ translation-profile outgoing FAX-OUT
+ session protocol sipv2
+ session server-group 500
+ destination dpg 100
+ incoming uri from 500
+ voice-class codec 500
+ voice-class sip bind control source-interface GigabitEthernet0/0/1
+ voice-class sip bind media source-interface GigabitEthernet0/0/1
+ dtmf-relay rtp-nte
+ no vad
+!

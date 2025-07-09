@@ -1,0 +1,9 @@
+Access code DTMF tone generator:
+https://www.audiocheck.net/audiocheck_dtmf.php
+Put space in front of code
+
+Algo:
+System > File Manager > Tones > Upload
+Basic Settings > Features > Page Tone
+Page Notif Tone Sound
+-10dBm 600 ohm (0.245 Vrms)

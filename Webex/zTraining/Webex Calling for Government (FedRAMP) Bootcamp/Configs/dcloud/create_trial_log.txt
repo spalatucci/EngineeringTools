@@ -1,0 +1,288 @@
+﻿**********************
+Windows PowerShell transcript start
+Start time: 20231107043708
+Username: DCLOUD\cholland
+RunAs User: DCLOUD\cholland
+Configuration Name: 
+Machine: WKST1 (Microsoft Windows NT 10.0.16299.0)
+Host Application: powershell.exe c:\scripts\get_scripts.ps1
+Process ID: 6668
+PSVersion: 5.1.16299.98
+PSEdition: Desktop
+PSCompatibleVersions: 1.0, 2.0, 3.0, 4.0, 5.0, 5.1.16299.98
+BuildVersion: 10.0.16299.98
+CLRVersion: 4.0.30319.42000
+WSManStackVersion: 3.0
+PSRemotingProtocolVersion: 2.3
+SerializationVersion: 1.1.0.1
+**********************
+Transcript started, output file is C:\dcloud\create_trial_log.txt
+Script started at 11/07/2023 04:37:08
+Getting session details
+11/7/2023 4:37:09 AM: {
+    "id":  {
+               "rel":  "self",
+               "href":  "/api/sessions/1080201"
+           },
+    "links":  [
+                  {
+                      "rel":  "parentDemo",
+                      "href":  "/api/contents/899681"
+                  }
+              ],
+    "relevance":  0,
+    "sessionUuid":  "641fbfc8-d5ed-4770-b879-b12ef19fdbb9",
+    "guid":  "RTP-SES-1080201",
+    "canReset":  false,
+    "event":  null,
+    "name":  "CUBE and Advanced Dial Plan Lab",
+    "type":  "demo",
+    "owner":  "toreyes",
+    "uid":  1080201,
+    "status":  2,
+    "parentId":  899681,
+    "anyconnectAllowed":  true,
+    "endpointAllowed":  true,
+    "stop":  "2023-11-12T22:36:00Z",
+    "start":  "2023-11-07T10:08:00Z",
+    "updated":  "2023-11-07T10:35:04Z",
+    "published":  "2023-11-07T10:36:32Z",
+    "activeId":  1022467,
+    "errorState":  false,
+    "canRequestExtension":  false,
+    "virtualCenter":  15,
+    "saveEnabled":  false,
+    "parentDemoName":  "CUBE and Advanced Dial Plan Lab",
+    "scenario":  null,
+    "contentPoolName":  null,
+    "contentPoolOptionId":  null,
+    "topologyUid":  null,
+    "topologyVersionUid":  null,
+    "expand":  {
+                   "expandable":  "topology,server,network,endpoint,devices,document,sharedwith"
+               },
+    "eventOwner":  false
+}
+11/7/2023 4:37:09 AM: Creating customer trial with Webex meetings, please wait. Trial creation will take a bit to complete.
+
+11/7/2023 4:39:37 AM: {
+    "result":  "success",
+    "message":  "Trial created successfully.",
+    "webexUrl":  "cb39801a.webex.com",
+    "sipAddress":  "cb39801.webex.com"
+}
+11/7/2023 4:39:37 AM: Customer trial created successfully.
+11/7/2023 4:39:42 AM: Pausing for 3 minutes to wait for trial to be setup
+11/7/2023 4:42:42 AM: Configuring Webex Calling.
+
+11/7/2023 4:44:10 AM: {
+    "result":  "success",
+    "message":  "Webex Calling setup successfully."
+}
+11/7/2023 4:44:10 AM: Setting org features.
+11/7/2023 4:44:37 AM: {
+    "result":  "success",
+    "message":  "Succesfully set features."
+}
+11/7/2023 4:44:37 AM: Configure DID to DN text document
+11/7/2023 4:44:37 AM: Moving LGW Config to Desktop
+Move-Item : Cannot create a file when that file already exists.
+
+At C:\dcloud\create_trial.ps1:345 char:13
++             Move-Item -Path 'C:\dcloud\LGW_Config_tra1.txt' -Destinat ...
++             ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : WriteError: (C:\dcloud\LGW_Config_tra1.txt:FileInfo) [Move-Item], IOException
+    + FullyQualifiedErrorId : MoveFileInfoItemIOError,Microsoft.PowerShell.Commands.MoveItemCommand
+Move-Item : Cannot create a file when that file already exists.
+
+At C:\dcloud\create_trial.ps1:345 char:13
++             Move-Item -Path 'C:\dcloud\LGW_Config_tra1.txt' -Destinat ...
++             ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : WriteError: (C:\dcloud\LGW_Config_tra1.txt:FileInfo) [Move-Item], IO
+   Exception
+    + FullyQualifiedErrorId : MoveFileInfoItemIOError,Microsoft.PowerShell.Commands.MoveItemComman
+   d
+
+Get-Content : Cannot find path '\\198.18.133.2\c$\TRIAL_EMAIL.txt' because it does not exist.
+At C:\dcloud\create_trial.ps1:362 char:19
++     $trialemail = Get-Content \\$exc_ip\c$\TRIAL_EMAIL.txt -Raw
++                   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (\\198.18.133.2\c$\TRIAL_EMAIL.txt:String) [Get-Content], 
+ItemNotFoundException
+    + FullyQualifiedErrorId : PathNotFound,Microsoft.PowerShell.Commands.GetContentCommand
+Get-Content : Cannot find path '\\198.18.133.2\c$\TRIAL_EMAIL.txt' because it does not exist.
+At C:\dcloud\create_trial.ps1:362 char:19
++     $trialemail = Get-Content \\$exc_ip\c$\TRIAL_EMAIL.txt -Raw
++                   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (\\198.18.133.2\c$\TRIAL_EMAIL.txt:String) [Get-Cont
+   ent], ItemNotFoundException
+    + FullyQualifiedErrorId : PathNotFound,Microsoft.PowerShell.Commands.GetContentCommand
+
+You cannot call a method on a null-valued expression.
+At C:\dcloud\create_trial.ps1:363 char:5
++     $trialemail = $trialemail.Trim()
++     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidOperation: (:) [], RuntimeException
+    + FullyQualifiedErrorId : InvokeMethodOnNull
+You cannot call a method on a null-valued expression.
+At C:\dcloud\create_trial.ps1:363 char:5
++     $trialemail = $trialemail.Trim()
++     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidOperation: (:) [], RuntimeException
+    + FullyQualifiedErrorId : InvokeMethodOnNull
+
+Send-MailMessage : Unable to connect to the remote server
+At C:\dcloud\create_trial.ps1:364 char:5
++     Send-MailMessage -To cholland@dcloud.cisco.com -From cholland@dcl ...
++     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidOperation: (System.Net.Mail.SmtpClient:SmtpClient) [Send-MailMessage], 
+SmtpException
+    + FullyQualifiedErrorId : SmtpException,Microsoft.PowerShell.Commands.SendMailMessage
+Send-MailMessage : Unable to connect to the remote server
+At C:\dcloud\create_trial.ps1:364 char:5
++     Send-MailMessage -To cholland@dcloud.cisco.com -From cholland@dcl ...
++     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidOperation: (System.Net.Mail.SmtpClient:SmtpClient) [Send-Mail
+   Message], SmtpException
+    + FullyQualifiedErrorId : SmtpException,Microsoft.PowerShell.Commands.SendMailMessage
+
+11/7/2023 4:45:21 AM: Ready to sync Unified CM with Active Directory
+
+xml                            Envelope
+---                            --------
+version="1.0" encoding="UTF-8" Envelope
+11/7/2023 4:45:28 AM: Sync Complete
+11/7/2023 4:45:33 AM: Updating ESXi license of 198.18.134.47.
+connect-viserver : 11/7/2023 4:45:59 AM	Connect-VIServer		Could not resolve the requested VC server.
+Additional Information: There was no endpoint listening at https://198.18.134.47/sdk that could accept the message. 
+This is often caused by an incorrect address or SOAP action. See InnerException, if present, for more details.	
+At C:\dcloud\create_trial.ps1:411 char:5
++     connect-viserver $node1 -user root -password dCloud123! -Force
++     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (:) [Connect-VIServer], ViServerConnectionException
+    + FullyQualifiedErrorId : Client20_ConnectivityServiceImpl_Reconnect_NameResolutionFailure,VMware.VimAutomation.ViCo
+re.Cmdlets.Commands.ConnectVIServer
+connect-viserver : 11/7/2023 4:45:59 AM	Connect-VIServer		Could not resolve the requested VC
+server.
+Additional Information: There was no endpoint listening at https://198.18.134.47/sdk that could
+accept the message. This is often caused by an incorrect address or SOAP action. See
+InnerException, if present, for more details.
+At C:\dcloud\create_trial.ps1:411 char:5
++     connect-viserver $node1 -user root -password dCloud123! -Force
++     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (:) [Connect-VIServer], ViServerConnectionException
+    + FullyQualifiedErrorId : Client20_ConnectivityServiceImpl_Reconnect_NameResolutionFailure,VMw
+   are.VimAutomation.ViCore.Cmdlets.Commands.ConnectVIServer
+
+PS>TerminatingError(Get-View): "11/7/2023 4:46:00 AM	Get-View		You are not currently connected to any servers. Please connect first using a Connect cmdlet.	"
+Get-View : 11/7/2023 4:46:00 AM	Get-View		You are not currently connected to any servers. Please connect first using a 
+Connect cmdlet.	
+At C:\dcloud\create_trial.ps1:413 char:11
++     $lm = Get-View -Id "LicenseManager-ha-license-manager"
++           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : ResourceUnavailable: (:) [Get-View], ViServerConnectionException
+    + FullyQualifiedErrorId : 
+Core_BaseCmdlet_NotConnectedError,VMware.VimAutomation.ViCore.Cmdlets.Commands.DotNetInterop.GetVIView
+Get-View : 11/7/2023 4:46:00 AM	Get-View		You are not currently connected to any servers. Please
+connect first using a Connect cmdlet.
+At C:\dcloud\create_trial.ps1:413 char:11
++     $lm = Get-View -Id "LicenseManager-ha-license-manager"
++           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : ResourceUnavailable: (:) [Get-View], ViServerConnectionException
+    + FullyQualifiedErrorId : Core_BaseCmdlet_NotConnectedError,VMware.VimAutomation.ViCore.Cmdlet
+   s.Commands.DotNetInterop.GetVIView
+
+You cannot call a method on a null-valued expression.
+At C:\dcloud\create_trial.ps1:414 char:5
++     $lm.UpdateLicense($lic, $null)
++     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidOperation: (:) [], RuntimeException
+    + FullyQualifiedErrorId : InvokeMethodOnNull
+You cannot call a method on a null-valued expression.
+At C:\dcloud\create_trial.ps1:414 char:5
++     $lm.UpdateLicense($lic, $null)
++     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidOperation: (:) [], RuntimeException
+    + FullyQualifiedErrorId : InvokeMethodOnNull
+
+11/7/2023 4:46:00 AM: Completed the license update of node: 198.18.134.47.
+disconnect-viserver : 11/7/2023 4:46:00 AM	Disconnect-VIServer		Could not find VIServer with name '198.18.134.47'.	
+At C:\dcloud\create_trial.ps1:416 char:5
++     disconnect-viserver $node1 -confirm:$false
++     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (198.18.134.47:String) [Disconnect-VIServer], VimException
+    + FullyQualifiedErrorId : 
+Core_ObnSelector_SelectObjectByNameCore_ObjectNotFound,VMware.VimAutomation.ViCore.Cmdlets.Commands.DisconnectVIServer
+disconnect-viserver : 11/7/2023 4:46:00 AM	Disconnect-VIServer		Could not find VIServer with name
+'198.18.134.47'.
+At C:\dcloud\create_trial.ps1:416 char:5
++     disconnect-viserver $node1 -confirm:$false
++     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (198.18.134.47:String) [Disconnect-VIServer], VimExc
+   eption
+    + FullyQualifiedErrorId : Core_ObnSelector_SelectObjectByNameCore_ObjectNotFound,VMware.VimAut
+   omation.ViCore.Cmdlets.Commands.DisconnectVIServer
+
+>> TerminatingError(Disconnect-VIServer): "11/7/2023 4:46:00 AM	Disconnect-VIServer		Could not find any of the servers specified by name.	"
+disconnect-viserver : 11/7/2023 4:46:00 AM	Disconnect-VIServer		Could not find any of the servers specified by name.	
+At C:\dcloud\create_trial.ps1:416 char:5
++     disconnect-viserver $node1 -confirm:$false
++     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (VMware.VimAutom...Server[] Server:RuntimePropertyInfo) 
+[Disconnect-VIServer], ServerObnFailureException
+    + FullyQualifiedErrorId : Core_ObnSelector_SetNewParameterValue_ServerSpecifiedButNotFound,VMware.VimAutomation.ViCo
+re.Cmdlets.Commands.DisconnectVIServer
+disconnect-viserver : 11/7/2023 4:46:00 AM	Disconnect-VIServer		Could not find any of the servers
+specified by name.
+At C:\dcloud\create_trial.ps1:416 char:5
++     disconnect-viserver $node1 -confirm:$false
++     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (VMware.VimAutom...Server[] Server:RuntimePropertyIn
+   fo) [Disconnect-VIServer], ServerObnFailureException
+    + FullyQualifiedErrorId : Core_ObnSelector_SetNewParameterValue_ServerSpecifiedButNotFound,VMw
+   are.VimAutomation.ViCore.Cmdlets.Commands.DisconnectVIServer
+
+11/7/2023 4:46:00 AM: Starting Complete Base Config Script
+11/7/2023 4:46:00 AM: Creating and configuring lab users.
+11/7/2023 4:46:00 AM: This will take a few minutes or so to complete.
+
+11/7/2023 4:47:18 AM: {
+    "result":  "success",
+    "message":  "Users created successfully",
+    "totalUsers":  "8",
+    "usersConfigured":  "[\u0027aperez\u0027, \u0027cholland\u0027, \u0027esteele\u0027, \u0027kmelby\u0027, \u0027rbarretta\u0027, \u0027rfilice\u0027, \u0027smauk\u0027, \u0027tbard\u0027]",
+    "avatarSet":  "true"
+}
+11/7/2023 4:47:18 AM: Total users created:
+11/7/2023 4:47:18 AM: 8
+11/7/2023 4:47:18 AM: Users created:
+11/7/2023 4:47:18 AM: ['aperez', 'cholland', 'esteele', 'kmelby', 'rbarretta', 'rfilice', 'smauk', 'tbard']
+11/7/2023 4:47:18 AM: Avatars configured:
+11/7/2023 4:47:18 AM: true
+11/7/2023 4:47:18 AM: Org has more than 7 users. Continuing on.
+11/7/2023 4:47:18 AM: Setting up users complete.
+
+11/7/2023 4:47:18 AM: Base Configuration Complete.
+
+Moving Add Trunk Powershell script and LGW Config to desktop
+11/7/2023 4:47:23 AM: Demo Setup Complete.
+Send-MailMessage : Unable to connect to the remote server
+At C:\dcloud\create_trial.ps1:732 char:5
++     Send-MailMessage -To cholland@dcloud.cisco.com -From cholland@dcl ...
++     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidOperation: (System.Net.Mail.SmtpClient:SmtpClient) [Send-MailMessage], 
+SmtpException
+    + FullyQualifiedErrorId : SmtpException,Microsoft.PowerShell.Commands.SendMailMessage
+Send-MailMessage : Unable to connect to the remote server
+At C:\dcloud\create_trial.ps1:732 char:5
++     Send-MailMessage -To cholland@dcloud.cisco.com -From cholland@dcl ...
++     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidOperation: (System.Net.Mail.SmtpClient:SmtpClient) [Send-Mail
+   Message], SmtpException
+    + FullyQualifiedErrorId : SmtpException,Microsoft.PowerShell.Commands.SendMailMessage
+
+Total script run time HH:mm:ss: 00:10:36
+**********************
+Windows PowerShell transcript end
+End time: 20231107044745
+**********************

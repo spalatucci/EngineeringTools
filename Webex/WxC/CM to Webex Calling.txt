@@ -1,0 +1,68 @@
+Main:
+cs.co/ucmmigrate
+
+Architecture:
+https://www.cisco.com/c/dam/en/us/td/docs/solutions/CVD/Collaboration/hybrid/AltDesigns/PA-WbxCall.pdf
+
+Migration Support:
+https://callinghelp.webex.com/customer-migration/
+
+Partner Helpdesk:
+https://callinghelp.webex.com/phd/
+
+CM to Webex Calling:
+https://www.cisco.com/c/dam/en/us/td/docs/solutions/PA/mcp/DEPLOYMENT_CALLING_Unified_CM_to_Webex_Calling.pdf
+
+Features:
+https://help.webex.com/en-us/0r7a2z/Set-Up-Your-Webex-Calling-Features
+https://help.webex.com/en-US/article/n1qbbp7/Features-available-by-license-type-for-Webex-Calling
+
+Calling:
+https://www.cisco.com/c/dam/en/us/td/docs/solutions/PA/mcp/TDM_CALLING_Unified_CM_to_Webex_Calling.pdf
+
+Phones Migration:
+https://help.webex.com/en-us/article/n19c71/Migrate-Your-Phone-to-Webex-Calling
+https://www.cisco.com/c/en/us/products/collateral/collaboration-endpoints/unified-ip-phone-7800-series/guide-c07-742786.html
+https://upgrade.cisco.com/e2m_converter_wxc
+https://github.com/joemar2/mpp_readiness_check/tree/master
+
+Phones:
+https://www.cisco.com/c/en/us/td/docs/voice_ip_comm/cloudCollaboration/sparkcall/user/cuip_b_phone-7800-8800-series-ata190sc-guide.html
+https://help.webex.com/en-us/n9r1aac/Configure-and-Manage-Webex-Calling-Devices#id_118912
+
+PSTN:
+https://community.cisco.com/t5/collaboration-voice-and-video/global-availability-and-cloud-connected-pstn-options-for-webex/ta-p/3916211
+
+Convert Webex Users:
+https://help.webex.com/en-us/nceb8tm/Claim-Users-to-Your-Organization-Convert-Users
+
+Presentations:
+https://community.cisco.com/t5/collaboration-blogs/cisco-collaboration-migration-partner-workshop/ba-p/4258901
+
+AzureAD:
+https://help.webex.com/en-us/article/heauzeb/Set-up-Azure-AD-Wizard-App-in-Control-Hub
+https://help.webex.com/en-us/aumpbz/Synchronize-Azure-Active-Directory-Users-into-Cisco-Webex-Control-Hub
+https://docs.microsoft.com/en-us/azure/active-directory/saas-apps/cisco-webex-provisioning-tutorial
+
+SSO: (Need Azure AD Premium via Microsoft E, EMS or standalone)
+https://help.webex.com/en-us/lfu88u/Single-Sign-On-Integration-in-Cisco-Webex-Control-Hub#CMGT_RF_S9BDF982_00
+
+LGW:
+https://help.webex.com/article/jr1i3r
+https://help.webex.com/article/nqqzbk7
+https://www.youtube.com/watch?v=vYu1bEz_4Jk
+
+Help:
+https://callinghelp.webex.com/calling-admin-portal-main/
+
+Troublshooting:
+https://community.cisco.com/t5/webex-user-documents/how-to-collect-logs-from-different-devices-and-clients/ta-p/4175064
+
+GitHub:
+https://github.com/jeokrohn/ucmmigration
+
+Lab:
+https://dcloud2-sjc.cisco.com/content/demo/239993?returnPathTitleKey=content-view
+
+Assurance:
+https://community.cisco.com/t5/collaboration-documents/webex-calling-service-assurance/ta-p/4048844

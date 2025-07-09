@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<AnyConnectProfile xmlns="http://schemas.xmlsoap.org/encoding/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://schemas.xmlsoap.org/encoding/ AnyConnectProfile.xsd">
+	<ClientInitialization>
+		<UseStartBeforeLogon UserControllable="true">false</UseStartBeforeLogon>
+		<AutomaticCertSelection UserControllable="true">false</AutomaticCertSelection>
+		<ShowPreConnectMessage>false</ShowPreConnectMessage>
+		<CertificateStore>User</CertificateStore>
+		<CertificateStoreOverride>false</CertificateStoreOverride>
+		<ProxySettings>Native</ProxySettings>
+		<AllowLocalProxyConnections>false</AllowLocalProxyConnections>
+		<AuthenticationTimeout>120</AuthenticationTimeout>
+		<AutoConnectOnStart UserControllable="true">false</AutoConnectOnStart>
+		<MinimizeOnConnect UserControllable="true">true</MinimizeOnConnect>
+		<LocalLanAccess UserControllable="true">false</LocalLanAccess>
+		<DisableCaptivePortalDetection UserControllable="false">false</DisableCaptivePortalDetection>
+		<ClearSmartcardPin UserControllable="true">true</ClearSmartcardPin>
+		<IPProtocolSupport>IPv4,IPv6</IPProtocolSupport>
+		<AutoReconnect UserControllable="false">true
+			<AutoReconnectBehavior UserControllable="false">ReconnectAfterResume</AutoReconnectBehavior>
+		</AutoReconnect>
+		<AutoUpdate UserControllable="false">true</AutoUpdate>
+		<RSASecurIDIntegration UserControllable="false">Automatic</RSASecurIDIntegration>
+		<WindowsLogonEnforcement>SingleLogon</WindowsLogonEnforcement>
+		<WindowsVPNEstablishment>AllowRemoteUsers</WindowsVPNEstablishment>
+		<AutomaticVPNPolicy>false</AutomaticVPNPolicy>
+		<PPPExclusion UserControllable="false">Automatic
+			<PPPExclusionServerIP UserControllable="false"></PPPExclusionServerIP>
+		</PPPExclusion>
+		<EnableScripting UserControllable="false">false</EnableScripting>
+		<EnableAutomaticServerSelection UserControllable="true">false
+			<AutoServerSelectionImprovement>20</AutoServerSelectionImprovement>
+			<AutoServerSelectionSuspendTime>4</AutoServerSelectionSuspendTime>
+		</EnableAutomaticServerSelection>
+		<RetainVpnOnLogoff>false
+		</RetainVpnOnLogoff>
+		<AllowManualHostInput>true</AllowManualHostInput>
+	</ClientInitialization>
+	<ServerList>
+		<HostEntry>
+			<HostName>NGFW1</HostName>
+			<HostAddress>ngfw1-outside.dcloud.local</HostAddress>
+		</HostEntry>
+		<HostEntry>
+			<HostName>NGFW2</HostName>
+			<HostAddress>ngfw2-outside.dcloud.local</HostAddress>
+		</HostEntry>
+		<HostEntry>
+			<HostName>NGFW3</HostName>
+			<HostAddress>ngfw3-outside.dcloud.local</HostAddress>
+		</HostEntry>
+	</ServerList>
+</AnyConnectProfile>

@@ -1,0 +1,16 @@
+https://www.cisco.com/c/en/us/support/docs/security-vpn/public-key-infrastructure-pki/215849-certificate-installation-and-renewal-on.html#anc14
+https://integratingit.wordpress.com/2018/11/10/ftd-vpn-with-certificates/
+
+https://www.digicert.com/easy-csr/openssl.htm
+
+#first import to windows cert store, then export with private key to get formate openssl understands
+ 
+#export the private key
+openssl pkcs12 -in mf_wildcard_morganfranklin.com.pfx -nocerts -out mf_wildcard_morganfranklin.com.key
+ 
+#export the identity cert
+openssl pkcs12 -in mf_wildcard_morganfranklin.com2.pfx -clcerts -nokeys -out mf_wildcard_identity.pem
+openssl rsa -in key.pem -out server.key
+ 
+#combine private key, identity cert, and cert chain into pfx
+openssl pkcs12 -export -out mf_combined_wildcard.pfx -inkey mf_wildcard_morganfranklin.com.key -in mf_wildcard_identity.pem -certfile mf_digicert_chain.pem

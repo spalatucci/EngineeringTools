@@ -1,0 +1,4 @@
+https://www.countryipblocks.net/
+
+For Cisco ASA < 8.2 Use Cisco ACL
+For Cisco ASA > 8.2 Use network-object

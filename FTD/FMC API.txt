@@ -1,0 +1,9 @@
+https://<management_center_IP_or_name>:<https_port>/api/api-explorer
+
+Sandbox:
+https://devnetsandbox.cisco.com/RM/Diagram/Index/1228cb22-b2ba-48d3-a70a-86a53f4eecc0?diagramType=Topology
+https://developer.cisco.com/learning/lab/firepower-restapi-106/step/5
+
+Python:
+python.org
+ipython.org

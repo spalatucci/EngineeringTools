@@ -1,0 +1,5 @@
+You can verify it by yourself with these steps:
+
+1.	Go to the Service Contract Centre:  http://www.cisco.com/warp/public/437/scc/index.html
+2.	Click "Launch Tool"
+3.	 A window should hopefully pop up.  In the search bar, choose "Serial/Pack Number" and you enter the Serial Number in the box next to it.

@@ -1,0 +1,3 @@
+Smartcare Passwords - admin,Cwp$14120,$martCare
+root - c1sc0p3l
+#su admin

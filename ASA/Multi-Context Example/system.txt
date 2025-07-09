@@ -1,0 +1,169 @@
+
+hqasa>
+hqasa>
+hqasa>
+hqasa>
+hqasa> en
+Password:
+hqasa#
+hqasa#
+hqasa#
+hqasa#
+hqasa#
+hqasa# sh run
+: Saved
+
+:
+: Serial Number: FCH19477C7L
+: Hardware:   ASA5525, 8192 MB RAM, CPU Lynnfield 2394 MHz, 1 CPU (4 cores)
+:
+ASA Version 9.5(2) <system>
+!
+hostname hqasa
+enable password 8Ry2YjIyt7RRXU24 encrypted
+mac-address auto prefix 64001
+!
+interface GigabitEthernet0/0
+ channel-group 1 mode active
+!
+interface GigabitEthernet0/1
+ channel-group 1 mode active
+!
+interface GigabitEthernet0/2
+ channel-group 1 mode active
+!
+interface GigabitEthernet0/3
+ channel-group 1 mode active
+!
+interface GigabitEthernet0/4
+ shutdown
+!
+interface GigabitEthernet0/5
+ shutdown
+!
+interface GigabitEthernet0/6
+!
+interface GigabitEthernet0/7
+!
+interface GigabitEthernet0/7.4093
+ description LAN Failover Interface
+ vlan 4093
+!
+interface GigabitEthernet0/7.4094
+ description STATE Failover Interface
+ vlan 4094
+!
+interface Management0/0
+!
+interface Port-channel1
+ lacp max-bundle 8
+!
+interface Port-channel1.1109
+ description ***MGMT***
+ vlan 1109
+!
+interface Port-channel1.1110
+ description ***PhysSec***
+ vlan 1110
+!
+interface Port-channel1.1111
+ description ***WAN***
+ vlan 1111
+!
+interface Port-channel1.1112
+ description data
+ vlan 1112
+!
+interface Port-channel1.1128
+ description ***AP-Net***
+ vlan 1128
+!
+interface Port-channel1.1130
+ description ***SSID-CNCSGuestWireless***
+ vlan 1130
+!
+interface Port-channel1.1132
+ description ***SSID-CNCS***
+ vlan 1132
+!
+interface Port-channel1.1136
+ description ***SSID-CNCSMobile***
+ vlan 1136
+!
+interface Port-channel1.1250
+ description ***Servers***
+ vlan 1250
+!
+interface Port-channel1.2200
+ description VoIP
+ vlan 2200
+!
+class default
+  limit-resource All 0
+  limit-resource Mac-addresses 16384
+  limit-resource ASDM 5
+  limit-resource SSH 5
+  limit-resource Telnet 5
+!
+
+boot system disk0:/asa952-smp-k8.bin
+boot system disk0:/asa922-4-smp-k8.bin
+ftp mode passive
+clock timezone EST -5
+clock summer-time EDT recurring
+pager lines 24
+failover
+failover lan unit primary
+failover lan interface Failover GigabitEthernet0/7.4093
+failover link State GigabitEthernet0/7.4094
+failover interface ip Failover 10.255.255.253 255.255.255.252 standby 10.255.255.254
+failover interface ip State 10.255.254.253 255.255.255.252 standby 10.255.254.254
+failover group 1
+  preempt
+failover group 2
+  secondary
+  preempt
+asdm image disk0:/asdm-752.bin
+no asdm history enable
+arp timeout 14400
+no arp permit-nonconnected
+no ssh stricthostkeycheck
+console timeout 0
+
+admin-context admin
+context admin
+  allocate-interface Port-channel1.1109 Management
+  config-url disk0:/admin.cfg
+!
+
+context VoIP
+  allocate-interface Port-channel1.1111 WAN
+  allocate-interface Port-channel1.2200 VoIP
+  config-url disk0:/VoIP.cfg
+  join-failover-group 2
+!
+
+context data
+  allocate-interface Port-channel1.1109 MGMT
+  allocate-interface Port-channel1.1110 PhysSec
+  allocate-interface Port-channel1.1111 WAN
+  allocate-interface Port-channel1.1112 data
+  allocate-interface Port-channel1.1128 AP_Net
+  allocate-interface Port-channel1.1130 SSID_CNCSGuestWireless
+  allocate-interface Port-channel1.1132 SSID_CNCS
+  allocate-interface Port-channel1.1136 SSID_CNCSMobile
+  allocate-interface Port-channel1.1250 Servers
+  config-url disk0:/data.cfg
+  join-failover-group 1
+!
+
+ntp server 192.5.41.41 source Management prefer
+ssl cipher default custom "RC4-SHA:AES128-SHA:AES256-SHA:DES-CBC3-SHA"
+ssl cipher tlsv1 custom "RC4-SHA:AES128-SHA:AES256-SHA:DES-CBC3-SHA"
+ssl cipher dtlsv1 custom "RC4-SHA:AES128-SHA:AES256-SHA:DES-CBC3-SHA"
+username cwps password hogPKzqCPCSXW4Qt encrypted privilege 15
+prompt hostname context
+no call-home reporting anonymous
+Cryptochecksum:4f80f01c62689e7ff5877c01d66c456b
+: end
+hqasa#

@@ -1,0 +1,37 @@
+https://docs.microsoft.com/en-us/azure/vpn-gateway/vpn-gateway-connect-multiple-policybased-rm-ps
+https://docs.microsoft.com/en-us/azure/vpn-gateway/vpn-gateway-about-vpn-devices
+https://docs.microsoft.com/en-us/azure/vpn-gateway/vpn-gateway-about-vpn-gateway-settings
+
+https://learn.microsoft.com/en-us/azure/vpn-gateway/vpn-gateway-ipsecikepolicy-rm-powershell
+
+1. Create Resource Group
+2. Create Virtual Network Gateway
+	a. Select Name,Region,Route-based,SKU, Virtual network,new Public IP
+3. Create Local Network Gateway
+	a. Remote Public IP,Remote subnets
+4. Create Connection using below
+
+Connect-AzAccount
+Get-AzSubscription
+Select-AzSubscription -SubscriptionId "
+
+$Location1 = "East US 2"
+$RG1 = "RN-AZ-RG"
+$GWName1 = "RN-AZ-VNG"
+$LNGName6 = "RN-HQ-LNG"
+$Connection1  = "RN-HQ-S2S"
+
+$vnet1gw = Get-AzVirtualNetworkGateway -Name $GWName1  -ResourceGroupName $RG1
+$lng6 = Get-AzLocalNetworkGateway  -Name $LNGName6 -ResourceGroupName $RG1
+
+$ipsecpolicy6 = New-AzIpsecPolicy -IkeEncryption AES256 -IkeIntegrity SHA384 -DhGroup DHGroup24 -IpsecEncryption AES256 -IpsecIntegrity SHA384 -PfsGroup PFS24 -SALifeTimeSeconds 3600 -SADataSizeKilobytes 102400000
+
+Change Pre-Shared Key:
+New-AzVirtualNetworkGatewayConnection -Name $Connection1 -ResourceGroupName $RG1 -VirtualNetworkGateway1 $vnet1gw -LocalNetworkGateway2 $lng6 -Location $Location1 -ConnectionType IPsec -UsePolicyBasedTrafficSelectors $True -IpsecPolicies $ipsecpolicy6 -SharedKey '7@E@AV7Mjb2D6sMz'
+
+
+NEW ROUTE BASED FOR ASA
+https://www.petenetlive.com/KB/Article/0001515
+
+Reference:
+ARTBA

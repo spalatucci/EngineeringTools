@@ -1,0 +1,24 @@
+# TODO: virtual line related tests
+    * available members for call queues, call parks, ...
+    * add virtual lines to devices, w/ line labels
+    + add virtual lines to apps, w/ line labels
+# TODO: what about location level settings?
+    #   what about outgoing and incoming permissions for locations
+    #   what about call park for locations
+    #   what about MoH for locations
+    #   what about location level calling behavior settings
+# TODO: when creating an extension only user in CH the user get an ESN work number. This is not the case if the user
+    # is created using the people APi. Question: how can one create an extension only WxC user using the API so that
+    # the user gets a WSN work number
+# TODO: validate workspace operations
+# TODO: missing: API for agent/supervisor management
+# TODO: call parks now have list of call park extensions, validate call park creation with CPEs, updating list of CPEs,
+    # ...
+# TODO: file defect: https://developer.webex.com/docs/api/v1/webex-calling-organization-settings/get-details-for-a-call-pickup
+#   attribute phoneNumber actually is 'numbers'
+# TODO: implement shared line appearance members for WxC apps: https://developer.webex.com/docs/api/v1/webex-calling-person-settings/search-shared-line-appearance-members
+
+
+
+
+

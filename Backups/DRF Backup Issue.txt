@@ -1,0 +1,18 @@
+Regenerated the (ipsec and tomcat) certificates on both CUCM nodes following the below
+procedure:
+
+
+1.	Log onto the OS Administration page.
+
+2.	Choose Security > Certificate Management.
+3.	Click on Find to find all the certificates. 
+4.	find the IPsec-trust certificate and click on the .pem file. 
+5.	Delete the current corrupted ipsec-trust entry.(Click on delete to delete the certificate(we need to do it on all the servers))
+6.	Go back to the certificate management page.
+7.	Click ipsec.pem file and then click regenerate (regenerate the ipsec certificate on both nodes).
+8.	After the successful generation of the ipsec.pem file, download the file and save it locally.
+9.	Please download ipsec certificate from the publisher, and Upload the downloaded ipsec.pem file with the caption ipsec-trust to the Subscriber. (from security -> certificate management -> upload).
+10.	Then, download ipsec certificate from the Subscriber, and Upload the downloaded ipsec.pem file with the caption ipsec-trust to the publisher.
+11.	From the CLI interface issue the following commands to Restart the DRF Master Agent(MA)/DRF Local Agent (LA) services.
+•	utils service restart Cisco DRF Master(on the publisher)
+•	utils service restart Cisco DRF Local (on all nodes)

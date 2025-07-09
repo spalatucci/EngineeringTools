@@ -1,0 +1,17 @@
+https://github.com/jeokrohn/wxc_sdk
+https://github.com/kctrey/wxcadm
+
+https://github.com/webex
+https://github.com/wxsd-sales
+
+https://github.com/WebexCommunity/WebexPythonSDK
+https://github.com/wxsd-sales/integration-refresh-python
+https://github.com/wxsd-sales/integration-samples
+
+https://developer.webex.com/blog/real-world-walkthrough-of-building-an-oauth-webex-integration
+https://github.com/WebexSamples/webex-flask-oauth-example
+
+developer.webex.com/blog
+cs.co/webexdevsyoutube
+cs.co/webexdevelopercommunity
+https://developer.cisco.com/codeexchange/

@@ -1,0 +1,1337 @@
+12:37:08.367  10.15.13.100  local0.notice  [S=300229] [BID=f4fbdf:155]  (N   253049) TLSSocketAPI(#2206)::HandleConnectEvent - Local IP Address = 173.227.253.94:5061, Remote IP Address = 52.114.7.24:7176 [Time:25-06@11:34:59.455]
+12:37:08.367  10.15.13.100  local0.notice  [S=300230] [BID=f4fbdf:155]  (N   253050) TLSSocketAPI(#2206)::HandshakeCompleted - TLS handshake success [Time:25-06@11:34:59.455]
+12:37:08.919  10.15.13.100  local0.notice  [S=300231] [BID=f4fbdf:155]  (N   253051) New ReliableTransportObject created - (#2210) - SocketID=4045 [Time:25-06@11:35:00.006]
+12:37:08.919  10.15.13.100  local0.notice  [S=300232] [SID=f4fbdf:155:10912]  (N   253052) (#1464)gwSession[Allocated]. Handle:00007F00BBFEBD30; Global session ID: 39a3d0e2e46088fe [Time:25-06@11:35:00.006]
+12:37:08.919  10.15.13.100  local0.notice  [S=300233] [SID=f4fbdf:155:10912]  (N   253053) Condition Table matched on condition Index 0 [Time:25-06@11:35:00.006]
+12:37:08.919  10.15.13.100  local0.notice  [S=300234] [SID=f4fbdf:155:10912]  (N   253054) Classification Succeeded - Source IP Group #1 (Teams) [Time:25-06@11:35:00.006]
+12:37:08.919  10.15.13.100  local0.notice  [S=300235] [SID=f4fbdf:155:10912]  (N   253055) SBC Internal Action::Execute, Type = 1 Value = 200 [Time:25-06@11:35:00.006]
+12:37:08.919  10.15.13.100  local0.notice  [S=300236] [SID=f4fbdf:155:10912]  (N   253056) (#816)Route found (0), Route by Internal [Time:25-06@11:35:00.006]
+12:37:08.919  10.15.13.100  local0.notice  [S=300237] [SID=f4fbdf:155:10912]  (N   253057) States: (#816)SBCRoutesIterator[Deallocated] [Time:25-06@11:35:00.006]
+12:37:08.920  10.15.13.100  local0.notice  [S=300238] [SID=f4fbdf:155:10912]  (N   253058) ---- Incoming SIP Message from 52.114.7.24:7176 to SIPInterface #1 (Teams) TLS TO(#2210) SocketID(4045) ---- [Time:25-06@11:35:00.006]
+12:37:08.920  10.15.13.100  local0.notice  [S=300239] [SID=f4fbdf:155:10912]  OPTIONS sip:tr-us-sbc3.audctrunk.aceducation.info:5061;transport=tls SIP/2.0 
+                                                                              FROM: <sip:sip-du-a-as.pstnhub.microsoft.com:5061>;tag=f3430fd8-8cc1-49fc-83b9-56a32e0627b8 
+                                                                              TO: <sip:173.227.253.94> 
+                                                                              CSEQ: 1 OPTIONS 
+                                                                              CALL-ID: c28a8a8e-1596-4ede-ab47-b0fc0c5d384b 
+                                                                              MAX-FORWARDS: 70 
+                                                                              VIA: SIP/2.0/TLS 52.114.7.24:5061;branch=z9hG4bK8b282ba7 
+                                                                              CONTACT: <sip:sip-du-a-as.pstnhub.microsoft.com:5061> 
+                                                                              CONTENT-LENGTH: 0 
+                                                                              USER-AGENT: Microsoft.PSTNHub.SIPProxy v.2020.5.27.2 i.ASEA.0 
+                                                                              ALLOW: INVITE,ACK,OPTIONS,CANCEL,BYE,NOTIFY 
+                                                                               
+                                                                               [Time:25-06@11:35:00.006]
+12:37:08.920  10.15.13.100  local0.notice  [S=300240] [SID=f4fbdf:155:10912]  (N   253059) RequestTerminationEvent: (#0) -> (#0)MessageRejectionMngr [Time:25-06@11:35:00.007]
+12:37:08.920  10.15.13.100  local0.notice  [S=300241] [SID=f4fbdf:155:10912]  (N   253060) ---- Outgoing SIP Message to 52.114.7.24:7176 from SIPInterface #1 (Teams) TLS TO(#0) SocketID(4045) ---- [Time:25-06@11:35:00.007]
+12:37:08.920  10.15.13.100  local0.notice  [S=300242] [SID=f4fbdf:155:10912]  SIP/2.0 200 OK 
+                                                                              Via: SIP/2.0/TLS 52.114.7.24:5061;branch=z9hG4bK8b282ba7 
+                                                                              From: <sip:sip-du-a-as.pstnhub.microsoft.com:5061>;tag=f3430fd8-8cc1-49fc-83b9-56a32e0627b8 
+                                                                              To: <sip:173.227.253.94>;tag=1c466603533 
+                                                                              Call-ID: c28a8a8e-1596-4ede-ab47-b0fc0c5d384b 
+                                                                              CSeq: 1 OPTIONS 
+                                                                              Content-Length: 0 
+                                                                               
+                                                                               [Time:25-06@11:35:00.007]
+12:37:08.935  10.15.13.100  local0.notice  [S=300243] [SID=f4fbdf:155:10912]  (N   253061) (#1464)gwSession[Deallocated] [Time:25-06@11:35:00.022]
+12:37:12.257  10.15.13.100  local0.notice  [S=300244] [BID=f4fbdf:155]  (N   253062) SIPServersIPList::ResolveDNS (ProxySet 1) - Starting resolution of sip.pstnhub.microsoft.com [Time:25-06@11:35:03.345]
+12:37:12.257  10.15.13.100  local0.debug   [S=300245] [BID=f4fbdf:155]  DnsGetAddrInfo: CacheEntry == NULL ai_family[2] hostNameStr[sip.pstnhub.microsoft.com] [File:DnsApi_Linux.cpp Line:1686] [Time:25-06@11:35:03.345]
+12:37:12.263  10.15.13.100  local0.debug   [S=300246] [BID=f4fbdf:155]  _DnsSendQuery status 8 [File:DnsApi_Linux.cpp Line:1426] [Time:25-06@11:35:03.345]
+12:37:12.264  10.15.13.100  local0.notice  [S=300247] [BID=f4fbdf:155]  (N   253063) HandleARecordQuery - Host:sip.pstnhub.microsoft.com is not in cache, setting timer [Time:25-06@11:35:03.346]
+12:37:12.274  10.15.13.100  local0.debug   [S=300248] [BID=f4fbdf:155]  _DnsCallback: end query recieved _GetInterfaceIndexByCtx(ctx) 1, q->qtyp 1 q->name sip.pstnhub.microsoft.com, p.dnsp_ttl 3 [File:DnsApi_Linux.cpp Line:1386] [Time:25-06@11:35:03.359]
+12:37:12.274  10.15.13.100  local0.debug   [S=300249] [BID=f4fbdf:155]  _DnsUpdateCacheEntryAddrInfo: update addr for query sip.pstnhub.microsoft.com [File:DnsApi_Linux.cpp Line:356] [Time:25-06@11:35:03.359]
+12:37:12.274  10.15.13.100  local0.debug   [S=300250] [BID=f4fbdf:155]  sip.pstnhub.microsoft.com resolved to 52.114.132.46 [File:DnsApi_Linux.cpp Line:309] [Time:25-06@11:35:03.359]
+12:37:12.319  10.15.13.100  local0.notice  [S=300251] [BID=f4fbdf:155]  (N   253064) DNSResolver::HandleTimerExpiredOnWaitForARecord: host:sip.pstnhub.microsoft.com [Time:25-06@11:35:03.407]
+12:37:12.320  10.15.13.100  local0.debug   [S=300252] [BID=f4fbdf:155]  DnsGetAddrInfo: sip.pstnhub.microsoft.com exists in cache sin_family[2] IPAddr[0x3472842e] [File:DnsApi_Linux.cpp Line:1739] [Time:25-06@11:35:03.407]
+12:37:12.320  10.15.13.100  local0.notice  [S=300253] [BID=f4fbdf:155]  (N   253065) DNSResolver::HandleTimerExpOnWaitARecord - Host:sip.pstnhub.microsoft.com resolved in external table [Time:25-06@11:35:03.407]
+12:37:12.320  10.15.13.100  local0.notice  [S=300254] [BID=f4fbdf:155]  (N   253066) SIPServersIPList::AddResolvedProxiesIPToList (ProxySet 1) - sip.pstnhub.microsoft.com was resolved by DNS to 52.114.132.46 [Time:25-06@11:35:03.407]
+12:37:12.320  10.15.13.100  local0.notice  [S=300255] [BID=f4fbdf:155]  (N   253067) SIPServersIPList::ResolveDNS (ProxySet 1) - Starting resolution of sip2.pstnhub.microsoft.com [Time:25-06@11:35:03.407]
+12:37:12.321  10.15.13.100  local0.debug   [S=300256] [BID=f4fbdf:155]  DnsGetAddrInfo: CacheEntry == NULL ai_family[2] hostNameStr[sip2.pstnhub.microsoft.com] [File:DnsApi_Linux.cpp Line:1686] [Time:25-06@11:35:03.407]
+12:37:12.321  10.15.13.100  local0.debug   [S=300257] [BID=f4fbdf:155]  _DnsSendQuery status 8 [File:DnsApi_Linux.cpp Line:1426] [Time:25-06@11:35:03.407]
+12:37:12.321  10.15.13.100  local0.notice  [S=300258] [BID=f4fbdf:155]  (N   253068) HandleARecordQuery - Host:sip2.pstnhub.microsoft.com is not in cache, setting timer [Time:25-06@11:35:03.408]
+12:37:12.350  10.15.13.100  local0.debug   [S=300259] [BID=f4fbdf:155]  _DnsCallback: end query recieved _GetInterfaceIndexByCtx(ctx) 1, q->qtyp 1 q->name sip2.pstnhub.microsoft.com, p.dnsp_ttl 6 [File:DnsApi_Linux.cpp Line:1386] [Time:25-06@11:35:03.439]
+12:37:12.351  10.15.13.100  local0.debug   [S=300260] [BID=f4fbdf:155]  _DnsUpdateCacheEntryAddrInfo: update addr for query sip2.pstnhub.microsoft.com [File:DnsApi_Linux.cpp Line:356] [Time:25-06@11:35:03.439]
+12:37:12.351  10.15.13.100  local0.debug   [S=300261] [BID=f4fbdf:155]  sip2.pstnhub.microsoft.com resolved to 52.114.76.76 [File:DnsApi_Linux.cpp Line:309] [Time:25-06@11:35:03.439]
+12:37:12.382  10.15.13.100  local0.notice  [S=300262] [BID=f4fbdf:155]  (N   253069) DNSResolver::HandleTimerExpiredOnWaitForARecord: host:sip2.pstnhub.microsoft.com [Time:25-06@11:35:03.469]
+12:37:12.382  10.15.13.100  local0.debug   [S=300263] [BID=f4fbdf:155]  DnsGetAddrInfo: sip2.pstnhub.microsoft.com exists in cache sin_family[2] IPAddr[0x34724c4c] [File:DnsApi_Linux.cpp Line:1739] [Time:25-06@11:35:03.469]
+12:37:12.382  10.15.13.100  local0.notice  [S=300264] [BID=f4fbdf:155]  (N   253070) DNSResolver::HandleTimerExpOnWaitARecord - Host:sip2.pstnhub.microsoft.com resolved in external table [Time:25-06@11:35:03.469]
+12:37:12.383  10.15.13.100  local0.notice  [S=300265] [BID=f4fbdf:155]  (N   253071) SIPServersIPList::AddResolvedProxiesIPToList (ProxySet 1) - sip2.pstnhub.microsoft.com was resolved by DNS to 52.114.76.76 [Time:25-06@11:35:03.469]
+12:37:12.383  10.15.13.100  local0.notice  [S=300266] [BID=f4fbdf:155]  (N   253072) SIPServersIPList::ResolveDNS (ProxySet 1) - Starting resolution of sip3.pstnhub.microsoft.com [Time:25-06@11:35:03.469]
+12:37:12.383  10.15.13.100  local0.debug   [S=300267] [BID=f4fbdf:155]  DnsGetAddrInfo: CacheEntry == NULL ai_family[2] hostNameStr[sip3.pstnhub.microsoft.com] [File:DnsApi_Linux.cpp Line:1686] [Time:25-06@11:35:03.469]
+12:37:12.384  10.15.13.100  local0.debug   [S=300268] [BID=f4fbdf:155]  _DnsSendQuery status 8 [File:DnsApi_Linux.cpp Line:1426] [Time:25-06@11:35:03.469]
+12:37:12.384  10.15.13.100  local0.notice  [S=300269] [BID=f4fbdf:155]  (N   253073) HandleARecordQuery - Host:sip3.pstnhub.microsoft.com is not in cache, setting timer [Time:25-06@11:35:03.470]
+12:37:12.391  10.15.13.100  local0.debug   [S=300270] [BID=f4fbdf:155]  _DnsCallback: end query recieved _GetInterfaceIndexByCtx(ctx) 1, q->qtyp 1 q->name sip3.pstnhub.microsoft.com, p.dnsp_ttl 9 [File:DnsApi_Linux.cpp Line:1386] [Time:25-06@11:35:03.480]
+12:37:12.391  10.15.13.100  local0.debug   [S=300271] [BID=f4fbdf:155]  _DnsUpdateCacheEntryAddrInfo: update addr for query sip3.pstnhub.microsoft.com [File:DnsApi_Linux.cpp Line:356] [Time:25-06@11:35:03.480]
+12:37:12.391  10.15.13.100  local0.debug   [S=300272] [BID=f4fbdf:155]  sip3.pstnhub.microsoft.com resolved to 52.114.7.24 [File:DnsApi_Linux.cpp Line:309] [Time:25-06@11:35:03.480]
+12:37:12.457  10.15.13.100  local0.notice  [S=300273] [BID=f4fbdf:155]  (N   253074) DNSResolver::HandleTimerExpiredOnWaitForARecord: host:sip3.pstnhub.microsoft.com [Time:25-06@11:35:03.530]
+12:37:12.457  10.15.13.100  local0.debug   [S=300274] [BID=f4fbdf:155]  DnsGetAddrInfo: sip3.pstnhub.microsoft.com exists in cache sin_family[2] IPAddr[0x34720718] [File:DnsApi_Linux.cpp Line:1739] [Time:25-06@11:35:03.530]
+12:37:12.457  10.15.13.100  local0.notice  [S=300275] [BID=f4fbdf:155]  (N   253075) DNSResolver::HandleTimerExpOnWaitARecord - Host:sip3.pstnhub.microsoft.com resolved in external table [Time:25-06@11:35:03.530]
+12:37:12.457  10.15.13.100  local0.notice  [S=300276] [BID=f4fbdf:155]  (N   253076) SIPServersIPList::AddResolvedProxiesIPToList (ProxySet 1) - sip3.pstnhub.microsoft.com was resolved by DNS to 52.114.7.24 [Time:25-06@11:35:03.530]
+12:37:12.457  10.15.13.100  local0.notice  [S=300277] [BID=f4fbdf:155]  (N   253077) SIPServersIPList::UpdateList (ProxySet 1) - Update process finished [Time:25-06@11:35:03.530]
+12:37:14.069  10.15.13.100  local0.notice  [S=300278] [BID=f4fbdf:155]  (N   253078) SIPListeningSocketTLS(#1) Socket debug message: CTcpSocket::HandleSocketEvent socket connectedSocketName: SIPLISTENING#1, FileDesc: 60  [Time:25-06@11:35:05.151]
+12:37:14.069  10.15.13.100  local0.notice  [S=300279] [BID=f4fbdf:155]  (N   253079) SIPListeningSocketTLS(#1) Socket debug message: CTcpServerSocket::IsSocketPending socket is pending for acceptSocketName: SIPLISTENING#1, FileDesc: 60  [Time:25-06@11:35:05.151]
+12:37:14.070  10.15.13.100  local0.notice  [S=300280] [BID=f4fbdf:155]  (N   253080) TlsThresholdManager::OkayToAcceptTlsConnection - returning True [Time:25-06@11:35:05.151]
+12:37:14.070  10.15.13.100  local0.notice  [S=300281] [BID=f4fbdf:155]  (N   253081) SIPListeningSocketTLS(#1)::OkayToHandleAccept - returning True [Time:25-06@11:35:05.151]
+12:37:14.070  10.15.13.100  local0.notice  [S=300282] [BID=f4fbdf:155]  (N   253082) New SIPSocketReliable created - (#2204) - SocketID=4046 [Time:25-06@11:35:05.151]
+12:37:14.070  10.15.13.100  local0.notice  [S=300283] [BID=f4fbdf:155]  (N   253083) New TLSSocketAPI created (#2204) - SocketID=4046 [Time:25-06@11:35:05.151]
+12:37:14.070  10.15.13.100  local0.notice  [S=300284] [BID=f4fbdf:155]  (N   253084) New Socket buffer allocated - (#2205) [Time:25-06@11:35:05.151]
+12:37:14.071  10.15.13.100  local0.notice  [S=300285] [BID=f4fbdf:155]  (N   253085) SIPAppMngr::GetTlsContextIdForIpAddress: ProxySetId = 1, SIPInterface = 1, ContextID = 1 [Time:25-06@11:35:05.151]
+12:37:14.071  10.15.13.100  local0.notice  [S=300286] [BID=f4fbdf:155]  (N   253086) SIPListeningSocketTLS(#1)::AcceptNewConnection - Incoming connection from 52.114.132.46:4096 accepted. SocketID=4046 [Time:25-06@11:35:05.157]
+12:37:14.104  10.15.13.100  local0.notice  [S=300287] [BID=f4fbdf:155]  (N   253087) TLSSocketAPI(#2204)::HandleConnectEvent - Local IP Address = 173.227.253.94:5061, Remote IP Address = 52.114.132.46:4096 [Time:25-06@11:35:05.193]
+12:37:14.104  10.15.13.100  local0.notice  [S=300288] [BID=f4fbdf:155]  (N   253088) TLSSocketAPI(#2204)::HandshakeCompleted - TLS handshake success [Time:25-06@11:35:05.193]
+12:37:14.199  10.15.13.100  local0.notice  [S=300289] [BID=f4fbdf:155]  (N   253089) New ReliableTransportObject created - (#2208) - SocketID=4046 [Time:25-06@11:35:05.269]
+12:37:14.199  10.15.13.100  local0.notice  [S=300290] [SID=f4fbdf:155:10913]  (N   253090) (#1463)gwSession[Allocated]. Handle:00007F00BBFEBD58; Global session ID: e8ad7f185432fa30 [Time:25-06@11:35:05.269]
+12:37:14.199  10.15.13.100  local0.notice  [S=300291] [SID=f4fbdf:155:10913]  (N   253091) Condition Table matched on condition Index 0 [Time:25-06@11:35:05.270]
+12:37:14.199  10.15.13.100  local0.notice  [S=300292] [SID=f4fbdf:155:10913]  (N   253092) Classification Succeeded - Source IP Group #1 (Teams) [Time:25-06@11:35:05.270]
+12:37:14.199  10.15.13.100  local0.notice  [S=300293] [SID=f4fbdf:155:10913]  (N   253093) IP2IPInboundManipulation Rule #0 [Time:25-06@11:35:05.270]
+12:37:14.199  10.15.13.100  local0.notice  [S=300294] [SID=f4fbdf:155:10913]  (N   253094) SBCRoutingMngr::InboundManipulate: Destination username was manipulated from +33336663101 to 33336663101 [Time:25-06@11:35:05.270]
+12:37:14.199  10.15.13.100  local0.notice  [S=300295] [SID=f4fbdf:155:10913]  (N   253095) States: (#815)SBCRoutesIterator[InitialRouting->AlternativeRouting] [Time:25-06@11:35:05.270]
+12:37:14.199  10.15.13.100  local0.notice  [S=300296] [SID=f4fbdf:155:10913]  (N   253096) SBC_ADMIT_DIALOGS_EV: (#815)SBCRoutesIterator -> (#0)SBCAdmissionControlMngr [Time:25-06@11:35:05.270]
+12:37:14.199  10.15.13.100  local0.notice  [S=300297] [SID=f4fbdf:155:10913]  (N   253097) CAC: Add SBC Incoming INVITE, IPG 1 (Teams): 1, SRD 0 (DefaultSRD): 1, SipIF 1 (Teams): 1 [Time:25-06@11:35:05.270]
+12:37:14.200  10.15.13.100  local0.notice  [S=300298] [SID=f4fbdf:155:10913]  (N   253098) ResourceCounter: SBC leg +1 [1/260] [Time:25-06@11:35:05.270]
+12:37:14.200  10.15.13.100  local0.notice  [S=300299] [SID=f4fbdf:155:10913]  (N   253099) CAC: Add SBC Outgoing INVITE, IPG 2 (ITSP1): 1, SRD 0 (DefaultSRD): 1, SipIF 0 (ITSP): 1 [Time:25-06@11:35:05.270]
+12:37:14.200  10.15.13.100  local0.notice  [S=300300] [SID=f4fbdf:155:10913]  (N   253100) ResourceCounter: SBC leg +1 [2/260] [Time:25-06@11:35:05.270]
+12:37:14.200  10.15.13.100  local0.notice  [S=300301] [SID=f4fbdf:155:10913]  (N   253101) (#815)Route found (2), Route by IPGroup, IP Group 1 -> 2 (Teams -> ITSP1) [Time:25-06@11:35:05.270]
+12:37:14.201  10.15.13.100  local0.notice  [S=300302] [SID=f4fbdf:155:10913]  (N   253102) ---- Incoming SIP Message from 52.114.132.46:4096 to SIPInterface #1 (Teams) TLS TO(#2208) SocketID(4046) ---- [Time:25-06@11:35:05.270]
+12:37:14.201  10.15.13.100  local0.notice  [S=300303] [SID=f4fbdf:155:10913]  INVITE sip:+33336663101@tr-us-sbc3.audctrunk.aceducation.info:5061;user=phone;transport=tls SIP/2.0 
+                                                                              FROM: tr-us-user3<sip:+33336663005@sip.pstnhub.microsoft.com:5061;user=phone>;tag=08b881f3f0d04f38921e7ba70adba9e8 
+                                                                              TO: <sip:+33336663101@tr-us-sbc3.audctrunk.aceducation.info:5061;user=phone> 
+                                                                              CSEQ: 1 INVITE 
+                                                                              CALL-ID: bcd8cfeabbd351d18d1f23b4460c8b93 
+                                                                              MAX-FORWARDS: 70 
+                                                                              VIA: SIP/2.0/TLS 52.114.132.46:5061;branch=z9hG4bKc4c65154 
+                                                                              RECORD-ROUTE: <sip:sip-du-a-us.pstnhub.microsoft.com:5061;transport=tls;lr> 
+                                                                              CONTACT: <sip:api-du-c-usea.pstnhub.microsoft.com:443;x-i=5cc11d85-14d7-438f-a2a3-dfdcee2d6527;x-c=bcd8cfeabbd351d18d1f23b4460c8b93/d/8/a1868ffa9c8d443a9461e18cee291870> 
+                                                                              CONTENT-LENGTH: 1129 
+                                                                              MIN-SE: 300 
+                                                                              SUPPORTED: timer 
+                                                                              USER-AGENT: Microsoft.PSTNHub.SIPProxy v.2020.5.27.2 i.USEA.6 
+                                                                              CONTENT-TYPE: application/sdp 
+                                                                              ALLOW: INVITE,ACK,OPTIONS,CANCEL,BYE,NOTIFY 
+                                                                              P-ASSERTED-IDENTITY: <tel:+33336663005>,<sip:tr-us-user3@audio-code.net> 
+                                                                              PRIVACY: id 
+                                                                              SESSION-EXPIRES: 3600 
+                                                                               
+                                                                              v=0 
+                                                                              o=- 167634 0 IN IP4 127.0.0.1 
+                                                                              s=session 
+                                                                              c=IN IP4 52.113.211.96 
+                                                                              b=CT:10000000 
+                                                                              t=0 0 
+                                                                              m=audio 50780 RTP/SAVP 104 117 9 103 111 18 0 8 97 101 13 118 
+                                                                              c=IN IP4 52.113.211.96 
+                                                                              a=rtcp:50781 
+                                                                              a=ice-ufrag:K4VK 
+                                                                              a=ice-pwd:KfRtSGVng4l5qK [Time:25-06@11:35:05.270]
+12:37:14.201  10.15.13.100  local0.notice  [S=300304] [SID=f4fbdf:155:10913]  ZzIzYoUYZp 
+                                                                              a=rtcp-mux 
+                                                                              a=candidate:1 1 UDP 2130706431 52.113.211.96 50780 typ srflx raddr 10.0.33.17 rport 50780 
+                                                                              a=candidate:1 2 UDP 2130705918 52.113.211.96 50781 typ srflx raddr 10.0.33.17 rport 50781 
+                                                                              a=candidate:2 1 tcp-act 2121006078 52.113.211.96 49152 typ srflx raddr 10.0.33.17 rport 49152 
+                                                                              a=candidate:2 2 tcp-act 2121006078 52.113.211.96 49152 typ srflx raddr 10.0.33.17 rport 49152 
+                                                                              a=label:main-audio 
+                                                                              a=mid:1 
+                                                                              a=crypto:1 AES_CM_128_HMAC_SHA1_80 inline:sqweghm3kSsO+hhp5GiqPZtgW69UtUGlZ1eii+Sa|2^31 
+                                                                              a=sendrecv 
+                                                                              a=rtpmap:104 SILK/16000 
+                                                                              a=rtpmap:117 G722/8000/2 
+                                                                              a=rtpmap:9 G722/8000 
+                                                                              a=rtpmap:103 SILK/8000 
+                                                                              a=rtpmap:111 SIREN/16000 
+                                                                              a=fmtp:111 bitrate=16000 
+                                                                              a=rtpmap:18 G729/8000 
+                                                                              a=fmtp:18 annexb=no 
+                                                                              a=rtpmap:0 PCMU/8000 
+                                                                              a=rtpmap:8 PCMA/8000 
+                                                                              a=rtpmap:97 RED/8000 
+                                                                              a=rtpmap:101 telephone-event/8000 
+                                                                              a=fmtp:101 0-16 
+                                                                              a=rtpmap:13 CN/8000 
+                                                                              a=rtpmap:118 CN/16000 
+                                                                              a=ptime:20 
+                                                                               [Time:25-06@11:35:05.270]
+12:37:14.201  10.15.13.100  local0.notice  [S=300305] [SID=f4fbdf:155:10913]  (N   253103) States: (#9314)AcSIPCall[Allocated] [Time:25-06@11:35:05.270]
+12:37:14.202  10.15.13.100  local0.notice  [S=300306] [SID=f4fbdf:155:10913]  (N   253104) SBCNewCallData: (#1590)AcSBCCallAPI -> (#1590)SIPSBCCallLeg [Time:25-06@11:35:05.270]
+12:37:14.202  10.15.13.100  local0.notice  [S=300307] [SID=f4fbdf:155:10913]  (N   253105) NEW_CALL_EV: (#1590)SIPSBCCallLeg -> (#360)SBCCall[Idle->NewCall] [Time:25-06@11:35:05.270]
+12:37:14.202  10.15.13.100  local0.notice  [S=300308] [SID=f4fbdf:155:10913]  (N   253106) (#360)SBCCall: Profiled<Tel=-1,Ip=2 (Teams)>: MSBeh=1 Rmt3xx=2 R2833B=1 RmtUpdSup=0 RmtRvtSup=1 RmtDOS=0 RmtRB=3 RmtRBSR=1 RmtHF=3 RmtRepB=1 Ice=1 [Time:25-06@11:35:05.270]
+12:37:14.203  10.15.13.100  local0.notice  [S=300309] [SID=f4fbdf:155:10913]  (N   253107) NEW_CALL_EV: (#360)SBCCall -> (#1586)SBCEndPoint[Idle->NewCall] 
+                                                                               -> (#793)SBCController[Idle->NewCall] 
+                                                                               -> (#1587)SBCEndPoint[Idle->NewCall] 
+                                                                               -> (#3468)CallPlacement 
+                                                                               -> (#359)SBCCall[Idle->NewCall] [Time:25-06@11:35:05.270]
+12:37:14.203  10.15.13.100  local0.notice  [S=300310] [SID=f4fbdf:155:10913]  (N   253108) (#359)SBCCall: Profiled<Tel=-1,Ip=1 (ITSP)>: MSBeh=2 Rmt3xx=2 RmtRB=3 RmtRepB=1 [Time:25-06@11:35:05.270]
+12:37:14.204  10.15.13.100  local0.notice  [S=300311] [SID=f4fbdf:155:10913]  (N   253109) NEW_CALL_EV: (#359)SBCCall -> (#1589)SIPSBCCallLeg [Time:25-06@11:35:05.270]
+12:37:14.204  10.15.13.100  local0.notice  [S=300312] [SID=f4fbdf:155:10913]  (N   253110) [ManSet: 3, Rule: 0] - Executed (Condition was True) [Time:25-06@11:35:05.270]
+12:37:14.204  10.15.13.100  local0.notice  [S=300313] [SID=f4fbdf:155:10913]  (N   253111) ReliableTransportObject(#2208)::ShouldConnectionBePersistent - Opening persistent connection with proxy: 52.114.132.46:5061(SI=1) [Time:25-06@11:35:05.270]
+12:37:14.204  10.15.13.100  local0.notice  [S=300314] [SID=f4fbdf:155:10913]  (N   253112) InviteServerTransaction(#21645)::SetResponseAddr - Setting ReceivedFromIP as response IP due to configuration [Time:25-06@11:35:05.270]
+12:37:14.205  10.15.13.100  local0.notice  [S=300315] [SID=f4fbdf:155:10913]  (N   253113) AcSIPCall(#9314): Handling INVITE in state Idle [Time:25-06@11:35:05.270]
+12:37:14.205  10.15.13.100  local0.notice  [S=300316] [SID=f4fbdf:155:10913]  (N   253114) AcSIPCall(#9314)::UpdateRemoteLocation - Setting ReceivedFrom address as transport object's key 52.114.132.46:5061 [Time:25-06@11:35:05.271]
+12:37:14.205  10.15.13.100  local0.notice  [S=300317] [SID=f4fbdf:155:10913]  (N   253115) AcTransactionUser::CheckRemoteAddressChange - Remote is behind the NAT [Time:25-06@11:35:05.271]
+12:37:14.205  10.15.13.100  local0.notice  [S=300318] [SID=f4fbdf:155:10913]  (N   253116) States: (#9314)AcSIPCall[Idle->Invited] [Time:25-06@11:35:05.271]
+12:37:14.205  10.15.13.100  local0.notice  [S=300319] [SID=f4fbdf:155:10913]  (N   253117) SBCSetupData: (#1590)AcSBCCallAPI -> (#1590)SIPSBCCallLeg [Time:25-06@11:35:05.271]
+12:37:14.206  10.15.13.100  local0.notice  [S=300320] [SID=f4fbdf:155:10913]  (N   253118) States: (#1590)SBCOfferAnswerMngr[Idle->Offered] [Time:25-06@11:35:05.271]
+12:37:14.206  10.15.13.100  local0.notice  [S=300321] [SID=f4fbdf:155:10913]  (N   253119) (#381)MediaStream[Allocated] (#381)MediaStream belongs to call #360 [Time:25-06@11:35:05.271]
+12:37:14.206  10.15.13.100  local0.notice  [S=300322] [SID=f4fbdf:155:10913]  (N   253120) AllocateAddress: Allocated address port 7090 IntIPv4 1 IntIPv6 -1 extension 1 [Time:25-06@11:35:05.271]
+12:37:14.206  10.15.13.100  local0.notice  [S=300323] [SID=f4fbdf:155:10913]  (N   253121) (#360)ChannelResource::AllocateMediaIpPorts RealmIndex(1) port(7090) Allocated. [Time:25-06@11:35:05.271]
+12:37:14.207  10.15.13.100  local0.notice  [S=300324] [SID=f4fbdf:155:10913]  (N   253122) AcSIPCall(#9314): Handling TRYING_REQ in state Invited [Time:25-06@11:35:05.271]
+12:37:14.207  10.15.13.100  local0.notice  [S=300325] [SID=f4fbdf:155:10913]  (N   253123) ---- Outgoing SIP Message to 52.114.132.46:4096 from SIPInterface #1 (Teams) TLS TO(#2208) SocketID(4046) ---- [Time:25-06@11:35:05.271]
+12:37:14.207  10.15.13.100  local0.notice  [S=300326] [SID=f4fbdf:155:10913]  SIP/2.0 100 Trying 
+                                                                              Via: SIP/2.0/TLS 52.114.132.46:5061;branch=z9hG4bKc4c65154 
+                                                                              From: tr-us-user3 <sip:+33336663005@sip.pstnhub.microsoft.com:5061;user=phone>;tag=08b881f3f0d04f38921e7ba70adba9e8 
+                                                                              To: <sip:+33336663101@tr-us-sbc3.audctrunk.aceducation.info:5061;user=phone> 
+                                                                              Call-ID: bcd8cfeabbd351d18d1f23b4460c8b93 
+                                                                              CSeq: 1 INVITE 
+                                                                              Server: GROUP-1-VESBC/v.7.20A.254.375 
+                                                                              Content-Length: 0 
+                                                                               
+                                                                               [Time:25-06@11:35:05.271]
+12:37:14.208  10.15.13.100  local0.notice  [S=300327] [SID=f4fbdf:155:10913]  (N   253124) SETUP_EV: (#1590)SIPSBCCallLeg -> (#360)SBCCall[NewCall->Initiated] 
+                                                                               -> (#1586)SBCEndPoint[NewCall->Initiated] 
+                                                                               -> (#793)SBCController[NewCall->Establishing] 
+                                                                               -> (#1587)SBCEndPoint[NewCall->Initiated] 
+                                                                               -> (#3468)CallPlacement[Idle->Initiated] 
+                                                                               -> (#359)SBCCall[NewCall->Initiated] 
+                                                                               -> (#1589)SIPSBCCallLeg [Time:25-06@11:35:05.272]
+12:37:14.208  10.15.13.100  local0.notice  [S=300328] [SID=f4fbdf:155:10913]  (N   253125) SIPSBCCallLeg(#1589) - Route by dest IPGroup: #2 [Time:25-06@11:35:05.272]
+12:37:14.208  10.15.13.100  local0.notice  [S=300329] [SID=f4fbdf:155:10913]  (N   253126) States: (#9313)AcSIPCall[Allocated] 
+                                                                               (#1589)SBCOfferAnswerMngr[Idle->Offering] [Time:25-06@11:35:05.272]
+12:37:14.209  10.15.13.100  local0.notice  [S=300330] [SID=f4fbdf:155:10913]  (N   253127) (#380)MediaStream[Allocated] (#380)MediaStream belongs to call #359 [Time:25-06@11:35:05.272]
+12:37:14.209  10.15.13.100  local0.notice  [S=300331] [SID=f4fbdf:155:10913]  (N   253128) SBCSDPDTMFFeature(index = 0) - DTMF transcoding is needed. [Time:25-06@11:35:05.272]
+12:37:14.209  10.15.13.100  local0.notice  [S=300332] [SID=f4fbdf:155:10913]  (N   253129) SBCSDPDTMFFeature (index = 0) - old state: Idle, new state: Wait_For_Answer_RFC [Time:25-06@11:35:05.272]
+12:37:14.209  10.15.13.100  local0.notice  [S=300333] [SID=f4fbdf:155:10913]  (N   253130) SBCSDPDTMFFeature(index = 1) - DTMF transcoding is needed. [Time:25-06@11:35:05.272]
+12:37:14.210  10.15.13.100  local0.notice  [S=300334] [SID=f4fbdf:155:10913]  (N   253131) SBCSDPDTMFFeature (index = 1) - old state: Idle, new state: Wait_For_Answer_RFC [Time:25-06@11:35:05.272]
+12:37:14.210  10.15.13.100  local0.notice  [S=300335] [SID=f4fbdf:155:10913]  (N   253132) SBCSDPSecurityFeature(index = 1, type = AUDIO, tag = -100) -  new state: Wait_For_Extend [Time:25-06@11:35:05.272]
+12:37:14.210  10.15.13.100  local0.notice  [S=300336] [SID=f4fbdf:155:10913]  (N   253133) MRC::AllocateMediaResources [Time:25-06@11:35:05.272]
+12:37:14.210  10.15.13.100  local0.notice  [S=300337] [SID=f4fbdf:155:10913]  (N   253134) ConnectionData::CalculateResourcesForExtTranscoding Leading:DSP Opposite:DSP MediationLevel:RTP [Time:25-06@11:35:05.272]
+12:37:14.211  10.15.13.100  local0.notice  [S=300338] [SID=f4fbdf:155:10913]  (N   253135) ResourceCounter: Media channel +1 [1/1022] [Time:25-06@11:35:05.276]
+12:37:14.211  10.15.13.100  local0.notice  [S=300339] [SID=f4fbdf:155:10913]  (N   253136) <(#360)>CID=-100 ChannelResource::AllocateResource DSP Allocated. Available count 1021 [Time:25-06@11:35:05.276]
+12:37:14.211  10.15.13.100  local0.notice  [S=300340] [SID=f4fbdf:155:10913]  (N   253137) ResourceCounter: Media channel +1 [2/1022] [Time:25-06@11:35:05.276]
+12:37:14.214  10.15.13.100  local0.notice  [S=300341] [SID=f4fbdf:155:10913]  (N   253138) <(#359)>CID=-100 ChannelResource::AllocateResource DSP Allocated. Available count 1020 [Time:25-06@11:35:05.276]
+12:37:14.214  10.15.13.100  local0.notice  [S=300342] [SID=f4fbdf:155:10913]  (N   253139) (#381)RTS::AllocateResource DSP already Allocated. [Time:25-06@11:35:05.280]
+12:37:14.214  10.15.13.100  local0.notice  [S=300343] [SID=f4fbdf:155:10913]  (N   253140) (#380)RTS::AllocateResource DSP already Allocated. [Time:25-06@11:35:05.280]
+12:37:14.214  10.15.13.100  local0.notice  [S=300344] [SID=f4fbdf:155:10913]  (N   253141) ConnectionData::CalculateResourcesForExtTranscoding Leading:DSP Opposite:DSP MediationLevel:RTP [Time:25-06@11:35:05.280]
+12:37:14.214  10.15.13.100  local0.notice  [S=300345] [SID=f4fbdf:155:10913]  (N   253142) (#381)RTS::AllocateResource DSP already Allocated. [Time:25-06@11:35:05.283]
+12:37:14.214  10.15.13.100  local0.notice  [S=300346] [SID=f4fbdf:155:10913]  (N   253143) (#380)RTS::AllocateResource DSP already Allocated. [Time:25-06@11:35:05.283]
+12:37:14.214  10.15.13.100  local0.notice  [S=300347] [SID=f4fbdf:155:10913]  (N   253144) (#381)RTS::AllocateResource DSP already Allocated. [Time:25-06@11:35:05.283]
+12:37:14.214  10.15.13.100  local0.notice  [S=300348] [SID=f4fbdf:155:10913]  (N   253145) (#380)RTS::AllocateResource DSP already Allocated. [Time:25-06@11:35:05.283]
+12:37:14.215  10.15.13.100  local0.notice  [S=300349] [SID=f4fbdf:155:10913]  (N   253146) SBCSDPSecurityFeature(index = 0, type = AUDIO, tag = -100) -  new state: Idle [Time:25-06@11:35:05.283]
+12:37:14.215  10.15.13.100  local0.notice  [S=300350] [SID=f4fbdf:155:10913]  (N   253147) SBCSDPANATFeature(index = 0, type = AUDIO, tag = -100) -  new state: Idle [Time:25-06@11:35:05.283]
+12:37:14.215  10.15.13.100  local0.notice  [S=300351] [SID=f4fbdf:155:10913]  (N   253148) SBCSDPDTMFFeature (index = 0) - old state: Wait_For_Answer_RFC, new state: Idle [Time:25-06@11:35:05.283]
+12:37:14.215  10.15.13.100  local0.notice  [S=300352] [SID=f4fbdf:155:10913]  (N   253149) SBCSDPSecurityFeature(index = 1, type = AUDIO, tag = -100) -  new state: Offer_Extended [Time:25-06@11:35:05.283]
+12:37:14.216  10.15.13.100  local0.notice  [S=300353] [SID=f4fbdf:155:10913]  (N   253150) AllocateAddress: Allocated address port 8130 IntIPv4 0 IntIPv6 -1 extension 1 [Time:25-06@11:35:05.283]
+12:37:14.216  10.15.13.100  local0.notice  [S=300354] [SID=f4fbdf:155:10913]  (N   253151) (#359)ChannelResource::AllocateMediaIpPorts RealmIndex(0) port(8130) Allocated. [Time:25-06@11:35:05.284]
+12:37:14.216  10.15.13.100  local0.notice  [S=300355] [SID=f4fbdf:155:10913]  (N   253152) AcSIPCall(#9313): Handling SETUP_REQ in state Idle [Time:25-06@11:35:05.284]
+12:37:14.216  10.15.13.100  local0.notice  [S=300356] [SID=f4fbdf:155:10913]  (N   253153) States: (#9313)AcSIPCall[Idle->Inviting] [Time:25-06@11:35:05.284]
+12:37:14.217  10.15.13.100  local0.notice  [S=300357] [SID=f4fbdf:155:10913]  (N   253154) [ManSet: 2, Rule: 1] - Executed (Condition was True) [Time:25-06@11:35:05.284]
+12:37:14.217  10.15.13.100  local0.notice  [S=300358] [SID=f4fbdf:155:10913]  (N   253155) UdpRtxMngr::Transmit 1 INVITE Rtx Left: 6 Dest: 10.15.30.83:5060, TU: AcSIPCall(#9313) [Time:25-06@11:35:05.285]
+12:37:14.217  10.15.13.100  local0.notice  [S=300359] [SID=f4fbdf:155:10913]  (N   253156) ---- Outgoing SIP Message to 10.15.30.83:5060 from SIPInterface #0 (ITSP) UDP TO(#0) ---- [Time:25-06@11:35:05.285]
+12:37:14.217  10.15.13.100  local0.notice  [S=300360] [SID=f4fbdf:155:10913]  INVITE sip:33336663101@tr-us-sbc3.audctrunk.aceducation.info;user=phone SIP/2.0 
+                                                                              Via: SIP/2.0/UDP 10.15.13.100:5060;branch=z9hG4bKac233818534 
+                                                                              Max-Forwards: 69 
+                                                                              From: tr-us-user3 <sip:999@sip.pstnhub.microsoft.com:5061;user=phone>;tag=1c1232080397 
+                                                                              To: <sip:33336663101@tr-us-sbc3.audctrunk.aceducation.info;user=phone> 
+                                                                              Call-ID: 640237173256202011355@10.15.13.100 
+                                                                              CSeq: 1 INVITE 
+                                                                              Contact: <sip:10.15.13.100:5060;x-i=5cc11d85-14d7-438f-a2a3-dfdcee2d6527;x-c=bcd8cfeabbd351d18d1f23b4460c8b93/d/8/a1868ffa9c8d443a9461e18cee291870> 
+                                                                              Supported: timer,sdp-anat 
+                                                                              Allow: INVITE,ACK,OPTIONS,CANCEL,BYE,NOTIFY 
+                                                                              Session-Expires: 3600 
+                                                                              MIN-SE: 300 
+                                                                              User-Agent: GROUP-1-VESBC/v.7.20A.254.375 
+                                                                              P-Asserted-Identity: <tel:+33336663005> 
+                                                                              P-Asserted-Identity: <sip:tr-us-user3@audio-code.net> 
+                                                                              Content-Type: application/sdp 
+                                                                              Content-Length: 612 
+                                                                               
+                                                                              v=0 
+                                                                              o=- 1719792717 223051632 IN IP4 10.15.13.100 
+                                                                              s=session 
+                                                                              c=IN IP4 10.15.13.100 
+                                                                              b=CT:10000000 
+                                                                              t=0 0 
+                                                                              m=audio 8130 RTP/AVP 104 117 9 103 111 18 0 8 97 118 101 13 
+                                                                              c=IN IP4 10.15.13.100 
+                                                                              a=rtcp:8131 
+                                                                              a=label:main-audio 
+                                                                              a=mid:2 
+                                                                              a=sendrecv 
+                                                                              a=rtpmap:104 SILK/16000 
+                                                                              a=rtpmap:117 G722/8000/2 
+                                                                              a=rtpmap:9 G722/8000 
+                                                                              a=rtpmap:103 SILK/8000 
+                                                                              a=rtpmap:111 SIREN/16000 
+                                                                              a=fmtp:111 bitrate=1 [Time:25-06@11:35:05.285]
+12:37:14.218  10.15.13.100  local0.notice  [S=300361] [SID=f4fbdf:155:10913]  6000 
+                                                                              a=rtpmap:18 G729/8000 
+                                                                              a=fmtp:18 annexb=no 
+                                                                              a=rtpmap:0 PCMU/8000 
+                                                                              a=rtpmap:8 PCMA/8000 
+                                                                              a=rtpmap:97 RED/8000 
+                                                                              a=rtpmap:101 telephone-event/8000 
+                                                                              a=fmtp:101 0-16 
+                                                                              a=rtpmap:13 CN/8000 
+                                                                              a=rtpmap:118 CN/16000 
+                                                                              a=ptime:20 
+                                                                               [Time:25-06@11:35:05.285]
+12:37:14.322  10.15.13.100  local0.notice  [S=300362] [SID=f4fbdf:155:10913]  (N   253157) ---- Incoming SIP Message from 10.15.30.83:5060 to SIPInterface #0 (ITSP) UDP TO(#0) ---- [Time:25-06@11:35:05.410]
+12:37:14.322  10.15.13.100  local0.notice  [S=300363] [SID=f4fbdf:155:10913]  SIP/2.0 100 Trying 
+                                                                              Via: SIP/2.0/UDP 10.15.13.100:5060;branch=z9hG4bKac233818534 
+                                                                              To: <sip:33336663101@tr-us-sbc3.audctrunk.aceducation.info;user=phone> 
+                                                                              From: tr-us-user3 <sip:999@sip.pstnhub.microsoft.com:5061;user=phone>;tag=1c1232080397 
+                                                                              Call-ID: 640237173256202011355@10.15.13.100 
+                                                                              CSeq: 1 INVITE 
+                                                                              Content-Length: 0 
+                                                                               
+                                                                               [Time:25-06@11:35:05.410]
+12:37:14.322  10.15.13.100  local0.notice  [S=300364] [SID=f4fbdf:155:10913]  (N   253158) UdpRtxMngr::Remove 1 INVITE, TU: AcSIPCall(#9313) [Time:25-06@11:35:05.410]
+12:37:14.323  10.15.13.100  local0.notice  [S=300365] [SID=f4fbdf:155:10913]  (N   253159) AcSIPCall(#9313): Handling 100 in state Inviting [Time:25-06@11:35:05.410]
+12:37:14.323  10.15.13.100  local0.notice  [S=300366] [SID=f4fbdf:155:10913]  (N   253160) States: (#9313)AcSIPCall[Inviting->Proceeding] [Time:25-06@11:35:05.410]
+12:37:14.509  10.15.13.100  local0.notice  [S=300367] [SID=f4fbdf:155:10913]  (N   253161) ---- Incoming SIP Message from 10.15.30.83:5060 to SIPInterface #0 (ITSP) UDP TO(#0) ---- [Time:25-06@11:35:05.596]
+12:37:14.510  10.15.13.100  local0.notice  [S=300368] [SID=f4fbdf:155:10913]  SIP/2.0 180 Ringing 
+                                                                              Via: SIP/2.0/UDP 10.15.13.100:5060;branch=z9hG4bKac233818534 
+                                                                              Contact: <sip:33336663101@10.15.30.83:5060>;+sip.instance="<urn:uuid:bfd77b28a9de40066d8b52ffcbdadc0cb356ec9f>" 
+                                                                              To: "IP-PBX"<sip:33336663101@tr-us-sbc3.audctrunk.aceducation.info;user=phone>;tag=633d1b68 
+                                                                              From: tr-us-user3 <sip:999@sip.pstnhub.microsoft.com:5061;user=phone>;tag=1c1232080397 
+                                                                              Call-ID: 640237173256202011355@10.15.13.100 
+                                                                              CSeq: 1 INVITE 
+                                                                              User-Agent: X-Lite release 4.8.2 stamp 76122 
+                                                                              Content-Length: 0 
+                                                                               
+                                                                               [Time:25-06@11:35:05.596]
+12:37:14.510  10.15.13.100  local0.notice  [S=300369] [SID=f4fbdf:155:10913]  (N   253162) AcSIPCall(#9313): Handling 180 in state Proceeding [Time:25-06@11:35:05.596]
+12:37:14.510  10.15.13.100  local0.notice  [S=300370] [SID=f4fbdf:155:10913]  (N   253163) SBCAlertData: (#1589)AcSBCCallAPI -> (#1589)SIPSBCCallLeg [Time:25-06@11:35:05.596]
+12:37:14.511  10.15.13.100  local0.notice  [S=300371] [SID=f4fbdf:155:10913]  (N   253164) ALERT_EV: (#1589)SIPSBCCallLeg -> (#359)SBCCall[Initiated->Alerting] 
+                                                                               -> (#3468)CallPlacement 
+                                                                               -> (#1587)SBCEndPoint 
+                                                                               -> (#793)SBCController 
+                                                                               -> (#1586)SBCEndPoint 
+                                                                               -> (#360)SBCCall[Initiated->Alerting] 
+                                                                               -> (#1590)SIPSBCCallLeg [Time:25-06@11:35:05.596]
+12:37:14.511  10.15.13.100  local0.notice  [S=300372] [SID=f4fbdf:155:10913]  (N   253165) AcSIPCall(#9314): Handling ALERT_REQ in state Invited [Time:25-06@11:35:05.596]
+12:37:14.511  10.15.13.100  local0.notice  [S=300373] [SID=f4fbdf:155:10913]  (N   253166) ---- Outgoing SIP Message to 52.114.132.46:4096 from SIPInterface #1 (Teams) TLS TO(#2208) SocketID(4046) ---- [Time:25-06@11:35:05.597]
+12:37:14.511  10.15.13.100  local0.notice  [S=300374] [SID=f4fbdf:155:10913]  SIP/2.0 180 Ringing 
+                                                                              Via: SIP/2.0/TLS 52.114.132.46:5061;branch=z9hG4bKc4c65154 
+                                                                              From: tr-us-user3 <sip:+33336663005@sip.pstnhub.microsoft.com:5061;user=phone>;tag=08b881f3f0d04f38921e7ba70adba9e8 
+                                                                              To: <sip:+33336663101@tr-us-sbc3.audctrunk.aceducation.info:5061;user=phone>;tag=633d1b68 
+                                                                              Call-ID: bcd8cfeabbd351d18d1f23b4460c8b93 
+                                                                              CSeq: 1 INVITE 
+                                                                              Contact: <sip:33336663101@tr-us-sbc3.audctrunk.aceducation.info:5061;transport=tls>;+sip.instance="<urn:uuid:bfd77b28a9de40066d8b52ffcbdadc0cb356ec9f>" 
+                                                                              Record-Route: <sip:sip-du-a-us.pstnhub.microsoft.com:5061;transport=tls;lr> 
+                                                                              Server: GROUP-1-VESBC/v.7.20A.254.375 
+                                                                              Content-Length: 0 
+                                                                               
+                                                                               [Time:25-06@11:35:05.597]
+12:37:21.366  10.15.13.100  local0.notice  [S=300375] [SID=f4fbdf:155:10914]  (N   253167) (#1462)gwSession[Allocated]. Handle:00007F00BBFEBD80; Global session ID: 5614be06bd8f1548 [Time:25-06@11:35:12.453]
+12:37:21.367  10.15.13.100  local0.notice  [S=300376] [SID=f4fbdf:155:10914]  (N   253168) SIPAppMngr::ClassifyByProxySet - Message was classified by ProxySet 0 to IPGroup 0 [Time:25-06@11:35:12.453]
+12:37:21.367  10.15.13.100  local0.notice  [S=300377] [SID=f4fbdf:155:10914]  (N   253169) Classification Succeeded - Source IP Group #0 (ITSP) [Time:25-06@11:35:12.453]
+12:37:21.367  10.15.13.100  local0.notice  [S=300378] [SID=f4fbdf:155:10914]  (N   253170) SBC Internal Action::Execute, Type = 1 Value = 200 [Time:25-06@11:35:12.453]
+12:37:21.367  10.15.13.100  local0.notice  [S=300379] [SID=f4fbdf:155:10914]  (N   253171) (#814)Route found (0), Route by Internal [Time:25-06@11:35:12.454]
+12:37:21.367  10.15.13.100  local0.notice  [S=300380] [SID=f4fbdf:155:10914]  (N   253172) States: (#814)SBCRoutesIterator[Deallocated] [Time:25-06@11:35:12.454]
+12:37:21.368  10.15.13.100  local0.notice  [S=300381] [SID=f4fbdf:155:10914]  (N   253173) ---- Incoming SIP Message from 10.15.10.20:5068 to SIPInterface #0 (ITSP) TCP TO(#2620) SocketID(3634) ---- [Time:25-06@11:35:12.454]
+12:37:21.368  10.15.13.100  local0.notice  [S=300382] [SID=f4fbdf:155:10914]  OPTIONS sip:10.15.10.20 SIP/2.0 
+                                                                              Via: SIP/2.0/TCP 10.15.10.20:5068;alias;branch=z9hG4bKac1341745659 
+                                                                              Max-Forwards: 70 
+                                                                              From: <sip:10.15.10.20>;tag=1c1334658103 
+                                                                              To: <sip:10.15.10.20> 
+                                                                              Call-ID: 6462699362562020163536@10.15.10.20 
+                                                                              CSeq: 1 OPTIONS 
+                                                                              Contact: <sip:10.15.10.20:5068;transport=tcp> 
+                                                                              Allow: REGISTER,OPTIONS,INVITE,ACK,CANCEL,BYE,NOTIFY,PRACK,REFER,INFO,SUBSCRIBE,UPDATE 
+                                                                              User-Agent: VMWare vSBC/v.7.20A.254.202 
+                                                                              Accept: application/sdp, application/simple-message-summary, message/sipfrag 
+                                                                              Content-Length: 0 
+                                                                               
+                                                                               [Time:25-06@11:35:12.454]
+12:37:21.368  10.15.13.100  local0.notice  [S=300383] [SID=f4fbdf:155:10914]  (N   253174) RequestTerminationEvent: (#0) -> (#0)MessageRejectionMngr [Time:25-06@11:35:12.454]
+12:37:21.369  10.15.13.100  local0.notice  [S=300384] [SID=f4fbdf:155:10914]  (N   253175) [ManSet: 2, Rule: 2] - Executed (Condition was False) [Time:25-06@11:35:12.454]
+12:37:21.369  10.15.13.100  local0.notice  [S=300385] [SID=f4fbdf:155:10914]  (N   253176) ---- Outgoing SIP Message to 10.15.10.20:5068 from SIPInterface #0 (ITSP) TCP TO(#0) SocketID(3634) ---- [Time:25-06@11:35:12.454]
+12:37:21.369  10.15.13.100  local0.notice  [S=300386] [SID=f4fbdf:155:10914]  SIP/2.0 200 OK 
+                                                                              Via: SIP/2.0/TCP 10.15.10.20:5068;alias;branch=z9hG4bKac1341745659 
+                                                                              From: <sip:10.15.10.20>;tag=1c1334658103 
+                                                                              To: <sip:10.15.10.20>;tag=1c878266233 
+                                                                              Call-ID: 6462699362562020163536@10.15.10.20 
+                                                                              CSeq: 1 OPTIONS 
+                                                                              Content-Length: 0 
+                                                                               
+                                                                               [Time:25-06@11:35:12.454]
+12:37:21.370  10.15.13.100  local0.notice  [S=300387] [SID=f4fbdf:155:10914]  (N   253177) (#1462)gwSession[Deallocated] [Time:25-06@11:35:12.454]
+12:37:24.048  10.15.13.100  local0.notice  [S=300388] [SID=f4fbdf:155:10915]  (N   253178) (#1461)gwSession[Allocated]. Handle:00007F00BBFEBDA8; Global session ID: 3a00334d391d51e9 [Time:25-06@11:35:15.135]
+12:37:24.048  10.15.13.100  local0.notice  [S=300389] [SID=f4fbdf:155:10915]  (N   253179) SIPEntity::PrepareConfigurationData: Setting persistent connection to proxy: 52.114.76.76:5061  [Time:25-06@11:35:15.135]
+12:37:24.049  10.15.13.100  local0.notice  [S=300390] [SID=f4fbdf:155:10915]  (N   253180) States: (#9312)AcSIPDialog[Allocated] [Time:25-06@11:35:15.135]
+12:37:24.049  10.15.13.100  local0.notice  [S=300391] [SID=f4fbdf:155:10915]  (N   253181) AcSIPDialog(#9312): Handling DIALOG_INIT_REQ in state DialogIdle [Time:25-06@11:35:15.135]
+12:37:24.049  10.15.13.100  local0.notice  [S=300392] [SID=f4fbdf:155:10915]  (N   253182) States: (#9312)AcSIPDialog[DialogIdle->DialogInitiated] [Time:25-06@11:35:15.135]
+12:37:24.050  10.15.13.100  local0.notice  [S=300393] [SID=f4fbdf:155:10915]  (N   253183) AcSIPDialog(#9312): Handling GENERAL_REQ in state DialogInitiated [Time:25-06@11:35:15.135]
+12:37:24.050  10.15.13.100  local0.notice  [S=300394] [SID=f4fbdf:155:10915]  (N   253184) ---- Outgoing SIP Message to 52.114.76.76:5061 from SIPInterface #1 (Teams) TLS TO(#2625) SocketID(3629) ---- [Time:25-06@11:35:15.136]
+12:37:24.050  10.15.13.100  local0.notice  [S=300395] [SID=f4fbdf:155:10915]  OPTIONS sip:173.227.253.94 SIP/2.0 
+                                                                              Via: SIP/2.0/TLS tr-us-sbc3.audctrunk.aceducation.info:5061;alias;branch=z9hG4bKac587544982 
+                                                                              Max-Forwards: 70 
+                                                                              From: <sip:173.227.253.94>;tag=1c1188329813 
+                                                                              To: <sip:173.227.253.94> 
+                                                                              Call-ID: 769670292562020113515@tr-us-sbc3.audctrunk.aceducation.info 
+                                                                              CSeq: 1 OPTIONS 
+                                                                              Contact: <sip:tr-us-sbc3.audctrunk.aceducation.info:5061;transport=tls> 
+                                                                              Allow: REGISTER,OPTIONS,INVITE,ACK,CANCEL,BYE,NOTIFY,PRACK,REFER,INFO,SUBSCRIBE,UPDATE 
+                                                                              User-Agent: GROUP-1-VESBC/v.7.20A.254.375 
+                                                                              Accept: application/sdp, application/simple-message-summary, message/sipfrag 
+                                                                              Content-Length: 0 
+                                                                               
+                                                                               [Time:25-06@11:35:15.136]
+12:37:24.145  10.15.13.100  local0.notice  [S=300396] [SID=f4fbdf:155:10915]  (N   253185) ---- Incoming SIP Message from 52.114.76.76:5061 to SIPInterface #1 (Teams) TLS TO(#2625) SocketID(3629) ---- [Time:25-06@11:35:15.231]
+12:37:24.145  10.15.13.100  local0.notice  [S=300397] [SID=f4fbdf:155:10915]  SIP/2.0 200 OK 
+                                                                              FROM: <sip:173.227.253.94>;tag=1c1188329813 
+                                                                              TO: <sip:173.227.253.94> 
+                                                                              CSEQ: 1 OPTIONS 
+                                                                              CALL-ID: 769670292562020113515@tr-us-sbc3.audctrunk.aceducation.info 
+                                                                              VIA: SIP/2.0/TLS tr-us-sbc3.audctrunk.aceducation.info:5061;branch=z9hG4bKac587544982 
+                                                                              CONTENT-LENGTH: 0 
+                                                                              ALLOW: INVITE,ACK,OPTIONS,CANCEL,BYE,NOTIFY 
+                                                                              SERVER: Microsoft.PSTNHub.SIPProxy v.2020.5.27.2 i.EUNO.4 
+                                                                               
+                                                                               [Time:25-06@11:35:15.231]
+12:37:24.145  10.15.13.100  local0.notice  [S=300398] [SID=f4fbdf:155:10915]  (N   253186) AcSIPDialog(#9312): Handling 200 OK in state DialogInitiated [Time:25-06@11:35:15.231]
+12:37:24.146  10.15.13.100  local0.notice  [S=300399] [SID=f4fbdf:155:10915]  (N   253187) States: (#9312)AcSIPDialog[DialogInitiated->DialogConnected] [Time:25-06@11:35:15.231]
+12:37:24.146  10.15.13.100  local0.notice  [S=300400] [SID=f4fbdf:155:10915]  (N   253188) SIPServersMngr::UpdateSetWithOnlineServer - Added server 52.114.76.76 to working servers list [Time:25-06@11:35:15.231]
+12:37:24.146  10.15.13.100  local0.notice  [S=300401] [SID=f4fbdf:155:10915]  (N   253189) AcSIPDialog(#9312): Handling DIALOG_DISCONNECT_REQ in state DialogConnected [Time:25-06@11:35:15.232]
+12:37:24.146  10.15.13.100  local0.notice  [S=300402] [SID=f4fbdf:155:10915]  (N   253190) States: (#9312)AcSIPDialog[DialogConnected->DialogDisconnected] [Time:25-06@11:35:15.232]
+12:37:24.146  10.15.13.100  local0.notice  [S=300403] [SID=f4fbdf:155:10915]  (N   253191) SIPAppMngr::FreeDialogAPI - (#1602) [Time:25-06@11:35:15.232]
+12:37:24.147  10.15.13.100  local0.notice  [S=300404] [SID=f4fbdf:155:10915]  (N   253192) States: (#9312)AcSIPDialog[Deallocated] 
+                                                                               (#9312)AcSIPDialog[DialogDisconnected->DialogIdle] [Time:25-06@11:35:15.232]
+12:37:24.147  10.15.13.100  local0.notice  [S=300405] [SID=f4fbdf:155:10915]  (N   253193) (#1461)gwSession[Deallocated] [Time:25-06@11:35:15.232]
+12:37:24.147  10.15.13.100  local0.notice  [S=300406] [SID=f4fbdf:155:10916]  (N   253194) (#1460)gwSession[Allocated]. Handle:00007F00BBFEBDD0; Global session ID: b13b3dc228a231d5 [Time:25-06@11:35:15.233]
+12:37:24.148  10.15.13.100  local0.notice  [S=300407] [SID=f4fbdf:155:10916]  (N   253195) Condition Table matched on condition Index 0 [Time:25-06@11:35:15.233]
+12:37:24.148  10.15.13.100  local0.notice  [S=300408] [SID=f4fbdf:155:10916]  (N   253196) Classification Succeeded - Source IP Group #1 (Teams) [Time:25-06@11:35:15.233]
+12:37:24.148  10.15.13.100  local0.notice  [S=300409] [SID=f4fbdf:155:10916]  (N   253197) SBC Internal Action::Execute, Type = 1 Value = 200 [Time:25-06@11:35:15.233]
+12:37:24.148  10.15.13.100  local0.notice  [S=300410] [SID=f4fbdf:155:10916]  (N   253198) (#813)Route found (0), Route by Internal [Time:25-06@11:35:15.233]
+12:37:24.149  10.15.13.100  local0.notice  [S=300411] [SID=f4fbdf:155:10916]  (N   253199) States: (#813)SBCRoutesIterator[Deallocated] [Time:25-06@11:35:15.233]
+12:37:24.149  10.15.13.100  local0.notice  [S=300412] [SID=f4fbdf:155:10916]  (N   253200) ---- Incoming SIP Message from 52.114.76.76:1281 to SIPInterface #1 (Teams) TLS TO(#2221) SocketID(4034) ---- [Time:25-06@11:35:15.233]
+12:37:24.149  10.15.13.100  local0.notice  [S=300413] [SID=f4fbdf:155:10916]  OPTIONS sip:tr-us-sbc3.audctrunk.aceducation.info:5061;transport=tls SIP/2.0 
+                                                                              FROM: <sip:sip-du-a-eu.pstnhub.microsoft.com:5061>;tag=ff68f1d8-a978-4391-8895-1370e9e6d16d 
+                                                                              TO: <sip:173.227.253.94> 
+                                                                              CSEQ: 1 OPTIONS 
+                                                                              CALL-ID: cb17acf6-180b-494e-8f9d-24d6f9189f2b 
+                                                                              MAX-FORWARDS: 70 
+                                                                              VIA: SIP/2.0/TLS 52.114.76.76:5061;branch=z9hG4bKbe611fbf 
+                                                                              CONTACT: <sip:sip-du-a-eu.pstnhub.microsoft.com:5061> 
+                                                                              CONTENT-LENGTH: 0 
+                                                                              USER-AGENT: Microsoft.PSTNHub.SIPProxy v.2020.5.27.2 i.EUNO.4 
+                                                                              ALLOW: INVITE,ACK,OPTIONS,CANCEL,BYE,NOTIFY 
+                                                                               
+                                                                               [Time:25-06@11:35:15.233]
+12:37:24.149  10.15.13.100  local0.notice  [S=300414] [SID=f4fbdf:155:10916]  (N   253201) RequestTerminationEvent: (#0) -> (#0)MessageRejectionMngr [Time:25-06@11:35:15.233]
+12:37:24.149  10.15.13.100  local0.notice  [S=300415] [SID=f4fbdf:155:10916]  (N   253202) ---- Outgoing SIP Message to 52.114.76.76:1281 from SIPInterface #1 (Teams) TLS TO(#0) SocketID(4034) ---- [Time:25-06@11:35:15.233]
+12:37:24.150  10.15.13.100  local0.notice  [S=300416] [SID=f4fbdf:155:10916]  SIP/2.0 200 OK 
+                                                                              Via: SIP/2.0/TLS 52.114.76.76:5061;branch=z9hG4bKbe611fbf 
+                                                                              From: <sip:sip-du-a-eu.pstnhub.microsoft.com:5061>;tag=ff68f1d8-a978-4391-8895-1370e9e6d16d 
+                                                                              To: <sip:173.227.253.94>;tag=1c527518125 
+                                                                              Call-ID: cb17acf6-180b-494e-8f9d-24d6f9189f2b 
+                                                                              CSeq: 1 OPTIONS 
+                                                                              Content-Length: 0 
+                                                                               
+                                                                               [Time:25-06@11:35:15.233]
+12:37:24.159  10.15.13.100  local0.notice  [S=300417] [SID=f4fbdf:155:10916]  (N   253203) (#1460)gwSession[Deallocated] [Time:25-06@11:35:15.249]
+12:37:24.313  10.15.13.100  local0.notice  [S=300418] [SID=f4fbdf:155:10913]  (N   253204) ---- Incoming SIP Message from 10.15.30.83:5060 to SIPInterface #0 (ITSP) UDP TO(#0) ---- [Time:25-06@11:35:15.388]
+12:37:24.313  10.15.13.100  local0.notice  [S=300419] [SID=f4fbdf:155:10913]  SIP/2.0 486 Busy Here 
+                                                                              Via: SIP/2.0/UDP 10.15.13.100:5060;branch=z9hG4bKac233818534 
+                                                                              To: <sip:33336663101@tr-us-sbc3.audctrunk.aceducation.info;user=phone>;tag=633d1b68 
+                                                                              From: tr-us-user3 <sip:999@sip.pstnhub.microsoft.com:5061;user=phone>;tag=1c1232080397 
+                                                                              Call-ID: 640237173256202011355@10.15.13.100 
+                                                                              CSeq: 1 INVITE 
+                                                                              User-Agent: X-Lite release 4.8.2 stamp 76122 
+                                                                              Content-Length: 0 
+                                                                               
+                                                                               [Time:25-06@11:35:15.388]
+12:37:24.314  10.15.13.100  local0.notice  [S=300420] [SID=f4fbdf:155:10913]  (N   253205) AcSIPCall(#9313): Handling 486 in state Proceeding [Time:25-06@11:35:15.388]
+12:37:24.314  10.15.13.100  local0.notice  [S=300421] [SID=f4fbdf:155:10913]  (N   253206) ---- Outgoing SIP Message to 10.15.30.83:5060 from SIPInterface #0 (ITSP) UDP TO(#0) ---- [Time:25-06@11:35:15.388]
+12:37:24.314  10.15.13.100  local0.notice  [S=300422] [SID=f4fbdf:155:10913]  ACK sip:33336663101@tr-us-sbc3.audctrunk.aceducation.info;user=phone SIP/2.0 
+                                                                              Via: SIP/2.0/UDP 10.15.13.100:5060;branch=z9hG4bKac233818534 
+                                                                              Max-Forwards: 70 
+                                                                              From: tr-us-user3 <sip:999@sip.pstnhub.microsoft.com:5061;user=phone>;tag=1c1232080397 
+                                                                              To: <sip:33336663101@tr-us-sbc3.audctrunk.aceducation.info;user=phone>;tag=633d1b68 
+                                                                              Call-ID: 640237173256202011355@10.15.13.100 
+                                                                              CSeq: 1 ACK 
+                                                                              Contact: <sip:10.15.13.100:5060> 
+                                                                              User-Agent: GROUP-1-VESBC/v.7.20A.254.375 
+                                                                              Content-Length: 0 
+                                                                               
+                                                                               [Time:25-06@11:35:15.389]
+12:37:24.314  10.15.13.100  local0.notice  [S=300423] [SID=f4fbdf:155:10913]  (N   253207) States: (#9313)AcSIPCall[Proceeding->Disconnected] [Time:25-06@11:35:15.389]
+12:37:24.315  10.15.13.100  local0.notice  [S=300424] [SID=f4fbdf:155:10913]  (N   253208) SBCDisconnectData: (#1589)AcSBCCallAPI -> (#1589)SIPSBCCallLeg [Time:25-06@11:35:15.389]
+12:37:24.315  10.15.13.100  local0.notice  [S=300425] [SID=f4fbdf:155:10913]  (N   253209) RELEASE_EV: (#1589)SIPSBCCallLeg -> (#359)SBCCall[Alerting->Disconnecting] 
+                                                                               -> (#3468)CallPlacement [Time:25-06@11:35:15.389]
+12:37:24.315  10.15.13.100  local0.notice  [S=300426] [SID=f4fbdf:155:10913]  (N   253210) SBC_ADMIT_DIALOGS_EV: (#815)SBCRoutesIterator -> (#0)SBCAdmissionControlMngr [Time:25-06@11:35:15.389]
+12:37:24.315  10.15.13.100  local0.notice  [S=300427] [SID=f4fbdf:155:10913]  (N   253211) CAC: Add SBC Outgoing INVITE, IPG 0 (ITSP): 1, SRD 0 (DefaultSRD): 2, SipIF 0 (ITSP): 2 [Time:25-06@11:35:15.389]
+12:37:24.315  10.15.13.100  local0.notice  [S=300428] [SID=f4fbdf:155:10913]  (N   253212) ResourceCounter: SBC leg +1 [3/260] [Time:25-06@11:35:15.389]
+12:37:24.316  10.15.13.100  local0.notice  [S=300429] [SID=f4fbdf:155:10913]  (N   253213) (#815)Route found (3), Route by IPGroup, IP Group 1 -> 0 (Teams -> ITSP) [Time:25-06@11:35:15.389]
+12:37:24.316  10.15.13.100  local0.notice  [S=300430] [SID=f4fbdf:155:10913]  (N   253214) Routing Succeeded -IP2IPRouting Rule #3 [Time:25-06@11:35:15.389]
+12:37:24.316  10.15.13.100  local0.notice  [S=300431] [SID=f4fbdf:155:10913]  (N   253215) SBC_ROUTING_DONE_EV: (#815)SBCRoutesIterator -> (#3468)CallPlacement [Time:25-06@11:35:15.390]
+12:37:24.317  10.15.13.100  local0.notice  [S=300432] [SID=f4fbdf:155:10913]  (N   253216) NEW_CALL_EV: (#3468)CallPlacement -> (#358)SBCCall[Idle->NewCall] [Time:25-06@11:35:15.390]
+12:37:24.317  10.15.13.100  local0.notice  [S=300433] [SID=f4fbdf:155:10913]  (N   253217) (#358)SBCCall: Profiled<Tel=-1,Ip=1 (ITSP)>: MSBeh=2 Rmt3xx=2 RmtRB=3 RmtRepB=1 [Time:25-06@11:35:15.390]
+12:37:24.317  10.15.13.100  local0.notice  [S=300434] [SID=f4fbdf:155:10913]  (N   253218) NEW_CALL_EV: (#358)SBCCall -> (#1588)SIPSBCCallLeg [Time:25-06@11:35:15.390]
+12:37:24.329  10.15.13.100  local0.notice  [S=300435] [SID=f4fbdf:155:10913]  (N   253219) SETUP_EV: (#3468)CallPlacement -> (#358)SBCCall[NewCall->Initiated] 
+                                                                               -> (#1588)SIPSBCCallLeg [Time:25-06@11:35:15.390]
+12:37:24.329  10.15.13.100  local0.notice  [S=300436] [SID=f4fbdf:155:10913]  (N   253220) SIPSBCCallLeg(#1588) - Route by dest IPGroup: #0 [Time:25-06@11:35:15.390]
+12:37:24.329  10.15.13.100  local0.notice  [S=300437] [SID=f4fbdf:155:10913]  (N   253221) SIPSBCCallLeg(#1588) RouteByDestIPGroup: Setting persistent connection to proxy: 10.15.10.20:5068 [Time:25-06@11:35:15.390]
+12:37:24.329  10.15.13.100  local0.notice  [S=300438] [SID=f4fbdf:155:10913]  (N   253222) States: (#9311)AcSIPCall[Allocated] 
+                                                                               (#1588)SBCOfferAnswerMngr[Idle->Offering] [Time:25-06@11:35:15.390]
+12:37:24.329  10.15.13.100  local0.notice  [S=300439] [SID=f4fbdf:155:10913]  (N   253223) (#379)MediaStream[Allocated] (#379)MediaStream belongs to call #358 [Time:25-06@11:35:15.390]
+12:37:24.329  10.15.13.100  local0.notice  [S=300440] [SID=f4fbdf:155:10913]  (N   253224) SBCSDPDTMFFeature(index = 0) - DTMF transcoding is needed. [Time:25-06@11:35:15.391]
+12:37:24.329  10.15.13.100  local0.notice  [S=300441] [SID=f4fbdf:155:10913]  (N   253225) SBCSDPDTMFFeature (index = 0) - old state: Idle, new state: Wait_For_Answer_RFC [Time:25-06@11:35:15.391]
+12:37:24.329  10.15.13.100  local0.notice  [S=300442] [SID=f4fbdf:155:10913]  (N   253226) SBCSDPDTMFFeature(index = 1) - DTMF transcoding is needed. [Time:25-06@11:35:15.391]
+12:37:24.329  10.15.13.100  local0.notice  [S=300443] [SID=f4fbdf:155:10913]  (N   253227) SBCSDPDTMFFeature (index = 1) - old state: Idle, new state: Wait_For_Answer_RFC [Time:25-06@11:35:15.391]
+12:37:24.329  10.15.13.100  local0.notice  [S=300444] [SID=f4fbdf:155:10913]  (N   253228) SBCSDPSecurityFeature(index = 1, type = AUDIO, tag = -100) -  new state: Wait_For_Extend [Time:25-06@11:35:15.391]
+12:37:24.329  10.15.13.100  local0.notice  [S=300445] [SID=f4fbdf:155:10913]  (N   253229) MRC::AllocateMediaResources [Time:25-06@11:35:15.391]
+12:37:24.329  10.15.13.100  local0.notice  [S=300446] [SID=f4fbdf:155:10913]  (N   253230) ConnectionData::CalculateResourcesForExtTranscoding Leading:DSP Opposite:DSP MediationLevel:RTP [Time:25-06@11:35:15.391]
+12:37:24.329  10.15.13.100  local0.notice  [S=300447] [SID=f4fbdf:155:10913]  (N   253231) (#381)RTS::AllocateResource DSP already Allocated. [Time:25-06@11:35:15.394]
+12:37:24.329  10.15.13.100  local0.notice  [S=300448] [SID=f4fbdf:155:10913]  (N   253232) ResourceCounter: Media channel +1 [3/1022] [Time:25-06@11:35:15.394]
+12:37:24.329  10.15.13.100  local0.notice  [S=300449] [SID=f4fbdf:155:10913]  (N   253233) <(#358)>CID=-100 ChannelResource::AllocateResource DSP Allocated. Available count 1019 [Time:25-06@11:35:15.394]
+12:37:24.329  10.15.13.100  local0.notice  [S=300450] [SID=f4fbdf:155:10913]  (N   253234) (#381)RTS::AllocateResource DSP already Allocated. [Time:25-06@11:35:15.397]
+12:37:24.329  10.15.13.100  local0.notice  [S=300451] [SID=f4fbdf:155:10913]  (N   253235) (#379)RTS::AllocateResource DSP already Allocated. [Time:25-06@11:35:15.397]
+12:37:24.329  10.15.13.100  local0.notice  [S=300452] [SID=f4fbdf:155:10913]  (N   253236) ConnectionData::CalculateResourcesForExtTranscoding Leading:DSP Opposite:DSP MediationLevel:RTP [Time:25-06@11:35:15.397]
+12:37:24.329  10.15.13.100  local0.notice  [S=300453] [SID=f4fbdf:155:10913]  (N   253237) (#381)RTS::AllocateResource DSP already Allocated. [Time:25-06@11:35:15.400]
+12:37:24.329  10.15.13.100  local0.notice  [S=300454] [SID=f4fbdf:155:10913]  (N   253238) (#379)RTS::AllocateResource DSP already Allocated. [Time:25-06@11:35:15.400]
+12:37:24.329  10.15.13.100  local0.notice  [S=300455] [SID=f4fbdf:155:10913]  (N   253239) (#381)RTS::AllocateResource DSP already Allocated. [Time:25-06@11:35:15.400]
+12:37:24.329  10.15.13.100  local0.notice  [S=300456] [SID=f4fbdf:155:10913]  (N   253240) (#379)RTS::AllocateResource DSP already Allocated. [Time:25-06@11:35:15.400]
+12:37:24.329  10.15.13.100  local0.notice  [S=300457] [SID=f4fbdf:155:10913]  (N   253241) SBCSDPSecurityFeature(index = 0, type = AUDIO, tag = -100) -  new state: Idle [Time:25-06@11:35:15.400]
+12:37:24.329  10.15.13.100  local0.notice  [S=300458] [SID=f4fbdf:155:10913]  (N   253242) SBCSDPANATFeature(index = 0, type = AUDIO, tag = -100) -  new state: Idle [Time:25-06@11:35:15.400]
+12:37:24.329  10.15.13.100  local0.notice  [S=300459] [SID=f4fbdf:155:10913]  (N   253243) SBCSDPDTMFFeature (index = 0) - old state: Wait_For_Answer_RFC, new state: Idle [Time:25-06@11:35:15.400]
+12:37:24.329  10.15.13.100  local0.notice  [S=300460] [SID=f4fbdf:155:10913]  (N   253244) SBCSDPSecurityFeature(index = 1, type = AUDIO, tag = -100) -  new state: Offer_Extended [Time:25-06@11:35:15.400]
+12:37:24.329  10.15.13.100  local0.notice  [S=300461] [SID=f4fbdf:155:10913]  (N   253245) AllocateAddress: Allocated address port 8140 IntIPv4 0 IntIPv6 -1 extension 1 [Time:25-06@11:35:15.400]
+12:37:24.329  10.15.13.100  local0.notice  [S=300462] [SID=f4fbdf:155:10913]  (N   253246) (#358)ChannelResource::AllocateMediaIpPorts RealmIndex(0) port(8140) Allocated. [Time:25-06@11:35:15.400]
+12:37:24.329  10.15.13.100  local0.notice  [S=300463] [SID=f4fbdf:155:10913]  (N   253247) AcSIPCall(#9311): Handling SETUP_REQ in state Idle [Time:25-06@11:35:15.400]
+12:37:24.329  10.15.13.100  local0.notice  [S=300464] [SID=f4fbdf:155:10913]  (N   253248) States: (#9311)AcSIPCall[Idle->Inviting] [Time:25-06@11:35:15.401]
+12:37:24.329  10.15.13.100  local0.notice  [S=300465] [SID=f4fbdf:155:10913]  (N   253249) [ManSet: 2, Rule: 1] - Executed (Condition was True) [Time:25-06@11:35:15.401]
+12:37:24.329  10.15.13.100  local0.notice  [S=300466] [SID=f4fbdf:155:10913]  (N   253250) ---- Outgoing SIP Message to 10.15.10.20:5068 from SIPInterface #0 (ITSP) TCP TO(#2620) SocketID(3634) ---- [Time:25-06@11:35:15.401]
+12:37:24.329  10.15.13.100  local0.notice  [S=300467] [SID=f4fbdf:155:10913]  INVITE sip:33336663101@tr-us-sbc3.audctrunk.aceducation.info;user=phone SIP/2.0 
+                                                                              Via: SIP/2.0/TCP 10.15.13.100:5068;alias;branch=z9hG4bKac1745012253 
+                                                                              Max-Forwards: 69 
+                                                                              From: tr-us-user3 <sip:999@sip.pstnhub.microsoft.com:5061;user=phone>;tag=1c48010101 
+                                                                              To: <sip:33336663101@tr-us-sbc3.audctrunk.aceducation.info;user=phone> 
+                                                                              Call-ID: 19339540082562020113515@10.15.13.100 
+                                                                              CSeq: 1 INVITE 
+                                                                              Contact: <sip:10.15.13.100:5068;transport=tcp;x-i=5cc11d85-14d7-438f-a2a3-dfdcee2d6527;x-c=bcd8cfeabbd351d18d1f23b4460c8b93/d/8/a1868ffa9c8d443a9461e18cee291870> 
+                                                                              Supported: timer,sdp-anat 
+                                                                              Allow: INVITE,ACK,OPTIONS,CANCEL,BYE,NOTIFY 
+                                                                              Session-Expires: 3600 
+                                                                              MIN-SE: 300 
+                                                                              User-Agent: GROUP-1-VESBC/v.7.20A.254.375 
+                                                                              P-Asserted-Identity: <tel:+33336663005> 
+                                                                              P-Asserted-Identity: <sip:tr-us-user3@audio-code.net> 
+                                                                              Content-Type: application/sdp 
+                                                                              Content-Length: 611 
+                                                                               
+                                                                              v=0 
+                                                                              o=- 780630094 884218789 IN IP4 10.15.13.100 
+                                                                              s=session 
+                                                                              c=IN IP4 10.15.13.100 
+                                                                              b=CT:10000000 
+                                                                              t=0 0 
+                                                                              m=audio 8140 RTP/AVP 104 117 9 103 111 18 0 8 97 118 101 13 
+                                                                              c=IN IP4 10.15.13.100 
+                                                                              a=rtcp:8141 
+                                                                              a=label:main-audio 
+                                                                              a=mid:2 
+                                                                              a=sendrecv 
+                                                                              a=rtpmap:104 SILK/16000 
+                                                                              a=rtpmap:117 G722/8000/2 
+                                                                              a=rtpmap:9 G722/8000 
+                                                                              a=rtpmap:103 SILK/8000 
+                                                                              a=rtpmap:111 SIREN/16000 
+                                                                               [Time:25-06@11:35:15.401]
+12:37:24.329  10.15.13.100  local0.notice  [S=300468] [SID=f4fbdf:155:10913]  a=fmtp:111 bitrate=16000 
+                                                                              a=rtpmap:18 G729/8000 
+                                                                              a=fmtp:18 annexb=no 
+                                                                              a=rtpmap:0 PCMU/8000 
+                                                                              a=rtpmap:8 PCMA/8000 
+                                                                              a=rtpmap:97 RED/8000 
+                                                                              a=rtpmap:101 telephone-event/8000 
+                                                                              a=fmtp:101 0-16 
+                                                                              a=rtpmap:13 CN/8000 
+                                                                              a=rtpmap:118 CN/16000 
+                                                                              a=ptime:20 
+                                                                               [Time:25-06@11:35:15.401]
+12:37:24.329  10.15.13.100  local0.notice  [S=300469] [SID=f4fbdf:155:10913]  (N   253251) RELEASE_ACK_EV: (#3468)CallPlacement -> (#359)SBCCall[Disconnecting->Disconnected] 
+                                                                               -> (#1589)SIPSBCCallLeg [Time:25-06@11:35:15.402]
+12:37:24.329  10.15.13.100  local0.notice  [S=300470] [SID=f4fbdf:155:10913]  (N   253252) AcSBCCallAPI::DisconnectAck: No SIPCall [Time:25-06@11:35:15.402]
+12:37:24.329  10.15.13.100  local0.notice  [S=300471] [SID=f4fbdf:155:10913]  (N   253253) States: (#1589)SIPSBCCallLeg[Deallocated] [Time:25-06@11:35:15.402]
+12:37:24.329  10.15.13.100  local1.info    [S=48] |CALL_END       |SBC       |640237173256202011355@10.15.13.100                |f4fbdf:155:10913        |LCL  |10.15.13.100        |5060         |10.15.30.83         |5060       |UDP             |999@sip.pstnhub.microsoft.com            |+33336663005@sip.pstnhub.microsoft.com   |33336663101@tr-us-sbc3.audctrunk.aceducation.info|33336663101@tr-us-sbc3.audctrunk.aceducation.info|0       |RMT  |GWAPP_USER_BUSY                         |BUSY             |11:35:05.272  UTC Thu Jun 25 2020  |                                   |11:35:15.402  UTC Thu Jun 25 2020  |-1             |                                         |                                         |24             |ITSP1                           |DefaultSRD                      |ITSP                            |ITSP1                           |ITSP                            |MR-ITSP                         |no         |486         |SIP ;cause=486 ;text="{486 Busy Here}"|tr-us-user3                                        |                                     |Normal  |2     
+                                                   [Time:25-06@11:35:15.402]
+12:37:24.329  10.15.13.100  local0.notice  [S=300472] [SID=f4fbdf:155:10913]  (N   253254) States: (#359)MRA[Deallocated] [Time:25-06@11:35:15.402]
+12:37:24.329  10.15.13.100  local0.notice  [S=300473] [SID=f4fbdf:155:10913]  (N   253255) ResourceCounter: Media channel -1 [2/1022] [Time:25-06@11:35:15.402]
+12:37:24.329  10.15.13.100  local0.notice  [S=300474] [SID=f4fbdf:155:10913]  (N   253256) <-100>ChannelResource::DeAllocateResource, DSP Deallocated. allocated Count 1020 [Time:25-06@11:35:15.402]
+12:37:24.329  10.15.13.100  local0.notice  [S=300475] [SID=f4fbdf:155:10913]  (N   253257) (#380)RTS::DeAllocateResource, CID -100 Detached. [Time:25-06@11:35:15.402]
+12:37:24.329  10.15.13.100  local0.notice  [S=300476] [SID=f4fbdf:155:10913]  (N   253258) ReleaseAddress. IPv4IF=0 IPv6IF=-1 Port=8130 [Time:25-06@11:35:15.402]
+12:37:24.329  10.15.13.100  local0.notice  [S=300477] [SID=f4fbdf:155:10913]  (N   253259) (#359)ChannelResource::DeAllocateMediaIpPorts RealmIndex(0) port(8130) IPV4IF(0) Deallocated. [Time:25-06@11:35:15.402]
+12:37:24.329  10.15.13.100  local0.notice  [S=300478] [SID=f4fbdf:155:10913]  (N   253260) States: (#359)ChannelResource[Deallocated] 
+                                                                               (#380)MediaStream[Deallocated] [Time:25-06@11:35:15.402]
+12:37:24.329  10.15.13.100  local0.notice  [S=300479] [SID=f4fbdf:155:10913]  (N   253261) CAC: Remove SBC Outgoing INVITE, IPG 2 (ITSP1): 0, SRD 0 (DefaultSRD): 1, SipIF 0 (ITSP): 1 [Time:25-06@11:35:15.402]
+12:37:24.329  10.15.13.100  local0.notice  [S=300480] [SID=f4fbdf:155:10913]  (N   253262) ResourceCounter: SBC leg -1 [2/260] [Time:25-06@11:35:15.402]
+12:37:24.330  10.15.13.100  local0.notice  [S=300481] [SID=f4fbdf:155:10913]  (N   253263) States: (#359)SBCCall[Deallocated] [Time:25-06@11:35:15.402]
+12:37:24.330  10.15.13.100  local0.notice  [S=300482] [SID=f4fbdf:155:10913]  (N   253264) ---- Incoming SIP Message from 10.15.10.20:5068 to SIPInterface #0 (ITSP) TCP TO(#2620) SocketID(3634) ---- [Time:25-06@11:35:15.418]
+12:37:24.330  10.15.13.100  local0.notice  [S=300483] [SID=f4fbdf:155:10913]  SIP/2.0 100 Trying 
+                                                                              Via: SIP/2.0/TCP 10.15.13.100:5068;alias;branch=z9hG4bKac1745012253 
+                                                                              From: tr-us-user3 <sip:999@sip.pstnhub.microsoft.com:5061;user=phone>;tag=1c48010101 
+                                                                              To: <sip:33336663101@tr-us-sbc3.audctrunk.aceducation.info;user=phone> 
+                                                                              Call-ID: 19339540082562020113515@10.15.13.100 
+                                                                              CSeq: 1 INVITE 
+                                                                              Server: VMWare vSBC/v.7.20A.254.202 
+                                                                              Content-Length: 0 
+                                                                               
+                                                                               [Time:25-06@11:35:15.418]
+12:37:24.330  10.15.13.100  local0.notice  [S=300484] [SID=f4fbdf:155:10913]  (N   253265) AcSIPCall(#9311): Handling 100 in state Inviting [Time:25-06@11:35:15.418]
+12:37:24.330  10.15.13.100  local0.notice  [S=300485] [SID=f4fbdf:155:10913]  (N   253266) States: (#9311)AcSIPCall[Inviting->Proceeding] [Time:25-06@11:35:15.418]
+12:37:24.832  10.15.13.100  local0.notice  [S=300486] [SID=f4fbdf:155:10913]  (N   253267) ---- Incoming SIP Message from 10.15.10.20:5068 to SIPInterface #0 (ITSP) TCP TO(#2620) SocketID(3634) ---- [Time:25-06@11:35:15.921]
+12:37:24.832  10.15.13.100  local0.notice  [S=300487] [SID=f4fbdf:155:10913]  SIP/2.0 180 Ringing 
+                                                                              Via: SIP/2.0/TCP 10.15.13.100:5068;alias;branch=z9hG4bKac1745012253 
+                                                                              From: tr-us-user3 <sip:999@sip.pstnhub.microsoft.com:5061;user=phone>;tag=1c48010101 
+                                                                              To: <sip:33336663101@tr-us-sbc3.audctrunk.aceducation.info;user=phone>;tag=NkvC~aC 
+                                                                              Call-ID: 19339540082562020113515@10.15.13.100 
+                                                                              CSeq: 1 INVITE 
+                                                                              Contact: <sip:10.15.10.20:5068;transport=tcp> 
+                                                                              Supported: outbound,replaces 
+                                                                              Server: VMWare vSBC/v.7.20A.254.202 
+                                                                              Content-Length: 0 
+                                                                               
+                                                                               [Time:25-06@11:35:15.921]
+12:37:24.832  10.15.13.100  local0.notice  [S=300488] [SID=f4fbdf:155:10913]  (N   253268) AcSIPCall(#9311): Handling 180 in state Proceeding [Time:25-06@11:35:15.921]
+12:37:24.832  10.15.13.100  local0.notice  [S=300489] [SID=f4fbdf:155:10913]  (N   253269) SBCAlertData: (#1588)AcSBCCallAPI -> (#1588)SIPSBCCallLeg [Time:25-06@11:35:15.922]
+12:37:24.832  10.15.13.100  local0.notice  [S=300490] [SID=f4fbdf:155:10913]  (N   253270) ALERT_EV: (#1588)SIPSBCCallLeg -> (#358)SBCCall[Initiated->Alerting] 
+                                                                               -> (#3468)CallPlacement 
+                                                                               -> (#1587)SBCEndPoint 
+                                                                               -> (#793)SBCController 
+                                                                               -> (#1586)SBCEndPoint 
+                                                                               -> (#360)SBCCall 
+                                                                               -> (#1590)SIPSBCCallLeg [Time:25-06@11:35:15.922]
+12:37:24.833  10.15.13.100  local0.notice  [S=300491] [SID=f4fbdf:155:10913]  (N   253271) AcSIPCall(#9314): Handling ALERT_REQ in state Invited [Time:25-06@11:35:15.922]
+12:37:24.833  10.15.13.100  local0.notice  [S=300492] [SID=f4fbdf:155:10913]  (N   253272) ---- Outgoing SIP Message to 52.114.132.46:4096 from SIPInterface #1 (Teams) TLS TO(#2208) SocketID(4046) ---- [Time:25-06@11:35:15.922]
+12:37:24.833  10.15.13.100  local0.notice  [S=300493] [SID=f4fbdf:155:10913]  SIP/2.0 180 Ringing 
+                                                                              Via: SIP/2.0/TLS 52.114.132.46:5061;branch=z9hG4bKc4c65154 
+                                                                              From: tr-us-user3 <sip:+33336663005@sip.pstnhub.microsoft.com:5061;user=phone>;tag=08b881f3f0d04f38921e7ba70adba9e8 
+                                                                              To: <sip:+33336663101@tr-us-sbc3.audctrunk.aceducation.info:5061;user=phone>;tag=633d1b68 
+                                                                              Call-ID: bcd8cfeabbd351d18d1f23b4460c8b93 
+                                                                              CSeq: 1 INVITE 
+                                                                              Contact: <sip:tr-us-sbc3.audctrunk.aceducation.info:5061;transport=tls> 
+                                                                              Record-Route: <sip:sip-du-a-us.pstnhub.microsoft.com:5061;transport=tls;lr> 
+                                                                              Supported: outbound,replaces 
+                                                                              Server: GROUP-1-VESBC/v.7.20A.254.375 
+                                                                              Content-Length: 0 
+                                                                               
+                                                                               [Time:25-06@11:35:15.922]
+12:37:27.021  10.15.13.100  local0.notice  [S=300494] [SID=f4fbdf:155:10913]  (N   253273) ---- Incoming SIP Message from 10.15.10.20:5068 to SIPInterface #0 (ITSP) TCP TO(#2620) SocketID(3634) ---- [Time:25-06@11:35:18.104]
+12:37:27.021  10.15.13.100  local0.notice  [S=300495] [SID=f4fbdf:155:10913]  SIP/2.0 200 OK 
+                                                                              Via: SIP/2.0/TCP 10.15.13.100:5068;alias;branch=z9hG4bKac1745012253 
+                                                                              From: tr-us-user3 <sip:999@sip.pstnhub.microsoft.com:5061;user=phone>;tag=1c48010101 
+                                                                              To: <sip:33336663101@tr-us-sbc3.audctrunk.aceducation.info;user=phone>;tag=NkvC~aC 
+                                                                              Call-ID: 19339540082562020113515@10.15.13.100 
+                                                                              CSeq: 1 INVITE 
+                                                                              Contact: "ITSP" <sip:10.15.10.20:5068;transport=tcp>;+sip.instance="<urn:uuid:c4d84b67-e7ea-4050-b5e8-e82cf6d04dae>" 
+                                                                              Supported: outbound,replaces,sdp-anat 
+                                                                              Allow: INVITE, ACK, CANCEL, OPTIONS, BYE, REFER, NOTIFY, MESSAGE, SUBSCRIBE, INFO, UPDATE 
+                                                                              Server: VMWare vSBC/v.7.20A.254.202 
+                                                                              Content-Type: application/sdp 
+                                                                              Content-Length: 193 
+                                                                               
+                                                                              v=0 
+                                                                              o=33336663101 836920831 1199274657 IN IP4 10.15.10.20 
+                                                                              s=Talk 
+                                                                              c=IN IP4 10.15.10.20 
+                                                                              t=0 0 
+                                                                              m=audio 6912 RTP/AVP 0 8 101 
+                                                                              c=IN IP4 10.15.10.20 
+                                                                              a=rtpmap:101 telephone-event/8000 
+                                                                              a=mid:2 
+                                                                               [Time:25-06@11:35:18.104]
+12:37:27.024  10.15.13.100  local0.notice  [S=300496] [SID=f4fbdf:155:10913]  (N   253274) AcSIPCall(#9311): Handling 200 OK in state Proceeding [Time:25-06@11:35:18.104]
+12:37:27.024  10.15.13.100  local0.notice  [S=300497] [SID=f4fbdf:155:10913]  (N   253275) States: (#9311)AcSIPCall[Proceeding->RemoteAccepted] [Time:25-06@11:35:18.105]
+12:37:27.024  10.15.13.100  local0.notice  [S=300498] [SID=f4fbdf:155:10913]  (N   253276) SBCConnectData: (#1588)AcSBCCallAPI -> (#1588)SIPSBCCallLeg [Time:25-06@11:35:18.105]
+12:37:27.025  10.15.13.100  local0.notice  [S=300499] [SID=f4fbdf:155:10913]  (N   253277) States: (#1588)SBCOfferAnswerMngr[Offering->Completed] [Time:25-06@11:35:18.105]
+12:37:27.025  10.15.13.100  local0.notice  [S=300500] [SID=f4fbdf:155:10913]  (N   253278) MEDIA_NEGOTIATION_COMPLETED_EV: (#1588)SIPSBCCallLeg -> (#358)SBCCall 
+                                                                               -> (#3468)CallPlacement 
+                                                                               -> (#1587)SBCEndPoint 
+                                                                               -> (#793)SBCController 
+                                                                               -> (#181)MRC [Time:25-06@11:35:18.105]
+12:37:27.025  10.15.13.100  local0.notice  [S=300501] [SID=f4fbdf:155:10913]  (N   253279) MRC <- MediaNegotiationCompletedEv Role=FULL_SYNC, NegotiationCause=NONE, Success=True, OriginatorModule=2,IsPreCallConnected= True,Action=ANSWER_RECEIVED,Leading side=1, MMDL ID:(#507) [Time:25-06@11:35:18.106]
+12:37:27.026  10.15.13.100  local0.notice  [S=300502] [SID=f4fbdf:155:10913]  (N   253280) ResourceCounter: Service channel +1 [1/380] [Time:25-06@11:35:18.106]
+12:37:27.026  10.15.13.100  local0.notice  [S=300503] [SID=f4fbdf:155:10913]  (N   253281) (#379)RTS::AllocateResource CID 359 Allocated. [Time:25-06@11:35:18.106]
+12:37:27.026  10.15.13.100  local0.notice  [S=300504] [SID=f4fbdf:155:10913]  (N   253282) CONNECT_EV: (#1588)SIPSBCCallLeg -> (#358)SBCCall[Alerting->Connected] 
+                                                                               -> (#3468)CallPlacement [Time:25-06@11:35:18.106]
+12:37:27.026  10.15.13.100  local0.notice  [S=300505] [SID=f4fbdf:155:10913]  (N   253283) States: (#815)SBCRoutesIterator[Deallocated] 
+                                                                               (#3468)CallPlacement[Initiated->End] [Time:25-06@11:35:18.106]
+12:37:27.028  10.15.13.100  local0.notice  [S=300506] [SID=f4fbdf:155:10913]  (N   253284) CONNECT_EV: (#358)SBCCall -> (#1587)SBCEndPoint[Initiated->Session] 
+                                                                               -> (#793)SBCController[Establishing->Active] 
+                                                                               -> (#1586)SBCEndPoint[Initiated->Session] 
+                                                                               -> (#360)SBCCall[Alerting->Connected] 
+                                                                               -> (#1590)SIPSBCCallLeg [Time:25-06@11:35:18.108]
+12:37:27.028  10.15.13.100  local0.notice  [S=300507] [SID=f4fbdf:155:10913]  (N   253285) States: (#1590)SBCOfferAnswerMngr[Offered->Completed] [Time:25-06@11:35:18.108]
+12:37:27.028  10.15.13.100  local0.notice  [S=300508] [SID=f4fbdf:155:10913]  (N   253286) MEDIA_NEGOTIATION_COMPLETED_EV: (#1590)SIPSBCCallLeg -> (#360)SBCCall 
+                                                                               -> (#1586)SBCEndPoint 
+                                                                               -> (#793)SBCController 
+                                                                               -> (#181)MRC [Time:25-06@11:35:18.108]
+12:37:27.028  10.15.13.100  local0.notice  [S=300509] [SID=f4fbdf:155:10913]  (N   253287) MRC <- MediaNegotiationCompletedEv Role=FULL_SYNC, NegotiationCause=NONE, Success=True, OriginatorModule=2,IsPreCallConnected= True,Action=ANSWER_SENT,Leading side=1, MMDL ID:(#507) [Time:25-06@11:35:18.108]
+12:37:27.029  10.15.13.100  local0.notice  [S=300510] [SID=f4fbdf:155:10913]  (N   253288) ResourceCounter: Service channel +1 [2/380] [Time:25-06@11:35:18.108]
+12:37:27.029  10.15.13.100  local0.notice  [S=300511] [SID=f4fbdf:155:10913]  (N   253289) (#381)RTS::AllocateResource CID 358 Allocated. [Time:25-06@11:35:18.108]
+12:37:27.029  10.15.13.100  local0.notice  [S=300512] [SID=f4fbdf:155:10913]  (N   253290) (#186)StreamsConnector[Allocated] (Leading:(#379), Opposite:(#381)) [Time:25-06@11:35:18.108]
+12:37:27.029  10.15.13.100  local0.notice  [S=300513] [SID=f4fbdf:155:10913]  (N   253291) ConnectionData::CalculateResourcesForSRTP Leading:NONE Opposite:SRTP MediationLevel:RTP [Time:25-06@11:35:18.108]
+12:37:27.030  10.15.13.100  local0.notice  [S=300514] [SID=f4fbdf:155:10913]  (N   253292) SRTPTunnelingAllowed: False, IsLeadingSideSecured: False, SRTPToRTPStatus: 3 [Time:25-06@11:35:18.108]
+12:37:27.030  10.15.13.100  local0.notice  [S=300515] [SID=f4fbdf:155:10913]  (N   253293) (#379)RTS: DSPUsage = RTP_MEDIATION - default [Time:25-06@11:35:18.108]
+12:37:27.031  10.15.13.100  local0.notice  [S=300516] [SID=f4fbdf:155:10913]  (N   253294) (#381)RTS: DSPUsage = RTP_MEDIATION - default [Time:25-06@11:35:18.108]
+12:37:27.031  10.15.13.100  local0.notice  [S=300517] [SID=f4fbdf:155:10913]  (N   253295) ResourceCounter: Media channel -1 [1/1022] [Time:25-06@11:35:18.108]
+12:37:27.031  10.15.13.100  local0.notice  [S=300518] [SID=f4fbdf:155:10913]  (N   253296) <359>ChannelResource::DeAllocateResource, DSP Deallocated. allocated Count 1021 [Time:25-06@11:35:18.108]
+12:37:27.031  10.15.13.100  local0.notice  [S=300519] [SID=f4fbdf:155:10913]  (N   253297) ResourceCounter: Media channel -1 [0/1022] [Time:25-06@11:35:18.108]
+12:37:27.032  10.15.13.100  local0.notice  [S=300520] [SID=f4fbdf:155:10913]  (N   253298) <358>ChannelResource::DeAllocateResource, DSP Deallocated. allocated Count 1022 [Time:25-06@11:35:18.108]
+12:37:27.032  10.15.13.100  local0.notice  [S=300521] [SID=f4fbdf:155:10913]  (N   253299) (#186)StreamsConnector:FreeResources Leading:NONE Opposite:SRTP [Time:25-06@11:35:18.108]
+12:37:27.032  10.15.13.100  local0.notice  [S=300522] [SID=f4fbdf:155:10913]  (N   253300) ResourceCounter: SBC Media Legs FK +1 [1/260] [Time:25-06@11:35:18.108]
+12:37:27.033  10.15.13.100  local0.notice  [S=300523] [SID=f4fbdf:155:10913]  (N   253301) (#379)IpTosFieldInUdpPacket: 184 RtpPayload: 0 T38Imm: 0 Activation mode: 1 [Time:25-06@11:35:18.108]
+12:37:27.033  10.15.13.100  local0.notice  [S=300524] [SID=f4fbdf:155:10913]  (N   253302) (#379)RTS: Coder = 1, Interval = 3, M = 1 [Time:25-06@11:35:18.108]
+12:37:27.033  10.15.13.100  local0.notice  [S=300525] [SID=f4fbdf:155:10913]  (N   253303) (#379)RTS: CID #359:Channel will be open WITHOUT DSP, MediaResUsage: RTP_MEDIATION, Mediation: [HeaderNorm ], IgnoreUnknownPayload [Time:25-06@11:35:18.108]
+12:37:27.033  10.15.13.100  local0.notice  [S=300526] [SID=f4fbdf:155:10913]  (N   253304) #359 OPEN_STREAM (Remote:10.15.10.20:6912, Local:10.15.13.100:8140, Mode:TxRx, Coder:g711Ulaw64k20, Payload:0, RemoteRTCPPort:6913, BrokenTimeout: 100, Red:104, DTMF:gwRFC2833RelayDTMF, Rx:101, Tx:101, FaxTran: 0) [Time:25-06@11:35:18.108]
+12:37:27.034  10.15.13.100  local0.notice  [S=300527] [SID=f4fbdf:155:10913]  (N   253305) (#379)ChannelConfiguration: [Voice], ConfTypeUpdate = OpenAndActivate [Time:25-06@11:35:18.108]
+12:37:27.034  10.15.13.100  local0.notice  [S=300528] [SID=f4fbdf:155:10913]  (N   253306) (#358)SBCCall: SetMsa CID 359 with 1 MSAs: 0 0 0 0 0 [Time:25-06@11:35:18.108]
+12:37:27.034  10.15.13.100  local0.notice  [S=300529] [SID=f4fbdf:155:10913]  (N   253307) ResourceCounter: SBC Media Legs FK +1 [2/260] [Time:25-06@11:35:18.108]
+12:37:27.034  10.15.13.100  local0.notice  [S=300530] [SID=f4fbdf:155:10913]  (N   253308) (#381)IpTosFieldInUdpPacket: 184 RtpPayload: 0 T38Imm: 0 Activation mode: 1 [Time:25-06@11:35:18.108]
+12:37:27.035  10.15.13.100  local0.notice  [S=300531] [SID=f4fbdf:155:10913]  (N   253309) (#381)RTS: Coder = 1, Interval = 3, M = 1 [Time:25-06@11:35:18.108]
+12:37:27.035  10.15.13.100  local0.notice  [S=300532] [SID=f4fbdf:155:10913]  (N   253310) (#381)RTS: StunOnMediaPortsMode=1 IceUsernameLocal=iCfZV613yv2arZYp IceUsernameRemote=K4VK IcePasswordLocal=nmxYRS+mtMeevetgLORhKDkz [Time:25-06@11:35:18.108]
+12:37:27.035  10.15.13.100  local0.notice  [S=300533] [SID=f4fbdf:155:10913]  (N   253311) (#381)#358:Activated Cipher is 2 (2 == SRTP) 
+                                                                              Active Crypto-Suite = 1 
+                                                                              Local Key = BfjYkvjYsLsM16RiU4tZDZK3dJcI1B3R0jEae+u2 
+                                                                              Remote Key = sqweghm3kSsO+hhp5GiqPZtgW69UtUGlZ1eii+Sa [Time:25-06@11:35:18.108]
+12:37:27.039  10.15.13.100  local0.notice  [S=300534] [SID=f4fbdf:155:10913]  (N   253312) (#381)RTS: CID #358:Channel will be open WITHOUT DSP, MediaResUsage: RTP_MEDIATION, Mediation: [HeaderNorm ], IgnoreUnknownPayload [Time:25-06@11:35:18.108]
+12:37:27.039  10.15.13.100  local0.notice  [S=300535] [SID=f4fbdf:155:10913]  (N   253313) #358 OPEN_STREAM (Remote:0.0.0.0:0, Local:173.227.253.94:7090, Mode:TxRx, Coder:g711Ulaw64k20, Payload:0, RemoteRTCPPort:0, BrokenTimeout: 100, Red:104, DTMF:gwRFC2833RelayDTMF, Rx:101, Tx:101, FaxTran: 0) [Time:25-06@11:35:18.108]
+12:37:27.039  10.15.13.100  local0.notice  [S=300536] [SID=f4fbdf:155:10913]  (N   253314) (#381)ChannelConfiguration: [Voice], ConfTypeUpdate = OpenAndActivate [Time:25-06@11:35:18.108]
+12:37:27.039  10.15.13.100  local0.notice  [S=300537] [SID=f4fbdf:155:10913]  (N   253315) (#360)SBCCall: SetMsa CID 358 with 1 MSAs: 1 0 0 0 0 [Time:25-06@11:35:18.108]
+12:37:27.040  10.15.13.100  local0.notice  [S=300538] [SID=f4fbdf:155:10913]  (N   253316) (#186)StartSBCSession: CidA: 359(1), CidB: 358(1), Mediation: RTP, ConnectionType: FD, SrcDir: FromNet, DstDir: ToNet [Time:25-06@11:35:18.108]
+12:37:27.040  10.15.13.100  local0.notice  [S=300539] [SID=f4fbdf:155:10913]  (N   253317) AcSIPCall(#9314): Handling CONNECT_REQ in state Invited [Time:25-06@11:35:18.109]
+12:37:27.040  10.15.13.100  local0.notice  [S=300540] [SID=f4fbdf:155:10913]  (N   253318) ---- Outgoing SIP Message to 52.114.132.46:4096 from SIPInterface #1 (Teams) TLS TO(#2208) SocketID(4046) ---- [Time:25-06@11:35:18.109]
+12:37:27.040  10.15.13.100  local0.notice  [S=300541] [SID=f4fbdf:155:10913]  SIP/2.0 200 OK 
+                                                                              Via: SIP/2.0/TLS 52.114.132.46:5061;branch=z9hG4bKc4c65154 
+                                                                              From: tr-us-user3 <sip:+33336663005@sip.pstnhub.microsoft.com:5061;user=phone>;tag=08b881f3f0d04f38921e7ba70adba9e8 
+                                                                              To: <sip:+33336663101@tr-us-sbc3.audctrunk.aceducation.info:5061;user=phone>;tag=633d1b68 
+                                                                              Call-ID: bcd8cfeabbd351d18d1f23b4460c8b93 
+                                                                              CSeq: 1 INVITE 
+                                                                              Contact: "ITSP" <sip:tr-us-sbc3.audctrunk.aceducation.info:5061;transport=tls>;+sip.instance="<urn:uuid:c4d84b67-e7ea-4050-b5e8-e82cf6d04dae>" 
+                                                                              Record-Route: <sip:sip-du-a-us.pstnhub.microsoft.com:5061;transport=tls;lr> 
+                                                                              Supported: outbound,replaces,sdp-anat 
+                                                                              Allow: INVITE, ACK, CANCEL, OPTIONS, BYE, REFER, NOTIFY, MESSAGE, SUBSCRIBE, INFO, UPDATE 
+                                                                              Server: GROUP-1-VESBC/v.7.20A.254.375 
+                                                                              Content-Type: application/sdp 
+                                                                              Content-Length: 510 
+                                                                               
+                                                                              v=0 
+                                                                              o=33336663101 2036615530 209747623 IN IP4 173.227.253.94 
+                                                                              s=Talk 
+                                                                              c=IN IP4 173.227.253.94 
+                                                                              t=0 0 
+                                                                              a=ice-lite 
+                                                                              m=audio 7090 RTP/SAVP 0 8 101 
+                                                                              c=IN IP4 173.227.253.94 
+                                                                              a=rtpmap:101 telephone-event/8000 
+                                                                              a=mid:1 
+                                                                              a=ice-ufrag:iCfZV613yv2arZYp 
+                                                                              a=ice-pwd:nmxYRS+mtMeevetgLORhKDkz 
+                                                                              a=candidate:1557028013 1 udp 2130706431 173.227.253.94 7090 typ host 
+                                                                              a=candidate:1557028013 2 udp 2130706430 173.227.253.94 7091 typ host 
+                                                                              a=crypto:1 A [Time:25-06@11:35:18.109]
+12:37:27.041  10.15.13.100  local0.notice  [S=300542] [SID=f4fbdf:155:10913]  ES_CM_128_HMAC_SHA1_80 inline:BfjYkvjYsLsM16RiU4tZDZK3dJcI1B3R0jEae+u2|2^31 
+                                                                               [Time:25-06@11:35:18.109]
+12:37:27.041  10.15.13.100  local0.notice  [S=300543] [SID=f4fbdf:155:10913]  (N   253319) States: (#9314)AcSIPCall[Invited->LocalAccepted] [Time:25-06@11:35:18.109]
+12:37:27.041  10.15.13.100  local0.notice  [S=300544] [SID=f4fbdf:155:10913]  (N   253320) MEDIA_SYNC_ENDED_EV: (#793)SBCController -> (#1586)SBCEndPoint 
+                                                                               -> (#360)SBCCall [Time:25-06@11:35:18.109]
+12:37:27.042  10.15.13.100  local0.notice  [S=300545] [SID=f4fbdf:155:10913]  (N   253321) MEDIA_SYNC_ENDED_EV: (#793)SBCController -> (#1587)SBCEndPoint 
+                                                                               -> (#358)SBCCall [Time:25-06@11:35:18.109]
+12:37:27.042  10.15.13.100  local0.notice  [S=300546] [SID=f4fbdf:155:10913]  (N   253322) States: (#3468)SBCFeature[Deallocated] [Time:25-06@11:35:18.109]
+12:37:27.042  10.15.13.100  local0.notice  [S=300547] [SID=f4fbdf:155:10913]  (N   253323) recv <--acEV_PCIIF_COMMAND_RESPONSE ch: 359 CmdType: 164 SeqNum: 1 [Time:25-06@11:35:18.113]
+12:37:27.043  10.15.13.100  local0.notice  [S=300548] [SID=f4fbdf:155:10913]  (N   253324) recv <--acEV_PCIIF_COMMAND_RESPONSE ch: 358 CmdType: 164 SeqNum: 1 [Time:25-06@11:35:18.113]
+12:37:27.043  10.15.13.100  local0.notice  [S=300549] [SID=f4fbdf:155:10913]  (N   253325) SBC_CMD_RESPONSE_BOARD_EV: (#0)NULL -> (#358)RTPChannelResource [Time:25-06@11:35:18.114]
+12:37:27.043  10.15.13.100  local0.notice  [S=300550] [SID=f4fbdf:155:10913]  (N   253326) SBC_CMD_RESPONSE_BOARD_EV: (#0)NULL -> (#360)RTPChannelResource [Time:25-06@11:35:18.114]
+12:37:27.043  10.15.13.100  local0.notice  [S=300551] [SID=f4fbdf:155:10913]  (N   253327) ARP_RESOLVED_FOR_CHANNEL_EV: (#0)NULL -> (#358)RTPChannelResource [Time:25-06@11:35:18.117]
+12:37:27.044  10.15.13.100  local0.notice  [S=300552] [SID=f4fbdf:155:10913]  (N   253328) ARP_RESOLVED_FOR_CHANNEL_EV: (#0)NULL -> (#358)RTPChannelResource [Time:25-06@11:35:18.117]
+12:37:27.044  10.15.13.100  local0.notice  [S=300553] [SID=f4fbdf:155:10913]  (N   253329) ARP_RESOLVED_FOR_CHANNEL_EV: (#0)NULL -> (#360)RTPChannelResource [Time:25-06@11:35:18.117]
+12:37:27.044  10.15.13.100  local0.notice  [S=300554] [SID=f4fbdf:155:10913]  (N   253330) ARP_RESOLVED_FOR_CHANNEL_EV: (#0)NULL -> (#360)RTPChannelResource [Time:25-06@11:35:18.117]
+12:37:27.044  10.15.13.100  local0.notice  [S=300555] [SID=f4fbdf:155:10913]  (N   253331) ---- Incoming SIP Message from 52.114.132.46:4096 to SIPInterface #1 (Teams) TLS TO(#2208) SocketID(4046) ---- [Time:25-06@11:35:18.126]
+12:37:27.045  10.15.13.100  local0.notice  [S=300556] [SID=f4fbdf:155:10913]  ACK sip:tr-us-sbc3.audctrunk.aceducation.info:5061;transport=tls SIP/2.0 
+                                                                              FROM: tr-us-user3<sip:+33336663005@sip.pstnhub.microsoft.com:5061;user=phone>;tag=08b881f3f0d04f38921e7ba70adba9e8 
+                                                                              TO: <sip:+33336663101@tr-us-sbc3.audctrunk.aceducation.info:5061>;user=phone;tag=633d1b68 
+                                                                              CSEQ: 1 ACK 
+                                                                              CALL-ID: bcd8cfeabbd351d18d1f23b4460c8b93 
+                                                                              MAX-FORWARDS: 70 
+                                                                              VIA: SIP/2.0/TLS 52.114.132.46:5061;branch=z9hG4bK9369a152 
+                                                                              CONTACT: <sip:api-du-c-usea.pstnhub.microsoft.com:443;x-i=5cc11d85-14d7-438f-a2a3-dfdcee2d6527;x-c=bcd8cfeabbd351d18d1f23b4460c8b93/d/8/a1868ffa9c8d443a9461e18cee291870> 
+                                                                              CONTENT-LENGTH: 0 
+                                                                              USER-AGENT: Microsoft.PSTNHub.SIPProxy v.2020.5.27.2 i.USEA.6 
+                                                                              ALLOW: INVITE,ACK,OPTIONS,CANCEL,BYE,NOTIFY 
+                                                                               
+                                                                               [Time:25-06@11:35:18.126]
+12:37:27.045  10.15.13.100  local0.notice  [S=300557] [SID=f4fbdf:155:10913]  (N   253332) [ManSet: 3, Rule: 0] - Executed (Condition was True) [Time:25-06@11:35:18.127]
+12:37:27.046  10.15.13.100  local0.notice  [S=300558] [SID=f4fbdf:155:10913]  (N   253333) AcSIPCall(#9314): Handling ACK in state LocalAccepted [Time:25-06@11:35:18.127]
+12:37:27.046  10.15.13.100  local0.notice  [S=300559] [SID=f4fbdf:155:10913]  (N   253334) States: (#9314)AcSIPCall[LocalAccepted->Connected] [Time:25-06@11:35:18.127]
+12:37:27.046  10.15.13.100  local0.notice  [S=300560] [SID=f4fbdf:155:10913]  (N   253335) SBCAckData: (#1590)AcSBCCallAPI -> (#1590)SIPSBCCallLeg [Time:25-06@11:35:18.127]
+12:37:27.047  10.15.13.100  local0.notice  [S=300561] [SID=f4fbdf:155:10913]  (N   253336) SIPSBCConnectAckEvent: (#1590)SIPSBCCallLeg -> (#360)SBCCall[Connected->ConnectAcknowledged] 
+                                                                               -> (#1586)SBCEndPoint 
+                                                                               -> (#793)SBCController 
+                                                                               -> (#1587)SBCEndPoint 
+                                                                               -> (#358)SBCCall[Connected->ConnectAcknowledged] 
+                                                                               -> (#1588)SIPSBCCallLeg [Time:25-06@11:35:18.127]
+12:37:27.047  10.15.13.100  local0.notice  [S=300562] [SID=f4fbdf:155:10913]  (N   253337) AcSIPCall(#9311): Handling ACK_REQ in state RemoteAccepted [Time:25-06@11:35:18.127]
+12:37:27.047  10.15.13.100  local0.notice  [S=300563] [SID=f4fbdf:155:10913]  (N   253338) States: (#9311)AcSIPCall[RemoteAccepted->Connected] [Time:25-06@11:35:18.128]
+12:37:27.048  10.15.13.100  local0.notice  [S=300564] [SID=f4fbdf:155:10913]  (N   253339) ---- Outgoing SIP Message to 10.15.10.20:5068 from SIPInterface #0 (ITSP) TCP TO(#2620) SocketID(3634) ---- [Time:25-06@11:35:18.128]
+12:37:27.048  10.15.13.100  local0.notice  [S=300565] [SID=f4fbdf:155:10913]  ACK sip:10.15.10.20:5068;transport=tcp SIP/2.0 
+                                                                              Via: SIP/2.0/TCP 10.15.13.100:5068;alias;branch=z9hG4bKac146298676 
+                                                                              Max-Forwards: 69 
+                                                                              From: tr-us-user3 <sip:999@sip.pstnhub.microsoft.com:5061;user=phone>;tag=1c48010101 
+                                                                              To: <sip:33336663101@tr-us-sbc3.audctrunk.aceducation.info;user=phone>;tag=NkvC~aC 
+                                                                              Call-ID: 19339540082562020113515@10.15.13.100 
+                                                                              CSeq: 1 ACK 
+                                                                              Contact: <sip:10.15.13.100:5068;transport=tcp;x-i=5cc11d85-14d7-438f-a2a3-dfdcee2d6527;x-c=bcd8cfeabbd351d18d1f23b4460c8b93/d/8/a1868ffa9c8d443a9461e18cee291870> 
+                                                                              ALLOW: INVITE,ACK,OPTIONS,CANCEL,BYE,NOTIFY 
+                                                                              User-Agent: GROUP-1-VESBC/v.7.20A.254.375 
+                                                                              Content-Length: 0 
+                                                                               
+                                                                               [Time:25-06@11:35:18.128]
+12:37:27.048  10.15.13.100  local0.notice  [S=300566] [SID=f4fbdf:155:10913]  (N   253340) MEDIA_SYNC_REQUEST_EV: (#181)MRC -> (#181)MRC [Time:25-06@11:35:18.128]
+12:37:27.048  10.15.13.100  local0.notice  [S=300567] [SID=f4fbdf:155:10913]  (N   253341) (#181)MRC::HandleSyncRequest - SyncReason is None [Time:25-06@11:35:18.128]
+12:37:27.049  10.15.13.100  local0.notice  [S=300568] [SID=f4fbdf:155:10913]  (N   253342) MEDIA_SYNC_ENDED_EV: (#793)SBCController -> (#1586)SBCEndPoint 
+                                                                               -> (#360)SBCCall [Time:25-06@11:35:18.128]
+12:37:27.049  10.15.13.100  local0.notice  [S=300569] [SID=f4fbdf:155:10913]  (N   253343) MEDIA_SYNC_ENDED_EV: (#793)SBCController -> (#1587)SBCEndPoint 
+                                                                               -> (#358)SBCCall [Time:25-06@11:35:18.128]
+12:37:27.192  10.15.13.100  local0.notice  [S=300570] [BID=f4fbdf:155]  Validate Stun Message - got unknown attribute type:32822 [Time:25-06@11:35:18.267]
+12:37:27.192  10.15.13.100  local0.info    [S=300571] [SID=f4fbdf:155:10913]  Remote address has changed for stream #358: packet type: RTP, old dest: 0.0.0.0:0, new dest: 52.113.211.96:50780 [CID:358] [Time:25-06@11:35:18.267]
+12:37:27.192  10.15.13.100  local0.notice  [S=300572] [SID=f4fbdf:155:10913]  (N   253344) recv <-- EV_NEW_INBOUND_STREAM_LATCHED ProtocolType:0, Ch:358 [Time:25-06@11:35:18.267]
+12:37:27.192  10.15.13.100  local0.notice  [S=300573] [SID=f4fbdf:155:10913]  (N   253345) LATCH_EV: (#0)NULL -> (#360)RTPChannelResource [Time:25-06@11:35:18.267]
+12:37:27.192  10.15.13.100  local0.notice  [S=300574] [SID=f4fbdf:155:10913]  (N   253346) ARP_RESOLVED_FOR_CHANNEL_EV: (#0)NULL -> (#360)RTPChannelResource [Time:25-06@11:35:18.267]
+12:37:27.316  10.15.13.100  local0.notice  [S=300575] [BID=f4fbdf:155]  Validate Stun Message - got unknown attribute type:32822 [Time:25-06@11:35:18.377]
+12:37:27.316  10.15.13.100  local0.info    [S=300576] [SID=f4fbdf:155:10913]  Remote address has changed for stream #358: packet type: RTCP, old dest: 0.0.0.0:0, new dest: 52.113.211.96:50781 [CID:358] [Time:25-06@11:35:18.377]
+12:37:27.316  10.15.13.100  local0.notice  [S=300577] [SID=f4fbdf:155:10913]  (N   253347) recv <-- EV_NEW_INBOUND_STREAM_LATCHED ProtocolType:1, Ch:358 [Time:25-06@11:35:18.377]
+12:37:27.316  10.15.13.100  local0.notice  [S=300578] [SID=f4fbdf:155:10913]  (N   253348) ARP_RESOLVED_FOR_CHANNEL_EV: (#0)NULL -> (#360)RTPChannelResource [Time:25-06@11:35:18.377]
+12:37:27.392  10.15.13.100  local0.notice  [S=300579] [BID=f4fbdf:155]  Validate Stun Message - got unknown attribute type:32822 [Time:25-06@11:35:18.482]
+12:37:27.393  10.15.13.100  local0.notice  [S=300580] [BID=f4fbdf:155]  Validate Stun Message - got unknown attribute type:32822 [Time:25-06@11:35:18.482]
+12:37:27.393  10.15.13.100  local0.notice  [S=300581] [SID=f4fbdf:155:10913]  (N   253349) STUN_EV: (#0)NULL -> (#360)RTPChannelResource [Time:25-06@11:35:18.482]
+12:37:27.560  10.15.13.100  local0.notice  [S=300582] [SID=f4fbdf:155:10913]  (N   253350) ---- Incoming SIP Message from 52.114.132.46:4096 to SIPInterface #1 (Teams) TLS TO(#2208) SocketID(4046) ---- [Time:25-06@11:35:18.633]
+12:37:27.560  10.15.13.100  local0.notice  [S=300583] [SID=f4fbdf:155:10913]  INVITE sip:tr-us-sbc3.audctrunk.aceducation.info:5061;transport=tls SIP/2.0 
+                                                                              FROM: tr-us-user3<sip:+33336663005@sip.pstnhub.microsoft.com:5061;user=phone>;tag=08b881f3f0d04f38921e7ba70adba9e8 
+                                                                              TO: <sip:+33336663101@tr-us-sbc3.audctrunk.aceducation.info:5061>;user=phone;tag=633d1b68 
+                                                                              CSEQ: 2 INVITE 
+                                                                              CALL-ID: bcd8cfeabbd351d18d1f23b4460c8b93 
+                                                                              MAX-FORWARDS: 70 
+                                                                              VIA: SIP/2.0/TLS 52.114.132.46:5061;branch=z9hG4bKa0da9f6f 
+                                                                              CONTACT: <sip:api-du-c-usea.pstnhub.microsoft.com:443;x-i=5cc11d85-14d7-438f-a2a3-dfdcee2d6527;x-c=bcd8cfeabbd351d18d1f23b4460c8b93/d/8/a1868ffa9c8d443a9461e18cee291870> 
+                                                                              CONTENT-LENGTH: 992 
+                                                                              MIN-SE: 90 
+                                                                              SUPPORTED: timer 
+                                                                              USER-AGENT: Microsoft.PSTNHub.SIPProxy v.2020.5.27.2 i.USEA.6 
+                                                                              CONTENT-TYPE: application/sdp 
+                                                                              ALLOW: INVITE,ACK,OPTIONS,CANCEL,BYE,NOTIFY 
+                                                                              P-ASSERTED-IDENTITY: <tel:+33336663005>,<sip:tr-us-user3@audio-code.net> 
+                                                                              PRIVACY: id 
+                                                                              SESSION-EXPIRES: 3600;refresher=uac 
+                                                                               
+                                                                              v=0 
+                                                                              o=- 167634 1 IN IP4 127.0.0.1 
+                                                                              s=session 
+                                                                              c=IN IP4 52.113.211.96 
+                                                                              b=CT:10000000 
+                                                                              t=0 0 
+                                                                              m=audio 50780 RTP/SAVP 104 117 9 103 111 18 0 8 97 101 13 118 
+                                                                              c=IN IP4 52.113.211.96 
+                                                                              a=rtcp:50781 
+                                                                              a=ice-ufrag:K4VK 
+                                                                              a=ice-pwd:KfRtSGVng4l5qKZzIzYoUYZp 
+                                                                              a=candidate:1 1 UDP 1862270719 52.113.211.96 50780 typ prflx rad [Time:25-06@11:35:18.633]
+12:37:27.560  10.15.13.100  local0.notice  [S=300584] [SID=f4fbdf:155:10913]  dr 10.0.33.17 rport 50780 
+                                                                              a=candidate:1 2 UDP 1862270462 52.113.211.96 50781 typ prflx raddr 10.0.33.17 rport 50781 
+                                                                              a=remote-candidates:1 173.227.253.94 7090 2 173.227.253.94 7091 
+                                                                              a=label:main-audio 
+                                                                              a=mid:1 
+                                                                              a=crypto:1 AES_CM_128_HMAC_SHA1_80 inline:sqweghm3kSsO+hhp5GiqPZtgW69UtUGlZ1eii+Sa|2^31 
+                                                                              a=sendrecv 
+                                                                              a=rtpmap:104 SILK/16000 
+                                                                              a=rtpmap:117 G722/8000/2 
+                                                                              a=rtpmap:9 G722/8000 
+                                                                              a=rtpmap:103 SILK/8000 
+                                                                              a=rtpmap:111 SIREN/16000 
+                                                                              a=fmtp:111 bitrate=16000 
+                                                                              a=rtpmap:18 G729/8000 
+                                                                              a=fmtp:18 annexb=no 
+                                                                              a=rtpmap:0 PCMU/8000 
+                                                                              a=rtpmap:8 PCMA/8000 
+                                                                              a=rtpmap:97 RED/8000 
+                                                                              a=rtpmap:101 telephone-event/8000 
+                                                                              a=fmtp:101 0-16 
+                                                                              a=rtpmap:13 CN/8000 
+                                                                              a=rtpmap:118 CN/16000 
+                                                                              a=ptime:20 
+                                                                               [Time:25-06@11:35:18.633]
+12:37:27.560  10.15.13.100  local0.notice  [S=300585] [SID=f4fbdf:155:10913]  (N   253351) [ManSet: 3, Rule: 0] - Executed (Condition was True) [Time:25-06@11:35:18.634]
+12:37:27.560  10.15.13.100  local0.notice  [S=300586] [SID=f4fbdf:155:10913]  (N   253352) InviteServerTransaction(#21641)::SetResponseAddr - Setting ReceivedFromIP as response IP due to configuration [Time:25-06@11:35:18.634]
+12:37:27.560  10.15.13.100  local0.notice  [S=300587] [SID=f4fbdf:155:10913]  (N   253353) AcSIPCall(#9314): Handling INVITE in state Connected [Time:25-06@11:35:18.634]
+12:37:27.561  10.15.13.100  local0.notice  [S=300588] [SID=f4fbdf:155:10913]  (N   253354) AcSIPCall(#9314)::UpdateRemoteLocation - Setting ReceivedFrom address as transport object's key 52.114.132.46:5061 [Time:25-06@11:35:18.634]
+12:37:27.561  10.15.13.100  local0.notice  [S=300589] [SID=f4fbdf:155:10913]  (N   253355) AcTransactionUser::CheckRemoteAddressChange - Remote is behind the NAT [Time:25-06@11:35:18.634]
+12:37:27.561  10.15.13.100  local0.notice  [S=300590] [SID=f4fbdf:155:10913]  (N   253356) SBCReinviteData: (#1590)AcSBCCallAPI -> (#1590)SIPSBCCallLeg [Time:25-06@11:35:18.634]
+12:37:27.561  10.15.13.100  local0.notice  [S=300591] [SID=f4fbdf:155:10913]  (N   253357) States: (#1590)SBCOfferAnswerMngr[Completed->Offered] [Time:25-06@11:35:18.634]
+12:37:27.562  10.15.13.100  local0.notice  [S=300592] [SID=f4fbdf:155:10913]  (N   253358) (#378)MediaStream[Allocated](#378). Sibling: (#381) (#360)ChannelResource belongs to call #360 [Time:25-06@11:35:18.634]
+12:37:27.562  10.15.13.100  local0.notice  [S=300593] [SID=f4fbdf:155:10913]  (N   253359) SIPSBCReinviteEvent: (#1590)SIPSBCCallLeg -> (#360)SBCCall 
+                                                                               -> (#1586)SBCEndPoint 
+                                                                               -> (#793)SBCController 
+                                                                               -> (#1587)SBCEndPoint 
+                                                                               -> (#358)SBCCall 
+                                                                               -> (#1588)SIPSBCCallLeg [Time:25-06@11:35:18.635]
+12:37:27.562  10.15.13.100  local0.notice  [S=300594] [SID=f4fbdf:155:10913]  (N   253360) States: (#1588)SBCOfferAnswerMngr[Completed->Offering] [Time:25-06@11:35:18.635]
+12:37:27.562  10.15.13.100  local0.notice  [S=300595] [SID=f4fbdf:155:10913]  (N   253361) (#377)MediaStream[Allocated](#377). Sibling: (#379) (#358)ChannelResource belongs to call #358 [Time:25-06@11:35:18.635]
+12:37:27.563  10.15.13.100  local0.notice  [S=300596] [SID=f4fbdf:155:10913]  (N   253362) SBCSDPDTMFFeature(index = 0) - DTMF transcoding is needed. [Time:25-06@11:35:18.635]
+12:37:27.563  10.15.13.100  local0.notice  [S=300597] [SID=f4fbdf:155:10913]  (N   253363) SBCSDPDTMFFeature (index = 0) - old state: Idle, new state: Wait_For_Answer_RFC [Time:25-06@11:35:18.635]
+12:37:27.563  10.15.13.100  local0.notice  [S=300598] [SID=f4fbdf:155:10913]  (N   253364) SBCSDPDTMFFeature(index = 1) - DTMF transcoding is needed. [Time:25-06@11:35:18.635]
+12:37:27.563  10.15.13.100  local0.notice  [S=300599] [SID=f4fbdf:155:10913]  (N   253365) SBCSDPDTMFFeature (index = 1) - old state: Idle, new state: Wait_For_Answer_RFC [Time:25-06@11:35:18.635]
+12:37:27.563  10.15.13.100  local0.notice  [S=300600] [SID=f4fbdf:155:10913]  (N   253366) SBCSDPSecurityFeature(index = 1, type = AUDIO, tag = -100) -  new state: Wait_For_Extend [Time:25-06@11:35:18.635]
+12:37:27.563  10.15.13.100  local0.notice  [S=300601] [SID=f4fbdf:155:10913]  (N   253367) MRC::AllocateMediaResources [Time:25-06@11:35:18.635]
+12:37:27.564  10.15.13.100  local0.notice  [S=300602] [SID=f4fbdf:155:10913]  (N   253368) ConnectionData::CalculateResourcesForExtTranscoding Leading:DSP Opposite:DSP MediationLevel:RTP [Time:25-06@11:35:18.635]
+12:37:27.564  10.15.13.100  local0.notice  [S=300603] [SID=f4fbdf:155:10913]  (N   253369) ResourceCounter: Media channel +1 [1/1022] [Time:25-06@11:35:18.639]
+12:37:27.564  10.15.13.100  local0.notice  [S=300604] [SID=f4fbdf:155:10913]  (N   253370) <(#360)>CID=358 ChannelResource::AllocateResource DSP Allocated. Available count 1021 [Time:25-06@11:35:18.639]
+12:37:27.564  10.15.13.100  local0.notice  [S=300605] [SID=f4fbdf:155:10913]  (N   253371) ResourceCounter: Media channel +1 [2/1022] [Time:25-06@11:35:18.639]
+12:37:27.564  10.15.13.100  local0.notice  [S=300606] [SID=f4fbdf:155:10913]  (N   253372) <(#358)>CID=359 ChannelResource::AllocateResource DSP Allocated. Available count 1020 [Time:25-06@11:35:18.639]
+12:37:27.564  10.15.13.100  local0.notice  [S=300607] [SID=f4fbdf:155:10913]  (N   253373) (#378)RTS::AllocateResource DSP already Allocated. [Time:25-06@11:35:18.643]
+12:37:27.565  10.15.13.100  local0.notice  [S=300608] [SID=f4fbdf:155:10913]  (N   253374) (#377)RTS::AllocateResource DSP already Allocated. [Time:25-06@11:35:18.643]
+12:37:27.565  10.15.13.100  local0.notice  [S=300609] [SID=f4fbdf:155:10913]  (N   253375) ConnectionData::CalculateResourcesForExtTranscoding Leading:DSP Opposite:DSP MediationLevel:RTP [Time:25-06@11:35:18.643]
+12:37:27.565  10.15.13.100  local0.notice  [S=300610] [SID=f4fbdf:155:10913]  (N   253376) (#378)RTS::AllocateResource DSP already Allocated. [Time:25-06@11:35:18.646]
+12:37:27.565  10.15.13.100  local0.notice  [S=300611] [SID=f4fbdf:155:10913]  (N   253377) (#377)RTS::AllocateResource DSP already Allocated. [Time:25-06@11:35:18.646]
+12:37:27.565  10.15.13.100  local0.notice  [S=300612] [SID=f4fbdf:155:10913]  (N   253378) (#378)RTS::AllocateResource DSP already Allocated. [Time:25-06@11:35:18.646]
+12:37:27.565  10.15.13.100  local0.notice  [S=300613] [SID=f4fbdf:155:10913]  (N   253379) (#377)RTS::AllocateResource DSP already Allocated. [Time:25-06@11:35:18.646]
+12:37:27.566  10.15.13.100  local0.notice  [S=300614] [SID=f4fbdf:155:10913]  (N   253380) SBCSDPSecurityFeature(index = 0, type = AUDIO, tag = -100) -  new state: Idle [Time:25-06@11:35:18.646]
+12:37:27.566  10.15.13.100  local0.notice  [S=300615] [SID=f4fbdf:155:10913]  (N   253381) SBCSDPANATFeature(index = 0, type = AUDIO, tag = -100) -  new state: Idle [Time:25-06@11:35:18.646]
+12:37:27.566  10.15.13.100  local0.notice  [S=300616] [SID=f4fbdf:155:10913]  (N   253382) SBCSDPDTMFFeature (index = 0) - old state: Wait_For_Answer_RFC, new state: Idle [Time:25-06@11:35:18.646]
+12:37:27.566  10.15.13.100  local0.notice  [S=300617] [SID=f4fbdf:155:10913]  (N   253383) SBCSDPSecurityFeature(index = 1, type = AUDIO, tag = -100) -  new state: Offer_Extended [Time:25-06@11:35:18.646]
+12:37:27.566  10.15.13.100  local0.notice  [S=300618] [SID=f4fbdf:155:10913]  (N   253384) AcSIPCall(#9311): Handling REINVITE_REQ in state Connected [Time:25-06@11:35:18.647]
+12:37:27.566  10.15.13.100  local0.notice  [S=300619] [SID=f4fbdf:155:10913]  (N   253385) ---- Outgoing SIP Message to 10.15.10.20:5068 from SIPInterface #0 (ITSP) TCP TO(#2620) SocketID(3634) ---- [Time:25-06@11:35:18.647]
+12:37:27.567  10.15.13.100  local0.notice  [S=300620] [SID=f4fbdf:155:10913]  INVITE sip:10.15.10.20:5068;transport=tcp SIP/2.0 
+                                                                              Via: SIP/2.0/TCP 10.15.13.100:5068;alias;branch=z9hG4bKac450964132 
+                                                                              Max-Forwards: 69 
+                                                                              From: tr-us-user3 <sip:999@sip.pstnhub.microsoft.com:5061;user=phone>;tag=1c48010101 
+                                                                              To: <sip:33336663101@tr-us-sbc3.audctrunk.aceducation.info;user=phone>;tag=NkvC~aC 
+                                                                              Call-ID: 19339540082562020113515@10.15.13.100 
+                                                                              CSeq: 2 INVITE 
+                                                                              Contact: <sip:10.15.13.100:5068;transport=tcp;x-i=5cc11d85-14d7-438f-a2a3-dfdcee2d6527;x-c=bcd8cfeabbd351d18d1f23b4460c8b93/d/8/a1868ffa9c8d443a9461e18cee291870> 
+                                                                              Supported: timer,sdp-anat 
+                                                                              ALLOW: INVITE,ACK,OPTIONS,CANCEL,BYE,NOTIFY 
+                                                                              Session-Expires: 3600;refresher=uac 
+                                                                              MIN-SE: 90 
+                                                                              User-Agent: GROUP-1-VESBC/v.7.20A.254.375 
+                                                                              PRIVACY: id 
+                                                                              P-ASSERTED-IDENTITY: <tel:+33336663005>,<sip:tr-us-user3@audio-code.net> 
+                                                                              Content-Type: application/sdp 
+                                                                              Content-Length: 611 
+                                                                               
+                                                                              v=0 
+                                                                              o=- 780630094 884218790 IN IP4 10.15.13.100 
+                                                                              s=session 
+                                                                              c=IN IP4 10.15.13.100 
+                                                                              b=CT:10000000 
+                                                                              t=0 0 
+                                                                              m=audio 8140 RTP/AVP 104 117 9 103 111 18 0 8 97 118 101 13 
+                                                                              c=IN IP4 10.15.13.100 
+                                                                              a=rtcp:8141 
+                                                                              a=label:main-audio 
+                                                                              a=mid:2 
+                                                                              a=sendrecv 
+                                                                              a=rtpmap:104 SILK/16000 
+                                                                              a=rtpmap:117 G722/8000/2 
+                                                                              a=rtpmap:9 G722/8000 
+                                                                              a=rtpmap:103 SILK/8000 
+                                                                              a=rtpmap:111 SIREN/16000 
+                                                                              a=fmtp:111 bitr [Time:25-06@11:35:18.647]
+12:37:27.567  10.15.13.100  local0.notice  [S=300621] [SID=f4fbdf:155:10913]  ate=16000 
+                                                                              a=rtpmap:18 G729/8000 
+                                                                              a=fmtp:18 annexb=no 
+                                                                              a=rtpmap:0 PCMU/8000 
+                                                                              a=rtpmap:8 PCMA/8000 
+                                                                              a=rtpmap:97 RED/8000 
+                                                                              a=rtpmap:101 telephone-event/8000 
+                                                                              a=fmtp:101 0-16 
+                                                                              a=rtpmap:13 CN/8000 
+                                                                              a=rtpmap:118 CN/16000 
+                                                                              a=ptime:20 
+                                                                               [Time:25-06@11:35:18.647]
+12:37:27.604  10.15.13.100  local0.notice  [S=300622] [BID=f4fbdf:155]  Validate Stun Message - got unknown attribute type:32819 [Time:25-06@11:35:18.692]
+12:37:27.623  10.15.13.100  local0.notice  [S=300623] [SID=f4fbdf:155:10913]  (N   253386) ---- Incoming SIP Message from 10.15.10.20:5068 to SIPInterface #0 (ITSP) TCP TO(#2620) SocketID(3634) ---- [Time:25-06@11:35:18.710]
+12:37:27.623  10.15.13.100  local0.notice  [S=300624] [SID=f4fbdf:155:10913]  SIP/2.0 200 OK 
+                                                                              Via: SIP/2.0/TCP 10.15.13.100:5068;alias;branch=z9hG4bKac450964132 
+                                                                              From: tr-us-user3 <sip:999@sip.pstnhub.microsoft.com:5061;user=phone>;tag=1c48010101 
+                                                                              To: <sip:33336663101@tr-us-sbc3.audctrunk.aceducation.info;user=phone>;tag=NkvC~aC 
+                                                                              Call-ID: 19339540082562020113515@10.15.13.100 
+                                                                              CSeq: 2 INVITE 
+                                                                              Contact: "ITSP" <sip:10.15.10.20:5068;transport=tcp>;+sip.instance="<urn:uuid:c4d84b67-e7ea-4050-b5e8-e82cf6d04dae>" 
+                                                                              Supported: outbound,replaces,sdp-anat 
+                                                                              Allow: INVITE, ACK, CANCEL, OPTIONS, BYE, REFER, NOTIFY, MESSAGE, SUBSCRIBE, INFO, UPDATE 
+                                                                              Server: VMWare vSBC/v.7.20A.254.202 
+                                                                              Content-Type: application/sdp 
+                                                                              Content-Length: 193 
+                                                                               
+                                                                              v=0 
+                                                                              o=33336663101 836920831 1199274658 IN IP4 10.15.10.20 
+                                                                              s=Talk 
+                                                                              c=IN IP4 10.15.10.20 
+                                                                              t=0 0 
+                                                                              m=audio 6912 RTP/AVP 0 8 101 
+                                                                              c=IN IP4 10.15.10.20 
+                                                                              a=rtpmap:101 telephone-event/8000 
+                                                                              a=mid:2 
+                                                                               [Time:25-06@11:35:18.710]
+12:37:27.623  10.15.13.100  local0.notice  [S=300625] [SID=f4fbdf:155:10913]  (N   253387) AcSIPCall(#9311): Handling 200 OK in state Connected [Time:25-06@11:35:18.710]
+12:37:27.623  10.15.13.100  local0.notice  [S=300626] [SID=f4fbdf:155:10913]  (N   253388) SBCReinviteResponseData: (#1588)AcSBCCallAPI -> (#1588)SIPSBCCallLeg [Time:25-06@11:35:18.711]
+12:37:27.623  10.15.13.100  local0.notice  [S=300627] [SID=f4fbdf:155:10913]  (N   253389) DirectMediaDB::RemovePreviousSDP (#345) SDP confirmed [Time:25-06@11:35:18.711]
+12:37:27.624  10.15.13.100  local0.notice  [S=300628] [SID=f4fbdf:155:10913]  (N   253390) States: (#1588)SBCOfferAnswerMngr[Offering->Completed] [Time:25-06@11:35:18.711]
+12:37:27.624  10.15.13.100  local0.notice  [S=300629] [SID=f4fbdf:155:10913]  (N   253391) MEDIA_NEGOTIATION_COMPLETED_EV: (#1588)SIPSBCCallLeg -> (#358)SBCCall 
+                                                                               -> (#1587)SBCEndPoint 
+                                                                               -> (#793)SBCController 
+                                                                               -> (#181)MRC [Time:25-06@11:35:18.711]
+12:37:27.624  10.15.13.100  local0.notice  [S=300630] [SID=f4fbdf:155:10913]  (N   253392) MRC <- MediaNegotiationCompletedEv Role=FULL_SYNC, NegotiationCause=NONE, Success=True, OriginatorModule=2,IsPreCallConnected= False,Action=ANSWER_RECEIVED,Leading side=1, MMDL ID:(#505) [Time:25-06@11:35:18.711]
+12:37:27.624  10.15.13.100  local0.notice  [S=300631] [SID=f4fbdf:155:10913]  (N   253393) SIPSBCReinviteResponseEvent: (#1588)SIPSBCCallLeg -> (#358)SBCCall 
+                                                                               -> (#1587)SBCEndPoint 
+                                                                               -> (#793)SBCController 
+                                                                               -> (#1586)SBCEndPoint 
+                                                                               -> (#360)SBCCall 
+                                                                               -> (#1590)SIPSBCCallLeg [Time:25-06@11:35:18.711]
+12:37:27.624  10.15.13.100  local0.notice  [S=300632] [SID=f4fbdf:155:10913]  (N   253394) DirectMediaDB::RemovePreviousSDP (#344) SDP confirmed [Time:25-06@11:35:18.711]
+12:37:27.625  10.15.13.100  local0.notice  [S=300633] [SID=f4fbdf:155:10913]  (N   253395) States: (#1590)SBCOfferAnswerMngr[Offered->Completed] [Time:25-06@11:35:18.711]
+12:37:27.625  10.15.13.100  local0.notice  [S=300634] [SID=f4fbdf:155:10913]  (N   253396) MEDIA_NEGOTIATION_COMPLETED_EV: (#1590)SIPSBCCallLeg -> (#360)SBCCall 
+                                                                               -> (#1586)SBCEndPoint 
+                                                                               -> (#793)SBCController 
+                                                                               -> (#181)MRC [Time:25-06@11:35:18.711]
+12:37:27.625  10.15.13.100  local0.notice  [S=300635] [SID=f4fbdf:155:10913]  (N   253397) MRC <- MediaNegotiationCompletedEv Role=FULL_SYNC, NegotiationCause=NONE, Success=True, OriginatorModule=2,IsPreCallConnected= False,Action=ANSWER_SENT,Leading side=1, MMDL ID:(#505) [Time:25-06@11:35:18.711]
+12:37:27.625  10.15.13.100  local0.notice  [S=300636] [SID=f4fbdf:155:10913]  (N   253398) (#185)StreamsConnector[Allocated] (Leading:(#377), Opposite:(#378)) [Time:25-06@11:35:18.711]
+12:37:27.625  10.15.13.100  local0.notice  [S=300637] [SID=f4fbdf:155:10913]  (N   253399) ConnectionData::CalculateResourcesForSRTP Leading:NONE Opposite:SRTP MediationLevel:RTP [Time:25-06@11:35:18.711]
+12:37:27.625  10.15.13.100  local0.notice  [S=300638] [SID=f4fbdf:155:10913]  (N   253400) SRTPTunnelingAllowed: False, IsLeadingSideSecured: False, SRTPToRTPStatus: 3 [Time:25-06@11:35:18.711]
+12:37:27.626  10.15.13.100  local0.notice  [S=300639] [SID=f4fbdf:155:10913]  (N   253401) (#377)RTS: DSPUsage = RTP_MEDIATION - default [Time:25-06@11:35:18.711]
+12:37:27.626  10.15.13.100  local0.notice  [S=300640] [SID=f4fbdf:155:10913]  (N   253402) (#378)RTS: DSPUsage = RTP_MEDIATION - default [Time:25-06@11:35:18.711]
+12:37:27.626  10.15.13.100  local0.notice  [S=300641] [SID=f4fbdf:155:10913]  (N   253403) ResourceCounter: Media channel -1 [1/1022] [Time:25-06@11:35:18.711]
+12:37:27.626  10.15.13.100  local0.notice  [S=300642] [SID=f4fbdf:155:10913]  (N   253404) <359>ChannelResource::DeAllocateResource, DSP Deallocated. allocated Count 1021 [Time:25-06@11:35:18.711]
+12:37:27.626  10.15.13.100  local0.notice  [S=300643] [SID=f4fbdf:155:10913]  (N   253405) ResourceCounter: Media channel -1 [0/1022] [Time:25-06@11:35:18.711]
+12:37:27.627  10.15.13.100  local0.notice  [S=300644] [SID=f4fbdf:155:10913]  (N   253406) <358>ChannelResource::DeAllocateResource, DSP Deallocated. allocated Count 1022 [Time:25-06@11:35:18.711]
+12:37:27.627  10.15.13.100  local0.notice  [S=300645] [SID=f4fbdf:155:10913]  (N   253407) (#185)StreamsConnector:FreeResources Leading:NONE Opposite:SRTP [Time:25-06@11:35:18.711]
+12:37:27.627  10.15.13.100  local0.notice  [S=300646] [SID=f4fbdf:155:10913]  (N   253408) (#358)SBCCall: SetMsa CID 359 with 1 MSAs: 0 0 0 0 0 [Time:25-06@11:35:18.711]
+12:37:27.628  10.15.13.100  local0.notice  [S=300647] [SID=f4fbdf:155:10913]  (N   253409) (#360)SBCCall: SetMsa CID 358 with 1 MSAs: 1 0 0 0 0 [Time:25-06@11:35:18.711]
+12:37:27.628  10.15.13.100  local0.notice  [S=300648] [SID=f4fbdf:155:10913]  (N   253410) (#185)StreamsConnector: Calling to OpenOrUpdateSBCSession not required [Time:25-06@11:35:18.711]
+12:37:27.629  10.15.13.100  local0.notice  [S=300649] [SID=f4fbdf:155:10913]  (N   253411) States: (#186)StreamsConnector[Deallocated] [Time:25-06@11:35:18.711]
+12:37:27.629  10.15.13.100  local0.notice  [S=300650] [SID=f4fbdf:155:10913]  (N   253412) (#379)RTS::DeAllocateResource, CID 359 Detached. [Time:25-06@11:35:18.711]
+12:37:27.629  10.15.13.100  local0.notice  [S=300651] [SID=f4fbdf:155:10913]  (N   253413) States: (#379)MediaStream[Deallocated] [Time:25-06@11:35:18.711]
+12:37:27.630  10.15.13.100  local0.notice  [S=300652] [SID=f4fbdf:155:10913]  (N   253414) (#381)RTS::DeAllocateResource, CID 358 Detached. [Time:25-06@11:35:18.711]
+12:37:27.630  10.15.13.100  local0.notice  [S=300653] [SID=f4fbdf:155:10913]  (N   253415) States: (#381)MediaStream[Deallocated] [Time:25-06@11:35:18.711]
+12:37:27.631  10.15.13.100  local0.notice  [S=300654] [SID=f4fbdf:155:10913]  (N   253416) AcSIPCall(#9314): Handling REINVITE_RESPONSE in state Connected [Time:25-06@11:35:18.711]
+12:37:27.631  10.15.13.100  local0.notice  [S=300655] [SID=f4fbdf:155:10913]  (N   253417) ---- Outgoing SIP Message to 52.114.132.46:4096 from SIPInterface #1 (Teams) TLS TO(#2208) SocketID(4046) ---- [Time:25-06@11:35:18.712]
+12:37:27.632  10.15.13.100  local0.notice  [S=300656] [SID=f4fbdf:155:10913]  SIP/2.0 200 OK 
+                                                                              Via: SIP/2.0/TLS 52.114.132.46:5061;branch=z9hG4bKa0da9f6f 
+                                                                              From: tr-us-user3 <sip:+33336663005@sip.pstnhub.microsoft.com:5061;user=phone>;tag=08b881f3f0d04f38921e7ba70adba9e8 
+                                                                              To: <sip:+33336663101@tr-us-sbc3.audctrunk.aceducation.info:5061;user=phone>;tag=633d1b68 
+                                                                              Call-ID: bcd8cfeabbd351d18d1f23b4460c8b93 
+                                                                              CSeq: 2 INVITE 
+                                                                              Contact: "ITSP" <sip:tr-us-sbc3.audctrunk.aceducation.info:5061;transport=tls>;+sip.instance="<urn:uuid:c4d84b67-e7ea-4050-b5e8-e82cf6d04dae>" 
+                                                                              Supported: outbound,replaces,sdp-anat 
+                                                                              Allow: INVITE, ACK, CANCEL, OPTIONS, BYE, REFER, NOTIFY, MESSAGE, SUBSCRIBE, INFO, UPDATE 
+                                                                              Server: GROUP-1-VESBC/v.7.20A.254.375 
+                                                                              Content-Type: application/sdp 
+                                                                              Content-Length: 510 
+                                                                               
+                                                                              v=0 
+                                                                              o=33336663101 2036615530 209747624 IN IP4 173.227.253.94 
+                                                                              s=Talk 
+                                                                              c=IN IP4 173.227.253.94 
+                                                                              t=0 0 
+                                                                              a=ice-lite 
+                                                                              m=audio 7090 RTP/SAVP 0 8 101 
+                                                                              c=IN IP4 173.227.253.94 
+                                                                              a=rtpmap:101 telephone-event/8000 
+                                                                              a=mid:1 
+                                                                              a=ice-ufrag:iCfZV613yv2arZYp 
+                                                                              a=ice-pwd:nmxYRS+mtMeevetgLORhKDkz 
+                                                                              a=candidate:1557028013 1 udp 2130706431 173.227.253.94 7090 typ host 
+                                                                              a=candidate:1557028013 2 udp 2130706430 173.227.253.94 7091 typ host 
+                                                                              a=crypto:1 AES_CM_128_HMAC_SHA1_80 inline:BfjYkvjYsLsM16RiU4tZDZK3dJcI1B3R0jEae+u2|2^31 
+                                                                               [Time:25-06@11:35:18.712]
+12:37:27.632  10.15.13.100  local0.notice  [S=300657] [SID=f4fbdf:155:10913]  (N   253418) MEDIA_SYNC_ENDED_EV: (#793)SBCController -> (#1586)SBCEndPoint 
+                                                                               -> (#360)SBCCall [Time:25-06@11:35:18.712]
+12:37:27.632  10.15.13.100  local0.notice  [S=300658] [SID=f4fbdf:155:10913]  (N   253419) MEDIA_SYNC_ENDED_EV: (#793)SBCController -> (#1587)SBCEndPoint 
+                                                                               -> (#358)SBCCall [Time:25-06@11:35:18.712]
+12:37:27.639  10.15.13.100  local0.notice  [S=300659] [SID=f4fbdf:155:10913]  (N   253420) ---- Incoming SIP Message from 52.114.132.46:4096 to SIPInterface #1 (Teams) TLS TO(#2208) SocketID(4046) ---- [Time:25-06@11:35:18.728]
+12:37:27.639  10.15.13.100  local0.notice  [S=300660] [SID=f4fbdf:155:10913]  ACK sip:tr-us-sbc3.audctrunk.aceducation.info:5061;transport=tls SIP/2.0 
+                                                                              FROM: tr-us-user3<sip:+33336663005@sip.pstnhub.microsoft.com:5061;user=phone>;tag=08b881f3f0d04f38921e7ba70adba9e8 
+                                                                              TO: <sip:+33336663101@tr-us-sbc3.audctrunk.aceducation.info:5061>;user=phone;tag=633d1b68 
+                                                                              CSEQ: 2 ACK 
+                                                                              CALL-ID: bcd8cfeabbd351d18d1f23b4460c8b93 
+                                                                              MAX-FORWARDS: 70 
+                                                                              VIA: SIP/2.0/TLS 52.114.132.46:5061;branch=z9hG4bK22534f8 
+                                                                              CONTACT: <sip:api-du-c-usea.pstnhub.microsoft.com:443;x-i=5cc11d85-14d7-438f-a2a3-dfdcee2d6527;x-c=bcd8cfeabbd351d18d1f23b4460c8b93/d/8/a1868ffa9c8d443a9461e18cee291870> 
+                                                                              CONTENT-LENGTH: 0 
+                                                                              USER-AGENT: Microsoft.PSTNHub.SIPProxy v.2020.5.27.2 i.USEA.6 
+                                                                              ALLOW: INVITE,ACK,OPTIONS,CANCEL,BYE,NOTIFY 
+                                                                               
+                                                                               [Time:25-06@11:35:18.728]
+12:37:27.639  10.15.13.100  local0.notice  [S=300661] [SID=f4fbdf:155:10913]  (N   253421) [ManSet: 3, Rule: 0] - Executed (Condition was True) [Time:25-06@11:35:18.728]
+12:37:27.640  10.15.13.100  local0.notice  [S=300662] [SID=f4fbdf:155:10913]  (N   253422) AcSIPCall(#9314): Handling ACK in state Connected [Time:25-06@11:35:18.728]
+12:37:27.640  10.15.13.100  local0.notice  [S=300663] [SID=f4fbdf:155:10913]  (N   253423) SBCReinviteAckData: (#1590)AcSBCCallAPI -> (#1590)SIPSBCCallLeg [Time:25-06@11:35:18.728]
+12:37:27.640  10.15.13.100  local0.notice  [S=300664] [SID=f4fbdf:155:10913]  (N   253424) SIPSBCReinviteAckEvent: (#1590)SIPSBCCallLeg -> (#360)SBCCall 
+                                                                               -> (#1586)SBCEndPoint 
+                                                                               -> (#793)SBCController 
+                                                                               -> (#1587)SBCEndPoint 
+                                                                               -> (#358)SBCCall 
+                                                                               -> (#1588)SIPSBCCallLeg [Time:25-06@11:35:18.728]
+12:37:27.640  10.15.13.100  local0.notice  [S=300665] [SID=f4fbdf:155:10913]  (N   253425) AcSIPCall(#9311): Handling ACK_REQ in state Connected [Time:25-06@11:35:18.728]
+12:37:27.640  10.15.13.100  local0.notice  [S=300666] [SID=f4fbdf:155:10913]  (N   253426) ---- Outgoing SIP Message to 10.15.10.20:5068 from SIPInterface #0 (ITSP) TCP TO(#2620) SocketID(3634) ---- [Time:25-06@11:35:18.729]
+12:37:27.640  10.15.13.100  local0.notice  [S=300667] [SID=f4fbdf:155:10913]  ACK sip:10.15.10.20:5068;transport=tcp SIP/2.0 
+                                                                              Via: SIP/2.0/TCP 10.15.13.100:5068;alias;branch=z9hG4bKac462247566 
+                                                                              Max-Forwards: 69 
+                                                                              From: tr-us-user3 <sip:999@sip.pstnhub.microsoft.com:5061;user=phone>;tag=1c48010101 
+                                                                              To: <sip:33336663101@tr-us-sbc3.audctrunk.aceducation.info;user=phone>;tag=NkvC~aC 
+                                                                              Call-ID: 19339540082562020113515@10.15.13.100 
+                                                                              CSeq: 2 ACK 
+                                                                              Contact: <sip:10.15.13.100:5068;transport=tcp;x-i=5cc11d85-14d7-438f-a2a3-dfdcee2d6527;x-c=bcd8cfeabbd351d18d1f23b4460c8b93/d/8/a1868ffa9c8d443a9461e18cee291870> 
+                                                                              ALLOW: INVITE,ACK,OPTIONS,CANCEL,BYE,NOTIFY 
+                                                                              User-Agent: GROUP-1-VESBC/v.7.20A.254.375 
+                                                                              Content-Length: 0 
+                                                                               
+                                                                               [Time:25-06@11:35:18.729]
+12:37:28.140  10.15.13.100  local0.notice  [S=300668] [BID=f4fbdf:155]  (N   253427) ReliableTransportObject(#2212)::SelfCheck - Connection is not persistent and client list is empty - disconnecting [Time:25-06@11:35:19.220]
+12:37:28.141  10.15.13.100  local0.notice  [S=300669] [BID=f4fbdf:155]  (N   253428) ReliableTransportObject::HandleAuditRelease - Releasing transport object(#2212) [Time:25-06@11:35:19.220]
+12:37:28.141  10.15.13.100  local0.notice  [S=300670] [BID=f4fbdf:155]  (N   253429) Resource ReliableTransportObject released - (#2212) [Time:25-06@11:35:19.220]
+12:37:28.141  10.15.13.100  local0.notice  [S=300671] [BID=f4fbdf:155]  (N   253430) LBEventReleasedTO: (#0)ReliableTransportObject -> (#0)SIPSocketMngr [Time:25-06@11:35:19.220]
+12:37:28.141  10.15.13.100  local0.notice  [S=300672] [BID=f4fbdf:155]  (N   253431) SIPSocketReliable(#2205)::ReleaseConnection - Closing connection [Time:25-06@11:35:19.220]
+12:37:28.142  10.15.13.100  local0.notice  [S=300673] [BID=f4fbdf:155]  (N   253432) TLSSocketAPI(#2205) Released [Time:25-06@11:35:19.220]
+12:37:28.142  10.15.13.100  local0.notice  [S=300674] [BID=f4fbdf:155]  (N   253433) SIPSocketReliable(#2205) Released - SocketID=4044 [Time:25-06@11:35:19.220]
+12:37:28.142  10.15.13.100  local0.notice  [S=300675] [BID=f4fbdf:155]  (N   253434) TLSSocketAPI(#2205)::CloseConnection - Closing connection [Time:25-06@11:35:19.220]
+12:37:28.143  10.15.13.100  local0.notice  [S=300676] [BID=f4fbdf:155]  (N   253435) Socket buffer released - (#2209) [Time:25-06@11:35:19.221]
+12:37:29.307  10.15.13.100  local0.notice  [S=300677] [SID=f4fbdf:155:10913]  (N   253436) States: (#9313)AcSIPCall[Disconnected->Idle] 
+                                                                               (#9313)AcSIPCall[Deallocated] [Time:25-06@11:35:20.396]
+12:37:30.678  10.15.13.100  local0.notice  [S=300678] [SID=f4fbdf:155:10913]  (N   253437) ---- Incoming SIP Message from 10.15.10.20:5068 to SIPInterface #0 (ITSP) TCP TO(#2620) SocketID(3634) ---- [Time:25-06@11:35:21.766]
+12:37:30.678  10.15.13.100  local0.notice  [S=300679] [SID=f4fbdf:155:10913]  BYE sip:10.15.13.100:5068;transport=tcp;x-i=5cc11d85-14d7-438f-a2a3-dfdcee2d6527;x-c=bcd8cfeabbd351d18d1f23b4460c8b93/d/8/a1868ffa9c8d443a9461e18cee291870 SIP/2.0 
+                                                                              Via: SIP/2.0/TCP 10.15.10.20:5068;alias;branch=z9hG4bKac1645763270 
+                                                                              Max-Forwards: 69 
+                                                                              From: <sip:33336663101@tr-us-sbc3.audctrunk.aceducation.info;user=phone>;tag=NkvC~aC 
+                                                                              To: tr-us-user3 <sip:999@sip.pstnhub.microsoft.com:5061;user=phone>;tag=1c48010101 
+                                                                              Call-ID: 19339540082562020113515@10.15.13.100 
+                                                                              CSeq: 1 BYE 
+                                                                              User-Agent: VMWare vSBC/v.7.20A.254.202 
+                                                                              Content-Length: 0 
+                                                                               
+                                                                               [Time:25-06@11:35:21.766]
+12:37:30.678  10.15.13.100  local0.notice  [S=300680] [SID=f4fbdf:155:10913]  (N   253438) AcSIPCall(#9311): Handling BYE in state Connected [Time:25-06@11:35:21.766]
+12:37:30.678  10.15.13.100  local0.notice  [S=300681] [SID=f4fbdf:155:10913]  (N   253439) States: (#9311)AcSIPCall[Connected->Disconnected] [Time:25-06@11:35:21.766]
+12:37:30.679  10.15.13.100  local0.notice  [S=300682] [SID=f4fbdf:155:10913]  (N   253440) SBCDisconnectData: (#1588)AcSBCCallAPI -> (#1588)SIPSBCCallLeg [Time:25-06@11:35:21.766]
+12:37:30.679  10.15.13.100  local0.notice  [S=300683] [SID=f4fbdf:155:10913]  (N   253441) RELEASE_EV: (#1588)SIPSBCCallLeg -> (#358)SBCCall[ConnectAcknowledged->Disconnecting] 
+                                                                               -> (#1587)SBCEndPoint[Session->Releasing] 
+                                                                               -> (#793)SBCController[Active->Disconnecting] 
+                                                                               -> (#1586)SBCEndPoint[Session->Releasing] 
+                                                                               -> (#360)SBCCall[ConnectAcknowledged->Disconnecting] 
+                                                                               -> (#1590)SIPSBCCallLeg [Time:25-06@11:35:21.766]
+12:37:30.679  10.15.13.100  local0.notice  [S=300684] [SID=f4fbdf:155:10913]  (N   253442) AcSIPCall(#9314): Handling DISCONNECT_REQ in state Connected [Time:25-06@11:35:21.766]
+12:37:30.679  10.15.13.100  local0.notice  [S=300685] [SID=f4fbdf:155:10913]  (N   253443) ---- Outgoing SIP Message to 52.114.132.46:4096 from SIPInterface #1 (Teams) TLS TO(#2208) SocketID(4046) ---- [Time:25-06@11:35:21.766]
+12:37:30.679  10.15.13.100  local0.notice  [S=300686] [SID=f4fbdf:155:10913]  BYE sip:api-du-c-usea.pstnhub.microsoft.com:443;x-i=5cc11d85-14d7-438f-a2a3-dfdcee2d6527;x-c=bcd8cfeabbd351d18d1f23b4460c8b93/d/8/a1868ffa9c8d443a9461e18cee291870 SIP/2.0 
+                                                                              Via: SIP/2.0/TLS tr-us-sbc3.audctrunk.aceducation.info:5061;alias;branch=z9hG4bKac1262874691 
+                                                                              Max-Forwards: 68 
+                                                                              From: <sip:+33336663101@tr-us-sbc3.audctrunk.aceducation.info:5061;user=phone>;tag=633d1b68 
+                                                                              To: tr-us-user3 <sip:+33336663005@sip.pstnhub.microsoft.com:5061;user=phone>;tag=08b881f3f0d04f38921e7ba70adba9e8 
+                                                                              Call-ID: bcd8cfeabbd351d18d1f23b4460c8b93 
+                                                                              CSeq: 1 BYE 
+                                                                              Route: <sip:sip-du-a-us.pstnhub.microsoft.com:5061;transport=tls;lr> 
+                                                                              User-Agent: GROUP-1-VESBC/v.7.20A.254.375 
+                                                                              Content-Length: 0 
+                                                                               
+                                                                               [Time:25-06@11:35:21.767]
+12:37:30.679  10.15.13.100  local0.notice  [S=300687] [SID=f4fbdf:155:10913]  (N   253444) States: (#9314)AcSIPCall[Connected->Disconnected] [Time:25-06@11:35:21.767]
+12:37:30.711  10.15.13.100  local0.notice  [S=300688] [SID=f4fbdf:155:10913]  (N   253445) ---- Incoming SIP Message from 52.114.132.46:4096 to SIPInterface #1 (Teams) TLS TO(#2208) SocketID(4046) ---- [Time:25-06@11:35:21.799]
+12:37:30.711  10.15.13.100  local0.notice  [S=300689] [SID=f4fbdf:155:10913]  SIP/2.0 200 OK 
+                                                                              FROM: <sip:+33336663101@tr-us-sbc3.audctrunk.aceducation.info:5061;user=phone>;tag=633d1b68 
+                                                                              TO: tr-us-user3<sip:+33336663005@sip.pstnhub.microsoft.com:5061;user=phone>;tag=08b881f3f0d04f38921e7ba70adba9e8 
+                                                                              CSEQ: 1 BYE 
+                                                                              CALL-ID: bcd8cfeabbd351d18d1f23b4460c8b93 
+                                                                              VIA: SIP/2.0/TLS tr-us-sbc3.audctrunk.aceducation.info:5061;branch=z9hG4bKac1262874691 
+                                                                              CONTENT-LENGTH: 0 
+                                                                              ALLOW: INVITE,ACK,OPTIONS,CANCEL,BYE,NOTIFY 
+                                                                              SERVER: Microsoft.PSTNHub.SIPProxy v.2020.5.27.2 i.USEA.6 
+                                                                               
+                                                                               [Time:25-06@11:35:21.799]
+12:37:30.713  10.15.13.100  local0.notice  [S=300690] [SID=f4fbdf:155:10913]  (N   253446) [ManSet: 3, Rule: 0] - Executed (Condition was True) [Time:25-06@11:35:21.799]
+12:37:30.713  10.15.13.100  local0.notice  [S=300691] [SID=f4fbdf:155:10913]  (N   253447) AcSIPCall(#9314): Handling 200 OK in state Disconnected [Time:25-06@11:35:21.799]
+12:37:30.714  10.15.13.100  local0.notice  [S=300692] [SID=f4fbdf:155:10913]  (N   253448) States: (#9314)AcSIPCall[Disconnected->Idle] 
+                                                                               (#9314)AcSIPCall[Deallocated] [Time:25-06@11:35:21.799]
+12:37:30.714  10.15.13.100  local0.notice  [S=300693] [SID=f4fbdf:155:10913]  (N   253449) SBCDisconnectAckData: (#1590)AcSBCCallAPI -> (#1590)SIPSBCCallLeg [Time:25-06@11:35:21.799]
+12:37:30.714  10.15.13.100  local0.notice  [S=300694] [SID=f4fbdf:155:10913]  (N   253450) RELEASE_ACK_EV: (#1590)SIPSBCCallLeg -> (#360)SBCCall[Disconnecting->Disconnected] [Time:25-06@11:35:21.799]
+12:37:30.714  10.15.13.100  local0.notice  [S=300695] [SID=f4fbdf:155:10913]  (N   253451) (#185)StopSBCSession: DisconnectAndCloseA, CidA 358(2) CidB 359(2) [Time:25-06@11:35:21.799]
+12:37:30.714  10.15.13.100  local0.notice  [S=300696] [SID=f4fbdf:155:10913]  (N   253452) States: (#185)StreamsConnector[Deallocated] [Time:25-06@11:35:21.799]
+12:37:30.715  10.15.13.100  local0.notice  [S=300697] [SID=f4fbdf:155:10913]  (N   253453) RELEASE_ACK_EV: (#360)SBCCall -> (#1586)SBCEndPoint[Releasing->Released] 
+                                                                               -> (#793)SBCController[Disconnecting->Disconnected] [Time:25-06@11:35:21.799]
+12:37:30.715  10.15.13.100  local0.notice  [S=300698] [SID=f4fbdf:155:10913]  (N   253454) States: (#181)MRC[Deallocated] [Time:25-06@11:35:21.799]
+12:37:30.715  10.15.13.100  local0.notice  [S=300699] [SID=f4fbdf:155:10913]  (N   253455) RELEASE_ACK_EV: (#793)SBCController -> (#1587)SBCEndPoint[Releasing->Released] 
+                                                                               -> (#358)SBCCall[Disconnecting->Disconnected] [Time:25-06@11:35:21.799]
+12:37:30.715  10.15.13.100  local0.notice  [S=300700] [SID=f4fbdf:155:10913]  (N   253456) StopSBCSession: 2, CidA 359(3) [Time:25-06@11:35:21.800]
+12:37:30.715  10.15.13.100  local0.notice  [S=300701] [SID=f4fbdf:155:10913]  (N   253457) RELEASE_ACK_EV: (#358)SBCCall -> (#1588)SIPSBCCallLeg [Time:25-06@11:35:21.800]
+12:37:30.716  10.15.13.100  local0.notice  [S=300702] [SID=f4fbdf:155:10913]  (N   253458) AcSIPCall(#9311): Handling DISCONNECT_RESPONSE in state Disconnected [Time:25-06@11:35:21.800]
+12:37:30.716  10.15.13.100  local0.notice  [S=300703] [SID=f4fbdf:155:10913]  (N   253459) [ManSet: 2, Rule: 2] - Executed (Condition was False) [Time:25-06@11:35:21.800]
+12:37:30.716  10.15.13.100  local0.notice  [S=300704] [SID=f4fbdf:155:10913]  (N   253460) ---- Outgoing SIP Message to 10.15.10.20:5068 from SIPInterface #0 (ITSP) TCP TO(#2620) SocketID(3634) ---- [Time:25-06@11:35:21.800]
+12:37:30.716  10.15.13.100  local0.notice  [S=300705] [SID=f4fbdf:155:10913]  SIP/2.0 200 OK 
+                                                                              Via: SIP/2.0/TCP 10.15.10.20:5068;alias;branch=z9hG4bKac1645763270 
+                                                                              From: <sip:33336663101@tr-us-sbc3.audctrunk.aceducation.info;user=phone>;tag=NkvC~aC 
+                                                                              To: tr-us-user3 <sip:999@sip.pstnhub.microsoft.com:5061;user=phone>;tag=1c48010101 
+                                                                              Call-ID: 19339540082562020113515@10.15.13.100 
+                                                                              CSeq: 1 BYE 
+                                                                              ALLOW: INVITE,ACK,OPTIONS,CANCEL,BYE,NOTIFY 
+                                                                              Server: GROUP-1-VESBC/v.7.20A.254.375 
+                                                                              Content-Length: 0 
+                                                                               
+                                                                               [Time:25-06@11:35:21.800]
+12:37:30.718  10.15.13.100  local0.notice  [S=300706] [SID=f4fbdf:155:10913]  (N   253461) States: (#1588)SIPSBCCallLeg[Deallocated] 
+                                                                               (#1590)SIPSBCCallLeg[Deallocated] [Time:25-06@11:35:21.800]
+12:37:30.718  10.15.13.100  local0.notice  [S=300707] [SID=f4fbdf:155:10913]  (N   253462) Discarding event SBCDisconnectAckData. Receiver is invalid (#1590) [Time:25-06@11:35:21.800]
+12:37:30.718  10.15.13.100  local0.notice  [S=300708] [SID=f4fbdf:155:10913]  (N   253463) States: (#793)SBCController[Deallocated] [Time:25-06@11:35:21.800]
+12:37:30.718  10.15.13.100  local0.notice  [S=300709] [SID=f4fbdf:155:10913]  (N   253464) recv <--acEV_PCIIF_COMMAND_RESPONSE ch: 359 CmdType: 1601 SeqNum: 2 [Time:25-06@11:35:21.802]
+12:37:30.718  10.15.13.100  local0.notice  [S=300710] [SID=f4fbdf:155:10913]  (N   253465) recv <--acEV_PCIIF_COMMAND_RESPONSE ch: 358 CmdType: 3 SeqNum: 2 [Time:25-06@11:35:21.803]
+12:37:30.719  10.15.13.100  local0.notice  [S=300711] [SID=f4fbdf:155:10913]  (N   253466) recv <-- acEV_ALL_RTCP_STATISTICS Ch:359 [Time:25-06@11:35:21.803]
+12:37:30.719  10.15.13.100  local0.notice  [S=300712] [SID=f4fbdf:155:10913]  (N   253467) recv <--acEV_PCIIF_COMMAND_RESPONSE ch: 359 CmdType: 3 SeqNum: 3 [Time:25-06@11:35:21.803]
+12:37:30.719  10.15.13.100  local0.notice  [S=300713] [SID=f4fbdf:155:10913]  (N   253468) SBC_CMD_RESPONSE_BOARD_EV: (#0)NULL -> (#358)RTPChannelResource [Time:25-06@11:35:21.803]
+12:37:30.719  10.15.13.100  local0.notice  [S=300714] [SID=f4fbdf:155:10913]  (N   253469) SBC_CMD_RESPONSE_BOARD_EV: (#0)NULL -> (#360)RTPChannelResource [Time:25-06@11:35:21.803]
+12:37:30.719  10.15.13.100  local0.notice  [S=300715] [SID=f4fbdf:155:10913]  (N   253470) SBC_ALL_RTCP_STAT_EV: (#0)NULL -> (#358)RTPChannelResource [Time:25-06@11:35:21.804]
+12:37:30.719  10.15.13.100  local0.notice  [S=300716] [SID=f4fbdf:155:10913]  (N   253471) SBC_CMD_RESPONSE_BOARD_EV: (#0)NULL -> (#358)RTPChannelResource [Time:25-06@11:35:21.804]
+12:37:30.719  10.15.13.100  local0.notice  [S=300717] [SID=f4fbdf:155:10913]  (N   253472) recv <--acEV_MEDIA_END_RTCP_REPORT Ch:358 [Time:25-06@11:35:21.807]
+12:37:30.720  10.15.13.100  local0.notice  [S=300718] [SID=f4fbdf:155:10913]  (N   253473) recv <--acEV_MEDIA_END_RTCP_REPORT Ch:359 [Time:25-06@11:35:21.807]
+12:37:30.720  10.15.13.100  local0.notice  [S=300719] [SID=f4fbdf:155:10913]  (N   253474) SBC_MEDIA_END_STAT_EV: (#0)NULL -> (#360)RTPChannelResource [Time:25-06@11:35:21.807]
+12:37:30.720  10.15.13.100  local1.info    [S=49] |MediaReportType|SIPCallId                                         |SessionId               |Cid  |MediaType |Coder          |Intrv|LocalRtpIp          |LocalRtpPort   |RemoteRtpIp         |RemoteRtpPort|InPackets |OutPackets|LocalPackLoss|RemotePackLoss|RTPdelay |RTPjitter|TxRTPssrc     |RxRTPssrc     |LocalRFactor|RemoteRFactor|LocalMosCQ|RemoteMosCQ|TxRTPIPDiffServ|LatchedRtpIp        |LatchedRtpPort |LatchedT38Ip        |LatchedT38Port |CoderTranscoding |LegId 
+                                                   [Time:25-06@11:35:21.807]
+12:37:30.720  10.15.13.100  local1.info    [S=50] |MEDIA_END      |bcd8cfeabbd351d18d1f23b4460c8b93                  |f4fbdf:155:10913        |358  |AUDIO     |g711Ulaw64k    |20   |173.227.253.94      |7090           |52.113.211.96       |50780|78        |173       |0         |0             |71       |20       |4246780577    |3399625805    |127         |127          |127       |127        |46             |52.113.211.96       |50780          |                    |0              |NO_TRANSCODING   |1     
+                                                   [Time:25-06@11:35:21.807]
+12:37:30.720  10.15.13.100  local0.notice  [S=300720] [SID=f4fbdf:155:10913]  (N   253475) SBC_MEDIA_END_STAT_EV: (#360)MRA -> (#360)SBCCall [Time:25-06@11:35:21.808]
+12:37:30.720  10.15.13.100  local1.info    [S=51] |CALL_END       |SBC       |bcd8cfeabbd351d18d1f23b4460c8b93                  |f4fbdf:155:10913        |RMT  |52.114.132.46       |4096         |173.227.253.94      |5061       |TLS             |+33336663005@sip.pstnhub.microsoft.com   |+33336663005@sip.pstnhub.microsoft.com   |33336663101@tr-us-sbc3.audctrunk.aceducation.info|+33336663101@tr-us-sbc3.audctrunk.aceducation.info|3       |LCL  |GWAPP_NORMAL_CALL_CLEAR                 |NORMAL_CALL_CLEAR|11:35:05.272  UTC Thu Jun 25 2020  |11:35:18.106  UTC Thu Jun 25 2020  |11:35:21.807  UTC Thu Jun 25 2020  |-1             |                                         |                                         |24             |Teams                           |DefaultSRD                      |Teams                           |Teams                           |Teams                           |MR-Teams                        |no         |BYE         |                          |tr-us-user3                                        |                                     |Normal  |1     
+                                                   [Time:25-06@11:35:21.808]
+12:37:30.720  10.15.13.100  local0.notice  [S=300721] [SID=f4fbdf:155:10913]  (N   253476) States: (#360)MRA[Deallocated] [Time:25-06@11:35:21.808]
+12:37:30.721  10.15.13.100  local0.notice  [S=300722] [SID=f4fbdf:155:10913]  (N   253477) ResourceCounter: SBC Media Legs FK -1 [1/260] [Time:25-06@11:35:21.808]
+12:37:30.721  10.15.13.100  local0.notice  [S=300723] [SID=f4fbdf:155:10913]  (N   253478) (#378)RTS::DeAllocateResource, CID 358 Detached. [Time:25-06@11:35:21.808]
+12:37:30.721  10.15.13.100  local0.notice  [S=300724] [SID=f4fbdf:155:10913]  (N   253479) ReleaseAddress. IPv4IF=1 IPv6IF=-1 Port=7090 [Time:25-06@11:35:21.808]
+12:37:30.721  10.15.13.100  local0.notice  [S=300725] [SID=f4fbdf:155:10913]  (N   253480) (#360)ChannelResource::DeAllocateMediaIpPorts RealmIndex(1) port(7090) IPV4IF(1) Deallocated. [Time:25-06@11:35:21.808]
+12:37:30.721  10.15.13.100  local0.notice  [S=300726] [SID=f4fbdf:155:10913]  (N   253481) ResourceCounter: Service channel -1 [1/380] [Time:25-06@11:35:21.808]
+12:37:30.724  10.15.13.100  local0.notice  [S=300727] [SID=f4fbdf:155:10913]  (N   253482) States: (#360)ChannelResource[Deallocated] 
+                                                                               (#378)MediaStream[Deallocated] [Time:25-06@11:35:21.808]
+12:37:30.724  10.15.13.100  local0.notice  [S=300728] [SID=f4fbdf:155:10913]  (N   253483) SBC_MEDIA_END_STAT_EV: (#0)NULL -> (#358)RTPChannelResource [Time:25-06@11:35:21.808]
+12:37:30.724  10.15.13.100  local1.info    [S=52] |MEDIA_END      |19339540082562020113515@10.15.13.100              |f4fbdf:155:10913        |359  |AUDIO     |g711Ulaw64k    |20   |10.15.13.100        |8140           |10.15.10.20         |6912 |173       |78        |0         |0             |0        |47       |2816835897    |1920035283    |127         |127          |127       |127        |46             |                    |0              |                    |0              |NO_TRANSCODING   |3     
+                                                   [Time:25-06@11:35:21.808]
+12:37:30.724  10.15.13.100  local0.notice  [S=300729] [SID=f4fbdf:155:10913]  (N   253484) SBC_MEDIA_END_STAT_EV: (#358)MRA -> (#358)SBCCall [Time:25-06@11:35:21.808]
+12:37:30.724  10.15.13.100  local1.info    [S=53] |CALL_END       |SBC       |19339540082562020113515@10.15.13.100              |f4fbdf:155:10913        |LCL  |10.15.13.100        |5068         |10.15.10.20         |5068       |TCP             |999@sip.pstnhub.microsoft.com            |+33336663005@sip.pstnhub.microsoft.com   |33336663101@tr-us-sbc3.audctrunk.aceducation.info|33336663101@tr-us-sbc3.audctrunk.aceducation.info|3       |RMT  |GWAPP_NORMAL_CALL_CLEAR                 |NORMAL_CALL_CLEAR|11:35:15.390  UTC Thu Jun 25 2020  |11:35:18.106  UTC Thu Jun 25 2020  |11:35:21.808  UTC Thu Jun 25 2020  |-1             |                                         |                                         |24             |ITSP                            |DefaultSRD                      |ITSP                            |ITSP                            |ITSP                            |MR-ITSP                         |no         |BYE         |                          |tr-us-user3                                        |                                     |AltRoute|3     
+                                                   [Time:25-06@11:35:21.808]
+12:37:30.724  10.15.13.100  local0.notice  [S=300730] [SID=f4fbdf:155:10913]  (N   253485) States: (#358)MRA[Deallocated] [Time:25-06@11:35:21.808]
+12:37:30.724  10.15.13.100  local0.notice  [S=300731] [SID=f4fbdf:155:10913]  (N   253486) ResourceCounter: SBC Media Legs FK -1 [0/260] [Time:25-06@11:35:21.808]
+12:37:30.724  10.15.13.100  local0.notice  [S=300732] [SID=f4fbdf:155:10913]  (N   253487) (#377)RTS::DeAllocateResource, CID 359 Detached. [Time:25-06@11:35:21.808]
+12:37:30.724  10.15.13.100  local0.notice  [S=300733] [SID=f4fbdf:155:10913]  (N   253488) ReleaseAddress. IPv4IF=0 IPv6IF=-1 Port=8140 [Time:25-06@11:35:21.808]
+12:37:30.724  10.15.13.100  local0.notice  [S=300734] [SID=f4fbdf:155:10913]  (N   253489) (#358)ChannelResource::DeAllocateMediaIpPorts RealmIndex(0) port(8140) IPV4IF(0) Deallocated. [Time:25-06@11:35:21.808]
+12:37:30.724  10.15.13.100  local0.notice  [S=300735] [SID=f4fbdf:155:10913]  (N   253490) ResourceCounter: Service channel -1 [0/380] [Time:25-06@11:35:21.808]
+12:37:30.724  10.15.13.100  local0.notice  [S=300736] [SID=f4fbdf:155:10913]  (N   253491) States: (#358)ChannelResource[Deallocated] 
+                                                                               (#377)MediaStream[Deallocated] [Time:25-06@11:35:21.808]
+12:37:30.725  10.15.13.100  local0.notice  [S=300737] [SID=f4fbdf:155:10913]  (N   253492) CAC: Remove SBC Incoming INVITE, IPG 1 (Teams): 0, SRD 0 (DefaultSRD): 0, SipIF 1 (Teams): 0 [Time:25-06@11:35:21.808]
+12:37:30.725  10.15.13.100  local0.notice  [S=300738] [SID=f4fbdf:155:10913]  (N   253493) ResourceCounter: SBC leg -1 [1/260] [Time:25-06@11:35:21.808]
+12:37:30.725  10.15.13.100  local0.notice  [S=300739] [SID=f4fbdf:155:10913]  (N   253494) States: (#360)SBCCall[Deallocated] [Time:25-06@11:35:21.808]
+12:37:30.725  10.15.13.100  local0.notice  [S=300740] [SID=f4fbdf:155:10913]  (N   253495) CAC: Remove SBC Outgoing INVITE, IPG 0 (ITSP): 0, SRD 0 (DefaultSRD): 0, SipIF 0 (ITSP): 0 [Time:25-06@11:35:21.808]
+12:37:30.725  10.15.13.100  local0.notice  [S=300741] [SID=f4fbdf:155:10913]  (N   253496) ResourceCounter: SBC leg -1 [0/260] [Time:25-06@11:35:21.808]
+12:37:30.725  10.15.13.100  local0.notice  [S=300742] [SID=f4fbdf:155:10913]  (N   253497) States: (#358)SBCCall[Deallocated] [Time:25-06@11:35:21.808]
+12:52:00.222  10.15.13.100  local0.notice  [S=312590] [SID=f4fbdf:155:11423]  (N   264291) UdpRtxMngr::Transmit 1 OPTIONS Rtx Left: 4 Dest: 10.15.30.83:5060, TU: AcSIPDialog(#8851) [Time:25-06@11:49:50.977]
+12:52:00.222  10.15.13.100  local0.notice  [S=312591] [SID=f4fbdf:155:11423]  (N   264292) SIPTransaction(#21164)::SendMsgBuffer - Resending last message [Time:25-06@11:49:50.977]
+12:52:00.237  10.15.13.100  local0.notice  [S=312592] [BID=f4fbdf:155]  (N   264293) UdpSocketAPI(#2622): Socket error message: 'CSocket::HandleSocketEvent socket error received, error: Connection refused(111) SocketName: SIPUDP#2622, FileDesc: 59 '. [Time:25-06@11:49:50.993]
+12:52:00.237  10.15.13.100  local0.notice  [S=312593] [BID=f4fbdf:155]  (N   264294) UdpSocketAPI(#2622): ICMP error for 10.15.30.83:5060. Received ErrorCode=111 [Time:25-06@11:49:50.993]
+12:52:00.237  10.15.13.100  local0.notice  [S=312594] [BID=f4fbdf:155]  (N   264295) LBEventICMPError: (#0)SIPSocketUDP -> (#0)SIPStackTransport [Time:25-06@11:49:50.993]
+12:52:00.238  10.15.13.100  local0.notice  [S=312595] [BID=f4fbdf:155]  (N   264296) UdpRtxMngr::HandleICMPError - ICMP error for IP 10.15.30.83 Port 5060 [Time:25-06@11:49:50.993]
+12:52:00.238  10.15.13.100  local0.notice  [S=312596] [SID=f4fbdf:155:11423]  (N   264297) UdpRtxMngr::HandleICMPError - Retransmission of message 1 OPTIONS was stopped by ICMP error. Terminating transaction... [Time:25-06@11:49:50.993]
+12:52:00.238  10.15.13.100  local0.notice  [S=312597] [SID=f4fbdf:155:11423]  (N   264298) AcSIPDialog(#8851)::TransactionFail - ClientTransaction(#21164) failed sending message with CSeq 1 OPTIONS, the cause is Transport ICMP Error [Time:25-06@11:49:50.993]
+12:52:00.238  10.15.13.100  local0.notice  [S=312598] [SID=f4fbdf:155:11423]  (N   264299) AcSIPDialog(#8851): Handling DIALOG_DISCONNECT_REQ in state DialogInitiated [Time:25-06@11:49:50.993]
+12:52:00.238  10.15.13.100  local0.notice  [S=312599] [SID=f4fbdf:155:11423]  (N   264300) States: (#8851)AcSIPDialog[DialogInitiated->DialogDisconnected] [Time:25-06@11:49:50.993]
+12:52:00.238  10.15.13.100  local0.notice  [S=312600] [SID=f4fbdf:155:11423]  (N   264301) SIPAppMngr::FreeDialogAPI - (#1158) [Time:25-06@11:49:50.993]
+12:52:00.239  10.15.13.100  local0.notice  [S=312601] [SID=f4fbdf:155:11423]  (N   264302) States: (#8851)AcSIPDialog[Deallocated] 
+                                                                               (#8851)AcSIPDialog[DialogDisconnected->DialogIdle] [Time:25-06@11:49:50.993]
+12:52:00.239  10.15.13.100  local0.notice  [S=312602] [SID=f4fbdf:155:11423]  (N   264303) (#953)gwSession[Deallocated] [Time:25-06@11:49:50.993]
+12:52:01.246  10.15.13.100  local0.notice  [S=312603] [SID=f4fbdf:155:11424]  (N   264304) (#952)gwSession[Allocated]. Handle:00007F00BBFF0D30; Global session ID: ef55b14cfcc5ad21 [Time:25-06@11:49:52.001]
+12:52:01.247  10.15.13.100  local0.notice  [S=312604] [SID=f4fbdf:155:11424]  (N   264305) States: (#8850)AcSIPDialog[Allocated] [Time:25-06@11:49:52.001]
+12:52:01.247  10.15.13.100  local0.notice  [S=312605] [SID=f4fbdf:155:11424]  (N   264306) AcSIPDialog(#8850): Handling DIALOG_INIT_REQ in state DialogIdle [Time:25-06@11:49:52.001]
+12:52:01.247  10.15.13.100  local0.notice  [S=312606] [SID=f4fbdf:155:11424]  (N   264307) States: (#8850)AcSIPDialog[DialogIdle->DialogInitiated] [Time:25-06@11:49:52.001]
+12:52:01.247  10.15.13.100  local0.notice  [S=312607] [SID=f4fbdf:155:11424]  (N   264308) AcSIPDialog(#8850): Handling GENERAL_REQ in state DialogInitiated [Time:25-06@11:49:52.001]
+12:52:01.248  10.15.13.100  local0.notice  [S=312608] [SID=f4fbdf:155:11424]  (N   264309) UdpRtxMngr::Transmit 1 OPTIONS Rtx Left: 6 Dest: 10.15.30.83:5060, TU: AcSIPDialog(#8850) [Time:25-06@11:49:52.001]
+12:52:01.248  10.15.13.100  local0.notice  [S=312609] [SID=f4fbdf:155:11424]  (N   264310) ---- Outgoing SIP Message to 10.15.30.83:5060 from SIPInterface #0 (ITSP) UDP TO(#0) ---- [Time:25-06@11:49:52.001]
+12:52:01.248  10.15.13.100  local0.notice  [S=312610] [SID=f4fbdf:155:11424]  OPTIONS sip:10.15.13.100 SIP/2.0 
+                                                                              Via: SIP/2.0/UDP 10.15.13.100:5060;branch=z9hG4bKac1471140215 
+                                                                              Max-Forwards: 70 
+                                                                              From: <sip:10.15.13.100>;tag=1c1873069286 
+                                                                              To: <sip:10.15.13.100> 
+                                                                              Call-ID: 19000754682562020114952@10.15.13.100 
+                                                                              CSeq: 1 OPTIONS 
+                                                                              Contact: <sip:10.15.13.100:5060> 
+                                                                              Allow: REGISTER,OPTIONS,INVITE,ACK,CANCEL,BYE,NOTIFY,PRACK,REFER,INFO,SUBSCRIBE,UPDATE 
+                                                                              User-Agent: GROUP-1-VESBC/v.7.20A.254.375 
+                                                                              Accept: application/sdp, application/simple-message-summary, message/sipfrag 
+                                                                              Content-Length: 0 
+                                                                               
+                                                                               [Time:25-06@11:49:52.001]
+12:52:01.248  10.15.13.100  local0.notice  [S=312611] [BID=f4fbdf:155]  (N   264311) UdpSocketAPI(#2622): Socket error message: 'CSocket::HandleSocketEvent socket error received, error: Connection refused(111) SocketName: SIPUDP#2622, FileDesc: 59 '. [Time:25-06@11:49:52.002]
+12:52:01.249  10.15.13.100  local0.notice  [S=312612] [BID=f4fbdf:155]  (N   264312) UdpSocketAPI(#2622): ICMP error for 10.15.30.83:5060. Received ErrorCode=111 [Time:25-06@11:49:52.002]
+12:52:01.249  10.15.13.100  local0.notice  [S=312613] [BID=f4fbdf:155]  (N   264313) LBEventICMPError: (#0)SIPSocketUDP -> (#0)SIPStackTransport [Time:25-06@11:49:52.002]
+12:52:01.249  10.15.13.100  local0.notice  [S=312614] [BID=f4fbdf:155]  (N   264314) UdpRtxMngr::HandleICMPError - ICMP error for IP 10.15.30.83 Port 5060 [Time:25-06@11:49:52.002]
+12:52:01.249  10.15.13.100  local0.notice  [S=312615] [SID=f4fbdf:155:11424]  (N   264315) UdpRtxMngr::HandleICMPError - Retransmission of message 1 OPTIONS was stopped by ICMP error. Terminating transaction... [Time:25-06@11:49:52.002]
+12:52:01.249  10.15.13.100  local0.notice  [S=312616] [SID=f4fbdf:155:11424]  (N   264316) AcSIPDialog(#8850)::TransactionFail - ClientTransaction(#21163) failed sending message with CSeq 1 OPTIONS, the cause is Transport ICMP Error [Time:25-06@11:49:52.002]
+12:52:01.249  10.15.13.100  local0.notice  [S=312617] [SID=f4fbdf:155:11424]  (N   264317) AcSIPDialog(#8850): Handling DIALOG_DISCONNECT_REQ in state DialogInitiated [Time:25-06@11:49:52.002]
+12:52:01.250  10.15.13.100  local0.notice  [S=312618] [SID=f4fbdf:155:11424]  (N   264318) States: (#8850)AcSIPDialog[DialogInitiated->DialogDisconnected] [Time:25-06@11:49:52.003]
+12:52:01.250  10.15.13.100  local0.notice  [S=312619] [SID=f4fbdf:155:11424]  (N   264319) SIPAppMngr::FreeDialogAPI - (#1157) [Time:25-06@11:49:52.003]
+12:52:01.250  10.15.13.100  local0.notice  [S=312620] [SID=f4fbdf:155:11424]  (N   264320) States: (#8850)AcSIPDialog[Deallocated] 
+                                                                               (#8850)AcSIPDialog[DialogDisconnected->DialogIdle] [Time:25-06@11:49:52.003]
+12:52:01.250  10.15.13.100  local0.notice  [S=312621] [SID=f4fbdf:155:11424]  (N   264321) (#952)gwSession[Deallocated] [Time:25-06@11:49:52.003]
+12:52:02.254  10.15.13.100  local0.notice  [S=312622] [SID=f4fbdf:155:11425]  (N   264322) (#950)gwSession[Allocated]. Handle:00007F00BBFF0D80; Global session ID: 461aacd57e890c1f [Time:25-06@11:49:53.009]
+12:52:02.254  10.15.13.100  local0.notice  [S=312623] [SID=f4fbdf:155:11425]  (N   264323) States: (#8849)AcSIPDialog[Allocated] [Time:25-06@11:49:53.009]
+12:52:02.254  10.15.13.100  local0.notice  [S=312624] [SID=f4fbdf:155:11425]  (N   264324) AcSIPDialog(#8849): Handling DIALOG_INIT_REQ in state DialogIdle [Time:25-06@11:49:53.009]
+12:52:02.255  10.15.13.100  local0.notice  [S=312625] [SID=f4fbdf:155:11425]  (N   264325) States: (#8849)AcSIPDialog[DialogIdle->DialogInitiated] [Time:25-06@11:49:53.009]
+12:52:02.255  10.15.13.100  local0.notice  [S=312626] [SID=f4fbdf:155:11425]  (N   264326) AcSIPDialog(#8849): Handling GENERAL_REQ in state DialogInitiated [Time:25-06@11:49:53.010]
+12:52:02.255  10.15.13.100  local0.notice  [S=312627] [SID=f4fbdf:155:11425]  (N   264327) UdpRtxMngr::Transmit 1 OPTIONS Rtx Left: 6 Dest: 10.15.30.83:5060, TU: AcSIPDialog(#8849) [Time:25-06@11:49:53.010]
+12:52:02.255  10.15.13.100  local0.notice  [S=312628] [SID=f4fbdf:155:11425]  (N   264328) ---- Outgoing SIP Message to 10.15.30.83:5060 from SIPInterface #0 (ITSP) UDP TO(#0) ---- [Time:25-06@11:49:53.010]
+12:52:02.256  10.15.13.100  local0.notice  [S=312629] [SID=f4fbdf:155:11425]  OPTIONS sip:10.15.13.100 SIP/2.0 
+                                                                              Via: SIP/2.0/UDP 10.15.13.100:5060;branch=z9hG4bKac1105462331 
+                                                                              Max-Forwards: 70 
+                                                                              From: <sip:10.15.13.100>;tag=1c920260573 
+                                                                              To: <sip:10.15.13.100> 
+                                                                              Call-ID: 10316971692562020114953@10.15.13.100 
+                                                                              CSeq: 1 OPTIONS 
+                                                                              Contact: <sip:10.15.13.100:5060> 
+                                                                              Allow: REGISTER,OPTIONS,INVITE,ACK,CANCEL,BYE,NOTIFY,PRACK,REFER,INFO,SUBSCRIBE,UPDATE 
+                                                                              User-Agent: GROUP-1-VESBC/v.7.20A.254.375 
+                                                                              Accept: application/sdp, application/simple-message-summary, message/sipfrag 
+                                                                              Content-Length: 0 
+                                                                               
+                                                                               [Time:25-06@11:49:53.010]
+12:52:02.270  10.15.13.100  local0.notice  [S=312630] [BID=f4fbdf:155]  (N   264329) UdpSocketAPI(#2622): Socket error message: 'CSocket::HandleSocketEvent socket error received, error: Connection refused(111) SocketName: SIPUDP#2622, FileDesc: 59 '. [Time:25-06@11:49:53.026]
+12:52:02.270  10.15.13.100  local0.notice  [S=312631] [BID=f4fbdf:155]  (N   264330) UdpSocketAPI(#2622): ICMP error for 10.15.30.83:5060. Received ErrorCode=111 [Time:25-06@11:49:53.026]
+12:52:02.270  10.15.13.100  local0.notice  [S=312632] [BID=f4fbdf:155]  (N   264331) LBEventICMPError: (#0)SIPSocketUDP -> (#0)SIPStackTransport [Time:25-06@11:49:53.026]
+12:52:02.270  10.15.13.100  local0.notice  [S=312633] [BID=f4fbdf:155]  (N   264332) UdpRtxMngr::HandleICMPError - ICMP error for IP 10.15.30.83 Port 5060 [Time:25-06@11:49:53.026]
+12:52:02.270  10.15.13.100  local0.notice  [S=312634] [SID=f4fbdf:155:11425]  (N   264333) UdpRtxMngr::HandleICMPError - Retransmission of message 1 OPTIONS was stopped by ICMP error. Terminating transaction... [Time:25-06@11:49:53.026]
+12:52:02.271  10.15.13.100  local0.notice  [S=312635] [SID=f4fbdf:155:11425]  (N   264334) AcSIPDialog(#8849)::TransactionFail - ClientTransaction(#21162) failed sending message with CSeq 1 OPTIONS, the cause is Transport ICMP Error [Time:25-06@11:49:53.026]
+12:52:02.271  10.15.13.100  local0.notice  [S=312636] [SID=f4fbdf:155:11425]  (N   264335) AcSIPDialog(#8849): Handling DIALOG_DISCONNECT_REQ in state DialogInitiated [Time:25-06@11:49:53.026]
+12:52:02.271  10.15.13.100  local0.notice  [S=312637] [SID=f4fbdf:155:11425]  (N   264336) States: (#8849)AcSIPDialog[DialogInitiated->DialogDisconnected] [Time:25-06@11:49:53.026]
+12:52:02.271  10.15.13.100  local0.notice  [S=312638] [SID=f4fbdf:155:11425]  (N   264337) SIPAppMngr::FreeDialogAPI - (#1156) [Time:25-06@11:49:53.026]
+12:52:02.271  10.15.13.100  local0.notice  [S=312639] [SID=f4fbdf:155:11425]  (N   264338) States: (#8849)AcSIPDialog[Deallocated] 
+                                                                               (#8849)AcSIPDialog[DialogDisconnected->DialogIdle] [Time:25-06@11:49:53.026]
+12:52:02.272  10.15.13.100  local0.notice  [S=312640] [SID=f4fbdf:155:11425]  (N   264339) (#950)gwSession[Deallocated] [Time:25-06@11:49:53.026]
+12:52:03.276  10.15.13.100  local0.notice  [S=312641] [SID=f4fbdf:155:11426]  (N   264340) (#951)gwSession[Allocated]. Handle:00007F00BBFF0D58; Global session ID: 80fdef09db89b8de [Time:25-06@11:49:54.031]
+12:52:03.276  10.15.13.100  local0.notice  [S=312642] [SID=f4fbdf:155:11426]  (N   264341) States: (#8848)AcSIPDialog[Allocated] [Time:25-06@11:49:54.032]
+12:52:03.278  10.15.13.100  local0.notice  [S=312643] [SID=f4fbdf:155:11426]  (N   264342) AcSIPDialog(#8848): Handling DIALOG_INIT_REQ in state DialogIdle [Time:25-06@11:49:54.032]
+12:52:03.278  10.15.13.100  local0.notice  [S=312644] [SID=f4fbdf:155:11426]  (N   264343) States: (#8848)AcSIPDialog[DialogIdle->DialogInitiated] [Time:25-06@11:49:54.032]
+12:52:03.278  10.15.13.100  local0.notice  [S=312645] [SID=f4fbdf:155:11426]  (N   264344) AcSIPDialog(#8848): Handling GENERAL_REQ in state DialogInitiated [Time:25-06@11:49:54.032]
+12:52:03.278  10.15.13.100  local0.notice  [S=312646] [SID=f4fbdf:155:11426]  (N   264345) UdpRtxMngr::Transmit 1 OPTIONS Rtx Left: 6 Dest: 10.15.30.83:5060, TU: AcSIPDialog(#8848) [Time:25-06@11:49:54.032]
+12:52:03.278  10.15.13.100  local0.notice  [S=312647] [SID=f4fbdf:155:11426]  (N   264346) ---- Outgoing SIP Message to 10.15.30.83:5060 from SIPInterface #0 (ITSP) UDP TO(#0) ---- [Time:25-06@11:49:54.032]
+12:52:03.278  10.15.13.100  local0.notice  [S=312648] [SID=f4fbdf:155:11426]  OPTIONS sip:10.15.13.100 SIP/2.0 
+                                                                              Via: SIP/2.0/UDP 10.15.13.100:5060;branch=z9hG4bKac1108455481 
+                                                                              Max-Forwards: 70 
+                                                                              From: <sip:10.15.13.100>;tag=1c1220430898 
+                                                                              To: <sip:10.15.13.100> 
+                                                                              Call-ID: 19183275872562020114954@10.15.13.100 
+                                                                              CSeq: 1 OPTIONS 
+                                                                              Contact: <sip:10.15.13.100:5060> 
+                                                                              Allow: REGISTER,OPTIONS,INVITE,ACK,CANCEL,BYE,NOTIFY,PRACK,REFER,INFO,SUBSCRIBE,UPDATE 
+                                                                              User-Agent: GROUP-1-VESBC/v.7.20A.254.375 
+                                                                              Accept: application/sdp, application/simple-message-summary, message/sipfrag 
+                                                                              Content-Length: 0 
+                                                                               
+                                                                               [Time:25-06@11:49:54.032]
+12:52:03.278  10.15.13.100  local0.notice  [S=312649] [BID=f4fbdf:155]  (N   264347) UdpSocketAPI(#2622): Socket error message: 'CSocket::HandleSocketEvent socket error received, error: Connection refused(111) SocketName: SIPUDP#2622, FileDesc: 59 '. [Time:25-06@11:49:54.033]
+12:52:03.278  10.15.13.100  local0.notice  [S=312650] [BID=f4fbdf:155]  (N   264348) UdpSocketAPI(#2622): ICMP error for 10.15.30.83:5060. Received ErrorCode=111 [Time:25-06@11:49:54.033]
+12:52:03.279  10.15.13.100  local0.notice  [S=312651] [BID=f4fbdf:155]  (N   264349) LBEventICMPError: (#0)SIPSocketUDP -> (#0)SIPStackTransport [Time:25-06@11:49:54.033]
+12:52:03.279  10.15.13.100  local0.notice  [S=312652] [BID=f4fbdf:155]  (N   264350) UdpRtxMngr::HandleICMPError - ICMP error for IP 10.15.30.83 Port 5060 [Time:25-06@11:49:54.033]
+12:52:03.279  10.15.13.100  local0.notice  [S=312653] [SID=f4fbdf:155:11426]  (N   264351) UdpRtxMngr::HandleICMPError - Retransmission of message 1 OPTIONS was stopped by ICMP error. Terminating transaction... [Time:25-06@11:49:54.033]
+12:52:03.279  10.15.13.100  local0.notice  [S=312654] [SID=f4fbdf:155:11426]  (N   264352) AcSIPDialog(#8848)::TransactionFail - ClientTransaction(#21161) failed sending message with CSeq 1 OPTIONS, the cause is Transport ICMP Error [Time:25-06@11:49:54.033]
+12:52:03.279  10.15.13.100  local0.notice  [S=312655] [SID=f4fbdf:155:11426]  (N   264353) AcSIPDialog(#8848): Handling DIALOG_DISCONNECT_REQ in state DialogInitiated [Time:25-06@11:49:54.033]
+12:52:03.279  10.15.13.100  local0.notice  [S=312656] [SID=f4fbdf:155:11426]  (N   264354) States: (#8848)AcSIPDialog[DialogInitiated->DialogDisconnected] [Time:25-06@11:49:54.033]
+12:52:03.279  10.15.13.100  local0.notice  [S=312657] [SID=f4fbdf:155:11426]  (N   264355) SIPAppMngr::FreeDialogAPI - (#1155) [Time:25-06@11:49:54.033]
+12:52:03.279  10.15.13.100  local0.notice  [S=312658] [SID=f4fbdf:155:11426]  (N   264356) States: (#8848)AcSIPDialog[Deallocated] 
+                                                                               (#8848)AcSIPDialog[DialogDisconnected->DialogIdle] [Time:25-06@11:49:54.033]
+12:52:03.279  10.15.13.100  local0.notice  [S=312659] [SID=f4fbdf:155:11426]  (N   264357) (#951)gwSession[Deallocated] [Time:25-06@11:49:54.033]

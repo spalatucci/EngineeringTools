@@ -1,0 +1,31 @@
+voice port Impedence test
+
+test voice port 0/1/0 thl-sweep verbose (0/1/0 is example of port to be tested.)
+
+Establish a call and mute both phones then run above command from CLI (Command line- Putty).  Run this and it will automatically test the port and at the end return the optimal impaedence setting.
+
+
+Customer receiving inbound / outbound calls that do not release properly when remote caller hangs up also seeing issue when caller is transferred to voicemail. conducted impedence line testing on 2 of the ports (0/1/0 and 0/2/0) both failed to complete tests.
+voice port Impedence test
+
+test voice port 0/1/0 thl-sweep verbose (0/1/0 is example of port to be tested.)
+
+Establish a call and mute both phones then run above command from CLI (Command line- Putty).  Run this and it will automatically test the port and at the end return the optimal impaedence setting.
+
+Customer to call Telco to have them test/verify and repair if necessary FXO lines.  Told Cu that case would remain open for 48 hours while he arranges for Telco support and that I  would email him for a status update prior to closing the case. 
+
+test voice port 0/1/0 thl-sweep verbose
+
+test voice port 0/1/1 thl-sweep verbose
+
+test voice port 0/1/2 thl-sweep verbose
+
+test voice port 0/1/3 thl-sweep verbose
+
+
+
+test voice port 0/2/0 thl-sweep verbose
+test voice port 0/2/1 thl-sweep verbose
+
+test voice port 0/2/2 thl-sweep verbose
+test voice port 0/2/3 thl-sweep verbose

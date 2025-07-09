@@ -1,0 +1,5 @@
+SRD - Logical security group/Multi-tenancy
+Media Realm - Media definition by ports/sessions
+SIP Interfaces - L3 for SIP messages
+Proxy Set - Set of servers used by IP group/Redundancy options
+IP Group - SIP group entity and used in routing

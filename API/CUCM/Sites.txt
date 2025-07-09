@@ -1,0 +1,2 @@
+https://github.com/CiscoDevNet/axl-python-zeep-samples/tree/master
+https://collabapilab.ciscolive.com/lab/pod10/soap_apis/axl_python

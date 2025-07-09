@@ -1,0 +1,248 @@
+login as: dataadmin
+dataadmin@10.1.111.3's password:
+Type help or '?' for a list of available commands.
+hqasa/data>
+hqasa/data>
+hqasa/data> en
+Password:
+hqasa/data# sh run
+: Saved
+
+:
+: Hardware:   ASA5525
+:
+ASA Version 9.5(2) <context>
+!
+hostname data
+enable password 8Ry2YjIyt7RRXU24 encrypted
+names
+!
+interface WAN
+ nameif WAN
+ security-level 0
+ ip address 10.1.111.3 255.255.255.0 standby 10.1.111.5
+!
+interface data
+ nameif data
+ security-level 100
+ ip address 10.1.112.251 255.255.255.0 standby 10.1.112.252
+!
+interface AP_Net
+ nameif AP_Net
+ security-level 100
+ ip address 10.1.128.9 255.255.255.0
+!
+interface SSID_CNCSGuestWireless
+ nameif GuestWireless
+ security-level 50
+ ip address 10.1.130.1 255.255.254.0 standby 10.1.130.2
+!
+interface SSID_CNCS
+ nameif CNCS-Wireless
+ security-level 100
+ ip address 10.1.132.1 255.255.252.0 standby 10.1.132.2
+!
+interface SSID_CNCSMobile
+ nameif CNCS-Mobile
+ security-level 100
+ ip address 10.1.136.1 255.255.252.0 standby 10.1.136.2
+!
+interface Servers
+ nameif Servers
+ security-level 100
+ ip address 10.1.250.1 255.255.254.0 standby 10.1.250.2
+!
+interface MGMT
+ nameif MGMT
+ security-level 100
+ no ip address
+!
+interface PhysSec
+ nameif PhysSec
+ security-level 0
+ ip address 10.1.110.10 255.255.255.0
+!
+same-security-traffic permit inter-interface
+same-security-traffic permit intra-interface
+access-list WAN_access_in extended permit ip any any
+access-list data_access_in extended permit ip any any
+access-list PhysSec_access_in extended permit ip any any
+access-list GuestWireless_access_in extended permit ip any any
+access-list MGMT_access_in extended permit ip any any
+access-list Servers_access_in extended permit ip any any
+access-list CNCS-Mobile_access_in extended permit ip any any
+access-list CNCS-Wireless_access_in extended permit ip any any
+access-list AP_Net_access_in extended permit ip any any
+pager lines 24
+logging enable
+logging asdm informational
+mtu data 1500
+mtu WAN 1500
+mtu GuestWireless 1500
+mtu CNCS-Wireless 1500
+mtu CNCS-Mobile 1500
+mtu Servers 1500
+mtu MGMT 1500
+mtu PhysSec 1500
+mtu AP_Net 1500
+icmp unreachable rate-limit 1 burst-size 1
+no asdm history enable
+arp timeout 14400
+nat (any,any) source static any any no-proxy-arp
+access-group data_access_in in interface data
+access-group WAN_access_in in interface WAN
+access-group GuestWireless_access_in in interface GuestWireless
+access-group CNCS-Wireless_access_in in interface CNCS-Wireless
+access-group CNCS-Mobile_access_in in interface CNCS-Mobile
+access-group Servers_access_in in interface Servers
+access-group MGMT_access_in in interface MGMT
+access-group PhysSec_access_in in interface PhysSec
+access-group AP_Net_access_in in interface AP_Net
+route WAN 0.0.0.0 0.0.0.0 10.1.111.1 1
+route data 10.1.113.0 255.255.255.0 10.1.112.1 1
+route data 10.1.114.0 255.255.255.0 10.1.112.1 1
+route data 10.1.115.0 255.255.255.0 10.1.112.1 1
+route data 10.1.116.0 255.255.255.0 10.1.112.1 1
+route data 10.1.117.0 255.255.255.0 10.1.112.1 1
+route data 10.1.120.0 255.255.255.0 10.1.112.1 1
+route data 10.1.121.0 255.255.255.0 10.1.112.1 1
+route data 10.1.124.0 255.255.255.0 10.1.112.1 1
+route PhysSec 10.1.230.45 255.255.255.255 10.1.110.1 1
+timeout xlate 3:00:00
+timeout pat-xlate 0:00:30
+timeout conn 1:00:00 half-closed 0:10:00 udp 0:02:00 sctp 0:02:00 icmp 0:00:02
+timeout sunrpc 0:10:00 h323 0:05:00 h225 1:00:00 mgcp 0:05:00 mgcp-pat 0:05:00
+timeout sip 0:30:00 sip_media 0:02:00 sip-invite 0:03:00 sip-disconnect 0:02:00
+timeout sip-provisional-media 0:02:00 uauth 0:05:00 absolute
+timeout tcp-proxy-reassembly 0:01:00
+timeout floating-conn 0:00:00
+user-identity default-domain LOCAL
+aaa authentication ssh console LOCAL
+aaa authentication http console LOCAL
+http server enable
+http 0.0.0.0 0.0.0.0 WAN
+http 0.0.0.0 0.0.0.0 data
+no snmp-server location
+no snmp-server contact
+crypto ipsec security-association pmtu-aging infinite
+telnet timeout 5
+ssh stricthostkeycheck
+ssh 0.0.0.0 0.0.0.0 WAN
+ssh timeout 5
+ssh key-exchange group dh-group1-sha1
+dhcprelay server 10.1.230.45 PhysSec
+dhcprelay enable GuestWireless
+dhcprelay enable CNCS-Wireless
+dhcprelay enable CNCS-Mobile
+dhcprelay setroute GuestWireless
+dhcprelay setroute CNCS-Wireless
+dhcprelay setroute CNCS-Mobile
+dhcprelay timeout 60
+no threat-detection statistics tcp-intercept
+ssl cipher default custom "DES-CBC3-SHA:AES128-SHA:AES256-SHA"
+ssl cipher tlsv1 custom "DES-CBC3-SHA:AES128-SHA:AES256-SHA"
+ssl cipher dtlsv1 custom "DES-CBC3-SHA:AES128-SHA:AES256-SHA"
+username dataadmin password 9GQ03ug5UBzTMH4V encrypted privilege 15
+!
+class-map inspection_default
+ match default-inspection-traffic
+!
+!
+policy-map type inspect dns preset_dns_map
+ parameters
+  message-length maximum client auto
+  message-length maximum 512
+policy-map global_policy
+ class inspection_default
+  inspect dns preset_dns_map
+  inspect ftp
+  inspect h323 h225
+  inspect h323 ras
+  inspect ip-options
+  inspect netbios
+  inspect rsh
+  inspect rtsp
+  inspect skinny
+  inspect esmtp
+  inspect sqlnet
+  inspect sunrpc
+  inspect tftp
+  inspect sip
+  inspect xdmcp
+  inspect icmp
+!
+service-policy global_policy global
+Cryptochecksum:646d18a825f1c6f17e011edc9bec9404
+: end
+hqasa/data#           sh ip rout
+                            ^
+ERROR: % Invalid input detected at '^' marker.
+hqasa/data# sh rout
+
+
+Routing Table: data
+Codes: L - local, C - connected, S - static, R - RIP, M - mobile, B - BGP
+       D - EIGRP, EX - EIGRP external, O - OSPF, IA - OSPF inter area
+       N1 - OSPF NSSA external type 1, N2 - OSPF NSSA external type 2
+       E1 - OSPF external type 1, E2 - OSPF external type 2
+       i - IS-IS, su - IS-IS summary, L1 - IS-IS level-1, L2 - IS-IS level-2
+       ia - IS-IS inter area, * - candidate default, U - per-user static route
+       o - ODR, P - periodic downloaded static route, + - replicated route
+Gateway of last resort is 10.1.111.1 to network 0.0.0.0
+
+S*    0.0.0.0 0.0.0.0 [1/0] via 10.1.111.1, WAN
+C        10.1.110.0 255.255.255.0 is directly connected, PhysSec
+L        10.1.110.10 255.255.255.255 is directly connected, PhysSec
+C        10.1.111.0 255.255.255.0 is directly connected, WAN
+L        10.1.111.3 255.255.255.255 is directly connected, WAN
+C        10.1.112.0 255.255.255.0 is directly connected, data
+L        10.1.112.251 255.255.255.255 is directly connected, data
+S        10.1.113.0 255.255.255.0 [1/0] via 10.1.112.1, data
+S        10.1.114.0 255.255.255.0 [1/0] via 10.1.112.1, data
+S        10.1.115.0 255.255.255.0 [1/0] via 10.1.112.1, data
+S        10.1.116.0 255.255.255.0 [1/0] via 10.1.112.1, data
+S        10.1.117.0 255.255.255.0 [1/0] via 10.1.112.1, data
+S        10.1.120.0 255.255.255.0 [1/0] via 10.1.112.1, data
+S        10.1.121.0 255.255.255.0 [1/0] via 10.1.112.1, data
+S        10.1.124.0 255.255.255.0 [1/0] via 10.1.112.1, data
+C        10.1.128.0 255.255.255.0 is directly connected, AP_Net
+L        10.1.128.9 255.255.255.255 is directly connected, AP_Net
+C        10.1.130.0 255.255.254.0 is directly connected, GuestWireless
+L        10.1.130.1 255.255.255.255 is directly connected, GuestWireless
+C        10.1.132.0 255.255.252.0 is directly connected, CNCS-Wireless
+L        10.1.132.1 255.255.255.255 is directly connected, CNCS-Wireless
+C        10.1.136.0 255.255.252.0 is directly connected, CNCS-Mobile
+L        10.1.136.1 255.255.255.255 is directly connected, CNCS-Mobile
+S        10.1.230.45 255.255.255.255 [1/0] via 10.1.110.1, PhysSec
+C        10.1.250.0 255.255.254.0 is directly connected, Servers
+L        10.1.250.1 255.255.255.255 is directly connected, Servers
+
+hqasa/data#  sh ip
+System IP Addresses:
+Interface                Name                   IP address      Subnet mask     Method
+WAN                      WAN                    10.1.111.3      255.255.255.0   CONFIG
+data                     data                   10.1.112.251    255.255.255.0   CONFIG
+AP_Net                   AP_Net                 10.1.128.9      255.255.255.0   manual
+SSID_CNCSGuestWireless   GuestWireless          10.1.130.1      255.255.254.0   manual
+SSID_CNCS                CNCS-Wireless          10.1.132.1      255.255.252.0   manual
+SSID_CNCSMobile          CNCS-Mobile            10.1.136.1      255.255.252.0   manual
+Servers                  Servers                10.1.250.1      255.255.254.0   manual
+PhysSec                  PhysSec                10.1.110.10     255.255.255.0   manual
+Current IP Addresses:
+Interface                Name                   IP address      Subnet mask     Method
+WAN                      WAN                    10.1.111.3      255.255.255.0   CONFIG
+data                     data                   10.1.112.251    255.255.255.0   CONFIG
+AP_Net                   AP_Net                 10.1.128.9      255.255.255.0   manual
+SSID_CNCSGuestWireless   GuestWireless          10.1.130.1      255.255.254.0   manual
+SSID_CNCS                CNCS-Wireless          10.1.132.1      255.255.252.0   manual
+SSID_CNCSMobile          CNCS-Mobile            10.1.136.1      255.255.252.0   manual
+Servers                  Servers                10.1.250.1      255.255.254.0   manual
+PhysSec                  PhysSec                10.1.110.10     255.255.255.0   manual
+hqasa/data#
+hqasa/data#
+hqasa/data#
+hqasa/data#
+hqasa/data#
+hqasa/data#
+hqasa/data#
+hqasa/data#

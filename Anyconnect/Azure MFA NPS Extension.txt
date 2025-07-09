@@ -1,0 +1,4 @@
+https://docs.microsoft.com/en-us/azure/active-directory/authentication/howto-mfa-nps-extension
+
+TLS Issue:
+https://www.alitajran.com/unable-to-install-nuget-provider-for-powershell/

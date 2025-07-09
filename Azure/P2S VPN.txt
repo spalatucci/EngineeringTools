@@ -1,0 +1,8 @@
+https://docs.microsoft.com/en-us/azure/vpn-gateway/point-to-site-about
+https://docs.microsoft.com/en-us/azure/vpn-gateway/point-to-site-how-to-radius-ps
+https://docs.microsoft.com/en-us/azure/vpn-gateway/vpn-gateway-howto-point-to-site-rm-ps
+https://docs.microsoft.com/en-us/azure/vpn-gateway/vpn-gateway-howto-point-to-site-resource-manager-portal
+https://docs.microsoft.com/en-us/azure/vpn-gateway/vpn-gateway-howto-openvpn
+https://techcommunity.microsoft.com/t5/itops-talk-blog/step-by-step-creating-an-azure-point-to-site-vpn/ba-p/326264
+
+https://docs.microsoft.com/en-us/azure/vpn-gateway/vpn-profile-intune

@@ -1,0 +1,18 @@
+Microsoft Teams
+https://docs.microsoft.com/en-us/microsoftteams/direct-routing-landing-page
+
+AudioCodes
+https://www.audiocodes.com/media/13253/connecting-audiocodes-sbc-to-microsoft-teams-direct-routing-enterprise-model-configuration-note.pdf
+https://www.audiocodes.com/media/13591/0345-product-notice-audiocodes-license-key-for-microsoft-teams.pdf
+
+Message Manipulation Guide
+https://www.audiocodes.com/media/13527/sip-message-manipulation-syntax-reference-guide-ver-72.pdf
+
+Avaya:
+https://www.audiocodes.com/media/9662/ltrt-12460-avaya-ip-office-500-ip-pbx-with-broadcloud-sip-trunk-using-mediant-e-sbc-configuration-note.pdf
+
+Examples:
+https://www.audiocodes.com/media/9961/ltrt-31626-mediant-sbc-configuration-examples-ver-72.pdf
+
+S4B On-Prem:
+https://docs.microsoft.com/en-us/microsoftteams/migration-interop-guidance-for-teams-with-skype

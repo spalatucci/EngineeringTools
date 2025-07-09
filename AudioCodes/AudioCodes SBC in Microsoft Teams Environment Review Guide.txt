@@ -1,0 +1,487 @@
+AudioCodes SBC in Teams Environment review guide
+
+Q1:How can you assign the management IP address to the AudioCodes Session Border Controller?
+Web Browser
+BootP
+DHCP
+RS-232
+***All of the Above
+
+Q2:What is the Factory IP address of the AudioCodes Mediant 500/800/1000/2600/4000 Session Border Controller?
+172.17.0.2
+***192.168.0.2
+10.1.10.10
+
+Q3:The Configuration file, AKA INI file, contains all of the configuration parameters
+True, it contains all of the SBC parameters
+***False, only contains parameters that were changed during configuration
+
+Q4:On the Web Browser, what indicates that a parameter will need a Reset to take effect?
+Pink Dot
+Bold Text
+Highlighted
+***Lightning Bolt
+
+Q5:On the Web Browser, what indicates that there is an invalid line in a table?
+***Pink Dot
+Bold Text
+Highlighted
+Lightning Bolt
+
+Q6:After completing the SBC Configuration it is best Practice to?
+***Save the INI file
+Reset the SBC
+Click Restore Defaults
+Load the INI file
+
+Q7:How can the Software on the Session Border Controller be updated?
+BootP
+TFTP
+***Software Upgrade Wizard
+None of the Above
+
+Q8:On the Web Browser, Under what menu can syslogs be enabled?
+Monitor
+***Troubleshoot
+Setup
+All of the Above
+None of the Above
+
+Q9:How can parameters that do not appear on the web interface be configured?
+BootP
+***AdminPage
+INI Viewer
+None of the Above
+
+Q10:A red rectangle around the Reset button means?
+***A reset must occur to activate the change(s)
+A reset has occurred and the changes are activated
+A reminder to check you engine
+None of the Above
+
+Q11:Which document provides most of the AudioCodes Session Border Controller parameters?
+***Enterprise Gateway and SBCs User Manual
+Hardware Installation Manual
+Release Notes
+Design Guide
+Configuration Notes
+
+Q12:Which document provides new features to AudioCodes Session Border Controller?
+Enterprise Gateway and SBCs User Manual
+Hardware Installation Manual
+***Release Notes
+Design Guide
+Configuration Notes
+
+Q13:Which document provides hardware maintence of the AudioCodes Session Border Controller?
+Enterprise Gateway and SBCs User Manual
+***Hardware Installation Manual
+Release Notes
+Design Guide
+Configuration Notes
+
+Q14:How can AudioCodes Session Border Controller documentation be obtained?
+Thru AudioCodes Support Organization
+Thru AudioCodes Partners
+Sign up for an AudioCodes account on the Web Page
+Request via Sales
+***None of the Above
+
+Multiple Answer
+Q15:Which AudioCodes Session Border Controllers are defined as Software SBCs?
+***Mediant VE Microsoft Hyper-V
+***Mediant VE vmware
+***Mediant SE
+Mediant 9000
+
+Q16:Which of the AudioCodes Mediant 4000 Session Border Controller answers is Not Correct?
+Up to 5000 sessions
+Transcoding
+***Supports PSTN PRI carriers
+Can registers users
+None of the Above
+
+Multiple Answer
+Q17:Which of the AudioCodes Session Border Controllers can be configured as a Hybrid SBC?
+Mediant 9000
+Mediant VE vmware
+Mediant SE
+***Mediant 800
+Mediant 2600
+***Mediant 1000
+
+Q18:On the AudioCodes Session Border Controller, what is required to perform media transcoding?
+OSN4
+***DSP
+SWX
+FXO
+None of the Above
+
+Q19:An SBC by definition is
+Enforces Security, QoS and CAC
+A device to manage VoIP sessions
+A demarcation point between trusted and untrused network
+***All of the Above
+
+Q20: Examples of usage of the SBC
+Local IP Phone to Host IP-PBX
+Translator between two Dis-similar environments
+***Host IP-PBX to SIP Trunk
+All of the Above
+
+Q21:Which SBC connection allows for a virtual network separation?
+One-Leg SBC
+Two-Leg SBC
+***VLAN-Aware Switch
+None of the Above
+
+Multiple Answer
+Q22:Examples of SBC Transcoding
+***G.711Alaw to G.722
+***T.38 to Inband VBD
+***RTP to SRTP
+***Transrating
+***Voice Gain
+***RFC2833 - Transparent DTMF
+
+Q23:If the VIA header is stripped from an outgoing SIP message, is the SBC broken?
+True
+***False
+
+Q24:When does the SBC accept an RTP stream?
+Once Deep Stateful Packet Inspection of SIP occurs
+Once SIP has been Classified
+Once DPI of all RTP packets occurs
+***Opening of pin holes according to Offer/Answer Negotiation
+
+Q25:What is SBC Survivability?
+Routing calls to alternate routes
+Route calls between IP Phones using the Dynamic DB
+Fallback to PSTN
+***All of the Above
+
+Q26: Which SBC Operation Mode provides no topology hiding?
+***Stateful Proxy Server (CALL RECORDING AVAILABLE)
+Stateful Proxy Agent
+Back to Back User Agent
+Back to Back Server Agent
+
+Q27:When are SRDs used?
+Never
+Between LAN and WAN deployment
+***Multi-tenant deployment
+All of the Above
+
+Q28:Media Realms
+Define a range of TCP ports
+***Define a range of UDP ports
+None of the Above
+
+Q29:SIP Interfaces
+Used to receive Media
+Transcode between SIP trunks
+***Used to send and receive SIP messages
+Define a list of IP addresses
+Acts as a Message Translator
+
+Q30: Proxy sets define the IP/FQDNs of the SBC?
+True
+***False
+
+Q31:IP Groups Represent
+Servers
+Users
+Gateways
+***All of the Above
+None of the Above
+
+Q32: Proxy Sets are assigned to User-type Groups?
+True
+***False
+
+Q33: IP Profiles act as Translators between two dissimilar environments
+***True
+False
+
+Q34:Classification is used to Identify Incoming calls as belonging to an IP Group
+***True
+False
+
+Q35:IP to IP Routing rules define Number manipulations
+True
+***False
+
+Q36:What is the 4 step classification process in order?
+***AOR, Classify by Proxy Set, Classification Table, Allow Unclassified Calls
+Classify by Proxy Set, Allow Unclassified Calls, AOR, Classification Table
+Allow Unclassified Calls, Classification Table, AOR, Classify by Proxy Set
+AOR, Allow Unclassified Calls, Classify by Proxy Set, Classification Table
+AOR, Classification Table, Classify by Proxy Set, Allow Unclassified Calls
+
+Q37:The Colors on the SRDs indicate Alarm Severity
+True
+***False
+
+Q38:What is the Proxy Address Child table?
+Holds the IP addresses of the SBC
+Is the offspring of the IP Group and Proxy Set Parent tables
+***Holds the IP addresses or FQDNs of Proxies
+None of the Above
+
+Q39:VoIP Status -> Proxy set status shows
+***Connectivity to proxy addresses
+If calls are being completed
+If the SBC can receive calls
+None of the Above
+
+Q40:The NAT Translations table can modify the SIP signaling and Media IP addresses and Ports
+***True
+False
+
+Multiple Answer
+Q41:When opening an iSupport ticket, what data should be included? (Hint: more than 1 answer)
+***Syslog trace
+***Test setup
+***INI file
+***Problem description
+None of the Above
+
+Multiple Answer
+Q42:Which of the following can syslogs captured in?
+***The "Monkey" syslog viewer
+***Message log
+***Wireshark
+***Solarwinds
+None of the Above
+
+Q43:Syslogs are enabled under the Monitor menu
+True
+***False
+
+Multiple Answer
+Q44: What utilities print out the SIP ladder diagram?
+The "Alien" syslog viewer
+***The "Monkey" syslog viewer
+***Wireshark
+None of the Above
+
+Q45:Debug Recording can be used by R&D to determine issues with the DSPs
+***True
+False
+
+Multiple Answer
+Q46: What determines what media is offered to the far end?
+***Coder Group Table
+***SIP/SDP
+***Allowed Coder Group table
+None of the above
+
+Q47: What are the two Trunk Configurations that Microsoft Teams supports
+***Calling Plan
+***Direct Routing
+
+Q48: Which Microsoft Routing Plan allows customers to use their own DIDs?
+Calling Plan
+***Direct Routing
+All of the Above
+None of the Above
+
+Q49: Which Microsoft Routing Plan integrates with a legacy PBX or existing SIP Trunk?
+***Direct Routing
+Calling Plan
+
+Q50: Why use Direct Routing over Calling Plan?
+Existing contract with PSTN Carrier
+Connect to existing PBX, ATA, etc
+Calling Plan not available in the area
+***All of the Above
+
+Q51: For Teams Direct Routing, What does the SBC exchange SIP Messages with?
+Call Controller
+PSTN Hub
+***SIP Proxy
+Mediation Server
+
+Q52: Which Blanket Protocol is used to establish connections between hosts?
+STUN
+TURN
+***ICE
+SNMP
+HTTP
+
+Q53: What is STUN protocol used for?
+To discover its public IP address when it is located behind a NAT/Firewall
+NAT/Firewall still won't allow the two hosts to connect directly, media is relayed between two parties
+***Cordination between protocols to make connection between hosts
+
+Q54: What is TURN Protocol Used for?
+To discover its public IP address when it is located behind a NAT/Firewall
+***NAT/Firewall still won't allow the two hosts to connect directly, media is relayed between two parties
+Cordination between protocols to make connection between hosts
+
+Q55: What is ICE protocol Used for?
+***To discover its public IP address when it is located behind a NAT/Firewall
+NAT/Firewall still won't allow the two hosts to connect directly, media is relayed between two parties
+Cordination between protocols to make connection between hosts
+
+Q56: What are the two Direct Routing models?
+Standard
+***Enterprise
+***Hosting
+Serving
+
+Q57: Is audiocodes.onmicrosoft.com a valid DNS entry to register in an O365 Tenant?
+Yes
+***No
+
+Q58: Is sbc1.raleigh.audiocodes.com a valid certificate Common name for use with Teams?
+Yes
+***No
+
+Q59: Does teams support wildcard certificates?
+***Yes
+No
+
+Q60: On the ABC, what licenses are required for Teams?
+TEAMS
+MediaEncryption,  StrongEncryption and EncryptControlProtocol
+SBC Sessions
+***All of the above
+
+Q61: When Building Topology in Teams, what needs to be created?
+PSTN Gateway
+PSTN Usage Record
+Voice Policy
+Routes
+***all of the above
+
+Q62: Can a Teams client have many PSTN Usage records?
+***Yes
+No
+
+Q63: Is a PSTN Usage record part of a users routing policy?
+***Yes
+No
+
+Q64: Can Direct Routing Integrate with PBXs, ATAs, etc?
+***Yes
+No
+
+Q65: What type of DNS record is used to resolve the PSTN Hub FQDN?
+A-Record
+NAPTR
+***SRV
+none of the above
+
+Q66: What is returned from DNS when the PSTN Hub FQDN Record is resolved?
+Priority
+Weight
+Port
+Target
+***All of the above
+
+Q67: Where is the teams.local DNS entry resolved?
+Enterprise External DNS Server
+***Internal SRV Table
+Google DNS
+None of the above
+
+Multiple Answers
+Q68: What is required in the Teams IP Profile for the AudioCodes SBC to handle Signaling and Media to Teams?
+***SBC Media Security Mode = SRTP 
+***Remote Early Media RTP Detection Mode = By Media
+***Remote Update Support = Not Supported
+***Remote re-INVITE = Supported Only With SDP
+***Remote Delayed Offer Support = Not Supported
+***RFC 2833 Mode = Extend 
+***Remote Refer Mode = Handle Locally
+***Remote 3xx Mode = Handle Locally
+
+Q69:Allowed Coders can be used to remove codecs from incoming calls only
+True
+***False
+
+Q70:The order of codecs negotiated via the SDP cannot be rearranged
+True
+***False
+
+Q71:What is the CMR process?
+Calling, Media, Rotating
+***Classify, Manipulate, Routing
+Calling, Meditate, Return
+All of the Above
+None of the Above
+
+Multiple Answer
+Q72:Message manipulations can be applied to?
+***Outgoing IP Group
+***Incoming IP Group
+***Incoming SIP interface
+
+Q73:Message Manipulations are applied per SIP Message not per call
+***True
+False
+
+Q74: When a SIP Message Normalization rule is applied to the following header, which is the correct answer? sip:+1-800-229-229;phone-context=1@10.33.2.17;user=phone;UnknownUrlParam
+sip:+1800229229;phone-context=1@10.33.2.17;user=phone
+sip:+1-800-229-229;phone-context=1@10.33.2.17;user=phone
+***sip:+1800229229@10.33.2.17;user=phone
+
+Q75:Message Manipulation can only be applied to SIP Headers
+True
+***False
+
+Q76: Number Manipulations can be done using message manipulations
+***True
+False
+
+Q77:What is survivablilty?
+A redundant M4K chassis
+***Alternate routing
+A redundant vmware SBC
+None of the above
+
+Q78:When creating alternate routes in the IP to IP routing table, the order of the routes is the only  determination if the route is a primary or alternate route
+True
+***False
+
+Q79:Proxy sets can be used for alternate routing
+***True
+False
+
+Q80:What Method(s) determines that a route is able to establish a SIP call?
+SIP Options has marked the path as "OK"
+Receipt of a SIP response Code that is programmed in the Alternative Routing Reasons table
+An Alternate route is configured in the IP to IP routing table
+***All of the Above
+None of the Above
+
+Q81:Alternate Route Consider Inputs ignores the incoming SIP message to determine a matching routing rule
+True
+***False
+
+Multiple Answer
+Q82:Which products support High Availability?
+***Mediant 9000
+***Mediant 4000/B
+***Mediant 800B
+Mediant 1000B
+***Software SBC
+
+Q83:If the redundant unit fails, the active unit takes over
+True
+***False
+
+Q84:On a switchover, all calls are lost
+True
+***False
+
+Q85:What is the recommended Software Upgrade method for an HA system
+System Reset software upgrade
+BootP
+***Hitless software upgrade
+Stand up a new HA system
+
+Q86:HA configurations on both the Primary and Backup are EXACTLY Identical
+True
+***False

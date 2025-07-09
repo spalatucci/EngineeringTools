@@ -1,5 +1,0 @@
-FirstName,LastName,PhNo
-Customer,One,011919901951517
-Customer,Two,4083689111
-Customer,Three,12175035466
-Customer,Four,4083380880

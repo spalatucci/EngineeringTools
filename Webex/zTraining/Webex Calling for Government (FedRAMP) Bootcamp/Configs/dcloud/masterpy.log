@@ -1,9 +1,0 @@
-2023-11-07 04:37:06,888 Preparing for Webex Demo Session...
-2023-11-07 04:37:06,888 Upload Session file to FTP server in Shared Services
-2023-11-07 04:37:06,904 ReadingfileC:\dcloud\session.xml
-2023-11-07 04:37:06,904 Obtained Values are:
-2023-11-07 04:37:06,904 Session ID is: 1080201
-2023-11-07 04:37:06,904 Session Owner is: toreyes
-2023-11-07 04:37:06,904 Session vpod is :2594
-2023-11-07 04:37:06,904 Session Anyconnect Password is: 9fdbb9
-2023-11-07 04:37:06,982 Completed setup for Webex Demo Session...

@@ -1,3 +1,0 @@
-E911 RedSky
-No voicemail migration
-Voicemail PIN complexity requirements

@@ -1,3 +1,0 @@
-Transfer Fast Busy
-TAC:
-%KEEP_REFER_FAIL% tag changed to No to remove fast busy tone heard when attempting a transfer

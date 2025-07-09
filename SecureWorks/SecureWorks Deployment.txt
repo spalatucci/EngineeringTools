@@ -1,0 +1,41 @@
+SecureWorks:
+Order of priority below – and I am working on licensing for the NXLog app. 
+*•	Install Agent on all workstations
+*•	Install Agent on all servers
+*•	Rack (2) – 1u units at Datacenter
+	o	CTA - 192.168.10.10 - 1P24,2P17,2P18
+	o	LogVault - 192.168.10.11 - 1P23 - iDRAC/ESXi 192.168.10.12/.13
+*•	Deploy on-prem collector - 192.168.10.250
+•	Deploy Azure collector (NEED TO REBUILD AZURE)
+*•	Deploy 365 collector
+*•	Network integrations
+	o	Cisco ASA
+	o	Cisco Meraki
+*•	Install NXLog Enterprise on all servers (dev/test/prod/DR)
+
+Secure Works Login: 
+https://ctpx.secureworks.com/login
+
+On Prem Data Collector:
+https://docs.ctpx.secureworks.com/integration/localCollectors/on_prem_data_collection/
+
+Azure Data Collector:
+https://docs.ctpx.secureworks.com/integration/azure_data_collector/
+
+Office 365 / Azure Collector:
+https://docs.ctpx.secureworks.com/integration/connectCloud/azure_connect/
+
+MS Event Log: (NXLog Enterprise)
+https://docs.ctpx.secureworks.com/integration/connectEndpoint/windows_event_log_connect/
+
+Network:
+https://docs.ctpx.secureworks.com/integration/connectNetwork/cisco_meraki_connect/
+https://docs.ctpx.secureworks.com/integration/connectNetwork/cisco_connect/
+
+Qualys:
+*•	Deploy the virtual scanner
+•	Run a discovery scan to choose the ips for your subscription (if you don’t already know what they are)
+•	Update the information gathering SAP (where you added users) with the ips for your subscription 
+	o	Return the updated form to the VMS team
+Email: vms-support@secureworks.com 
+Phone: 1-888-456-3210 Option 4

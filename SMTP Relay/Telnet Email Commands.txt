@@ -1,0 +1,17 @@
+telnet 10.0.0.5 25
+
+ehlo sso.org
+
+mail from: test@ssorelay.com
+
+rcpt to: spalatucci@cwps.com
+
+data
+Subject: My Telnet Test Email
+
+Hello,
+
+This is an email sent by using the telnet command.
+
+Your friend,
+Me

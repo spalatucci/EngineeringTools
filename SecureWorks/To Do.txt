@@ -1,0 +1,14 @@
+*Validate subnets
+*Open Qualys ticket to import IP subnets
+*Categorize subnets
+*Setup authentication methods
+*Schedule light inventory scans
+*Schedule the vulnerability scans
+
+*Review DCMA spreadsheet
+LogVault backup destination (File Server/Util) - 
+
+*Open tickets with SecureWorks and Qualys on Accellion
+
+Datacenters Thursday 12am
+Sites Tuesday 12pm

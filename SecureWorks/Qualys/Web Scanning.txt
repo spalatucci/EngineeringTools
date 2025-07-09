@@ -1,0 +1,10 @@
+3rd party web scanning? e.g. Box
+External vs. Internal
+Authentication
+
+https://customerportal.sso.sourceamerica.org/login.html
+https://servicecosting.sso.sourceamerica.org/Shared/NewRequesthandler.asp?ModuleId=7
+https://www.sourceamerica.org
+https://sourceamerica.sharepoint.com/sites/Portal
+https://sourceamericaorg-sit.powerappsportals.com/signin
+https://source.sourceamerica.org/Pages/Home.aspx - Intranet

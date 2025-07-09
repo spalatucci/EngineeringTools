@@ -1,0 +1,19 @@
+Tony and Chris Barnes
+
+
+NXLog Community Edition
+https://nxlog.co/documentation/nxlog-user-guide/deploy-windows.html
+
+msiexec /i nxlog-5.1.6383_windows_x64.msi /q
+
+CMD:
+"C:\Program Files\nxlog\nxlog.exe" -v
+
+
+Qualys
+Email: vms-support@secureworks.com 
+Phone: 1-888-456-3210 Option 4 
+
+
+NXLog Test Machine:
+SAVMUTIL01

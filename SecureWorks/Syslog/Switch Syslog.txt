@@ -1,0 +1,6 @@
+login on-failure log
+login on-success log
+logging trap debugging
+logging host 192.168.10.250
+logging host 192.168.10.11
+ip nat log translations syslog

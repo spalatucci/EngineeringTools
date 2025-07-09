@@ -1,0 +1,9 @@
+Admins:
+Mike Caldron
+Ahmed Siddiqi
+
+Run reports for people
+
+Log retention 13 months
+
+SMTP - 192.168.10.106

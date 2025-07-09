@@ -1,0 +1,16 @@
+sascanqualysvms
+surce3ms
+Virtual Scanner
+21087495293028
+
+Non-Windows > Logging
+VMDSEN-Low02 Thin Prov
+
+
+
+Help > Resources
+
+1. Add IPs into inventory through ticket
+2. Run light inventory scans for all sites
+3. Schedule vulnerability scan for all sites excluding IP Phones
+4. Setup authentication on machines

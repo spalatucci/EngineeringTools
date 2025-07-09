@@ -1,0 +1,3 @@
+aka.ms/learn
+aka.ms/enablevts
+aka.ms/trainingcenter

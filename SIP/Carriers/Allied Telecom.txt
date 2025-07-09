@@ -1,0 +1,18 @@
+ip host proxy.alliedtelecom.net 66.208.53.174
+ip host alliedtelecom.net 66.208.53.174
+!
+voice service voip
+ ip address trusted list
+  ipv4 66.208.53.174
+  ipv4 66.208.53.160 255.255.255.224
+!
+ip route 66.208.53.160 255.255.255.224 x.x.x.x
+ip route 66.208.53.174 255.255.255.255 x.x.x.x
+!
+sip-ua
+ credentials username 2023150210 password 7 11021407011E000100323D2B22222223 realm alliedtelecom.net
+ authentication username 2023150210 password 7 130E1A101D000F272F3C3E3C3F330406 realm alliedtelecom.net
+ no remote-party-id
+ registrar dns:alliedtelecom.net expires 3600
+ sip-server ipv4:66.208.53.174
+ host-registrar

@@ -1,0 +1,19 @@
+CMS Procedures:
+Workstations: RedCloak_Installer, Qualys Cloud Agent_Installer
+Servers: RedCloak_Installer, Qualys Cloud Agent_Installer, NXLog_Installer
+DNS Servers: RedCloak_Installer, Qualys Cloud Agent_Installer, NXLog_DNS_Installer
+
+RedCloak:
+Check to make sure agent is checking into https://ctpx.secureworks.com under Agents
+
+Cloud Agent:
+Check to make sure agent is checking into https://portal.secureworks.com under Resources > Qualys SSO > Cloud Agent
+
+Syslog Collectors: 192.168.10.11, 192.168.10.250
+Cisco IOS, Cisco ASA, Meraki
+
+New Sites:
+Submit ticket to Qualys VMS support to add new IP ranges to subscription
+Create new Asset Group for new Site with IP ranges
+Add new IP ranges to "none" Domain under Assets
+Add non-Windows IPs to applicable Authentication records

@@ -1,0 +1,2 @@
+Supported SBCs
+https://docs.microsoft.com/en-us/microsoftteams/direct-routing-border-controllers

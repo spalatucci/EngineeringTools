@@ -1,0 +1,5 @@
+S4B Hybrid Connectivity:
+https://docs.microsoft.com/en-us/skypeforbusiness/hybrid/configure-hybrid-connectivity
+
+Polycom VVX:
+https://www.polycom.com/content/dam/polycom/common/documents/faqs/polycom-phones-and-microsoft-teams-faq-enus.pdf

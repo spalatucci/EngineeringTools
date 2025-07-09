@@ -1,0 +1,6 @@
+https://www.cisco.com/c/en/us/td/docs/routers/sl_using_policy/b-sl-using-policy.html
+
+license smart transport smart
+license smart url default
+license smart trust idtoken *TOKEN* all force
+service call-home

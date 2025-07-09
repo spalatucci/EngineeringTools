@@ -1,0 +1,3 @@
+auditpol /set /subcategory:”Filtering Platform Connection” /success:disable /failure:enable
+
+auditpol /get /subcategory:”Filtering Platform Connection”

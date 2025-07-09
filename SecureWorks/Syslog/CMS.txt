@@ -1,0 +1,2 @@
+dnscmd /Config /Loglevel 0x0000F321
+dnscmd /Config /logfilemaxsize 0x003FFFFD

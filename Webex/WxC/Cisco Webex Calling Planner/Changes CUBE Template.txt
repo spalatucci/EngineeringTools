@@ -1,0 +1,342 @@
+LGW Trunk OTG: <otg>
+LGW Outbound Proxy: <wxc proxy>
+LGW Registrar Domain: <registrar>
+LGW Line: <line>
+LGW Username: <username>
+LGW Password: <password>
+Encryption/STUN Password: <encrypt>
+CUBE ITSP Interface: GigabitEthernet0/0/Y
+CUBE Internal Interface: GigabitEthernet0/0/X
+ISTP IP: <itsp ip1> <itsp ip2>
+UCM IP: <ucm ip1> <ucm ip2> <ucm ip3>
+
+key config-key password-encrypt <encrypt>
+
+service timestamps debug datetime msec localtime show-timezone
+service timestamps log datetime msec localtime show-timezone
+!
+hostname #######
+!
+logging buffered 5120000
+no aaa new-model
+clock timezone XST -X 0
+clock summer-time XDT recurring
+!
+ip name-server 208.67.222.222 208.67.220.220
+ip domain name XXXX.###
+!
+login on-success log
+!
+crypto key generate rsa modulus 2048
+crypto pki trustpool import clean url http://www.cisco.com/security/pki/trs/ios_core.p7b
+!
+username rradmin privilege 15 secret 9 $9$.h9VWI6kZQmqhU$WS3UdrJvWEcwESqS79BR.axFvztmIYxrOD1.smInc.E
+!
+ip http server
+ip http authentication local
+ip http secure-server
+!
+password encryption aes
+pae
+!
+crypto pki trustpoint tp_webex_tls12
+ revocation-check crl
+!
+cts logging verbose
+!
+!
+license boot level network-advantage addon dna-advantage
+!
+FIRMWARE UPGRADE
+SMART LICENSE
+!
+!
+voice call send-alert
+voice rtp send-recv
+!
+voice service voip
+ ip address trusted list
+  ipv4 X.X.X.X Y.Y.Y.Y
+  ipv4 23.89.0.0 255.255.0.0
+  ipv4 62.109.192.0 255.255.192.0
+  ipv4 85.119.56.0 255.255.254.0
+  ipv4 128.177.14.0 255.255.255.0
+  ipv4 128.177.36.0 255.255.255.0
+  ipv4 135.84.168.0 255.255.248.0
+  ipv4 139.177.64.0 255.255.248.0
+  ipv4 139.177.72.0 255.255.254.0
+  ipv4 144.196.0.0 255.255.0.0
+  ipv4 150.253.128.0 255.255.128.0
+  ipv4 163.129.0.0 255.255.128.0
+  ipv4 170.72.0.0 255.255.0.0
+  ipv4 170.133.128.0 255.255.192.0
+  ipv4 185.115.196.0 255.255.252.0
+  ipv4 199.19.196.0 255.255.254.0
+  ipv4 199.19.199.0 255.255.255.0
+  ipv4 199.59.64.0 255.255.248.0
+  exit
+ mode border-element
+ media statistics
+ media bulk-stats
+ allow-connections sip to sip
+ no supplementary-service sip moved-temporarily
+ no supplementary-service sip refer
+ no supplementary-service sip handle-replaces
+ fax protocol t38 version 0 ls-redundancy 0 hs-redundancy 0 fallback none
+ trace
+ stun
+  stun flowdata agent-id 1 boot-count 4
+  stun flowdata shared-secret 0 <encrypt>
+ sip
+  rel1xx disable
+  header-passing
+  error-passthru
+  registrar server expires max 600 min 60
+  asserted-id pai
+  midcall-signaling passthru media-change
+  early-offer forced
+  g729 annexb-all
+ exit
+!
+voice class uri 100 sip
+ host ipv4:<itsp ip1>
+ host ipv4:<itsp ip2>
+!
+voice class uri 200 sip
+ host ipv4:<ucm ip1>
+ host ipv4:<ucm ip2>
+ host ipv4:<ucm ip3>
+!
+voice class uri 300 sip
+ pattern :5065
+!
+voice class uri 400 sip
+ pattern dtg=<otg>
+!
+voice class codec 99
+ codec preference 1 g711ulaw
+ codec preference 2 g711alaw
+!
+voice class stun-usage 400
+ stun usage firewall-traversal flowdata
+ stun usage ice lite
+!
+voice class srtp-crypto 400
+ crypto 1 AES_CM_128_HMAC_SHA1_80
+!
+voice class tls-profile 400
+ trustpoint tp_webex_tls12
+!
+voice class sip-profiles 400
+ rule 9 request ANY sip-header SIP-Req-URI modify "sips:(.*)" "sip:\1"
+ rule 10 request ANY sip-header To modify "<sips:(.*)" "<sip:\1"
+ rule 11 request ANY sip-header From modify "<sips:(.*)" "<sip:\1"
+ rule 12 request ANY sip-header Contact modify "<sips:(.*)>" "<sip:\1;transport=tls>"
+ rule 13 response ANY sip-header To modify "<sips:(.*)" "<sip:\1"
+ rule 14 response ANY sip-header From modify "<sips:(.*)" "<sip:\1"
+ rule 15 response ANY sip-header Contact modify "<sips:(.*)" "<sip:\1"
+ rule 20 request ANY sip-header From modify ">" ";otg=<otg>>"
+ rule 30 request ANY sip-header P-Asserted-Identity modify "sips:(.*)" "sip:\1"
+!
+dial-peer voice 100 voip
+voice class dpg 100
+ dial-peer 100
+!
+dial-peer voice 200 voip
+voice class dpg 200
+ dial-peer 200
+!
+dial-peer voice 300 voip
+voice class dpg 300
+ dial-peer 300
+!
+dial-peer voice 400 voip
+voice class dpg 400
+ dial-peer 400
+!
+voice class server-group 100
+ ipv4 <itsp ip1>
+ ipv4 <itsp ip2>
+!
+voice class server-group 200
+ ipv4 <ucm ip1> preference 3
+ ipv4 <ucm ip2> preference 1
+ ipv4 <ucm ip3> preference 2
+!
+voice class server-group 300
+ ipv4 <ucm ip1> port 5065 preference 3
+ ipv4 <ucm ip2> port 5065 preference 1
+ ipv4 <ucm ip3> port 5065 preference 2
+!
+voice class tenant 100 
+ session transport udp
+ url sip
+ error-passthru
+ bind control source-interface GigabitEthernet0/0/Y
+ bind media source-interface GigabitEthernet0/0/Y
+ no pass-thru content custom-sdp
+!
+voice class tenant 200 
+ session transport udp
+ url sip
+ error-passthru
+ bind control source-interface GigabitEthernet0/0/X
+ bind media source-interface GigabitEthernet0/0/X
+ no pass-thru content custom-sdp
+!
+voice class tenant 400
+  tls-profile 400
+  listen-port secure 5070
+ registrar dns:<registrar> scheme sips expires 240 refresh-ratio 50 tcp tls
+  credentials number <line> username <username> password 0 <password> realm BroadWorks
+  authentication username <username> password 0 <password> realm BroadWorks
+  authentication username <username> password 0 <password> realm <registrar>
+ no remote-party-id
+ sip-server dns:<registrar>
+ connection-reuse
+ srtp-crypto 400
+ no localhost
+ session transport tcp tls
+ url sips
+ bind control source-interface GigabitEthernet0/0/X
+ bind media source-interface GigabitEthernet0/0/X
+ no pass-thru content custom-sdp
+ sip-profiles 400
+ outbound-proxy dns:<wxc proxy>
+ privacy-policy passthru
+!
+!
+voice iec syslog
+!
+voice translation-rule 1
+ rule 1 /^\([2-9]..[2-9]......\)/ /+1\1/
+!
+voice translation-rule 2
+ rule 1 /^\([2-9]..[2-9]......\)/ /+1\1/
+!
+voice translation-rule 3
+ rule 1 /\+1\(.*\)/ /\1/
+!
+voice translation-rule 4
+ rule 1 /\+1\(.*\)/ /\1/
+ rule 2 /\+\([^1].*\)/ /011\1/
+!
+voice translation-rule 5
+!
+voice translation-rule 6
+!
+voice translation-rule 7
+!
+voice translation-rule 8
+!
+!
+voice translation-profile ITSP-IN
+ translate calling 1
+ translate called 2
+!
+voice translation-profile ITSP-OUT
+ translate calling 3
+ translate called 4
+!
+voice translation-profile WXC-IN
+ translate calling 5
+ translate called 6
+!
+voice translation-profile WXC-OUT
+ translate calling 7
+ translate called 8
+!
+call-history-mib retain-timer 500
+call-history-mib max-size 500
+!
+license smart url https://smartreceiver.cisco.com/licservice/license
+license smart url smart https://smartreceiver.cisco.com/licservice/license
+license smart transport smart
+!
+snmp-server community redriversnmp RW
+!
+dial-peer voice 100 voip
+ description ### IN/OUT ITSP ###
+ translation-profile incoming ITSP-IN
+ translation-profile outgoing ITSP-OUT
+ session protocol sipv2
+ session server-group 100
+ destination dpg 200
+ incoming uri via 100
+ voice-class codec 99
+ voice-class sip tenant 100
+ voice-class sip options-keepalive
+ dtmf-relay rtp-nte
+ no vad
+!
+dial-peer voice 200 voip
+ description ### IN/OUT CUCM ###
+ session protocol sipv2
+ session server-group 200
+ destination dpg 100
+ incoming uri from 200
+ voice-class codec 99
+ voice-class sip tenant 200
+ voice-class sip options-keepalive
+ dtmf-relay rtp-nte
+ no vad
+!
+dial-peer voice 300 voip
+ description ### IN/OUT CUCM WXC ###
+ session protocol sipv2
+ session server-group 300
+ destination dpg 400
+ incoming uri via 300
+ voice-class codec 99
+ voice-class sip tenant 200
+ voice-class sip options-keepalive
+ dtmf-relay rtp-nte
+ no vad
+!
+dial-peer voice 400 voip
+ description ### IN/OUT WXC ###
+ translation-profile incoming WXC-IN
+ translation-profile outgoing WXC-OUT
+ max-conn 250
+ session protocol sipv2
+ session target sip-server
+ destination dpg 300
+ incoming uri request 400
+ voice-class codec 99
+ voice-class stun-usage 400
+ no voice-class sip localhost
+ voice-class sip tenant 400
+ dtmf-relay rtp-nte
+ srtp
+ no vad
+!
+sip-ua
+ no remote-party-id
+ retry invite 2
+ timers trying 150
+ timers buffer-invite 500
+ transport tcp tls v1.2
+  crypto signaling default trustpoint tp_webex_tls12 cn-san-validate server
+ tcp-retry 1000
+!
+alias exec fc show voip trace cover-buffer | section
+alias exec sc show voip trace call-id
+!
+line con 0
+ logging synchronous
+ login local
+line vty 0 15
+ exec-timeout 15 0
+ logging synchronous
+ login local
+ transport input ssh
+!
+ntp master
+ntp server us.pool.ntp.org prefer
+ntp server time.nist.gov
+!
+event manager applet EnableDebugging
+ event syslog occurs 1 pattern "%SYS-5-RESTART"
+ action 1.0 cli command "enable"
+ action 2.0 cli command "debug ccsip messages"
+!
